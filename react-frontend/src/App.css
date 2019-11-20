@@ -1,0 +1,36 @@
+.App {
+  text-align: center;
+}
+
+.Applogo {
+  height: 40vmin;
+}
+
+.Appheader {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.Applink {
+  color: #09d3ac;
+}
+
+@font-face {
+  font-family: regular;
+  src: url("/../fonts/Montserrat-Regular.ttf");
+}
+
+@font-face {
+  font-family: semibold;
+  src: url("/../fonts/Montserrat-SemiBold.ttf");
+}
+@font-face {
+  font-family: bold;
+  src: url("/../fonts/Montserrat-Bold.ttf");
+}
