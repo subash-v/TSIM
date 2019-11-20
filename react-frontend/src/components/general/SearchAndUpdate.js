@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styles from "./SearchAndUpdate.css";
 import Icon from "../../core/Icon";
+import ControlInput from "../../core/ControlInput";
 export default class SearchAndUpdate extends React.Component {
   constructor(props) {
     super(props);
@@ -42,7 +43,35 @@ export default class SearchAndUpdate extends React.Component {
     return (
       <div className={styles.base}>
         <div className={styles.inputSearchHolder}>
-          <div className={styles.inputHolder}>{this.props.placeholder}</div>
+          <div
+            className={styles.inputHolder}
+            style={{ width: this.props.width }}
+          >
+            {" "}
+            <ControlInput
+              boxy={this.props.uiType === "default" ? true : false}
+              hollow={this.props.uiType === "hollow" ? true : false}
+              id={this.props.id}
+              value={this.state.pinCode}
+              placeholder={this.props.placeholder}
+              onChange={val => this.getValue(val)}
+              textStyle={{ fontSize: 14 }}
+              height={35}
+              autoFocus={this.props.hasAutoFocus}
+              rightChildSize={35}
+              borderColor={this.props.borderColor}
+              borderBottom={this.props.borderBottom}
+              onFocus={event => {
+                this.handleOnFocusInput(event);
+              }}
+              onBlur={() => {
+                this.handleBlurInput();
+              }}
+              onKeyUp={event => {
+                this.handleKeyUp(event);
+              }}
+            />
+          </div>
           <div className={styles.buttonHolder}>
             <div className={styles.buttonCover}>
               {this.props.iconImage ? (

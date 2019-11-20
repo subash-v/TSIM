@@ -27,6 +27,8 @@ export default class PrimaryHeader extends Component {
                 value={""}
                 labelText={"Check"}
                 iconImage={search}
+                width="320px"
+                borderBottom="none"
               />
             </div>
 
