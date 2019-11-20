@@ -53,8 +53,7 @@
   display: flex;
   align-items: center;
   font-size: 10px;
-  font-weight: bold;
-  font-family: sans-serif;
+  font-family: bold;
   justify-content: center;
 }
 .heading {
@@ -63,7 +62,7 @@
   height: auto;
   font-size: 26px;
   color: #fff;
-  font-weight: bold;
+  font-family: bold;
   line-height: 32px;
   max-width: 340px;
 }
@@ -73,7 +72,7 @@
   font-size: 12px;
   line-height: 18px;
   color: #fff;
-  font-weight: 600;
+  font-family: 600;
   margin-bottom: 10px;
 }
 .dot {
@@ -99,7 +98,7 @@
   border-radius: 5px;
   color: #fff;
   font-size: 16px;
-  font-weight: bold;
+  font-family: bold;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -137,7 +136,7 @@
   width: 100%;
   height: auto;
   color: #4f439a;
-  font-weight: bold;
+  font-family: bold;
   line-height: 22px;
   font-size: 16px;
   margin-top: 30px;
@@ -180,7 +179,7 @@
   width: 100%;
   color: #ffffff;
   font-size: 32px;
-  font-weight: bold;
+  font-family: bold;
   line-height: 40px;
   margin-bottom: 5px;
 }
@@ -189,7 +188,6 @@
   font-family: "Open Sans";
   font-size: 16px;
   line-height: 24px;
- 
 }
 .imageHolder {
   width: 50%;
@@ -197,11 +195,11 @@
   display: inline-block;
   vertical-align: top;
 }
-.inputHolder{
-    width: 72%;
-    background: #fff;
-    border-radius: 4px;
-    margin-top: 40px;
+.inputHolder {
+  width: 72%;
+  background: #fff;
+  border-radius: 4px;
+  margin-top: 40px;
 }
 .signUpImage {
   width: 100%;

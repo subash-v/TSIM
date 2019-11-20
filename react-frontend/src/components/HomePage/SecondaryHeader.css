@@ -1,15 +1,14 @@
 .headerBase {
-  width: 100%;
+  width: 100vw;
   height: 80px;
-  padding: 0px 200px;
 }
 .headerHolder {
-  height: 100%;
+  height: 80px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 0px 40px;
+  padding: 20px 40px;
 }
 .logoHolder {
   width: 165px;
@@ -18,6 +17,9 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  background: url("../../images/tsim_logo.png") no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .searchLoginHolder {
   justify-content: flex-end;

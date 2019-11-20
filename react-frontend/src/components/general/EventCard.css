@@ -20,29 +20,68 @@
 .contentHeading {
   color: #1a1a1a;
   font-size: 20px;
-  font-weight: bold;
+  font-family: bold;
   line-height: 28px;
+  margin-bottom: 15px;
+}
+
+.time,
+.date,
+.location {
+  font-size: 14px;
+  font-family: regular;
+  line-height: 20px;
   margin-bottom: 10px;
 }
-.username {
-  color: #232323;
-  font-size: 14px;
-  line-height: 22px;
+
+.icons {
+  height: 16px;
+  width: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
 }
-.or {
-  margin: 0px 10px;
+
+.timeImage {
+  composes: icons;
+  background: url("../../images/time.svg") no-repeat;
+  background-position: center;
+  background-size: cover;
 }
-.actionBarConatiner {
-  width: 100%;
+
+.dateImage {
+  composes: icons;
+  background: url("../../images/Date.svg") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.locationImage {
+  composes: icons;
+  background: url("../../images/Location-white.svg") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.tags {
+  box-sizing: border-box;
   height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px;
+  color: #fff;
+  width: auto;
+  border: 1px solid #000000;
+  border-radius: 15px;
+  background-color: rgba(26, 26, 26, 0.6);
+  padding: 5px 15px;
+  width: auto;
+  display: inline-block;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 20px;
 }
-.actionsHolder {
-  display: flex;
-}
-.action {
-  margin-right: 50px;
+
+.imageBase {
+  position: relative;
 }

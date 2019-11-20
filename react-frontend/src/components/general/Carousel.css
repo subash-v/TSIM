@@ -50,7 +50,7 @@
 }
 .back {
   composes: forward;
-  transform: rotate(90deg);
+  transform: rotate(180deg);
   right: initial;
   left: -15px;
 }
