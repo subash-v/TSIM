@@ -8,10 +8,12 @@ import SecondaryHeader from "./components/HomePage/SecondaryHeader";
 class App extends Component {
   render() {
     return (
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/header" component={SecondaryHeader} />
-      </Switch>
+      <div className={styles.main}>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/header" component={SecondaryHeader} />
+        </Switch>
+      </div>
     );
   }
 }
