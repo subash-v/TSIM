@@ -1,0 +1,100 @@
+.rowContainer {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 67px;
+  padding-bottom: 54px;
+  padding-left: 120px;
+  padding-right: 120px;
+}
+
+.column {
+  text-align: center;
+}
+
+.feedbackTxt {
+  height: 24px;
+  width: 198px;
+  color: #7f7f7f;
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: bold;
+  padding-left: 15px;
+}
+
+.feedbackBlock {
+  width: 235px;
+  height: 24px;
+  padding-left: 119px;
+  display: flex;
+}
+
+.feedbackImg {
+  height: 15.47px;
+  width: 22px;
+}
+
+.socialBlock {
+  width: 330px;
+  height: 50px;
+  margin-left: 120px;
+  margin-top: 62px;
+  display: flex;
+  /* border: 1px solid red; */
+  justify-content: space-between;
+}
+
+.socialImg {
+  /* box-sizing: border-box; */
+  height: 50px;
+  width: 50px;
+  border: 1px solid #ebeced;
+  border-radius: 3px;
+  background-color: #ffffff;
+}
+
+.bottomContainer {
+  display: flex;
+  margin-bottom: 23px;
+}
+.touch {
+  display: flex;
+  height: 50px;
+  width: 165px;
+  border-radius: 5px;
+  background-color: #f6eef5;
+  color: #ad5da3;
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-weight: bold;
+  justify-content: center;
+  margin-top: 62px;
+  margin-left: 52px;
+}
+
+.appLogo {
+  height: 45px;
+  width: 186.43px;
+}
+.copyrightTxt {
+  height: 44px;
+  width: 217px;
+  color: #333333;
+  font-family: ".SF NS Display";
+  font-size: 14px;
+  /* line-height: 22px;
+   */
+  /* border: 1px solid red; */
+
+  margin-top: 20px;
+}
+
+.copyrightBlock {
+  height: 99px;
+  width: 217px;
+  /* border: 1px solid red; */
+  margin-left: 890px;
+}
+
+/* .socialImg {
+  margin: 0 10px;
+} */
