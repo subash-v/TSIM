@@ -1,9 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import ControlInput from "../../general/ControlInput.js";
-import UnderLinedButton from "../../general/UnderLinedButton.js";
 import styles from "./SearchAndUpdate.css";
-import Button from "../../general/Button.js";
 export default class SearchAndUpdate extends React.Component {
   constructor(props) {
     super(props);

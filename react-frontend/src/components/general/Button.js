@@ -1,5 +1,5 @@
 import React from "react";
-import CoreButton from "../../general/Button.js";
+import CoreButton from "../../core/Button.js";
 import PropTypes from "prop-types";
 
 export default class Button extends React.Component {
