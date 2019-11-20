@@ -10,10 +10,11 @@ export default class Button extends React.Component {
         return (
           <CoreButton
             {...other}
-            backgroundColor={"#4F439A"}
+            backgroundColor={this.props.backgroundColor}
             height={this.props.height}
+            borderRadius="4px"
             textStyle={{
-              color: "#FFF",
+              color: this.props.fontColor,
               fontSize: 16,
               fontFamily: "semibold"
             }}
@@ -25,9 +26,10 @@ export default class Button extends React.Component {
             {...other}
             backgroundColor={"transparent"}
             height={this.props.height}
-            borderColor={"#4F439A"}
+            borderColor={this.props.borderColor}
+            borderRadius="4px"
             textStyle={{
-              color: "#4F439A",
+              color: this.props.fontColor,
               fontSize: 16,
               fontFamily: "semibold"
             }}
@@ -55,7 +57,9 @@ Button.propTypes = {
 
 Button.defaultProps = {
   height: 36,
-  color: "#212121",
+  fontColor: "#212121",
+  backgroundColor: "#4F439A",
+  borderColor: "#4F439A",
   linearColor: {
     fromColor: "#ce5096",
     toColor: "#da6060"

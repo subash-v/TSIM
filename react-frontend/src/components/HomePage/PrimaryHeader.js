@@ -34,11 +34,20 @@ export default class PrimaryHeader extends Component {
                   type="secondary"
                   height={40}
                   width={120}
+                  fontColor={"#4F439A"}
                   label="LOGIN"
+                  borderColor="#4F439A"
                 />
               </div>
               <div className={styles.signup}>
-                <Button type="primary" height={40} width={120} label="SIGNUP" />
+                <Button
+                  type="primary"
+                  backgroundColor={"#4F439A"}
+                  fontColor={"#ffffff"}
+                  height={40}
+                  width={120}
+                  label="SIGN UP"
+                />
               </div>
             </div>
           </div>
