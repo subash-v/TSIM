@@ -5,6 +5,7 @@
   "dependencies": {
     "@babel/core": "7.6.0",
     "@babel/runtime": "^7.7.2",
+    "@researchgate/react-intersection-observer": "^1.0.1",
     "@svgr/webpack": "4.3.2",
     "@typescript-eslint/eslint-plugin": "^2.8.0",
     "@typescript-eslint/parser": "^2.8.0",
