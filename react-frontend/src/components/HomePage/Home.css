@@ -154,3 +154,61 @@
   display: flex;
   align-items: center;
 }
+
+.eventsSection {
+  height: auto;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 100px 0;
+}
+
+.calendarIcon {
+  width: 80px;
+  height: 80px;
+  background: url("../../images/landing-page-Event.svg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 25px;
+}
+
+.eventText {
+  color: #ad5da3;
+  font-family: bold;
+  font-size: 18px;
+  line-height: 26px;
+  padding-bottom: 10px;
+}
+
+.eventTitle {
+  color: #1a1a1a;
+  font-family: bold;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 36px;
+  margin-bottom: 50px;
+}
+
+.arrow {
+  background: url("../../images/forward-color.svg") no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 15px;
+  height: 15px;
+  margin-left: 5px;
+}
+
+.viewAllButton {
+  height: 50px;
+  width: 146px;
+  display: flex;
+  align-items: center;
+  background: #f6eef5;
+  padding-left: 15px;
+  border-radius: 5px;
+  font-family: bold;
+  color: #ad5da3;
+}
+
+.eventsLink {
+  width: 20%;
+}

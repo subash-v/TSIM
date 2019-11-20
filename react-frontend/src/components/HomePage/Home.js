@@ -5,6 +5,7 @@ import image2 from "../../images/2.jpg";
 import image3 from "../../images/3.jpg";
 import Button from "../../core/Button copy";
 import SecondaryHeader from "./SecondaryHeader";
+import CenteredContent from "../../core/CenteredContent";
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -121,7 +122,8 @@ export default class Home extends React.Component {
               onClick={() => this.handleCarousel(1)}
             >
               BUILD
-              <br /> VISUAL PROFILE<div className={styles.innerTriangle}></div>
+              <br /> VISUAL PROFILE
+              <div className={styles.innerTriangle}></div>
             </div>
             <div
               className={styles.navButton}
@@ -150,7 +152,16 @@ export default class Home extends React.Component {
           <div className={styles.opactityWrapper}></div>
         </div>
         <div className={styles.eventsSection}>
-          <div className={styles.eventsLink}></div>
+          <div className={styles.eventsLink}>
+            <div className={styles.calendarIcon}></div>
+            <div className={styles.eventText}>EVENTS</div>
+            <div className={styles.eventTitle}>
+              View and attend workshops and networking events
+            </div>
+            <div className={styles.viewAllButton}>
+              VIEW ALL <div className={styles.arrow}></div>
+            </div>
+          </div>
         </div>
       </div>
     );
