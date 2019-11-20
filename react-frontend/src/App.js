@@ -4,16 +4,15 @@ import styles from "./App.css";
 import Home from "./components/HomePage/Home.js";
 import PrimaryHeader from "./components/HomePage/PrimaryHeader";
 import SecondaryHeader from "./components/HomePage/SecondaryHeader";
+import BlogFeed from "./components/Blog/BlogFeed";
 
 class App extends Component {
   render() {
     return (
-      <div className={styles.main}>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/header" component={SecondaryHeader} />
-        </Switch>
-      </div>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/blog" component={BlogFeed} />
+      </Switch>
     );
   }
 }

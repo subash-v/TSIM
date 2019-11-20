@@ -1,6 +1,7 @@
 .headerBase {
   width: 100%;
   height: 80px;
+  padding: 0px 200px;
 }
 .headerHolder {
   height: 100%;

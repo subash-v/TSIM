@@ -5,8 +5,37 @@ import image2 from "../../images/2.jpg";
 import image3 from "../../images/3.jpg";
 import Button from "../../core/Button copy";
 import SecondaryHeader from "./SecondaryHeader";
+import HomepageEventsCarousel from "../general/HomePageEventsCarousel.";
+import Card from "../general/EventCard";
+import Carousel from "../general/Carousel";
 import CenteredContent from "../../core/CenteredContent";
 
+const carouselData = [
+  {
+    title: "WEFT Women Entrepreneurs Annual Conference & Awards 2019",
+    time: "10 am – 5 pm",
+    date: "21 Sep, 22 Sep",
+    location: "Koramangala, Bengaluru"
+  },
+  {
+    title: "WEFT Women Entrepreneurs Annual Conference & Awards 2019",
+    time: "10 am – 5 pm",
+    date: "21 Sep, 22 Sep",
+    location: "Koramangala, Bengaluru"
+  },
+  {
+    title: "WEFT Women Entrepreneurs Annual Conference & Awards 2019",
+    time: "10 am – 5 pm",
+    date: "21 Sep, 22 Sep",
+    location: "Koramangala, Bengaluru"
+  },
+  {
+    title: "WEFT Women Entrepreneurs Annual Conference & Awards 2019",
+    time: "10 am – 5 pm",
+    date: "21 Sep, 22 Sep",
+    location: "Koramangala, Bengaluru"
+  }
+];
 export default class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -162,7 +191,64 @@ export default class Home extends React.Component {
               VIEW ALL <div className={styles.arrow}></div>
             </div>
           </div>
+          <div className={styles.carousel}>
+            <HomepageEventsCarousel>
+              {carouselData &&
+                carouselData.map((val, i) => {
+                  return (
+                    <Card
+                      image={""}
+                      heading={val.title}
+                      time={val.time}
+                      date={val.date}
+                      location={val.location}
+                      key={i}
+                      visibleChildrenDesktop={2}
+                    />
+                  );
+                })}
+            </HomepageEventsCarousel>
+          </div>
         </div>
+        <div className={styles.featuredSection}>
+          <div style={{ background: "#ebeced", padding: "100px 0 200px 0" }}>
+            <div className={styles.featuredHeader}>
+              <div className={styles.featIcon}></div>
+              <div className={styles.featText}>
+                <div className={styles.featTitle}>Featured content</div>
+                <div className={styles.subTitle}>
+                  Get access to career advice, inspirational stories and curated
+                  career resources
+                </div>
+                <div className={styles.gotoFeaturedContent}>
+                  {" "}
+                  VIEW ALL <div className={styles.arrow}></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <div className={styles.featuredCarousel}>
+              <Carousel>
+                {carouselData &&
+                  carouselData.map((val, i) => {
+                    return (
+                      <Card
+                        image={""}
+                        heading={val.title}
+                        time={val.time}
+                        date={val.date}
+                        location={val.location}
+                        key={i}
+                        visibleChildrenDesktop={2}
+                      />
+                    );
+                  })}
+              </Carousel>
+            </div>
+          </div>
+        </div>
+        <div className={styles.footerSection}>{/* <Footer/> */}</div>
       </div>
     );
   }

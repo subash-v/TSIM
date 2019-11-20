@@ -12,7 +12,7 @@
   padding-right: 22px;
 }
 .buttonHolder {
-  width: 50px;
+  width: auto;
   height: 50px;
   display: inline-block;
   vertical-align: middle;
@@ -28,6 +28,11 @@
   border-radius: 5px;
   border: 1px solid #e0deed;
   background: #e0deed;
+}
+.imageCover{
+  composes:buttonCover;
+  width:50px;
+  height:50px;
 }
 .inputSearchHolder {
   width: 100%;

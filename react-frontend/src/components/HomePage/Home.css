@@ -25,7 +25,8 @@
   margin: auto;
   width: 100%;
   position: relative;
-  overflow: hidden;
+  max-width: 750px;
+  margin-right: 0;
 }
 
 .opactityWrapper {
@@ -160,6 +161,9 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 100px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .calendarIcon {
@@ -209,6 +213,67 @@
   color: #ad5da3;
 }
 
+.gotoFeaturedContent {
+  composes: viewAllButton;
+  color: #4f439a;
+  background: #d1cfe3;
+  position: absolute;
+  right: 10px;
+  top: 55px;
+}
+
 .eventsLink {
   width: 20%;
+}
+
+.featuredSection {
+  position: relative;
+}
+
+.featIcon {
+  width: 102px;
+  height: 102px;
+  background: url("../../images/featured.svg") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.featTitle {
+  color: #4f439a;
+  font-family: bold;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 24px;
+  padding-bottom: 15px;
+}
+
+.subTitle {
+  color: #1a1a1a;
+  font-family: bold;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 36px;
+  width: 50%;
+}
+
+.featText {
+  display: flex;
+  width: 100%;
+  height: auto;
+  margin-left: 25px;
+  flex-direction: column;
+  position: relative;
+}
+
+.featuredHeader {
+  display: flex;
+  /* background: #ebeced; */
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+.featuredCarousel {
+  position: absolute;
+  top: 250px;
+  max-width: 1400px;
 }
