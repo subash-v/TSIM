@@ -3,6 +3,7 @@ import styles from "./PrimaryHeader.css";
 import Button from "../general/Button";
 import SearchAndUpdate from "../general/SearchAndUpdate";
 import CenteredContent from "../../core/CenteredContent";
+import search from "../../core/img/Search.svg";
 const links = ["PROFILE", "NETWORK", "COACH", "GUIDANCE", "GUIDE"];
 export default class PrimaryHeader extends Component {
   render() {
@@ -25,6 +26,7 @@ export default class PrimaryHeader extends Component {
                 placeholder="Search for People, Networks, Blogs & Events"
                 value={""}
                 labelText={"Check"}
+                iconImage={search}
               />
             </div>
 

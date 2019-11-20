@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styles from "./SearchAndUpdate.css";
+import Icon from "../../core/Icon";
 export default class SearchAndUpdate extends React.Component {
   constructor(props) {
     super(props);
@@ -43,7 +44,13 @@ export default class SearchAndUpdate extends React.Component {
         <div className={styles.inputSearchHolder}>
           <div className={styles.inputHolder}>{this.props.placeholder}</div>
           <div className={styles.buttonHolder}>
-            <div className={styles.buttonCover}>icon</div>
+            <div className={styles.buttonCover}>
+              {this.props.iconImage ? (
+                <Icon image={this.props.iconImage} size={"20px"}></Icon>
+              ) : (
+                <div className={styles.buttonCover}>icon</div>
+              )}
+            </div>
           </div>
         </div>
       </div>

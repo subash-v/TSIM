@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/header" component={SecondaryHeader} />
+        <Route path="/header" component={PrimaryHeader} />
       </Switch>
     );
   }
