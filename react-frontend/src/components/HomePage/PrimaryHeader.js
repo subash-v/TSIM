@@ -7,12 +7,21 @@ import HOME from "../../images/Home.svg";
 import NETWORK from "../../images/Connection_line.svg";
 import MORE from "../../images/Menu_Line.svg";
 import profile from "../../images/Profile_Line.svg";
+import MESSAGE from "../../images/Messages_line.svg";
+
 import IconWithHeader from "../../core/IconWithHeader";
 import ProfileImage from "../../core/ProfileImage";
 
 const links = [
   { data: HOME, name: "HOME", routeLink: "/" },
   { data: NETWORK, name: "NETWORK", routeLink: "/network" },
+  { data: MORE, name: "MORE", routeLink: "/events" }
+];
+const logedInLinks = [
+  { data: HOME, name: "HOME", routeLink: "/" },
+  { data: NETWORK, name: "CONNECTION", routeLink: "/network" },
+  { data: MESSAGE, name: "MESSAGE", routeLink: "/chat" },
+  { data: NETWORK, name: "NOTIFICATION", routeLink: "/notification" },
   { data: MORE, name: "MORE", routeLink: "/events" }
 ];
 export default class PrimaryHeader extends Component {
@@ -24,27 +33,47 @@ export default class PrimaryHeader extends Component {
   render() {
     return (
       <div className={styles.headerBase}>
-        <div className={styles.headerHolder}>
+        <div
+          className={
+            this.props.login ? styles.nonLogedInHeader : styles.headerHolder
+          }
+        >
           <div className={styles.logoLinkHolder}>
             <div
               className={styles.logoHolder}
               onClick={() => this.handleredirect("/")}
             ></div>
             <div className={styles.linkHolder}>
-              {links.map((value, i) => {
-                return (
-                  <div
-                    className={styles.linkText}
-                    onClick={() => this.handleredirect(value.routeLink)}
-                  >
-                    <IconWithHeader
-                      image={value.data}
-                      size={32}
-                      header={value.name}
-                    />
-                  </div>
-                );
-              })}
+              {!this.props.login
+                ? links.map((value, i) => {
+                    return (
+                      <div
+                        className={styles.linkText}
+                        onClick={() => this.handleredirect(value.routeLink)}
+                      >
+                        <IconWithHeader
+                          image={value.data}
+                          size={32}
+                          header={value.name}
+                        />
+                      </div>
+                    );
+                  })
+                : logedInLinks.map((value, i) => {
+                    return (
+                      <div
+                        className={styles.loglinkText}
+                        onClick={() => this.handleredirect(value.routeLink)}
+                      >
+                        <IconWithHeader
+                          image={value.data}
+                          size={25}
+                          header={value.name}
+                          fontSize={10}
+                        />
+                      </div>
+                    );
+                  })}
             </div>
           </div>
           <div className={styles.buttonSearchholder}>

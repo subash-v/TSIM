@@ -63,6 +63,11 @@ export default class Home extends React.Component {
   componentDidMount = () => {
     window.addEventListener("scroll", this.handleScroll);
   };
+  handleredirect = val => {
+    if (this.props.history) {
+      this.props.history.push(`${val}`);
+    }
+  };
 
   render() {
     return (
@@ -121,7 +126,10 @@ export default class Home extends React.Component {
                     create a visual resume and showcase yourself using videos,
                     pictures and stories?
                   </div>
-                  <div className={styles.buttonSection}>
+                  <div
+                    className={styles.buttonSection}
+                    onClick={() => this.handleredirect("/visual-profile")}
+                  >
                     <Button
                       backgroundColor={"#AD5DA3"}
                       label="BUILD VISUAL PROFILE"
@@ -211,7 +219,10 @@ export default class Home extends React.Component {
                     <br />
                     We make networking easy.
                   </div>
-                  <div className={styles.buttonSection}>
+                  <div
+                    className={styles.buttonSection}
+                    onClick={() => this.handleredirect("/visual-profile")}
+                  >
                     {" "}
                     <Button
                       backgroundColor={"#AD5DA3"}
