@@ -19,7 +19,10 @@ export default class Footer extends React.Component {
       <React.Fragment>
         <div className={styles.rowContainer}>
           <div className={styles.column}>
-            <div className={styles.buttons}>
+            <div
+              className={styles.buttons}
+              onClick={() => this.handleredirect("/aboutUs")}
+            >
               ABOUT <div className={styles.arrow}></div>
             </div>
           </div>
