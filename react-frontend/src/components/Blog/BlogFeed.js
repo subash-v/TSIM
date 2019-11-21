@@ -6,6 +6,7 @@ import PrimaryHeader from "../HomePage/PrimaryHeader";
 
 import SignUpBar from "./SignUpBar";
 import Footer from "../Footer/Footer";
+import PrimaryHeaderContainer from "../HomePage/container/PrimaryHeaderContainer";
 const data = [
   {
     name: "Pratiksha Gupta",
@@ -77,7 +78,7 @@ export default class BlogFeed extends Component {
       <React.Fragment>
         <div className={styles.base}>
           <div className={styles.headerHolder}>
-            <PrimaryHeader history={this.props.history} />
+            <PrimaryHeaderContainer />
           </div>
           <CenteredContent>
             <div className={styles.container}>
@@ -144,7 +145,7 @@ export default class BlogFeed extends Component {
             </div>
           </CenteredContent>
           <div className={styles.footerSection}>
-            <Footer />
+            <Footer history={this.props.history} />
           </div>
         </div>
       </React.Fragment>

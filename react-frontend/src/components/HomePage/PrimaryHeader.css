@@ -4,14 +4,19 @@
   border-bottom: 1px solid #d3d3d3;
   box-shadow: 0px 2px 4px -2px rgba(0, 0, 0, 0.25);
   padding: 0px 5px;
+  background: #fff;
 }
 .headerHolder {
   max-width: 1400px;
   margin: auto;
 }
+.nonLogedInHeader {
+  width: 100%;
+}
 .logoLinkHolder {
   width: 50%;
   display: inline-block;
+  vertical-align: middle;
 }
 .logoHolder {
   cursor: pointer;
@@ -27,8 +32,8 @@
   display: inline-block;
 }
 .logoHolder {
-  width: 30%;
-  height: 40px;
+  width: 31%;
+  height: 52px;
   align-items: center;
   display: inline-block;
 }
@@ -42,9 +47,10 @@
 }
 .search {
   cursor: pointer;
-  padding: 15px 5px 15px 0px;
+  padding: 15px 30px 15px 0px;
   width: auto;
   display: inline-block;
+  width: 60%;
 }
 .login {
   display: inline-block;
@@ -55,18 +61,30 @@
 }
 .linkHolder {
   display: inline-block;
-  width: 70%;
+  width: 69%;
   height: 100%;
   vertical-align: top;
-  padding-top: 15px;
+  padding-left: 30px;
 }
 .buttonHolder {
   justify-content: flex-end;
   display: flex;
   align-items: center;
 }
-@media screen and (max-width: 1025px) {
+.loglinkText {
+  composes: linkText;
+
+  font-size: 10px;
+}
+@media screen and (max-width: 1380px) {
   .linkText {
     font-size: 12px;
+    padding: 0px 8px;
+  }
+  .linkHolder {
+    width: 80%;
+  }
+  .logoHolder {
+    width: 20%;
   }
 }
