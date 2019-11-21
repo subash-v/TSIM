@@ -3,11 +3,19 @@ import styles from "./PrimaryHeader.css";
 import Button from "../general/Button";
 import SearchInput from "../general/SearchInput";
 import search from "../../core/img/Search.svg";
-const links = ["PROFILE", "NETWORK", "COACH", "GUIDANCE", "GUIDE"];
+import HOME from "../../images/Home.svg";
+import NETWORK from "../../images/Connection_line.svg";
+import MORE from "../../images/Menu_Line.svg";
+import IconWithHeader from "../../core/IconWithHeader";
+const links = [
+  { data: HOME, name: "HOME", routeLink: "/" },
+  { data: NETWORK, name: "NETWORK", routeLink: "/network" },
+  { data: MORE, name: "MORE", routeLink: "/events" }
+];
 export default class PrimaryHeader extends Component {
-  handleredirect = () => {
+  handleredirect = val => {
     if (this.props.history) {
-      this.props.history.push(`/`);
+      this.props.history.push(`${val}`);
     }
   };
   render() {
@@ -17,11 +25,22 @@ export default class PrimaryHeader extends Component {
           <div className={styles.logoLinkHolder}>
             <div
               className={styles.logoHolder}
-              onClick={() => this.handleredirect()}
+              onClick={() => this.handleredirect("/")}
             ></div>
             <div className={styles.linkHolder}>
-              {links.map(value => {
-                return <div className={styles.linkText}>{value}</div>;
+              {links.map((value, i) => {
+                return (
+                  <div
+                    className={styles.linkText}
+                    onClick={() => this.handleredirect(value.routeLink)}
+                  >
+                    <IconWithHeader
+                      image={value.data}
+                      size={32}
+                      header={value.name}
+                    />
+                  </div>
+                );
               })}
             </div>
           </div>
@@ -34,7 +53,6 @@ export default class PrimaryHeader extends Component {
                   value={""}
                   labelText={"Check"}
                   iconImage={search}
-                  width="300px"
                   borderBottom="none"
                 />
               </div>
@@ -43,9 +61,10 @@ export default class PrimaryHeader extends Component {
                 <Button
                   type="secondary"
                   height={40}
-                  width={100}
+                  width={"100%"}
                   fontColor={"#4F439A"}
                   label="LOGIN"
+                  borderRadius="none"
                   borderColor="#4F439A"
                 />
               </div>
@@ -55,7 +74,8 @@ export default class PrimaryHeader extends Component {
                   backgroundColor={"#4F439A"}
                   fontColor={"#ffffff"}
                   height={40}
-                  width={100}
+                  borderRadius="none"
+                  width={"100%"}
                   label="SIGN UP"
                 />
               </div>

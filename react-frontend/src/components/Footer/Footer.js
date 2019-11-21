@@ -11,7 +11,7 @@ import mail from "../../images/Mail.svg";
 export default class Footer extends React.Component {
   handleredirect = val => {
     if (this.props.history) {
-      this.props.history.push(`/${val}`);
+      this.props.history.push(`${val}`);
     }
   };
   render() {
@@ -29,14 +29,17 @@ export default class Footer extends React.Component {
             </div>
           </div>
           <div className={styles.column}>
-            <div className={styles.buttons}>
+            <div
+              className={styles.buttons}
+              onClick={() => this.handleredirect("/events")}
+            >
               EVENTS <div className={styles.arrow}></div>
             </div>
           </div>
           <div className={styles.column}>
             <div
               className={styles.buttons}
-              onClick={() => this.handleredirect("blog")}
+              onClick={() => this.handleredirect("/blog")}
             >
               BLOGS <div className={styles.arrow}></div>
             </div>
