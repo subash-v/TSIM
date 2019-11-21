@@ -15,14 +15,14 @@ export default class SignUpBar extends Component {
       <div className={styles.signupHolder}>
         <div className={styles.signUpContainer}>
           <div className={styles.signup}>
-            <div className={styles.signupText}>
-              Sign up to read more stories
-            </div>
+            <div className={styles.signupText} style={{fontSize:this.props.fontSize}}>{this.props.heading}</div>
 
-            <div className={styles.subText}>It won’t take long!</div>
-            <div className={styles.subText}>
-              Sign up to get access to interesting stories on the platform
-            </div>
+            <div className={styles.subText}>{this.props.content}</div>
+            {this.props.content2 && (
+              <div className={styles.subText}>
+                Sign up to get access to interesting stories on the platform
+              </div>
+            )}
             <div className={styles.inputBase}>
               <div className={styles.inputContainer}>
                 <div className={styles.inputWithButton}>
@@ -44,7 +44,10 @@ export default class SignUpBar extends Component {
                     </div>
                   </div>
                   <div className={styles.buttonHolder}>
-                    <div className={styles.button}> {"GET STARTED"}</div>
+                    <div className={styles.button}>
+                      {" "}
+                      {this.props.buttonText}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -62,3 +65,9 @@ export default class SignUpBar extends Component {
     );
   }
 }
+SignUpBar.defaultProps = {
+  heading: "Sign up to read more stories",
+  content: "It won’t take long!",
+  content2: true,
+  buttonText: "GET STARTED"
+};

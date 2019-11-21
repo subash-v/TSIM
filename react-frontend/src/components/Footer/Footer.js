@@ -9,10 +9,9 @@ import tsim_logo from "../../images/tsim_logo.png";
 import mail from "../../images/Mail.svg";
 
 export default class Footer extends React.Component {
-  handleredirect = val => {
-    console.log(val);
+  handleredirect = url => {
     if (this.props.history) {
-      this.props.history.push(`/${val}`);
+      window.open(url, "_blank");
     }
   };
   render() {
@@ -24,36 +23,45 @@ export default class Footer extends React.Component {
               ABOUT <div className={styles.arrow}></div>
             </div>
           </div>
-          <div className={styles.column}>
+          {/* <div className={styles.column}>
             <div className={styles.buttons}>
               COACHES <div className={styles.arrow}></div>
             </div>
-          </div>
+          </div> */}
           <div className={styles.column}>
-            <div className={styles.buttons}>
+            <div
+              className={styles.buttons}
+              onClick={() => this.handleredirect("/events")}
+            >
               EVENTS <div className={styles.arrow}></div>
             </div>
           </div>
           <div className={styles.column}>
             <div
               className={styles.buttons}
-              onClick={() => this.handleredirect("blog")}
+              onClick={() => this.handleredirect("/blog")}
             >
               BLOGS <div className={styles.arrow}></div>
             </div>
           </div>
-          <div className={styles.column}>
+          {/* <div className={styles.column}>
             <div className={styles.buttons}>
               PARTNERS <div className={styles.arrow}></div>
             </div>
-          </div>
+          </div> */}
           <div className={styles.column}>
-            <div className={styles.buttons}>
+            <div
+              className={styles.buttons}
+              onClick={() => this.handleredirect("/privacy")}
+            >
               PRIVACY POLICY <div className={styles.arrow}></div>
             </div>
           </div>
           <div className={styles.column}>
-            <div className={styles.buttons}>
+            <div
+              className={styles.buttons}
+              onClick={() => this.handleredirect("/terms")}
+            >
               TERMS AND CONDITIONS <div className={styles.arrow}></div>
             </div>
           </div>
