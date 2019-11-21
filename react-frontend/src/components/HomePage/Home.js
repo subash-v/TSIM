@@ -46,7 +46,8 @@ export default class Home extends React.Component {
     this.homeRef = React.createRef();
     this.state = {
       slideIndex: 0,
-      lastScrollY: 0
+      lastScrollY: 0,
+      maxSlide: 4
     };
   }
 
@@ -60,8 +61,32 @@ export default class Home extends React.Component {
     this.setState({ lastScrollY: window.scrollY });
   };
 
+  incrementTime = () => {
+    if (this.state.slideIndex < this.state.maxSlide) {
+      this.setState({
+        slideIndex: this.state.slideIndex + 1
+      });
+    } else {
+      this.setState({
+        slideIndex: 0
+      });
+    }
+  };
+
   componentDidMount = () => {
     window.addEventListener("scroll", this.handleScroll);
+
+    if (this.state.slideIndex <= this.state.maxSlide) {
+      var varss = setInterval(() => {
+        this.incrementTime();
+      }, 5000);
+    }
+    if (this.state.slideIndex > this.state.maxSlide) {
+      this.setState({
+        slideIndex: 0
+      });
+      clearInterval(varss);
+    }
   };
 
   render() {
@@ -236,14 +261,23 @@ export default class Home extends React.Component {
               >
                 BUILD
                 <br /> VISUAL PROFILE
-                <div className={styles.innerTriangle}></div>
+                <div
+                  className={
+                    this.state.slideIndex === 1 ? styles.innerTriangle : null
+                  }
+                ></div>
               </div>
               <div
                 className={styles.navButton}
                 onClick={() => this.handleCarousel(2)}
               >
                 LOOK FOR
-                <br /> APT GUIDANCE<div className={styles.innerTriangle}></div>
+                <br /> APT GUIDANCE
+                <div
+                  className={
+                    this.state.slideIndex === 2 ? styles.innerTriangle : null
+                  }
+                ></div>
               </div>
               <div
                 className={styles.navButton}
@@ -251,14 +285,23 @@ export default class Home extends React.Component {
               >
                 FIND
                 <br /> INTERESTING EVENTS
-                <div className={styles.innerTriangle}></div>
+                <div
+                  className={
+                    this.state.slideIndex === 3 ? styles.innerTriangle : null
+                  }
+                ></div>
               </div>
               <div
                 className={styles.navButton}
                 onClick={() => this.handleCarousel(4)}
               >
                 FEATURED
-                <br /> STORIES<div className={styles.innerTriangle}></div>
+                <br /> STORIES
+                <div
+                  className={
+                    this.state.slideIndex === 4 ? styles.innerTriangle : null
+                  }
+                ></div>
               </div>
             </CenteredContent>
           </div>

@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import styles from "./App.css";
 import Home from "./components/HomePage/Home.js";
-import PrimaryHeader from "./components/HomePage/PrimaryHeader";
-import SecondaryHeader from "./components/HomePage/SecondaryHeader";
 import BlogFeed from "./components/Blog/BlogFeed";
 import MorePage from "./components/HomePage/MorePage";
+import Terms from "./components/TermsAndConditions/TermsAndConditions";
+import Privacy from "./components/TermsAndConditions/TermsAndConditions";
 
 class App extends Component {
   render() {
@@ -15,6 +15,8 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route path="/blog" component={BlogFeed} />
           <Route path="/events" component={MorePage} />
+          <Route path="/terms" component={Terms} />
+          <Route path="/privacy" component={Privacy} />
         </Switch>
       </React.Fragment>
     );

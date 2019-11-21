@@ -23,11 +23,11 @@ export default class Footer extends React.Component {
               ABOUT <div className={styles.arrow}></div>
             </div>
           </div>
-          <div className={styles.column}>
+          {/* <div className={styles.column}>
             <div className={styles.buttons}>
               COACHES <div className={styles.arrow}></div>
             </div>
-          </div>
+          </div> */}
           <div className={styles.column}>
             <div
               className={styles.buttons}
@@ -44,18 +44,24 @@ export default class Footer extends React.Component {
               BLOGS <div className={styles.arrow}></div>
             </div>
           </div>
-          <div className={styles.column}>
+          {/* <div className={styles.column}>
             <div className={styles.buttons}>
               PARTNERS <div className={styles.arrow}></div>
             </div>
-          </div>
+          </div> */}
           <div className={styles.column}>
-            <div className={styles.buttons}>
+            <div
+              className={styles.buttons}
+              onClick={() => this.handleredirect("/privacy")}
+            >
               PRIVACY POLICY <div className={styles.arrow}></div>
             </div>
           </div>
           <div className={styles.column}>
-            <div className={styles.buttons}>
+            <div
+              className={styles.buttons}
+              onClick={() => this.handleredirect("/terms")}
+            >
               TERMS AND CONDITIONS <div className={styles.arrow}></div>
             </div>
           </div>
