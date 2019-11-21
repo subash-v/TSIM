@@ -156,56 +156,11 @@
   flex-shrink: 0;
   display: flex;
 }
-.signupHolder {
+.signUpBarContainer{
   width: 100%;
   height: auto;
-  padding: 50px;
-  background: #4f439a;
-  border-radius: 10px;
-}
-.signUpContainer {
-  display: inline-block;
-  width: 100%;
-  height: auto;
-  vertical-align: top;
-}
-.signup {
-  width: 50%;
-  height: auto;
-  display: inline-block;
-  vertical-align: top;
-}
-.signupText {
-  height: auto;
-  width: 100%;
-  color: #ffffff;
-  font-size: 32px;
-  font-weight: bold;
-  line-height: 40px;
-  margin-bottom: 5px;
-}
-.subText {
-  color: #ffffff;
-  font-family: "Open Sans";
-  font-size: 16px;
-  line-height: 24px;
- 
-}
-.imageHolder {
-  width: 50%;
-  height: auto;
-  display: inline-block;
-  vertical-align: top;
-}
-.inputHolder{
-    width: 72%;
-    background: #fff;
-    border-radius: 4px;
-    margin-top: 40px;
-}
-.signUpImage {
-  width: 100%;
-  height: 250px;
+  margin-bottom: 60px;
+  margin-top: 30px;
 }
 @media only screen and (max-width: 1024px) {
   .card {

@@ -3,8 +3,8 @@ import styles from "./BlogFeed.css";
 import Card from "./Card";
 import CenteredContent from "../../core/CenteredContent";
 import PrimaryHeader from "../HomePage/PrimaryHeader";
-import SearchAndUpdate from "../general/SearchAndUpdate";
-import signUpImage from "../Images/Signupbanner.svg";
+
+import SignUpBar from "./SignUpBar";
 const data = [
   {
     name: "Pratiksha Gupta",
@@ -12,7 +12,8 @@ const data = [
     shared: "12k",
     likes: "12k",
     comments: "12k",
-    time: 2
+    time: 2,
+    tags:["technology","technology","technology"]
   },
   {
     name: "Pratiksha Gupta",
@@ -20,7 +21,8 @@ const data = [
     shared: "12k",
     likes: "12k",
     comments: "12k",
-    time: 2
+    time: 2,
+    tags:["technology","technology","technology"]
   },
   {
     name: "Pratiksha Gupta",
@@ -28,7 +30,8 @@ const data = [
     shared: "12k",
     likes: "12k",
     comments: "12k",
-    time: 2
+    time: 2,
+    tags:["technology","technology","technology"]
   },
   {
     name: "Pratiksha Gupta",
@@ -36,7 +39,8 @@ const data = [
     shares: "12k",
     likes: "12k",
     comments: "12k",
-    time: 2
+    time: 2,
+    tags:["technology","technology","technology"]
   },
   {
     name: "Pratiksha Gupta",
@@ -44,7 +48,8 @@ const data = [
     shared: "12k",
     likes: "12k",
     comments: "12k",
-    time: 2
+    time: 2,
+    tags:["technology","technology","technology"]
   },
   {
     name: "Pratiksha Gupta",
@@ -52,7 +57,8 @@ const data = [
     shared: "12k",
     likes: "12k",
     comments: "12k",
-    time: 2
+    time: 2,
+    tags:["technology","technology","technology"]
   },
   {
     name: "Pratiksha Gupta",
@@ -60,7 +66,8 @@ const data = [
     shared: "12k",
     likes: "12k",
     comments: "12k",
-    time: 2
+    time: 2,
+    tags:["technology","technology","technology"]
   }
 ];
 export default class BlogFeed extends Component {
@@ -130,36 +137,8 @@ export default class BlogFeed extends Component {
                   ))}
                 </div>
               </div>
-              <div className={styles.signupHolder}>
-                <div className={styles.signUpContainer}>
-                  <div className={styles.signup}>
-                    <div className={styles.signupText}>
-                      Sign up to read more stories
-                    </div>
-
-                    <div className={styles.subText}>It won’t take long!</div>
-                    <div className={styles.subText}>
-                      Sign up to get access to interesting stories on the
-                      platform
-                    </div>
-                    <div className={styles.inputHolder}>
-                      <SearchAndUpdate
-                        uiType="hollow"
-                        width="250px"
-                        borderBottom="none"
-                        placeholder={"Enter Your Email Address"}
-                        iconText={"GET STARTED"}
-                      />
-                    </div>
-                  </div>
-                  <div className={styles.imageHolder}>
-                    <img
-                      className={styles.signUpImage}
-                      src={signUpImage}
-                      alt="no i"
-                    ></img>
-                  </div>
-                </div>
+              <div className={styles.signUpBarContainer}>
+                <SignUpBar />
               </div>
             </div>
           </CenteredContent>
