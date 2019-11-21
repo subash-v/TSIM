@@ -1,15 +1,17 @@
 .headerBase {
-  width: 100vw;
-  height: 80px;
+  width: 100%;
+  height: auto;
   border-bottom: 1px solid #d3d3d3;
   box-shadow: 0px 2px 4px -2px rgba(0, 0, 0, 0.25);
+  padding: 0px 5px;
 }
 .headerHolder {
   max-width: 1400px;
   margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+}
+.logoLinkHolder {
+  width: 50%;
+  display: inline-block;
 }
 .logoHolder {
   width: 192px;
@@ -18,6 +20,16 @@
   background: url("../../images/tsim_logo.png") no-repeat;
   background-position: center;
   background-size: cover;
+}
+.buttonSearchholder {
+  width: 50%;
+  display: inline-block;
+}
+.logoHolder {
+  width: 30%;
+  height: 40px;
+  align-items: center;
+  display: inline-block;
 }
 .linkText {
   padding: 0px 15px;
@@ -40,16 +52,15 @@
 }
 .linkHolder {
   display: inline-block;
+  width: 70%;
 }
 .buttonHolder {
-  display: inline-block;
-  position: absolute;
-  right: 40px;
-}
-
-.centeredHeaderSection {
+  justify-content: flex-end;
   display: flex;
-  justify-content: center;
   align-items: center;
-  width: 100%;
+}
+@media screen and (max-width: 1025px) {
+  .linkText {
+    font-size: 12px;
+  }
 }

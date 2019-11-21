@@ -292,6 +292,8 @@
 }
 
 .fixedHeader {
+  width: 100%;
+  height: auto;
   position: fixed;
   top: 0;
   transition: 0.5s;
