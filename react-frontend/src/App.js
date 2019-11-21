@@ -8,6 +8,7 @@ import Terms from "./components/TermsAndConditions/TermsAndConditions";
 import Privacy from "./components/TermsAndConditions/TermsAndConditions";
 import VisualProfilePage from "./components/VisualProfile/VisualProfilePage";
 import SeekGuide from "./components/SeekGuide/SeekGuide";
+import AboutUs from "./components/AboutUs/AboutUs";
 
 class App extends Component {
   render() {
@@ -21,6 +22,7 @@ class App extends Component {
           <Route path="/privacy" component={Privacy} />
           <Route path="/visual-profile" component={VisualProfilePage} />
           <Route path="/seek-guide" component={SeekGuide} />
+          <Route path="/aboutUs" component={AboutUs} />
         </Switch>
       </BrowserRouter>
     );
