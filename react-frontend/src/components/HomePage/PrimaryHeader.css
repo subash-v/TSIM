@@ -1,13 +1,15 @@
 .headerBase {
   width: 100vw;
   height: 80px;
+  border-bottom: 1px solid #d3d3d3;
+  box-shadow: 0px 2px 4px -2px rgba(0, 0, 0, 0.25);
 }
 .headerHolder {
-  height: 80px;
+  max-width: 1400px;
+  margin: auto;
   display: flex;
   align-items: center;
-  box-shadow: 0px 2px 4px -2px rgba(0, 0, 0, 0.25);
-  padding: 20px 40px;
+  justify-content: space-evenly;
 }
 .logoHolder {
   width: 192px;
@@ -25,9 +27,9 @@
   color: #1a1a1a;
 }
 .search {
-  padding: 15px 0px;
+  padding: 15px 5px 15px 0px;
   width: auto;
-  margin-left: 70px;
+  display: inline-block;
 }
 .login {
   display: inline-block;
