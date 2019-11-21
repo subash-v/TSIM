@@ -77,7 +77,7 @@ export default class BlogFeed extends Component {
       <React.Fragment>
         <div className={styles.base}>
           <div className={styles.headerHolder}>
-            <PrimaryHeader />
+            <PrimaryHeader history={this.props.history} />
           </div>
           <CenteredContent>
             <div className={styles.container}>

@@ -57,7 +57,6 @@ export default class Home extends React.Component {
 
   handleScroll = () => {
     this.setState({ lastScrollY: window.scrollY });
-    console.log(this.state.lastScrollY);
   };
 
   componentDidMount = () => {
@@ -73,9 +72,9 @@ export default class Home extends React.Component {
           }
         >
           {this.state.lastScrollY > 100 ? (
-            <PrimaryHeader />
+            <PrimaryHeader history={this.props.history} />
           ) : (
-            <SecondaryHeader />
+            <SecondaryHeader history={this.props.history} />
           )}
         </div>
         <div className={styles.topSection}>

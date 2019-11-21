@@ -10,7 +10,6 @@ import mail from "../../images/Mail.svg";
 
 export default class Footer extends React.Component {
   handleredirect = val => {
-    console.log(val);
     if (this.props.history) {
       this.props.history.push(`/${val}`);
     }
