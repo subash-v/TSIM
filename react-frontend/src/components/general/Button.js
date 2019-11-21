@@ -20,6 +20,7 @@ export default class Button extends React.Component {
             }}
           />
         );
+
       case "secondary":
         return (
           <CoreButton

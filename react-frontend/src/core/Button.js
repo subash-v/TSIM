@@ -65,7 +65,8 @@ export default class Button extends React.Component {
           backgroundColor: this.state.backgroundColor,
           border: `1px solid ${this.state.borderColor}`,
           fontSize: this.props.fontSize,
-          lineHeight: this.props.lineHeight
+          lineHeight: this.props.lineHeight,
+          color: this.props.textStyle.color
         }}
         onMouseEnter={() => this.hoverIn()}
         onMouseLeave={() => this.hoverOut()}

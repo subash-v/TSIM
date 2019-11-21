@@ -1,17 +1,22 @@
 import React, { Component } from "react";
 import styles from "./SecondaryHeader.css";
 import Button from "../general/Button";
-import CenteredContent from "../../core/CenteredContent";
 import search from "../../core/img/Search.svg";
 import Icon from "../../core/Icon";
 export default class SecondaryHeader extends Component {
+  handleredirect = () => {
+    if (this.props.history) {
+      this.props.history.push(`/`);
+    }
+  };
   render() {
     return (
       <div className={styles.headerBase}>
         <div className={styles.headerHolder}>
-          <div className={styles.logoHolder}>
-            <div className={styles.logo}>The star in me</div>
-          </div>
+          <div
+            className={styles.logoHolder}
+            onClick={() => this.handleredirect()}
+          ></div>
           <div className={styles.searchLoginHolder}>
             <div className={styles.search}>
               <Icon image={search} size={"20px"}></Icon>
