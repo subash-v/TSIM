@@ -1,0 +1,61 @@
+.headerBase {
+  width: 100vw;
+  height: 80px;
+}
+.headerHolder {
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+}
+.logoHolder {
+  width: 165px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background: url("../../images/tsim_logo.png") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.searchLoginHolder {
+  justify-content: flex-end;
+}
+.linkText {
+  padding: 0px 15px;
+  font-size: 14px;
+  display: inline-block;
+}
+.search {
+  padding-left: 20px;
+  position: relative;
+  width: auto;
+  vertical-align: middle;
+  display: inline-block;
+}
+.buttonHolder {
+  position: relative;
+}
+.buttonHolder::before {
+  content: "";
+  border-left: 1px solid #fff;
+  height: 25px;
+  position: absolute;
+  top: 6px;
+  left: 20px;
+}
+.login {
+  display: inline-block;
+}
+.signup {
+  display: inline-block;
+}
+.linkHolder {
+  display: inline-block;
+}
+.buttonHolder {
+  display: inline-block;
+}
