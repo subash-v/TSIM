@@ -1,22 +1,27 @@
 .headerBase {
   width: 100%;
-  height: 80px;
-  padding: 0px 200px;
-}
-.headerHolder {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
+  height: auto;
   border-bottom: 1px solid #d3d3d3;
   box-shadow: 0px 2px 4px -2px rgba(0, 0, 0, 0.25);
+  padding: 0px 5px;
+}
+.headerHolder {
+  max-width: 1400px;
+  margin: auto;
+}
+.logoLinkHolder {
+  width: 50%;
+  display: inline-block;
+}
+.buttonSearchholder {
+  width: 50%;
+  display: inline-block;
 }
 .logoHolder {
-  width: 165px;
+  width: 30%;
   height: 40px;
-  display: flex;
-  flex-direction: row;
   align-items: center;
+  display: inline-block;
 }
 .linkText {
   padding: 0px 15px;
@@ -25,11 +30,11 @@
   font-family: semibold;
 }
 .search {
-  padding: 15px 0px;
+  padding: 15px 5px 15px 0px;
   width: auto;
+  display: inline-block;
 }
 .login {
-  padding-left: 70px;
   display: inline-block;
 }
 .signup {
@@ -38,7 +43,15 @@
 }
 .linkHolder {
   display: inline-block;
+  width: 70%;
 }
 .buttonHolder {
-  display: inline-block;
+  justify-content: flex-end;
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 1025px) {
+  .linkText {
+    font-size: 12px;
+  }
 }

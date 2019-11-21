@@ -76,11 +76,11 @@ export default class SearchAndUpdate extends React.Component {
             <div className={styles.buttonCover}>
               {this.props.iconImage && (
                 <div className={styles.imageCover}>
-                <Icon image={this.props.iconImage} size={"20px"}></Icon>
-              </div>
+                  <Icon image={this.props.iconImage} size={"20px"}></Icon>
+                </div>
               )}
               {this.props.iconText && (
-                <div className={styles.buttonCover} >{this.props.iconText}</div>
+                <div className={styles.buttonCover}>{this.props.iconText}</div>
               )}
             </div>
           </div>
