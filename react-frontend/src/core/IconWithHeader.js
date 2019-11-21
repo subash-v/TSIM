@@ -12,12 +12,17 @@ export default class IconWithHeader extends React.Component {
         {!this.props.iconShow && (
           <div className={styles.iconHolder}>
             <VisibilityChild visible={true}>
-              <Icon image={this.props.image} size={30} />
+              <Icon image={this.props.image} size={this.props.size} />
             </VisibilityChild>
           </div>
         )}
 
-        <div className={styles.textHolder}>{this.props.header}</div>
+        <div
+          className={styles.textHolder}
+          style={{ fontSize: this.props.fontSize }}
+        >
+          {this.props.header}
+        </div>
         {this.props.children}
       </div>
     );
@@ -29,5 +34,6 @@ IconWithHeader.propTypes = {
   iconShow: PropTypes.bool
 };
 IconWithHeader.defaultProps = {
-  iconShow: false
+  iconShow: false,
+  size: 30
 };

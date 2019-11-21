@@ -9,9 +9,9 @@ import tsim_logo from "../../images/tsim_logo.png";
 import mail from "../../images/Mail.svg";
 
 export default class Footer extends React.Component {
-  handleredirect = val => {
+  handleredirect = url => {
     if (this.props.history) {
-      this.props.history.push(`${val}`);
+      window.open(url, "_blank");
     }
   };
   render() {

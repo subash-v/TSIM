@@ -10,6 +10,9 @@
   max-width: 1400px;
   margin: auto;
 }
+.nonLogedInHeader {
+  width: 100%;
+}
 .logoLinkHolder {
   width: 50%;
   display: inline-block;
@@ -68,8 +71,20 @@
   display: flex;
   align-items: center;
 }
-@media screen and (max-width: 1025px) {
+.loglinkText {
+  composes: linkText;
+
+  font-size: 10px;
+}
+@media screen and (max-width: 1380px) {
   .linkText {
     font-size: 12px;
+    padding: 0px 8px;
+  }
+  .linkHolder {
+    width: 80%;
+  }
+  .logoHolder {
+    width: 20%;
   }
 }
