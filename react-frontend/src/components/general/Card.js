@@ -15,8 +15,8 @@ export default class Card extends Component {
             <div className={styles.tagBase}>
               <div className={styles.tagContainer}>
                 {this.props &&
-                  this.props.tags.map((tag) => {
-                    return <div className={styles.tags}>{tag}</div>
+                  this.props.tags.map(tag => {
+                    return <div className={styles.tags}>{tag}</div>;
                   })}
               </div>
             </div>

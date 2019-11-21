@@ -6,13 +6,12 @@ import search from "../../core/img/Search.svg";
 const links = ["PROFILE", "NETWORK", "COACH", "GUIDANCE", "GUIDE"];
 export default class PrimaryHeader extends Component {
   render() {
+    console.log("is this called");
     return (
       <div className={styles.headerBase}>
         <div className={styles.headerHolder}>
           <div className={styles.logoLinkHolder}>
-            <div className={styles.logoHolder}>
-              <div className={styles.logo}>The star in me</div>
-            </div>
+            <div className={styles.logoHolder}></div>
             <div className={styles.linkHolder}>
               {links.map(value => {
                 return <div className={styles.linkText}>{value}</div>;

@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import styles from "./BlogFeed.css";
-import Card from "./Card";
+import Card from "../general/Card";
 import CenteredContent from "../../core/CenteredContent";
 import PrimaryHeader from "../HomePage/PrimaryHeader";
 
 import SignUpBar from "./SignUpBar";
+import Footer from "../Footer/Footer";
 const data = [
   {
     name: "Pratiksha Gupta",
@@ -13,7 +14,7 @@ const data = [
     likes: "12k",
     comments: "12k",
     time: 2,
-    tags:["technology","technology","technology"]
+    tags: ["technology", "technology", "technology"]
   },
   {
     name: "Pratiksha Gupta",
@@ -22,7 +23,7 @@ const data = [
     likes: "12k",
     comments: "12k",
     time: 2,
-    tags:["technology","technology","technology"]
+    tags: ["technology", "technology", "technology"]
   },
   {
     name: "Pratiksha Gupta",
@@ -31,7 +32,7 @@ const data = [
     likes: "12k",
     comments: "12k",
     time: 2,
-    tags:["technology","technology","technology"]
+    tags: ["technology", "technology", "technology"]
   },
   {
     name: "Pratiksha Gupta",
@@ -40,7 +41,7 @@ const data = [
     likes: "12k",
     comments: "12k",
     time: 2,
-    tags:["technology","technology","technology"]
+    tags: ["technology", "technology", "technology"]
   },
   {
     name: "Pratiksha Gupta",
@@ -49,7 +50,7 @@ const data = [
     likes: "12k",
     comments: "12k",
     time: 2,
-    tags:["technology","technology","technology"]
+    tags: ["technology", "technology", "technology"]
   },
   {
     name: "Pratiksha Gupta",
@@ -58,7 +59,7 @@ const data = [
     likes: "12k",
     comments: "12k",
     time: 2,
-    tags:["technology","technology","technology"]
+    tags: ["technology", "technology", "technology"]
   },
   {
     name: "Pratiksha Gupta",
@@ -67,7 +68,7 @@ const data = [
     likes: "12k",
     comments: "12k",
     time: 2,
-    tags:["technology","technology","technology"]
+    tags: ["technology", "technology", "technology"]
   }
 ];
 export default class BlogFeed extends Component {
@@ -142,6 +143,9 @@ export default class BlogFeed extends Component {
               </div>
             </div>
           </CenteredContent>
+          <div className={styles.footerSection}>
+            <Footer />
+          </div>
         </div>
       </React.Fragment>
     );
