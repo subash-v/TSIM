@@ -53,6 +53,9 @@
 .linkHolder {
   display: inline-block;
   width: 70%;
+  height: 100%;
+  vertical-align: top;
+  padding-top: 15px;
 }
 .buttonHolder {
   justify-content: flex-end;

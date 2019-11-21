@@ -298,7 +298,7 @@ export default class Home extends React.Component {
           </div>
         </div>
         <div className={styles.footerSection}>
-          <Footer />
+          <Footer history={this.props.history} />
         </div>
       </div>
     );

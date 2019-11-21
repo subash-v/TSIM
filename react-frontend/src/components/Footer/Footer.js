@@ -9,6 +9,12 @@ import tsim_logo from "../../images/tsim_logo.png";
 import mail from "../../images/Mail.svg";
 
 export default class Footer extends React.Component {
+  handleredirect = val => {
+    console.log(val);
+    if (this.props.history) {
+      this.props.history.push(`/${val}`);
+    }
+  };
   render() {
     return (
       <React.Fragment>
@@ -29,7 +35,10 @@ export default class Footer extends React.Component {
             </div>
           </div>
           <div className={styles.column}>
-            <div className={styles.buttons}>
+            <div
+              className={styles.buttons}
+              onClick={() => this.handleredirect("blog")}
+            >
               BLOGS <div className={styles.arrow}></div>
             </div>
           </div>
