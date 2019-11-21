@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import styles from "./PrimaryHeader.css";
 import Button from "../general/Button";
-import SearchAndUpdate from "../general/SearchAndUpdate";
+import SearchInput from "../general/SearchInput";
 import search from "../../core/img/Search.svg";
+import CenteredContent from "../../core/CenteredContent";
 const links = ["PROFILE", "NETWORK", "COACH", "GUIDANCE", "GUIDE"];
 export default class PrimaryHeader extends Component {
   render() {
@@ -18,24 +19,24 @@ export default class PrimaryHeader extends Component {
             })}
           </div>
 
-          <div className={styles.search}>
-            <SearchAndUpdate
-              uiType="hollow"
-              placeholder="Search for People, Networks, Blogs & Events"
-              value={""}
-              labelText={"Check"}
-              iconImage={search}
-              width="320px"
-              borderBottom="none"
-            />
-          </div>
-
           <div className={styles.buttonHolder}>
+            <div className={styles.search}>
+              <SearchInput
+                uiType="hollow"
+                placeholder="Search for People, Networks, Blogs & Events"
+                value={""}
+                labelText={"Check"}
+                iconImage={search}
+                width="300px"
+                borderBottom="none"
+              />
+            </div>
+
             <div className={styles.login}>
               <Button
                 type="secondary"
                 height={40}
-                width={120}
+                width={100}
                 fontColor={"#4F439A"}
                 label="LOGIN"
                 borderColor="#4F439A"
@@ -47,7 +48,7 @@ export default class PrimaryHeader extends Component {
                 backgroundColor={"#4F439A"}
                 fontColor={"#ffffff"}
                 height={40}
-                width={120}
+                width={100}
                 label="SIGN UP"
               />
             </div>
