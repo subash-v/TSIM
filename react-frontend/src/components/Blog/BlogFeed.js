@@ -144,7 +144,7 @@ export default class BlogFeed extends Component {
             </div>
           </CenteredContent>
           <div className={styles.footerSection}>
-            <Footer />
+            <Footer history={this.props.history} />
           </div>
         </div>
       </React.Fragment>

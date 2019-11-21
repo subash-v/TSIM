@@ -12,7 +12,7 @@ export default class Button extends React.Component {
             {...other}
             backgroundColor={this.props.backgroundColor}
             height={this.props.height}
-            borderRadius="4px"
+            borderRadius={this.props.borderRadius}
             textStyle={{
               color: this.props.fontColor,
               fontSize: 16,
@@ -28,7 +28,7 @@ export default class Button extends React.Component {
             backgroundColor={"transparent"}
             height={this.props.height}
             borderColor={this.props.borderColor}
-            borderRadius="4px"
+            borderRadius={this.props.borderRadius}
             textStyle={{
               color: this.props.fontColor,
               fontSize: 16,
@@ -61,6 +61,7 @@ Button.defaultProps = {
   fontColor: "#212121",
   backgroundColor: "#4F439A",
   borderColor: "#4F439A",
+  borderRadius: "4px",
   linearColor: {
     fromColor: "#ce5096",
     toColor: "#da6060"
