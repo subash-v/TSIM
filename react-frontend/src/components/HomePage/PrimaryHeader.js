@@ -6,7 +6,10 @@ import search from "../../core/img/Search.svg";
 import HOME from "../../images/Home.svg";
 import NETWORK from "../../images/Connection_line.svg";
 import MORE from "../../images/Menu_Line.svg";
+import profile from "../../images/Profile_Line.svg";
 import IconWithHeader from "../../core/IconWithHeader";
+import ProfileImage from "../../core/ProfileImage";
+
 const links = [
   { data: HOME, name: "HOME", routeLink: "/" },
   { data: NETWORK, name: "NETWORK", routeLink: "/network" },
@@ -56,29 +59,33 @@ export default class PrimaryHeader extends Component {
                   borderBottom="none"
                 />
               </div>
-
-              <div className={styles.login}>
-                <Button
-                  type="secondary"
-                  height={40}
-                  width={"100%"}
-                  fontColor={"#4F439A"}
-                  label="LOGIN"
-                  borderRadius="none"
-                  borderColor="#4F439A"
-                />
-              </div>
-              <div className={styles.signup}>
-                <Button
-                  type="primary"
-                  backgroundColor={"#4F439A"}
-                  fontColor={"#ffffff"}
-                  height={40}
-                  borderRadius="none"
-                  width={"100%"}
-                  label="SIGN UP"
-                />
-              </div>
+              {this.props.login && <ProfileImage image={profile} size={2} />}
+              {!this.props.login && (
+                <div className={styles.login}>
+                  <Button
+                    type="secondary"
+                    height={40}
+                    width={"100%"}
+                    fontColor={"#4F439A"}
+                    label="LOGIN"
+                    borderRadius="none"
+                    borderColor="#4F439A"
+                  />
+                </div>
+              )}
+              {!this.props.login && (
+                <div className={styles.signup}>
+                  <Button
+                    type="primary"
+                    backgroundColor={"#4F439A"}
+                    fontColor={"#ffffff"}
+                    height={40}
+                    borderRadius="none"
+                    width={"100%"}
+                    label="SIGN UP"
+                  />
+                </div>
+              )}
             </div>
           </div>
         </div>
