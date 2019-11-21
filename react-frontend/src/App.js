@@ -8,6 +8,7 @@ import BlogFeed from "./components/Blog/BlogFeed";
 import MorePage from "./components/HomePage/MorePage";
 import VisualProfilePage from "./components/VisualProfile/VisualProfilePage";
 import SeekGuide from "./components/SeekGuide/SeekGuide";
+import ModalContainer from "./components/modules/container/ModalContainer";
 
 class App extends Component {
   render() {
@@ -20,6 +21,7 @@ class App extends Component {
           <Route path="/visual-profile" component={VisualProfilePage} />
           <Route path="/seek-guide" component={SeekGuide} />
         </Switch>
+        <ModalContainer />
       </BrowserRouter>
     );
   }

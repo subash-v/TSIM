@@ -30,7 +30,14 @@ export default class PrimaryHeader extends Component {
       this.props.history.push(`${val}`);
     }
   };
+  showModal = () => {
+    // if(this.props.showCliqCenterModule)
+    // {
+    //   this.props.showCliqCenterModule()
+    // }
+  };
   render() {
+    console.log(this.props);
     return (
       <div className={styles.headerBase}>
         <div
@@ -90,7 +97,7 @@ export default class PrimaryHeader extends Component {
               </div>
               {this.props.login && <ProfileImage image={profile} size={2} />}
               {!this.props.login && (
-                <div className={styles.login}>
+                <div className={styles.login} onClick={() => this.showModal()}>
                   <Button
                     type="secondary"
                     height={40}
