@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Home.css";
+import image0 from "../../images/Events-min.jpg";
 import image1 from "../../images/Build-your-profile-min.jpg";
 import image2 from "../../images/Resources-min.jpg";
 import image3 from "../../images/Events-min.jpg";
@@ -44,7 +45,7 @@ export default class Home extends React.Component {
     super(props);
     this.homeRef = React.createRef();
     this.state = {
-      slideIndex: 1,
+      slideIndex: 0,
       lastScrollY: 0
     };
   }
@@ -79,9 +80,39 @@ export default class Home extends React.Component {
         </div>
         <div className={styles.topSection}>
           <div className={styles.slideshowContainer}>
+            {this.state.slideIndex === 0 && (
+              <div className={styles.mySlides}>
+                <div
+                  style={{
+                    backgroundImage: `url(${image0})`
+                  }}
+                  src={image0}
+                  className={styles.homepageCarousal}
+                />
+                <div className={styles.text}>
+                  <div className={styles.title}>Welcome to The star in me</div>{" "}
+                  <div className={styles.subText}>
+                    Designed to be a professional ecosystem, The star in me
+                    provides women with an entire spectrum of resources that
+                    equip them for success.
+                    <br />
+                    <br />
+                    For organizations that value diversity, The star in me is a
+                    holistic solution that helps in attracting, engaging and
+                    retaining women talent.
+                  </div>
+                </div>
+              </div>
+            )}
             {this.state.slideIndex === 1 && (
               <div className={styles.mySlides}>
-                <img src={image1} alt="" width="100%" height="768px;"></img>
+                <div
+                  style={{
+                    backgroundImage: `url(${image1})`
+                  }}
+                  className={styles.homepageCarousal}
+                  src={image1}
+                />
                 <div className={styles.text}>
                   <div className={styles.title}>Create your best profile</div>
 
@@ -107,11 +138,13 @@ export default class Home extends React.Component {
             )}
             {this.state.slideIndex === 2 && (
               <div className={styles.mySlides}>
-                <img
+                <div
+                  style={{
+                    backgroundImage: `url(${image2})`
+                  }}
                   src={image2}
-                  alt=""
-                  style={{ width: "100%", height: "768px" }}
-                ></img>
+                  className={styles.homepageCarousal}
+                />
                 <div className={styles.text}>
                   <div className={styles.title}>Welcome to The star in me</div>{" "}
                   <div className={styles.subText}>
@@ -129,11 +162,13 @@ export default class Home extends React.Component {
             )}
             {this.state.slideIndex === 3 && (
               <div className={styles.mySlides}>
-                <img
+                <div
+                  style={{
+                    backgroundImage: `url(${image3})`
+                  }}
                   src={image3}
-                  alt=""
-                  style={{ width: "100%", height: "768px" }}
-                ></img>
+                  className={styles.homepageCarousal}
+                />
                 <div className={styles.text}>
                   <div className={styles.title}>Find Interesting Events</div>
                   <div className={styles.subText}>
@@ -160,11 +195,13 @@ export default class Home extends React.Component {
             )}
             {this.state.slideIndex === 4 && (
               <div className={styles.mySlides}>
-                <img
+                <div
+                  style={{
+                    backgroundImage: `url(${image4})`
+                  }}
                   src={image4}
-                  alt=""
-                  style={{ width: "100%", height: "768px" }}
-                ></img>
+                  className={styles.homepageCarousal}
+                />
                 <div className={styles.text}>
                   <div className={styles.title}>Featured Stories</div>
                   <div className={styles.subText}>
