@@ -15,14 +15,16 @@ import ProfileImage from "../../core/ProfileImage";
 const links = [
   { data: HOME, name: "HOME", routeLink: "/" },
   { data: NETWORK, name: "NETWORK", routeLink: "/network" },
-  { data: MORE, name: "MORE", routeLink: "/events" }
+  { data: MORE, name: "MORE", routeLink: "/events" },
+  { data: MORE, name: "PROFILE", routeLink: "/profile" }
 ];
 const logedInLinks = [
   { data: HOME, name: "HOME", routeLink: "/" },
   { data: NETWORK, name: "CONNECTION", routeLink: "/network" },
   { data: MESSAGE, name: "MESSAGE", routeLink: "/chat" },
   { data: NETWORK, name: "NOTIFICATION", routeLink: "/notification" },
-  { data: MORE, name: "MORE", routeLink: "/events" }
+  { data: MORE, name: "MORE", routeLink: "/events" },
+  { data: MORE, name: "PROFILE", routeLink: "/profile" }
 ];
 export default class PrimaryHeader extends Component {
   handleredirect = val => {
@@ -60,7 +62,8 @@ export default class PrimaryHeader extends Component {
                       >
                         <IconWithHeader
                           image={value.data}
-                          size={32}
+                          size={25}
+                          fontSize={10}
                           header={value.name}
                         />
                       </div>
