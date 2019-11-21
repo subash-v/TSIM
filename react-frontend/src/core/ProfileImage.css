@@ -16,8 +16,8 @@
 }
 .size2 {
   composes: base;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   font-size: 14px;
 }
 .size3 {
