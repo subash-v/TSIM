@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styles from "./Image.css";
-import VisibilityChild from "../core/VisibilityChild";
+import VisibilityChild from "./VisibilityChild";
 
 const LOADING = "loading";
 const LOADED = "loaded";

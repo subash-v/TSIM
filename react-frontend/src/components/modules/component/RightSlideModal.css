@@ -1,11 +1,8 @@
 .base {
-  width: 100%;
-  height: auto;
-  display: flex;
-  margin: auto;
-  align-items: center;
-  justify-content: center;
-  animation: slideInUp 200ms forwards;
+  width: 50vw;
+  height: 100vh;
+  background: #ffffff;
+  animation: slideInLeft 200ms forwards;
 }
 .base:before {
   content: "";
@@ -21,7 +18,6 @@
 .crossIconHide {
   width: 100%;
   height: auto;
-  margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,11 +30,11 @@
   width: 100%;
   height: auto;
 }
-@keyframes slideInUp {
+@keyframes slideInLeft {
   0% {
-    transform: translateY(100%);
+    transform: translateX(100%);
   }
   100% {
-    transform: translateY(0%);
+    transform: translateX(0%);
   }
 }
