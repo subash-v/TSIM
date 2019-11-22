@@ -10,6 +10,7 @@ import VisualProfilePage from "./components/VisualProfile/VisualProfilePage";
 import SeekGuide from "./components/SeekGuide/SeekGuide";
 import AboutUs from "./components/AboutUs/AboutUs";
 import ModalContainer from "./components/modules/container/ModalContainer";
+import EventPage from "./components/Event/EventPage";
 
 class App extends Component {
   render() {
@@ -24,6 +25,7 @@ class App extends Component {
           <Route path="/visual-profile" component={VisualProfilePage} />
           <Route path="/seek-guide" component={SeekGuide} />
           <Route path="/aboutUs" component={AboutUs} />
+          <Route path="/event" component={EventPage} />
         </Switch>
         <ModalContainer />
       </BrowserRouter>
