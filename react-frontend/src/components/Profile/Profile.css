@@ -167,7 +167,7 @@
   background: url("../../images/Profile-Fill-grey.svg") no-repeat;
   background-size: 80%;
   width: auto;
-  height: 53vh;
+  height: 50vh;
   border: 1px dashed;
   margin: 20px;
   position: relative;
@@ -205,4 +205,75 @@
 
 .nameWithEdit {
   display: flex;
+}
+
+.milestones {
+  margin-top: 300px;
+}
+
+.milestoneList {
+  composes: bioList;
+  padding-bottom: 30px;
+}
+
+.accomplishmentIcon {
+  height: 40px;
+  width: 40px;
+  /* border-radius: 50%; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.accomplishmentIcon:nth-child(even) {
+  margin: 0 10px;
+}
+
+.boxIcon {
+  composes: accomplishmentIcon;
+  background: url("../../images/Job-line.svg");
+}
+.eduIcon {
+  composes: accomplishmentIcon;
+  background: url("../../images/Education-line.svg");
+}
+.profileIcon {
+  composes: accomplishmentIcon;
+  background: url("../../images/Certification-Line.svg");
+}
+.labelIcon {
+  composes: accomplishmentIcon;
+  background: url("../../images/Awards-line.svg");
+}
+
+.milestones {
+  padding-bottom: 50px;
+  border-bottom: 1px solid #ebeced;
+}
+
+.journey {
+  padding-top: 50px;
+}
+
+.usersJourney {
+  background: #fff;
+  width: 70%;
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.skillsLanguages {
+  width: 30%;
+  background: #fff;
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.accomplishmentTag {
+  padding-bottom: 50px;
+  border-bottom: 3px solid #333;
 }

@@ -2,8 +2,21 @@ import React, { Component } from "react";
 import styles from "./Profile.css";
 import PrimaryHeader from "../HomePage/PrimaryHeader";
 import CenteredContent from "../../core/CenteredContent";
+import Milestone from "../../core/Milestone";
+
+const data = [{}, {}, {}, {}, {}];
+
+const work = [{}, {}, {}, {}];
+const education = [{}, {}, {}, {}];
+const certification = [{}, {}, {}, {}];
+const awards = [{}, {}, {}, {}];
 
 export default class Profile extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -73,6 +86,45 @@ export default class Profile extends Component {
                   </div>
                 </div>
               </div>
+            </CenteredContent>
+          </div>{" "}
+          <div className={styles.milestones}>
+            <CenteredContent contentWidth="1400px">
+              {" "}
+              <div className={styles.summaryHeader}>Milestones</div>
+              <div className={styles.milestoneList}>
+                Share your professional milestones and key achievements
+              </div>{" "}
+              <div className={styles.milestoneSection}>
+                {data.map((val, i) => {
+                  return <Milestone key={i} />;
+                })}
+              </div>{" "}
+            </CenteredContent>
+          </div>
+          <div className={styles.journey}>
+            <CenteredContent contentWidth="1400px">
+              <div className={styles.usersJourney}>
+                <div className={styles.summaryHeader}>
+                  {this.props.username ? this.props.userName : "User"}'s
+                  professional journey
+                </div>
+                <div className={styles.milestoneList}>
+                  {this.props.accomplishment
+                    ? this.props.accomplishment
+                    : "ADD ACOMPLISHMENTS"}
+                </div>
+                <div className={styles.accomplishmentTag}>
+                  <div className={styles.boxIcon}></div>
+                  <div className={styles.eduIcon}></div>
+                  <div className={styles.profileIcon}></div>
+                  <div className={styles.labelIcon}></div>
+                </div>
+                <div className={styles.addAccomplishment}>
+                  {/* {this.props.userAchievement} */}
+                </div>
+              </div>
+              <div className={styles.skillsLanguages}>Hii</div>
             </CenteredContent>
           </div>
         </div>

@@ -15,16 +15,14 @@ import ProfileImage from "../../core/ProfileImage";
 const links = [
   { data: HOME, name: "HOME", routeLink: "/" },
   { data: NETWORK, name: "NETWORK", routeLink: "/network" },
-  { data: MORE, name: "MORE", routeLink: "/events" },
-  { data: MORE, name: "PROFILE", routeLink: "/profile" }
+  { data: MORE, name: "MORE", routeLink: "/events" }
 ];
 const logedInLinks = [
   { data: HOME, name: "HOME", routeLink: "/" },
   { data: NETWORK, name: "CONNECTION", routeLink: "/network" },
   { data: MESSAGE, name: "MESSAGE", routeLink: "/chat" },
   { data: NETWORK, name: "NOTIFICATION", routeLink: "/notification" },
-  { data: MORE, name: "MORE", routeLink: "/events" },
-  { data: MORE, name: "PROFILE", routeLink: "/profile" }
+  { data: MORE, name: "MORE", routeLink: "/events" }
 ];
 export default class PrimaryHeader extends Component {
   handleredirect = val => {

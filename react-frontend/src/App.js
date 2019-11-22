@@ -11,7 +11,6 @@ import SeekGuide from "./components/SeekGuide/SeekGuide";
 import AboutUs from "./components/AboutUs/AboutUs";
 import ModalContainer from "./components/modules/container/ModalContainer";
 import Profile from "./components/Profile/Profile";
-
 class App extends Component {
   render() {
     return (
