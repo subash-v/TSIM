@@ -4,11 +4,13 @@ import ModalPanel from "./ModalPanel";
 import ModalPanelRight from "./ModalPanelRight";
 import Loadable from "react-loadable";
 import DemoModalContainer from "../container/DemoModalContainer";
+import SliderComponentContainer from "../container/SliderComponentContainer";
 import SignInModuleContainer from "../container/SignInModuleContainer";
 import SignUpModuleContainer from "../container/SignUpModuleContainer";
 import SignUp from "../../SignUp/SignUp";
 import FilterModule from "./FilterModule";
 import ForgotPassword from "../../ForgotPassword/ForgotPassword";
+import SelectEventContainer from "../container/SelectEventContainer";
 const modalRoot = document.getElementById("modal-root");
 
 const Loader = () => {
@@ -76,6 +78,18 @@ export default class ModalRoot extends React.Component {
       ),
       ForgotPassword: (
         <ForgotPassword
+          closeModal={() => this.handleClose()}
+          {...this.props.ownProps}
+        />
+      ),
+      SliderComponentContainer: (
+        <SliderComponentContainer
+          closeModal={() => this.handleClose()}
+          {...this.props.ownProps}
+        />
+      ),
+      SelectEventModule: (
+        <SelectEventContainer
           closeModal={() => this.handleClose()}
           {...this.props.ownProps}
         />

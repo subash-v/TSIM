@@ -3,7 +3,8 @@ import { withRouter } from "react-router-dom";
 import {
   showModal,
   LOGIN_MODULE,
-  SIGNUP_MODULE
+  SIGNUP_MODULE,
+  SLIDER_COMPONENT
 } from "../../modules/modal.actions";
 import PrimaryHeader from "../PrimaryHeader";
 const mapDispatchToProps = dispatch => {
@@ -14,6 +15,9 @@ const mapDispatchToProps = dispatch => {
     showSignUpModule: data => {
       dispatch(showModal(SIGNUP_MODULE, data));
     }
+    , showsliderComponent: data => {
+      dispatch(showModal(SLIDER_COMPONENT, data));
+    }
   };
 };
 
@@ -23,7 +27,10 @@ const mapStateToProps = state => {
   };
 };
 const PrimaryHeaderContainer = withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(PrimaryHeader)
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(PrimaryHeader)
 );
 
 export default PrimaryHeaderContainer;

@@ -56,35 +56,35 @@ export default class PrimaryHeader extends Component {
             <div className={styles.linkHolder}>
               {!this.props.login
                 ? links.map((value, i) => {
-                    return (
-                      <div
-                        className={styles.linkText}
-                        onClick={() => this.handleredirect(value.routeLink)}
-                      >
-                        <IconWithHeader
-                          image={value.data}
-                          size={32}
-                          header={value.name}
-                          fontSize={10}
-                        />
-                      </div>
-                    );
-                  })
+                  return (
+                    <div
+                      className={styles.linkText}
+                      onClick={() => this.handleredirect(value.routeLink)}
+                    >
+                      <IconWithHeader
+                        image={value.data}
+                        size={32}
+                        header={value.name}
+                        fontSize={10}
+                      />
+                    </div>
+                  );
+                })
                 : logedInLinks.map((value, i) => {
-                    return (
-                      <div
-                        className={styles.loglinkText}
-                        onClick={() => this.handleredirect(value.routeLink)}
-                      >
-                        <IconWithHeader
-                          image={value.data}
-                          size={25}
-                          header={value.name}
-                          fontSize={10}
-                        />
-                      </div>
-                    );
-                  })}
+                  return (
+                    <div
+                      className={styles.loglinkText}
+                      onClick={() => this.handleredirect(value.routeLink)}
+                    >
+                      <IconWithHeader
+                        image={value.data}
+                        size={25}
+                        header={value.name}
+                        fontSize={10}
+                      />
+                    </div>
+                  );
+                })}
             </div>
           </div>
           <div className={styles.buttonSearchholder}>
