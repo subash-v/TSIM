@@ -161,7 +161,12 @@ export default class SignUp extends React.Component {
               <div className={styles.termsNcondition}>
                 By signing up, I agree to the terms and conditions.
               </div>
-              <div className={styles.signUpButton}>SIGN UP NOW</div>
+              <div
+                className={styles.signUpButton}
+                onClick={() => this.props.showTour(this.props)}
+              >
+                SIGN UP NOW
+              </div>
               <div></div>
               <div>
                 <div className={styles.starInTxt}>
