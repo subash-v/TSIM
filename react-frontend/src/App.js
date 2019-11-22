@@ -11,6 +11,7 @@ import SeekGuide from "./components/SeekGuide/SeekGuide";
 import AboutUs from "./components/AboutUs/AboutUs";
 import ModalContainer from "./components/modules/container/ModalContainer";
 import EventPage from "./components/Event/EventPage";
+import EventDetailsPage from "./components/Event/EventDetailsPage";
 
 class App extends Component {
   render() {
@@ -26,6 +27,7 @@ class App extends Component {
           <Route path="/seek-guide" component={SeekGuide} />
           <Route path="/aboutUs" component={AboutUs} />
           <Route path="/event" component={EventPage} />
+          <Route path="/eventDetails" component={EventDetailsPage} />
         </Switch>
         <ModalContainer />
       </BrowserRouter>
