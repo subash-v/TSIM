@@ -4,8 +4,9 @@ import Button from "../general/Button.js";
 import Card from "../general/EventCard";
 import CenteredContent from "../../core/CenteredContent";
 import Footer from "../Footer/Footer";
+
 import PrimaryHeaderContainer from "../HomePage/container/PrimaryHeaderContainer";
-const carouselData = [
+export const carouselData = [
   {
     title: "WEFT Women Entrepreneurs Annual Conference & Awards 2019",
     time: "10 am – 5 pm",
@@ -56,6 +57,11 @@ const carouselData = [
   }
 ];
 export default class EventPage extends Component {
+  handleredirect = val => {
+    if (this.props.history) {
+      this.props.history.push(`${val}`);
+    }
+  };
   render() {
     return (
       <React.Fragment>
@@ -110,7 +116,10 @@ export default class EventPage extends Component {
                     <div className={styles.tagButton}>Self Improvement</div>
                   </div>
                   <div className={styles.filterButtonContainer}>
-                    <div className={styles.fliterButton}>
+                    <div
+                      className={styles.fliterButton}
+                      onClick={() => this.handleredirect("/eventDetails")}
+                    >
                       <Button
                         type="primary"
                         backgroundColor={"transparent"}
@@ -122,6 +131,23 @@ export default class EventPage extends Component {
                       />
                     </div>
                   </div>
+                </div>
+              </div>
+              <div className={styles.recommendedEvents}>
+                <div className={styles.recommendedEventsHeading}>
+                  Recommended Events
+                </div>
+                <div className={styles.viewAllButtonContainer}>
+                  <Button
+                    type="primary"
+                    backgroundColor={"#E0DEED"}
+                    borderColor="#E0DEED"
+                    fontColor={"#4F439A"}
+                    height={50}
+                    width={210}
+                    label="VIEW ALL"
+                    borderRadius={10}
+                  />
                 </div>
               </div>
               <div className={styles.storiesContainer}>
