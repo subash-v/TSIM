@@ -7,6 +7,8 @@ export const LOGIN_MODULE = "LoginModule";
 export const SIGNUP_MODULE = "SignUpModule";
 export const FILTER_MODULE = "FilterModule";
 export const FORGOT_PASSWORD_MODULE = "ForgotPassword";
+export const TOPIC_MODULE = "TopicModule";
+
 export function showModal(type, ownProps) {
   const scrollPosition =
     window.pageYOffset || document.documentElement.scrollTop;
