@@ -7,6 +7,8 @@ import DemoModalContainer from "../container/DemoModalContainer";
 import SignInModuleContainer from "../container/SignInModuleContainer";
 import SignUpModuleContainer from "../container/SignUpModuleContainer";
 import SignUp from "../../SignUp/SignUp";
+import FilterModule from "./FilterModule";
+import ForgotPassword from "../../ForgotPassword/ForgotPassword";
 const modalRoot = document.getElementById("modal-root");
 
 const Loader = () => {
@@ -62,6 +64,18 @@ export default class ModalRoot extends React.Component {
       ),
       SignUpModule: (
         <SignUpModuleContainer
+          closeModal={() => this.handleClose()}
+          {...this.props.ownProps}
+        />
+      ),
+      FilterModule: (
+        <FilterModule
+          closeModal={() => this.handleClose()}
+          {...this.props.ownProps}
+        />
+      ),
+      ForgotPassword: (
+        <ForgotPassword
           closeModal={() => this.handleClose()}
           {...this.props.ownProps}
         />

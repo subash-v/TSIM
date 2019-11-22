@@ -11,11 +11,11 @@ export default class SignIn extends React.Component {
   constructor() {
     super();
     this.state = {
-      country: ""
+      email: "",
+      password: ""
     };
   }
   render() {
-    console.log("sbvljsfbvljvbsvl", this.props);
     return (
       <React.Fragment>
         <CenteredContent>
@@ -32,8 +32,8 @@ export default class SignIn extends React.Component {
               <div className={styles.inputBox}>
                 <Input2
                   placeholder="Email Address"
-                  value={this.state.country}
-                  onChange={val => this.onChange(val)}
+                  value={this.state.email}
+                  onChange={val => this.setState({ email: val })}
                   textStyle={{ fontSize: 14 }}
                   height={50}
                   boxy={true}
@@ -44,8 +44,8 @@ export default class SignIn extends React.Component {
               <div className={styles.inputBox}>
                 <Input2
                   placeholder="Password"
-                  value={this.state.country}
-                  onChange={val => this.onChange(val)}
+                  value={this.state.password}
+                  onChange={val => this.setState({ password: val })}
                   textStyle={{ fontSize: 14 }}
                   height={50}
                   boxy={true}
@@ -64,7 +64,12 @@ export default class SignIn extends React.Component {
                   value="true"
                 ></input>
                 <div className={styles.remPassword}>Remember password</div>
-                <div className={styles.forgotPassword}>Forgot password?</div>
+                <div
+                  className={styles.forgotPassword}
+                  onClick={() => this.props.showForgotPassword(this.props)}
+                >
+                  Forgot password?
+                </div>
               </div>
 
               <div className={styles.loginButton}>LOGIN</div>
@@ -72,7 +77,14 @@ export default class SignIn extends React.Component {
               <div>
                 <div className={styles.starInTxt}>No Account?&nbsp;&nbsp;</div>
 
-                <div className={styles.signUpNow}>Sign up now</div>
+                <div
+                  className={styles.signUpNow}
+                  onClick={() => {
+                    this.props.showSignUpModal();
+                  }}
+                >
+                  Sign up now
+                </div>
               </div>
               <div className={styles.loginWith}>Login with</div>
             </div>

@@ -19,8 +19,6 @@ export default class SignUp extends React.Component {
     };
   }
   render() {
-    console.log("sbvljsfbvljvbsvl", this.props);
-
     return (
       <React.Fragment>
         <CenteredContent>
@@ -171,7 +169,12 @@ export default class SignUp extends React.Component {
                 </div>
                 <div className={styles.accountTxt}>The star in me?&nbsp;</div>
 
-                <div className={styles.logInTxt}>Log In</div>
+                <div
+                  className={styles.logInTxt}
+                  onClick={() => this.props.showLoginModal()}
+                >
+                  Log In
+                </div>
               </div>
             </div>
           </div>

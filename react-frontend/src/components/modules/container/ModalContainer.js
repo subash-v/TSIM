@@ -6,7 +6,8 @@ const mapStateToProps = (state, ownProps) => {
   return {
     loading: state.modal,
     modalStatus: state.modal.modalDisplayed,
-    modalType: state.modal.modalType
+    modalType: state.modal.modalType,
+    ownProps: state.modal.ownProps
   };
 };
 

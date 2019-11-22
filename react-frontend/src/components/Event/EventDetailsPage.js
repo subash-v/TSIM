@@ -9,11 +9,7 @@ import { carouselData } from "./EventPage";
 import bannerImage from "../Images/b.jpg";
 import Image from "../../core/Image";
 import profileImage from "../Images/b.jpg";
-import { Map } from "google-maps-react";
-const mapstyle = {
-  width: "100%",
-  height: "100%"
-};
+
 export default class EventDetailsPage extends Component {
   render() {
     return (
@@ -98,14 +94,27 @@ export default class EventDetailsPage extends Component {
                     </div>
                   </div>
                   <div className={styles.registrationdetails}>
-                      <div className={styles.registrationdetailsContainer}>
-                    <img src={profileImage} className={styles.dot} alt={"profile"}/>
-                    <img src={profileImage} className={styles.dot} alt={"profile"}/>
-                    <img src={profileImage} className={styles.dot} alt={"profile"}/>
-                    <span className={styles.more}>+26</span>
-                    <div className={styles.intrested}>Intrested & 13 Registered</div>
+                    <div className={styles.registrationdetailsContainer}>
+                      <img
+                        src={profileImage}
+                        className={styles.dot}
+                        alt={"profile"}
+                      />
+                      <img
+                        src={profileImage}
+                        className={styles.dot}
+                        alt={"profile"}
+                      />
+                      <img
+                        src={profileImage}
+                        className={styles.dot}
+                        alt={"profile"}
+                      />
+                      <span className={styles.more}>+26</span>
+                      <div className={styles.intrested}>
+                        Intrested & 13 Registered
+                      </div>
                     </div>
-                   
                   </div>
                 </div>
               </div>

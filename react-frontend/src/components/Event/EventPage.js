@@ -118,7 +118,7 @@ export default class EventPage extends Component {
                   <div className={styles.filterButtonContainer}>
                     <div
                       className={styles.fliterButton}
-                      onClick={() => this.handleredirect("/eventDetails")}
+                      onClick={() => this.props.showFilterModule()}
                     >
                       <Button
                         type="primary"

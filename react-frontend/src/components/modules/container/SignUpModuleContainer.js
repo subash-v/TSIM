@@ -1,11 +1,11 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { showModal, SIGNUP_MODULE } from "../modal.actions.js";
+import { showModal, LOGIN_MODULE } from "../modal.actions.js";
 import SignUpModule from "../component/SignUpModule.js";
 const mapDispatchToProps = dispatch => {
   return {
-    showCliqCenterModule: data => {
-      dispatch(showModal(SIGNUP_MODULE, data));
+    showLoginModal: data => {
+      dispatch(showModal(LOGIN_MODULE, data));
     }
   };
 };

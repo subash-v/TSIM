@@ -151,10 +151,7 @@ export default class Home extends React.Component {
                     create a visual resume and showcase yourself using videos,
                     pictures and stories?
                   </div>
-                  <div
-                    className={styles.buttonSection}
-                    onClick={() => this.handleredirect("/visual-profile")}
-                  >
+                  <div className={styles.buttonSection}>
                     <Button
                       backgroundColor={"#AD5DA3"}
                       label="BUILD VISUAL PROFILE"
@@ -163,8 +160,14 @@ export default class Home extends React.Component {
                       width={"298px"}
                       height={"70px"}
                       fontFamily={"bold"}
+                      onClick={() => this.props.showSignUpModule()}
                     />
-                    <div className={styles.link}>Learn more</div>
+                    <div
+                      className={styles.link}
+                      onClick={() => this.handleredirect("/visual-profile")}
+                    >
+                      Learn more
+                    </div>
                   </div>
                 </div>
               </div>
@@ -220,8 +223,14 @@ export default class Home extends React.Component {
                       width={"298px"}
                       height={"70px"}
                       fontFamily={"bold"}
+                      onClick={() => this.props.showSignUpModule()}
                     />
-                    <div className={styles.link}>View all events</div>
+                    <div
+                      className={styles.link}
+                      onClick={() => this.handleredirect("/event")}
+                    >
+                      View all events
+                    </div>
                   </div>{" "}
                 </div>
               </div>
@@ -244,10 +253,7 @@ export default class Home extends React.Component {
                     <br />
                     We make networking easy.
                   </div>
-                  <div
-                    className={styles.buttonSection}
-                    onClick={() => this.handleredirect("/visual-profile")}
-                  >
+                  <div className={styles.buttonSection}>
                     {" "}
                     <Button
                       backgroundColor={"#AD5DA3"}
@@ -257,8 +263,14 @@ export default class Home extends React.Component {
                       width={"298px"}
                       height={"70px"}
                       fontFamily={"bold"}
+                      onClick={() => this.props.showSignUpModule()}
                     />
-                    <div className={styles.link}>View all blogs</div>
+                    <div
+                      className={styles.link}
+                      onClick={() => this.handleredirect("/blog")}
+                    >
+                      View all blogs
+                    </div>
                   </div>
                 </div>
               </div>
@@ -326,7 +338,10 @@ export default class Home extends React.Component {
             <div className={styles.eventTitle}>
               View and attend workshops and networking events
             </div>
-            <div className={styles.viewAllButton}>
+            <div
+              className={styles.viewAllButton}
+              onClick={() => this.handleredirect("/event")}
+            >
               VIEW ALL <div className={styles.arrow}></div>
             </div>
           </div>
