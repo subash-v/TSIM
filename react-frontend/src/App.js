@@ -12,6 +12,7 @@ import ModalContainer from "./components/modules/container/ModalContainer";
 import EventDetailsPage from "./components/Event/EventDetailsPage";
 import EventPageContainer from "./components/Event/container/EventPageContainer";
 import HomeContainer from "./components/HomePage/container/HomeContainer";
+import Profile from "./components/Profile/Profile";
 
 class App extends Component {
   render() {
@@ -28,6 +29,7 @@ class App extends Component {
           <Route path="/aboutUs" component={AboutUs} />
           <Route path="/eventDetails" component={EventDetailsPage} />
           <Route path="/event" component={EventPageContainer} />
+          <Route path="/profile" component={Profile} />
         </Switch>
         <ModalContainer />
       </BrowserRouter>
