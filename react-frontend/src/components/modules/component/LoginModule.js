@@ -8,7 +8,7 @@ export default class LoginModule extends Component {
     return (
       <RightSlideModal>
         <div className={styles.base}>
-          <SignIn />
+          <SignIn {...this.props} />
         </div>
       </RightSlideModal>
     );

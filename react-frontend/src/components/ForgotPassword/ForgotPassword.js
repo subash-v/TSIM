@@ -10,16 +10,16 @@ export default class ForgotPassword extends React.Component {
   constructor() {
     super();
     this.state = {
-      country: ""
+      email: ""
     };
   }
   render() {
     return (
       <React.Fragment>
         <CenteredContent>
-          <div className={styles.signUpContainer}>
+          <div className={styles.baseContainer}>
             <div className={styles.welTxt}>
-              <div className={styles.welcomeTxt}>Forgot Password</div>
+              <div className={styles.forgetPwd}>Forgot Password</div>
               <div className={styles.stayConnected}>
                 Enter your email address that you used to register. We'll send
                 you <br /> an email with a link to reset your password.
@@ -28,7 +28,7 @@ export default class ForgotPassword extends React.Component {
               <div className={styles.emailAddress}>
                 <Input2
                   placeholder="Enter your registered email"
-                  value={this.state.country}
+                  value={this.state.email}
                   onChange={val => this.onChange(val)}
                   textStyle={{ fontSize: 14 }}
                   height={50}
@@ -41,10 +41,10 @@ export default class ForgotPassword extends React.Component {
                 />
               </div>
 
-              <div className={styles.signUpButton}>LOGIN</div>
+              <div className={styles.loginButton}>LOGIN</div>
               <div></div>
               <div>
-                <div className={styles.starInTxt}>Back to login</div>
+                <div className={styles.bckToLogin}>Back to login</div>
               </div>
             </div>
           </div>
