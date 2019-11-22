@@ -1,9 +1,6 @@
 .base {
-  width: 768px;
+  width: auto;
   height: 100vh;
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
   background: #ffffff;
   animation: slideInLeft 200ms forwards;
 }
