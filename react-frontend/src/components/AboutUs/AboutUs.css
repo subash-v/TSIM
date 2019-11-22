@@ -1,0 +1,150 @@
+.base {
+  color: #1a1a1a;
+}
+
+.container {
+  padding: 60px 40px;
+}
+
+.overviewImage {
+  background: url("../../images/overview.png") no-repeat;
+  background-size: cover;
+  background-position: center;
+  max-width: 555px;
+  height: 376px;
+}
+
+.overview {
+  margin: 95px 0;
+  display: flex;
+}
+
+.overviewSecond {
+  composes: overview;
+  background: #f4f7f6;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.titleText {
+  font-size: 18px;
+  line-height: 26px;
+  font-family: regular;
+  width: 100%;
+  text-align: center;
+}
+
+.header {
+  font-size: 28px;
+  line-height: 40px;
+  font-family: bold;
+  /* border-left: 5px solid #77c09e; */
+}
+
+.summary {
+  padding-top: 40px;
+  font-size: 14px;
+  line-height: 22px;
+  font-family: regular;
+}
+
+.leftSection {
+  width: 50%;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+}
+
+.rightSection {
+  width: 50%;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: right;
+}
+
+.image {
+  width: 555px;
+  height: 375px;
+  margin: 0 auto;
+}
+
+.logoHeader {
+  margin: 0;
+  margin-bottom: 5px;
+  font-family: bold;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.logoSummary {
+  margin: 0;
+  margin-bottom: 5px;
+  font-family: regular;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.logo {
+  width: 360px;
+  height: 60px;
+  margin: 0 auto;
+}
+
+.strategy,
+.networth,
+.design {
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.strategy {
+  padding: 0 100px;
+}
+
+.rightheader {
+  composes: header;
+  border-right: 5px solid #77c09e;
+  padding-right: 20px;
+}
+
+.leftheader {
+  composes: header;
+  border-left: 5px solid #77c09e;
+  padding-left: 20px;
+}
+
+.footer {
+  border-top: 1px solid #ebeced;
+  padding: 0 40px;
+}
+
+.banner {
+  width: 100%;
+  height: 650px;
+  min-height: 650px;
+  background-image: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 0) 30%,
+      rgba(0, 0, 0, 1) 100%
+    ),
+    url("../../images/Welcome-Screen-min.jpg");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.title {
+  font-size: 70px;
+  line-height: 78px;
+
+  color: #fff;
+  font-family: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}

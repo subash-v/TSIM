@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styles from "./Terms.css";
 import Footer from "../Footer/Footer";
-import PrimaryHeader from "../HomePage/PrimaryHeader";
+import PrimaryHeaderContainer from "../HomePage/container/PrimaryHeaderContainer";
 
 export default class PrivacyPolicy extends Component {
   componentDidMount = () => {
@@ -18,7 +18,7 @@ export default class PrivacyPolicy extends Component {
   render() {
     return (
       <React.Fragment>
-        <PrimaryHeader history={this.props.history} />
+        <PrimaryHeaderContainer history={this.props.history} />
         <div className={styles.base}>
           <div className={styles.container}>
             <h2>Privacy Policy</h2>

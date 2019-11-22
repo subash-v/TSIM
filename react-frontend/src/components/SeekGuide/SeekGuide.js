@@ -1,18 +1,18 @@
 import React, { Component } from "react";
 import styles from "./SeekGuide.css";
 import CenteredContent from "../../core/CenteredContent";
-import PrimaryHeader from "../HomePage/PrimaryHeader";
 import VideoComponent from "../general/VideoComponent";
 import Button from "../general/Button.js";
 import SignUpBar from "../Blog/SignUpBar";
 import Footer from "../Footer/Footer";
+import PrimaryHeaderContainer from "../HomePage/container/PrimaryHeaderContainer";
 export default class SeekGuide extends Component {
   render() {
     return (
       <React.Fragment>
         <div className={styles.base}>
           <div className={styles.headerHolder}>
-            <PrimaryHeader history={this.props.history} />
+            <PrimaryHeaderContainer history={this.props.history} />
           </div>
           <CenteredContent>
             <div className={styles.container}>
@@ -61,11 +61,13 @@ export default class SeekGuide extends Component {
                     <div className={styles.questionContainer}>
                       <div className={styles.question}>How do I </div>
                       <div className={styles.quetionWithColor}>
-                      seek guidance?
+                        seek guidance?
                       </div>
                     </div>
                     <div className={styles.answer}>
-                    Get career guidance from experts in your field. And if you are an expert yourself, do register as a guide to help others. 
+                      Get career guidance from experts in your field. And if you
+                      are an expert yourself, do register as a guide to help
+                      others.
                     </div>
                     <div className={styles.buttonContainer}>
                       <Button

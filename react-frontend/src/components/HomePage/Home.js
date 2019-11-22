@@ -6,13 +6,13 @@ import image2 from "../../images/Resources-min.jpg";
 import image3 from "../../images/Events-min.jpg";
 import image4 from "../../images/Seek-guidance-min.jpg";
 import Button from "../../core/Button copy";
-import SecondaryHeader from "./SecondaryHeader";
-import PrimaryHeader from "./PrimaryHeader";
 import HomepageEventsCarousel from "../general/HomePageEventsCarousel.";
 import Card from "../general/EventCard";
 import Carousel from "../general/Carousel";
 import Footer from "../Footer/Footer";
 import CenteredContent from "../../core/CenteredContent";
+import PrimaryHeaderContainer from "./container/PrimaryHeaderContainer";
+import SecondaryHeaderContainer from "./container/SecondaryHeaderContainer";
 
 const carouselData = [
   {
@@ -103,9 +103,9 @@ export default class Home extends React.Component {
           }
         >
           {this.state.lastScrollY > 100 ? (
-            <PrimaryHeader history={this.props.history} />
+            <PrimaryHeaderContainer history={this.props.history} />
           ) : (
-            <SecondaryHeader history={this.props.history} />
+            <SecondaryHeaderContainer history={this.props.history} />
           )}
         </div>
         <div className={styles.topSection}>

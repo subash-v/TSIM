@@ -1,7 +1,10 @@
 export const SHOW_MODAL = "SHOW_MODAL";
 export const HIDE_MODAL = "HIDE_MODAL";
 export const CENTER_MODULE_DEMO = "centerModalDemo";
+//declare the module name
 export const MODULE_DEMO = "DemoModalContainer";
+export const LOGIN_MODULE = "LoginModule";
+export const SIGNUP_MODULE = "SignUpModule";
 export function showModal(type, ownProps) {
   const scrollPosition =
     window.pageYOffset || document.documentElement.scrollTop;

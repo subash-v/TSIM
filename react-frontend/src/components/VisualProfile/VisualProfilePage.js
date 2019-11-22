@@ -1,18 +1,18 @@
 import React, { Component } from "react";
 import styles from "./VisualProfilePage.css";
 import CenteredContent from "../../core/CenteredContent";
-import PrimaryHeader from "../HomePage/PrimaryHeader";
 import VideoComponent from "../general/VideoComponent";
 import Button from "../general/Button.js";
 import SignUpBar from "../Blog/SignUpBar";
 import Footer from "../Footer/Footer";
+import PrimaryHeaderContainer from "../HomePage/container/PrimaryHeaderContainer";
 export default class VisualProfilePage extends Component {
   render() {
     return (
       <React.Fragment>
         <div className={styles.base}>
           <div className={styles.headerHolder}>
-            <PrimaryHeader history={this.props.history} />
+            <PrimaryHeaderContainer history={this.props.history} />
           </div>
           <CenteredContent>
             <div className={styles.container}>
