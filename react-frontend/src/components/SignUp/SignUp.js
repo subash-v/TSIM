@@ -4,19 +4,28 @@ import CenteredContent from "../../core/CenteredContent";
 import Input2 from "../../core/Input2";
 import linkedin from "../../images/Linkedin.svg";
 import Facebook from "../../images/Facebook.svg";
-
+import Back from "../../images/Back.svg";
 // import { Input2 } from "../../core";
 export default class SignUp extends React.Component {
   constructor() {
     super();
     this.state = {
-      country: ""
+      country: "",
+      email: "",
+      firstName: "",
+      lastName: "",
+      newPassword: "",
+      confirmPassword: ""
     };
   }
   render() {
     return (
       <React.Fragment>
         <CenteredContent>
+          <div onClick={this.props.closeModal} className={styles.backCircle}>
+            <img src={Back} className={styles.backImg} alt="" />
+          </div>
+          <div className={styles.button}></div>
           <div className={styles.signUpContainer}>
             <div className={styles.welTxt}>
               <div className={styles.joinTxt}>Join</div>
@@ -36,7 +45,7 @@ export default class SignUp extends React.Component {
                 <Input2
                   placeholder="Select your country"
                   value={this.state.country}
-                  onChange={val => this.onChange(val)}
+                  onChange={val => this.setState({ country: val })}
                   textStyle={{ fontSize: 14 }}
                   height={50}
                   boxy={true}
@@ -72,8 +81,8 @@ export default class SignUp extends React.Component {
                 <div className={styles.firstName}>
                   <Input2
                     placeholder="First Name"
-                    value={this.state.country}
-                    onChange={val => this.onChange(val)}
+                    value={this.state.firstName}
+                    onChange={val => this.setState({ firstName: val })}
                     textStyle={{ fontSize: 14 }}
                     height={50}
                     boxy={true}
@@ -87,8 +96,8 @@ export default class SignUp extends React.Component {
                 <div className={styles.lastName}>
                   <Input2
                     placeholder="Last Name"
-                    value={this.state.country}
-                    onChange={val => this.onChange(val)}
+                    value={this.state.lastName}
+                    onChange={val => this.setState({ lastName: val })}
                     textStyle={{ fontSize: 14 }}
                     height={50}
                     boxy={true}
@@ -100,11 +109,11 @@ export default class SignUp extends React.Component {
                   />
                 </div>
               </div>
-              <div className={styles.emailAddress}>
+              <div className={styles.inputBox}>
                 <Input2
                   placeholder="Email Address"
-                  value={this.state.country}
-                  onChange={val => this.onChange(val)}
+                  value={this.state.email}
+                  onChange={val => this.setState({ email: val })}
                   textStyle={{ fontSize: 14 }}
                   height={50}
                   boxy={true}
@@ -115,11 +124,11 @@ export default class SignUp extends React.Component {
                   // }}
                 />
               </div>
-              <div className={styles.emailAddress}>
+              <div className={styles.inputBox}>
                 <Input2
-                  placeholder="New Password"
-                  value={this.state.country}
-                  onChange={val => this.onChange(val)}
+                  placeholder="New Password (Min 6 Characters)"
+                  value={this.state.newPassword}
+                  onChange={val => this.setState({ newPassword: val })}
                   textStyle={{ fontSize: 14 }}
                   height={50}
                   boxy={true}
@@ -130,11 +139,11 @@ export default class SignUp extends React.Component {
                   // }}
                 />
               </div>
-              <div className={styles.emailAddress}>
+              <div className={styles.inputBox}>
                 <Input2
                   placeholder="Confirm Password"
-                  value={this.state.country}
-                  onChange={val => this.onChange(val)}
+                  value={this.state.confirmPassword}
+                  onChange={val => this.setState({ confirmPassword: val })}
                   textStyle={{ fontSize: 14 }}
                   height={50}
                   boxy={true}
@@ -152,7 +161,12 @@ export default class SignUp extends React.Component {
               <div className={styles.termsNcondition}>
                 By signing up, I agree to the terms and conditions.
               </div>
-              <div className={styles.signUpButton}>SIGN UP NOW</div>
+              <div
+                className={styles.signUpButton}
+                onClick={() => this.props.showTour(this.props)}
+              >
+                SIGN UP NOW
+              </div>
               <div></div>
               <div>
                 <div className={styles.starInTxt}>
@@ -160,7 +174,12 @@ export default class SignUp extends React.Component {
                 </div>
                 <div className={styles.accountTxt}>The star in me?&nbsp;</div>
 
-                <div className={styles.logInTxt}>Log In</div>
+                <div
+                  className={styles.logInTxt}
+                  onClick={() => this.props.showLoginModal()}
+                >
+                  Log In
+                </div>
               </div>
             </div>
           </div>

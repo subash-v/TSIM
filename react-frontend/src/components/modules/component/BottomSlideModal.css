@@ -2,6 +2,7 @@
   width: 100%;
   height: auto;
   display: flex;
+  margin: auto;
   align-items: center;
   justify-content: center;
   animation: slideInUp 200ms forwards;
@@ -20,6 +21,7 @@
 .crossIconHide {
   width: 100%;
   height: auto;
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;

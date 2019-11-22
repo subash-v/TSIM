@@ -1,7 +1,11 @@
 .signUpContainer {
   width: 100%;
   height: auto;
-  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  padding: 0px 107px 0 200px;
 }
 
 .welTxt {
@@ -10,34 +14,33 @@
 
 .joinTxt {
   color: #4f439a;
-  font-family: "Open Sans";
+  font-family: bold;
   font-size: 22px;
-  font-weight: bold;
   display: inline-block;
 }
 .starTxt {
   color: #ad5da3;
-  font-family: "Open Sans";
+  font-family: bold;
   font-size: 22px;
-  font-weight: bold;
   display: inline-block;
   padding-left: 4px;
 }
 
 .femaleCheck {
-  color: #7f7f7f;
-  font-family: "Open Sans";
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 20px;
+  composes: femaleCheck;
+  margin: 15px 0 15px 10px;
   display: inline-block;
-  margin: 15px 0 15px 0;
+  color: #7f7f7f;
+  font-family: bold;
+  font-size: 14px;
 }
 
 .checkbox {
-  height: 18px;
-  width: 18px;
+  height: 9px;
+  width: 9px;
   vertical-align: middle;
+  display: inline-block;
+  outline: 2px solid #4f439a;
 }
 
 .countryInput {
@@ -54,11 +57,17 @@
   vertical-align: middle;
 }
 
+.backImg {
+  height: 22px;
+  width: 22px;
+  margin-top: 16px;
+  margin-right: 2px;
+}
+
 .linkedinTxt {
   color: #ffffff;
-  font-family: "Open Sans";
+  font-family: semibold;
   font-size: 14px;
-  font-weight: 600;
   line-height: 22px;
   text-align: justify;
   display: inline-block;
@@ -70,10 +79,9 @@
   height: auto;
   background-color: #4f439a;
   border-radius: 5px;
-  /* display: inline-block; */
   padding: 9px 25px 9px 25px;
   vertical-align: middle;
-  /* margin-right: 5px; */
+  text-align: center;
 }
 
 .linkedinNfbContainer:first-child {
@@ -84,28 +92,19 @@
   float: right;
 }
 
-.faceBookContainer {
-  width: 49%;
-  height: auto;
-  background-color: #4f439a;
-  border-radius: 5px;
-  display: inline-block;
-  padding: 9px 25px 9px 25px;
-  margin-left: 5px;
-}
-
 .socialContainer {
   width: 100%;
   height: auto;
   margin-top: 15px;
   margin-bottom: 15px;
+  padding-bottom: 50px;
 }
 .nameContainer {
   width: 100%;
   height: auto;
-  margin: 15px 0 15px 0;
+  margin: 0px 0 15px 0;
 }
-.emailAddress {
+.inputBox {
   width: 100%;
   /* margin-right: 30px; */
   height: auto;
@@ -113,6 +112,7 @@
   border: 1px solid rgba(127, 127, 127, 0.5);
   margin-top: 15px;
 }
+
 .firstName {
   width: 49%;
   height: auto;
@@ -142,46 +142,6 @@
   border: 1px solid rgba(127, 127, 127, 0.5);
 }
 
-.dividingLineMain:before {
-  content: "";
-  position: absolute;
-  width: 470px;
-  border-bottom: 1px solid #c8c8c8;
-  left: 30px;
-  top: 10px;
-}
-
-.dividingLineMain:after {
-  content: "";
-  position: absolute;
-  width: 586px;
-  border-bottom: 1px solid #c8c8c8;
-  /* right: 30px; */
-  top: 10px;
-}
-
-.dividingLineMain {
-  position: absolute;
-  /* background: #fff; */
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  font-family: semibold;
-  color: rgba(0, 0, 0, 0.5);
-  font-size: 14px;
-}
-
-.divideBase {
-  position: relative;
-  width: 100%;
-  height: 30px;
-}
-
 .circle {
   height: 11px;
   width: 11px;
@@ -190,19 +150,33 @@
   border: 1px solid #4f439a;
   display: inline-block;
 }
+.backCircle {
+  height: 55px;
+  width: 55px;
+  /* background-color: #555; */
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15);
+  position: absolute;
+  top: 70px;
+  left: 25px;
+  text-align: center;
+
+  /* border: 1px solid #4f439a; */
+}
 
 .circleTxt {
   color: rgba(79, 67, 154, 0.5);
-  font-family: "Open Sans";
+  font-family: bold;
   font-size: 14px;
-  font-weight: bold;
   line-height: 22px;
   display: inline-block;
+  margin-left: 15px;
 }
 
 .termsNcondition {
   color: #1a1a1a;
-  font-family: "Open Sans";
+  font-family: regular;
   font-size: 14px;
   line-height: 22px;
   margin-top: 15px;
@@ -223,16 +197,15 @@
 
 .logInTxt {
   color: #4f439a;
-  font-family: "Open Sans";
+  font-family: bold;
   font-size: 14px;
-  font-weight: bold;
   line-height: 22px;
   display: inline-block;
 }
 
 .accountTxt {
   color: #ad5da3;
-  font-family: "Open Sans";
+  font-family: regular;
   font-size: 14px;
   line-height: 22px;
   display: inline-block;
@@ -240,7 +213,7 @@
 
 .starInTxt {
   color: black;
-  font-family: "Open Sans";
+  font-family: regular;
   font-size: 14px;
   line-height: 22px;
   display: inline-block;
@@ -251,15 +224,24 @@
 }
 
 fieldset {
-  margin-top: 10px;
+  padding-top: 15px;
   border-top: 1px solid rgba(127, 127, 127, 0.5);
   border-left: none;
   border-bottom: none;
   border-right: none;
   text-align: center;
-  width: 1200px;
+  width: 750px;
   /* margin-left: 120px; */
   color: rgba(127, 127, 127, 0.5);
   font-size: 12px;
   font-weight: bold;
+}
+
+.button {
+  height: 22px;
+  width: 140px;
+  color: rgba(79, 67, 154, 0.5);
+  font-family: bold;
+  font-size: 14px;
+  line-height: 22px;
 }

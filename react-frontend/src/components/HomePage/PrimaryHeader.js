@@ -31,13 +31,16 @@ export default class PrimaryHeader extends Component {
     }
   };
   showModal = () => {
-    // if(this.props.showCliqCenterModule)
-    // {
-    //   this.props.showCliqCenterModule()
-    // }
+    if (this.props.showLoginModule) {
+      this.props.showLoginModule(this.props);
+    }
+  };
+  showSignUpModal = () => {
+    if (this.props.showSignUpModule) {
+      this.props.showSignUpModule(this.props);
+    }
   };
   render() {
-    console.log(this.props);
     return (
       <div className={styles.headerBase}>
         <div
@@ -53,34 +56,35 @@ export default class PrimaryHeader extends Component {
             <div className={styles.linkHolder}>
               {!this.props.login
                 ? links.map((value, i) => {
-                    return (
-                      <div
-                        className={styles.linkText}
-                        onClick={() => this.handleredirect(value.routeLink)}
-                      >
-                        <IconWithHeader
-                          image={value.data}
-                          size={32}
-                          header={value.name}
-                        />
-                      </div>
-                    );
-                  })
+                  return (
+                    <div
+                      className={styles.linkText}
+                      onClick={() => this.handleredirect(value.routeLink)}
+                    >
+                      <IconWithHeader
+                        image={value.data}
+                        size={32}
+                        header={value.name}
+                        fontSize={10}
+                      />
+                    </div>
+                  );
+                })
                 : logedInLinks.map((value, i) => {
-                    return (
-                      <div
-                        className={styles.loglinkText}
-                        onClick={() => this.handleredirect(value.routeLink)}
-                      >
-                        <IconWithHeader
-                          image={value.data}
-                          size={25}
-                          header={value.name}
-                          fontSize={10}
-                        />
-                      </div>
-                    );
-                  })}
+                  return (
+                    <div
+                      className={styles.loglinkText}
+                      onClick={() => this.handleredirect(value.routeLink)}
+                    >
+                      <IconWithHeader
+                        image={value.data}
+                        size={25}
+                        header={value.name}
+                        fontSize={10}
+                      />
+                    </div>
+                  );
+                })}
             </div>
           </div>
           <div className={styles.buttonSearchholder}>
@@ -110,7 +114,10 @@ export default class PrimaryHeader extends Component {
                 </div>
               )}
               {!this.props.login && (
-                <div className={styles.signup}>
+                <div
+                  className={styles.signup}
+                  onClick={() => this.showSignUpModal()}
+                >
                   <Button
                     type="primary"
                     backgroundColor={"#4F439A"}

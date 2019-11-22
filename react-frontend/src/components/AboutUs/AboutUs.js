@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import styles from "./AboutUs.css";
 import Footer from "../Footer/Footer";
-import PrimaryHeader from "../HomePage/PrimaryHeader";
 import CenteredContent from "../../core/CenteredContent";
 import image1 from "../../images/overview.png";
 import image2 from "../../images/networking-tsim.png";
@@ -10,6 +9,7 @@ import image4 from "../../images/entreprener-pic.png";
 import logo1 from "../../images/diamond.svg";
 import logo2 from "../../images/chess.svg";
 import logo3 from "../../images/pencil.svg";
+import PrimaryHeaderContainer from "../HomePage/container/PrimaryHeaderContainer";
 
 export default class TermsOfService extends Component {
   componentDidMount = () => {
@@ -22,7 +22,7 @@ export default class TermsOfService extends Component {
   render() {
     return (
       <React.Fragment>
-        <PrimaryHeader history={this.props.history} />
+        <PrimaryHeaderContainer history={this.props.history} />
 
         <div className={styles.banner}>
           <div className={styles.title}>The star in me</div>
