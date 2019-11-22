@@ -16,7 +16,10 @@ const mapStateToProps = state => {
   };
 };
 const DemoModalContainer = withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(DemoModal)
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(DemoModal)
 );
 
 export default DemoModalContainer;
