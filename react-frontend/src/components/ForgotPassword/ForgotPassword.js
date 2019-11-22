@@ -31,7 +31,7 @@ export default class ForgotPassword extends React.Component {
                   <Input2
                     placeholder="Enter your registered email"
                     value={this.state.email}
-                    onChange={val => this.onChange(val)}
+                    onChange={val => this.setState({ email: val })}
                     textStyle={{ fontSize: 14 }}
                     height={50}
                     boxy={true}

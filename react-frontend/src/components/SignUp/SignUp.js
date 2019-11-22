@@ -45,7 +45,7 @@ export default class SignUp extends React.Component {
                 <Input2
                   placeholder="Select your country"
                   value={this.state.country}
-                  onChange={val => this.onChange(val)}
+                  onChange={val => this.setState({ country: val })}
                   textStyle={{ fontSize: 14 }}
                   height={50}
                   boxy={true}
@@ -82,7 +82,7 @@ export default class SignUp extends React.Component {
                   <Input2
                     placeholder="First Name"
                     value={this.state.firstName}
-                    onChange={val => this.onChange(val)}
+                    onChange={val => this.setState({ firstName: val })}
                     textStyle={{ fontSize: 14 }}
                     height={50}
                     boxy={true}
@@ -97,7 +97,7 @@ export default class SignUp extends React.Component {
                   <Input2
                     placeholder="Last Name"
                     value={this.state.lastName}
-                    onChange={val => this.onChange(val)}
+                    onChange={val => this.setState({ lastName: val })}
                     textStyle={{ fontSize: 14 }}
                     height={50}
                     boxy={true}
@@ -113,7 +113,7 @@ export default class SignUp extends React.Component {
                 <Input2
                   placeholder="Email Address"
                   value={this.state.email}
-                  onChange={val => this.onChange(val)}
+                  onChange={val => this.setState({ email: val })}
                   textStyle={{ fontSize: 14 }}
                   height={50}
                   boxy={true}
@@ -128,7 +128,7 @@ export default class SignUp extends React.Component {
                 <Input2
                   placeholder="New Password (Min 6 Characters)"
                   value={this.state.newPassword}
-                  onChange={val => this.onChange(val)}
+                  onChange={val => this.setState({ newPassword: val })}
                   textStyle={{ fontSize: 14 }}
                   height={50}
                   boxy={true}
@@ -143,7 +143,7 @@ export default class SignUp extends React.Component {
                 <Input2
                   placeholder="Confirm Password"
                   value={this.state.confirmPassword}
-                  onChange={val => this.onChange(val)}
+                  onChange={val => this.setState({ confirmPassword: val })}
                   textStyle={{ fontSize: 14 }}
                   height={50}
                   boxy={true}
