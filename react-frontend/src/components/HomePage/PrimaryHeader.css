@@ -7,7 +7,6 @@
   background: #fff;
 }
 .headerHolder {
-  max-width: 1400px;
   margin: auto;
 }
 .nonLogedInHeader {
@@ -32,8 +31,8 @@
   display: inline-block;
 }
 .logoHolder {
-  width: 31%;
-  height: 52px;
+  width: 165px;
+  height: 40px;
   align-items: center;
   display: inline-block;
 }
@@ -61,7 +60,6 @@
 }
 .linkHolder {
   display: inline-block;
-  width: 69%;
   height: 100%;
   vertical-align: top;
   padding-left: 30px;
@@ -76,7 +74,7 @@
 
   font-size: 10px;
 }
-@media screen and (max-width: 1380px) {
+/* @media screen and (max-width: 1380px) {
   .linkText {
     font-size: 12px;
     padding: 0px 8px;
@@ -87,4 +85,4 @@
   .logoHolder {
     width: 20%;
   }
-}
+} */

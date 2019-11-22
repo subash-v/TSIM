@@ -4,6 +4,7 @@ import CenteredContent from "../../core/CenteredContent";
 import Input2 from "../../core/Input2";
 import linkedin from "../../images/Linkedin.svg";
 import Facebook from "../../images/Facebook.svg";
+import Back from "../../images/Back.svg";
 
 // import { Input2 } from "../../core";
 export default class SignIn extends React.Component {
@@ -14,16 +15,21 @@ export default class SignIn extends React.Component {
     };
   }
   render() {
+    console.log("sbvljsfbvljvbsvl", this.props);
     return (
       <React.Fragment>
         <CenteredContent>
-          <div className={styles.signUpContainer}>
+          <div onClick={this.props.closeModal} className={styles.backCircle}>
+            <img src={Back} className={styles.backImg} alt="" />
+          </div>
+
+          <div className={styles.signInContainer}>
             <div className={styles.welTxt}>
               <div className={styles.welcomeTxt}>Welcome Back</div>
               <div className={styles.stayConnected}>
                 Stay connected, be informed and keep inspiring.
               </div>
-              <div className={styles.emailAddress}>
+              <div className={styles.inputBox}>
                 <Input2
                   placeholder="Email Address"
                   value={this.state.country}
@@ -35,7 +41,7 @@ export default class SignIn extends React.Component {
                   borderBottom={"#7f7f7f"}
                 />
               </div>
-              <div className={styles.emailAddress}>
+              <div className={styles.inputBox}>
                 <Input2
                   placeholder="Password"
                   value={this.state.country}
@@ -50,7 +56,7 @@ export default class SignIn extends React.Component {
                   // }}
                 />
               </div>
-              <div className={styles.resetPassword}>
+              <div className={styles.passwordBlock}>
                 <input
                   className={styles.checkbox}
                   type="checkbox"
@@ -61,12 +67,12 @@ export default class SignIn extends React.Component {
                 <div className={styles.forgotPassword}>Forgot password?</div>
               </div>
 
-              <div className={styles.signUpButton}>LOGIN</div>
+              <div className={styles.loginButton}>LOGIN</div>
               <div></div>
               <div>
                 <div className={styles.starInTxt}>No Account?&nbsp;&nbsp;</div>
 
-                <div className={styles.logInTxt}>Sign up now</div>
+                <div className={styles.signUpNow}>Sign up now</div>
               </div>
               <div className={styles.loginWith}>Login with</div>
             </div>

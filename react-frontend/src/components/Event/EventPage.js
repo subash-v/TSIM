@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import PrimaryHeader from "../HomePage/PrimaryHeader";
 import styles from "./EventPage.css";
 import Button from "../general/Button.js";
 import Card from "../general/EventCard";
 import CenteredContent from "../../core/CenteredContent";
 import Footer from "../Footer/Footer";
+
+import PrimaryHeaderContainer from "../HomePage/container/PrimaryHeaderContainer";
 export const carouselData = [
   {
     title: "WEFT Women Entrepreneurs Annual Conference & Awards 2019",
@@ -66,7 +67,7 @@ export default class EventPage extends Component {
       <React.Fragment>
         <div className={styles.base}>
           <div className={styles.headerHolder}>
-            <PrimaryHeader history={this.props.history} />
+            <PrimaryHeaderContainer history={this.props.history} />
           </div>
           <CenteredContent>
             <div className={styles.container}>

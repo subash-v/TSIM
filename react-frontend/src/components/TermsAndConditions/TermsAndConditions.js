@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import styles from "./Terms.css";
 // import { HOME_PAGE_URL } from "../lib/constants";
 import Footer from "../Footer/Footer";
-import PrimaryHeader from "../HomePage/PrimaryHeader";
+import PrimaryHeaderContainer from "../HomePage/container/PrimaryHeaderContainer";
 
 export default class TermsOfService extends Component {
   // backToHomePage() {
@@ -22,7 +22,7 @@ export default class TermsOfService extends Component {
   render() {
     return (
       <React.Fragment>
-        <PrimaryHeader history={this.props.history} />
+        <PrimaryHeaderContainer history={this.props.history} />
         <div className={styles.base}>
           <div className={styles.container}>
             <h2>Terms of Service</h2>

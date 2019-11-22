@@ -9,6 +9,16 @@ export default class SecondaryHeader extends Component {
       this.props.history.push(`/`);
     }
   };
+  showModal = () => {
+    if (this.props.showLoginModule) {
+      this.props.showLoginModule(this.props);
+    }
+  };
+  showSignUpModal = () => {
+    if (this.props.showSignUpModule) {
+      this.props.showSignUpModule(this.props);
+    }
+  };
   render() {
     return (
       <div className={styles.headerBase}>
@@ -23,7 +33,7 @@ export default class SecondaryHeader extends Component {
             </div>
 
             <div className={styles.buttonHolder}>
-              <div className={styles.login}>
+              <div className={styles.login} onClick={() => this.showModal()}>
                 <Button
                   type="secondary"
                   height={40}
@@ -33,7 +43,10 @@ export default class SecondaryHeader extends Component {
                   borderColor="none"
                 />
               </div>
-              <div className={styles.signup}>
+              <div
+                className={styles.signup}
+                onClick={() => this.showSignUpModal()}
+              >
                 <Button
                   type="primary"
                   backgroundColor={"#fff"}

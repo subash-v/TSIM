@@ -5,7 +5,7 @@ import {
   LOGIN_MODULE,
   SIGNUP_MODULE
 } from "../../modules/modal.actions";
-import PrimaryHeader from "../PrimaryHeader";
+import SecondaryHeader from "../SecondaryHeader";
 const mapDispatchToProps = dispatch => {
   return {
     showLoginModule: data => {
@@ -16,14 +16,13 @@ const mapDispatchToProps = dispatch => {
     }
   };
 };
-
 const mapStateToProps = state => {
   return {
     loading: state
   };
 };
-const PrimaryHeaderContainer = withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(PrimaryHeader)
+const SecondaryHeaderContainer = withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(SecondaryHeader)
 );
 
-export default PrimaryHeaderContainer;
+export default SecondaryHeaderContainer;

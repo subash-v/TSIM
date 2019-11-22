@@ -31,13 +31,16 @@ export default class PrimaryHeader extends Component {
     }
   };
   showModal = () => {
-    // if(this.props.showCliqCenterModule)
-    // {
-    //   this.props.showCliqCenterModule()
-    // }
+    if (this.props.showLoginModule) {
+      this.props.showLoginModule(this.props);
+    }
+  };
+  showSignUpModal = () => {
+    if (this.props.showSignUpModule) {
+      this.props.showSignUpModule(this.props);
+    }
   };
   render() {
-    console.log(this.props);
     return (
       <div className={styles.headerBase}>
         <div
@@ -62,6 +65,7 @@ export default class PrimaryHeader extends Component {
                           image={value.data}
                           size={32}
                           header={value.name}
+                          fontSize={10}
                         />
                       </div>
                     );
@@ -110,7 +114,10 @@ export default class PrimaryHeader extends Component {
                 </div>
               )}
               {!this.props.login && (
-                <div className={styles.signup}>
+                <div
+                  className={styles.signup}
+                  onClick={() => this.showSignUpModal()}
+                >
                   <Button
                     type="primary"
                     backgroundColor={"#4F439A"}
