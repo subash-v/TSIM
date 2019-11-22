@@ -103,6 +103,15 @@
     flex-shrink: 0;
     display: flex;
   }
-
+  @media only screen and (max-width: 1024px) {
+    .card {
+      width: 100%;
+      padding: 10px 0;
+    }
+    .container {
+      padding: 0 43px;
+    }
+  }
+  
 
   
