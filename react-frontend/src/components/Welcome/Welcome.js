@@ -17,7 +17,7 @@ export default class Welcome extends React.Component {
     return (
       <React.Fragment>
         <CenteredContent>
-          <div className={styles.signUpContainer}>
+          <div className={styles.baseContainer}>
             <div className={styles.welTxt}>
               <div className={styles.welcomeTxt}>Welcome to&nbsp;</div>
               <div className={styles.startInMe}>The star in me,&nbsp;</div>
@@ -25,14 +25,14 @@ export default class Welcome extends React.Component {
 
               <div className={styles.stayConnected}>You’re almost done.</div>
 
-              <div className={styles.resetPassword}>
-                <div className={styles.remPassword}>
+              <div className={styles.valBlock}>
+                <div className={styles.valText}>
                   Thank you for joining. We may reach out to you for additional
                   validation, if required.{" "}
                 </div>
               </div>
 
-              <div className={styles.signUpButton}>LET’S GET STARTED!</div>
+              <div className={styles.getStartedButton}>LET’S GET STARTED!</div>
               <div></div>
               <div></div>
             </div>
