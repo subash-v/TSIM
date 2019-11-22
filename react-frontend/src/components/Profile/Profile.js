@@ -3,6 +3,7 @@ import styles from "./Profile.css";
 import PrimaryHeader from "../HomePage/PrimaryHeader";
 import CenteredContent from "../../core/CenteredContent";
 import Milestone from "../../core/Milestone";
+import Skills from "../Skills/Skills";
 
 const data = [{}, {}, {}, {}, {}];
 
@@ -29,17 +30,17 @@ export default class Profile extends Component {
                   <div className={styles.nameWithEdit}>
                     <div className={styles.profileName}>
                       {this.props.userName ? "" : "Add Name"}
-                      <div className={styles.editIcon}></div>
+                      {/* <div className={styles.editIcon}></div> */}
                     </div>
                     <div className={styles.editableOptions}></div>
                   </div>
                   <div className={styles.profileDesignation}>
                     {this.props.designation ? "" : "Add Designation"}
-                    <div className={styles.editIcon}></div>
+                    {/* <div className={styles.editIcon}></div> */}
                   </div>
                   <div className={styles.profileLocation}>
                     {"Add Location"}
-                    <div className={styles.editIcon}></div>
+                    {/* <div className={styles.editIcon}></div> */}
                   </div>
                   <div className={styles.profileConnections}>
                     <div className={styles.connections}>
@@ -54,7 +55,7 @@ export default class Profile extends Component {
                       <div className={styles.infoIcon}></div>
                     </div>
                     <div className={styles.addBio}>
-                      Add bio<div className={styles.editIcon}></div>
+                      {/* Add bio<div className={styles.editIcon}></div> */}
                     </div>
                     <div className={styles.bioList}>
                       {this.props.bio
@@ -109,6 +110,7 @@ export default class Profile extends Component {
                   {this.props.username ? this.props.userName : "User"}'s
                   professional journey
                 </div>
+                <div className={styles.editableOptions}></div>
                 <div className={styles.milestoneList}>
                   {this.props.accomplishment
                     ? this.props.accomplishment
@@ -121,10 +123,173 @@ export default class Profile extends Component {
                   <div className={styles.labelIcon}></div>
                 </div>
                 <div className={styles.addAccomplishment}>
-                  {/* {this.props.userAchievement} */}
+                  <div className={styles.jobSection}>
+                    <div className={styles.jobIcon}></div>
+                    <div className={styles.jobDescription}>
+                      <div style={{ display: " flex", paddingBottom: "15px" }}>
+                        <div className={styles.jobTitle}>
+                          {!this.props.jobTitle
+                            ? "Add Header"
+                            : this.props.jobTitle}
+                        </div>
+                        <div className={styles.horizontalLine} />
+                        <div className={styles.jobDate}>
+                          {!this.props.jobDate
+                            ? "Add Date"
+                            : `${this.props.jobMonth}` -
+                              `${this.props.jobYear}` -
+                              `${this.props.jobTime}`}
+                        </div>
+                      </div>
+                      <div className={styles.jobDetails}>
+                        <div className={styles.companyName}>
+                          {this.props.companyName
+                            ? this.props.companyName
+                            : "Add company Name"}
+                        </div>
+                        <div className={styles.companyLocation}>
+                          {this.props.companyLocation
+                            ? this.props.companyLocation
+                            : "Add company Location"}
+                        </div>
+                        <div className={styles.companyDescription}>
+                          {this.props.companyDescription
+                            ? this.props.companyDescription
+                            : "Add company Description"}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className={styles.jobSection}>
+                    <div className={styles.educationIcon}></div>
+                    <div className={styles.jobDescription}>
+                      <div style={{ display: " flex", paddingBottom: "15px" }}>
+                        <div className={styles.jobTitle}>
+                          {!this.props.jobTitle
+                            ? "Add Header"
+                            : this.props.jobTitle}
+                        </div>
+                        <div className={styles.horizontalLine} />
+                        <div className={styles.jobDate}>
+                          {!this.props.jobDate
+                            ? "Add Date"
+                            : `${this.props.jobMonth}` -
+                              `${this.props.jobYear}` -
+                              `${this.props.jobTime}`}
+                        </div>
+                      </div>
+                      <div className={styles.jobDetails}>
+                        <div className={styles.companyName}>
+                          {this.props.companyName
+                            ? this.props.companyName
+                            : "Add company Name"}
+                        </div>
+                        <div className={styles.companyLocation}>
+                          {this.props.companyLocation
+                            ? this.props.companyLocation
+                            : "Add company Location"}
+                        </div>
+                        <div className={styles.companyDescription}>
+                          {this.props.companyDescription
+                            ? this.props.companyDescription
+                            : "Add company Description"}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className={styles.jobSection}>
+                    <div className={styles.achievementIcon}></div>
+                    <div className={styles.jobDescription}>
+                      <div style={{ display: " flex", paddingBottom: "15px" }}>
+                        <div className={styles.jobTitle}>
+                          {!this.props.jobTitle
+                            ? "Add Header"
+                            : this.props.jobTitle}
+                        </div>
+                        <div className={styles.horizontalLine} />
+                        <div className={styles.jobDate}>
+                          {!this.props.jobDate
+                            ? "Add Date"
+                            : `${this.props.jobMonth}` -
+                              `${this.props.jobYear}` -
+                              `${this.props.jobTime}`}
+                        </div>
+                      </div>
+                      <div className={styles.jobDetails}>
+                        <div className={styles.companyName}>
+                          {this.props.companyName
+                            ? this.props.companyName
+                            : "Add company Name"}
+                        </div>
+                        <div className={styles.companyLocation}>
+                          {this.props.companyLocation
+                            ? this.props.companyLocation
+                            : "Add company Location"}
+                        </div>
+                        <div className={styles.companyDescription}>
+                          {this.props.companyDescription
+                            ? this.props.companyDescription
+                            : "Add company Description"}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className={styles.jobSection}>
+                    <div className={styles.awardsIcon}></div>
+                    <div className={styles.jobDescription}>
+                      <div style={{ display: " flex", paddingBottom: "15px" }}>
+                        <div className={styles.jobTitle}>
+                          {!this.props.jobTitle
+                            ? "Add Header"
+                            : this.props.jobTitle}
+                        </div>
+                        <div className={styles.horizontalLine} />
+                        <div className={styles.jobDate}>
+                          {!this.props.jobDate
+                            ? "Add Date"
+                            : `${this.props.jobMonth}` -
+                              `${this.props.jobYear}` -
+                              `${this.props.jobTime}`}
+                        </div>
+                      </div>
+                      <div className={styles.jobDetails}>
+                        <div className={styles.companyName}>
+                          {this.props.companyName
+                            ? this.props.companyName
+                            : "Add company Name"}
+                        </div>
+                        <div className={styles.companyLocation}>
+                          {this.props.companyLocation
+                            ? this.props.companyLocation
+                            : "Add company Location"}
+                        </div>
+                        <div className={styles.companyDescription}>
+                          {this.props.companyDescription
+                            ? this.props.companyDescription
+                            : "Add company Description"}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className={styles.noJobSection}>
+                    <div className={styles.jobIcon}></div>
+                    <div className={styles.jobDescription}>
+                      <div>
+                        <div className={styles.jobTitle}>
+                          Add recent Job Description/Education/Achievements
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className={styles.skillsLanguages}>Hii</div>
+              <div className={styles.skillsLanguages}>
+                <Skills title={"Skills"} skills={this.props.skills} />
+                <Skills title={"Languages"} skills={this.props.skills} />
+                <Skills title={"Interests"} skills={this.props.skills} />
+                <Skills title={"Recent Activity"} skills={this.props.skills} />
+              </div>
             </CenteredContent>
           </div>
         </div>

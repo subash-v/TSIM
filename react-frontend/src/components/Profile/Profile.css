@@ -201,6 +201,8 @@
   background-position: center;
   width: 25px;
   height: 25px;
+  float: right;
+  margin-right: 40px;
 }
 
 .nameWithEdit {
@@ -263,6 +265,7 @@
   height: 100%;
   display: inline-block;
   vertical-align: middle;
+  padding-right: 70px;
 }
 
 .skillsLanguages {
@@ -270,10 +273,111 @@
   background: #fff;
   height: 100%;
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: initial;
 }
 
 .accomplishmentTag {
   padding-bottom: 50px;
   border-bottom: 3px solid #333;
+}
+
+.professionalIcon {
+  height: 50px;
+  width: 50px;
+
+  margin-right: 30px;
+}
+
+.jobIcon {
+  composes: professionalIcon;
+  background: url("../../images/Job-line-blue.svg") no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.educationIcon {
+  composes: professionalIcon;
+  background: url("../../images/Education-line-blue.svg") no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.achievementIcon {
+  composes: professionalIcon;
+  background: url("../../images/Certification-Line-blue.svg") no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.awardsIcon {
+  composes: professionalIcon;
+  background: url("../../images/Awards-line-blue.svg") no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.jobSection {
+  display: flex;
+  padding-bottom: 50px;
+}
+
+.noJobSection {
+  composes: jobSection;
+  align-items: center;
+}
+
+.jobTitle {
+  color: #1a1a1a;
+  font-family: bold;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.horizontalLine {
+  width: 1px;
+  border: 1px solid #7f7f7f;
+  height: auto;
+  margin: 0 20px;
+}
+
+.jobDate {
+  color: #7f7f7f;
+  font-family: regular;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.companyName {
+  color: #4f439a;
+  font-family: regular;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.companyLocation {
+  color: #1a1a1a;
+  font-family: regular;
+  font-size: 14px;
+  line-height: 22px;
+  padding-top: 5px;
+}
+
+.companyDescription {
+  color: #333333;
+  font-family: regular;
+  font-size: 14px;
+  line-height: 22px;
+  padding-top: 15px;
+}
+
+.addAccomplishment {
+  padding-top: 50px;
 }
