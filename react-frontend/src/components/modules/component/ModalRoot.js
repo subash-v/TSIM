@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import ModalPanel from "./ModalPanel";
 import Loadable from "react-loadable";
 import DemoModalContainer from "../container/DemoModalContainer";
+import SliderComponentContainer from '../container/SliderComponentContainer'
 const modalRoot = document.getElementById("modal-root");
 
 const Loader = () => {
@@ -46,6 +47,12 @@ export default class ModalRoot extends React.Component {
     const MODAL_COMPONENTS = {
       DemoModalContainer: (
         <DemoModalContainer
+          closeModal={() => this.handleClose()}
+          {...this.props.ownProps}
+        />
+      ),
+      SliderComponentContainer: (
+        <SliderComponentContainer
           closeModal={() => this.handleClose()}
           {...this.props.ownProps}
         />

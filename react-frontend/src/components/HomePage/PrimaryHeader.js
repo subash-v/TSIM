@@ -31,13 +31,14 @@ export default class PrimaryHeader extends Component {
     }
   };
   showModal = () => {
-    // if(this.props.showCliqCenterModule)
-    // {
+    // if (this.props.showCliqCenterModule) {
     //   this.props.showCliqCenterModule()
     // }
+    if (this.props.showsliderComponent) {
+      this.props.showsliderComponent()
+    }
   };
   render() {
-    console.log(this.props);
     return (
       <div className={styles.headerBase}>
         <div
@@ -53,34 +54,34 @@ export default class PrimaryHeader extends Component {
             <div className={styles.linkHolder}>
               {!this.props.login
                 ? links.map((value, i) => {
-                    return (
-                      <div
-                        className={styles.linkText}
-                        onClick={() => this.handleredirect(value.routeLink)}
-                      >
-                        <IconWithHeader
-                          image={value.data}
-                          size={32}
-                          header={value.name}
-                        />
-                      </div>
-                    );
-                  })
+                  return (
+                    <div
+                      className={styles.linkText}
+                      onClick={() => this.handleredirect(value.routeLink)}
+                    >
+                      <IconWithHeader
+                        image={value.data}
+                        size={32}
+                        header={value.name}
+                      />
+                    </div>
+                  );
+                })
                 : logedInLinks.map((value, i) => {
-                    return (
-                      <div
-                        className={styles.loglinkText}
-                        onClick={() => this.handleredirect(value.routeLink)}
-                      >
-                        <IconWithHeader
-                          image={value.data}
-                          size={25}
-                          header={value.name}
-                          fontSize={10}
-                        />
-                      </div>
-                    );
-                  })}
+                  return (
+                    <div
+                      className={styles.loglinkText}
+                      onClick={() => this.handleredirect(value.routeLink)}
+                    >
+                      <IconWithHeader
+                        image={value.data}
+                        size={25}
+                        header={value.name}
+                        fontSize={10}
+                      />
+                    </div>
+                  );
+                })}
             </div>
           </div>
           <div className={styles.buttonSearchholder}>
