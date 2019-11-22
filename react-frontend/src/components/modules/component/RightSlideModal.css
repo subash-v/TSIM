@@ -1,5 +1,5 @@
 .base {
-  width: auto;
+  width: 50vw;
   height: 100vh;
   background: #ffffff;
   animation: slideInLeft 200ms forwards;
