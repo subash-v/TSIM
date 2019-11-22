@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import styles from "./MorePage.css";
-import IconWithHeader from "../../core/IconWithHeader";
 import landingImage from "../../images/landing-page-Event.svg";
 import Icon from "../../core/Icon";
 import CenteredContent from "../../core/CenteredContent";
-import PrimaryHeader from "./PrimaryHeader";
+import PrimaryHeaderContainer from "./container/PrimaryHeaderContainer";
 const more = [
   { data: landingImage, name: "EVENTS" },
   { name: "RESOURCES" },
@@ -18,7 +17,7 @@ export default class MorePage extends Component {
   render() {
     return (
       <div className={styles.moreHolder}>
-        <PrimaryHeader history={this.props.history} />
+        <PrimaryHeaderContainer history={this.props.history} />
         <CenteredContent>
           <div className={styles.more}>
             <div className={styles.logoHolder}>

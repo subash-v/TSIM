@@ -76,7 +76,7 @@
 
   font-size: 10px;
 }
-@media screen and (max-width: 1380px) {
+/* @media screen and (max-width: 1380px) {
   .linkText {
     font-size: 12px;
     padding: 0px 8px;
@@ -87,4 +87,4 @@
   .logoHolder {
     width: 20%;
   }
-}
+} */
