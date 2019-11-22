@@ -23,7 +23,10 @@ const mapStateToProps = state => {
   };
 };
 const PrimaryHeaderContainer = withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(PrimaryHeader)
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(PrimaryHeader)
 );
 
 export default PrimaryHeaderContainer;

@@ -9,6 +9,7 @@ import SignUpModuleContainer from "../container/SignUpModuleContainer";
 import SignUp from "../../SignUp/SignUp";
 import FilterModule from "./FilterModule";
 import ForgotPassword from "../../ForgotPassword/ForgotPassword";
+import SelectEventContainer from "../container/SelectEventContainer";
 const modalRoot = document.getElementById("modal-root");
 
 const Loader = () => {
@@ -76,6 +77,12 @@ export default class ModalRoot extends React.Component {
       ),
       ForgotPassword: (
         <ForgotPassword
+          closeModal={() => this.handleClose()}
+          {...this.props.ownProps}
+        />
+      ),
+      SelectEventModule: (
+        <SelectEventContainer
           closeModal={() => this.handleClose()}
           {...this.props.ownProps}
         />
