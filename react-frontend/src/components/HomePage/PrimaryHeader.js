@@ -13,9 +13,10 @@ import IconWithHeader from "../../core/IconWithHeader";
 import ProfileImage from "../../core/ProfileImage";
 
 const links = [
-  { data: HOME, name: "HOME", routeLink: "/" },
-  { data: NETWORK, name: "NETWORK", routeLink: "/network" },
-  { data: MORE, name: "MORE", routeLink: "/events" }
+  { data: profile, name: "PROFILE", routeLink: "/profile" },
+  { data: HOME, name: "GUIDE", routeLink: "/seek-guide" },
+  { data: NETWORK, name: "EVENTS", routeLink: "/event" },
+  { data: MORE, name: "RESOURCES", routeLink: "/resours" }
 ];
 const logedInLinks = [
   { data: HOME, name: "HOME", routeLink: "/" },

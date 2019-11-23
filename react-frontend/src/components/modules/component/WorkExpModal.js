@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import BottomSlideModal from "./BottomSlideModal";
 import WorkIcon from "./WorkIcon"
-import icon1 from "./Images/Awards-line.svg";
-import icon2 from "./Images/Certification Line.svg";
-import icon3 from "./Images/Education-line.svg";
-import icon4 from "./Images/Job-line.svg";
+import icon1 from "../../../images/Awards-line.svg";
+import icon2 from "../../../images/Certification Line.svg";
+import icon3 from "../../../images/Education-line.svg";
+import icon4 from "../../../images/Job-line.svg";
 import Button from "../../../core/Button";
 import Input from "./Input";
 import Textarea from "./Textarea";
@@ -20,7 +20,6 @@ const IconType=
 export default class WorkExpModal extends Component {
   state = { active: "" };
   handleClick = val => {
-    console.log(val);
     this.setState({
       active: val
     });

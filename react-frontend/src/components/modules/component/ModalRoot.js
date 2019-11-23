@@ -11,7 +11,9 @@ import FilterModule from "./FilterModule";
 import ForgotPassword from "../../ForgotPassword/ForgotPassword";
 import SelectEventContainer from "../container/SelectEventContainer";
 import ProfileModalContainer from "../container/ProfileModalContainer";
-import WorkExpModalContainer from "../container/WorkExpModalContainer";
+import Slider from "./SliderComponent/Slider";
+import SliderComponent from "./SliderComponent/SliderComponent";
+//import WorkExpModalContainer from "../container/WorkExpModalContainer";
 const modalRoot = document.getElementById("modal-root");
 
 const Loader = () => {
@@ -95,8 +97,14 @@ export default class ModalRoot extends React.Component {
           {...this.props.ownProps}
         />
       ),
-      WorkExpModal: (
-        <WorkExpModalContainer
+      SignUpModule: (
+        <SignUpModuleContainer
+          closeModal={() => this.handleClose()}
+          {...this.props.ownProps}
+        />
+      ),
+      Slider: (
+        <SliderComponent
           closeModal={() => this.handleClose()}
           {...this.props.ownProps}
         />
