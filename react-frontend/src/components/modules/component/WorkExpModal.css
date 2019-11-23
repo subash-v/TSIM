@@ -32,7 +32,7 @@
   padding-top: 19px;
   padding-bottom: 17px;
 }
-.inputbox {
+.inputbox[type="text"] {
   box-sizing: border-box;
   height: 50px;
   width: 540px;
@@ -40,6 +40,7 @@
   border-radius: 5px;
   padding: 15px;
 }
+
 .txtarea {
   width: 540px;
   height: 150px;
@@ -67,4 +68,13 @@
   display: flex;
   justify-content: flex-end;
   padding: 20px 30px 30px 30px;
+}
+.workicon {
+  display: flex;
+}
+.active {
+  background-color: #4f439a;
+}
+.radio {
+  height: 10px;
 }

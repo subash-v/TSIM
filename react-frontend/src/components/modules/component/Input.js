@@ -9,6 +9,7 @@ export default class Input extends Component {
           className={styles.inputbox}
           type={this.props.type}
           placeholder={this.props.placeholder}
+          name={this.props.name}
         />
       </div>
     );

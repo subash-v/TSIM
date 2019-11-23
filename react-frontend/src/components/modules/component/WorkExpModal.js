@@ -1,11 +1,30 @@
 import React, { Component } from "react";
 import BottomSlideModal from "./BottomSlideModal";
-
+import WorkIcon from "./WorkIcon"
+import icon1 from "./Images/Awards-line.svg";
+import icon2 from "./Images/Certification Line.svg";
+import icon3 from "./Images/Education-line.svg";
+import icon4 from "./Images/Job-line.svg";
 import Button from "../../../core/Button";
 import Input from "./Input";
 import Textarea from "./Textarea";
 import styles from "./WorkExpModal.css";
+const IconType=
+[
+  { name: "Awards" },
+  { name: "Certification" },
+  { name: "Edcation" },
+  { name: "Job" }
+];
+
 export default class WorkExpModal extends Component {
+  state = { active: "" };
+  handleClick = val => {
+    console.log(val);
+    this.setState({
+      active: val
+    });
+  };
   render() {
     return (
       <BottomSlideModal width="auto">
@@ -14,11 +33,29 @@ export default class WorkExpModal extends Component {
             <div className={styles.profileheader}>Edit Work Experience</div>
           </div>
           <div className={styles.brdr}></div>
-
+       <div className={styles.workicon}>  
+       {IconType.map(val => {
+              return (
+                <WorkIcon src={icon1}
+                  onClick={() => this.handleClick(val.name)}
+                  selected={this.state.active === val.name ? true : false}
+                >
+                  {val.name}
+                </WorkIcon>
+              );
+            })}</div> 
           <div className={styles.inpcont}>
-            <Input className={styles.input} type="text"></Input>
-
-            <Input className={styles.Input} type="text"></Input>
+          <div>
+          <Input classname={styles.radio} type="radio" name="type"></Input> 
+          <Input type="radio" name="type"></Input>
+          </div>
+            <Input className={styles.input} type="text" placeholder="Designation/Job Position*"></Input>
+            <Input className={styles.Input} type="text" placeholder="
+Organisation/Company*"></Input>
+<Input className={styles.Input} type="text" placeholder="
+Industry*"></Input>
+<Input className={styles.Input} type="text" placeholder="
+Location"></Input>
 
             <div className={styles.label}>Professional Summary</div>
             <div>
