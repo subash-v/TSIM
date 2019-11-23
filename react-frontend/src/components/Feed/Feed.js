@@ -3,6 +3,7 @@ import styles from "./Feed.css";
 import CenteredContent from "../../core/CenteredContent";
 import profileImage from "../Images/b.jpg";
 import Image from "../../core/Image";
+import VerticalStatus from "./VerticalStatus";
 const data = [
   {
     data: profileImage
@@ -42,6 +43,9 @@ export default class Feed extends Component {
     };
     return (
       <div>
+        <div className={styles.indicatorHolder}>
+          <VerticalStatus first="complete" second="active" third="incompele" />
+        </div>
         <CenteredContent>
           <div className={styles.dataHolderWrapper}>
             <div className={styles.leftSidePannel}>

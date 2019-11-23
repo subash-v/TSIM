@@ -75,3 +75,9 @@
   text-align: center;
   cursor: pointer;
 }
+.indicatorHolder {
+  width: 100%;
+  max-width: 500px;
+  margin: 30px auto 30px;
+  height: auto;
+}
