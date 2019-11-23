@@ -47,6 +47,52 @@ export default class Feed extends Component {
           <VerticalStatus first="complete" second="active" third="incompele" />
         </div>
         <CenteredContent>
+          <div className={styles.imageDisplaySection}>
+            <div className={styles.leftImage}>
+              <div className={styles.leftImgCont}>
+                <img
+                  src={profileImage}
+                  width="100%"
+                  height="100%"
+                  className={styles.image}
+                />
+              </div>
+            </div>
+            <div className={styles.rightImageHolder}>
+              <div className={styles.smallImage}>
+                <img
+                  src={profileImage}
+                  width="100%"
+                  height="100%"
+                  className={styles.image}
+                />
+              </div>
+              <div className={styles.smallImage}>
+                <img
+                  src={profileImage}
+                  width="100%"
+                  height="100%"
+                  className={styles.image}
+                />
+              </div>
+              <div className={styles.smallImage}>
+                <img
+                  src={profileImage}
+                  width="100%"
+                  height="100%"
+                  className={styles.image}
+                />
+              </div>
+              <div className={styles.smallImage}>
+                <img
+                  src={profileImage}
+                  width="100%"
+                  height="100%"
+                  className={styles.image}
+                />
+              </div>
+            </div>
+          </div>
           <div className={styles.dataHolderWrapper}>
             <div className={styles.leftSidePannel}>
               <div className={styles.dataDiv}>john</div>

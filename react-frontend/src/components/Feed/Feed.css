@@ -81,3 +81,41 @@
   margin: 30px auto 30px;
   height: auto;
 }
+.imageDisplaySection {
+  width: 100%;
+  height: auto;
+  display: flex;
+  margin-bottom: 15px;
+}
+.leftImage {
+  width: 30%;
+  height: auto;
+  min-height: 300px;
+  display: flex;
+  padding: 0.5%;
+}
+.leftImgCont {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  border: 1px solid red;
+}
+.rightImageHolder {
+  width: 70%;
+  height: auto;
+  display: flex;
+  padding-left: 0.5%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.smallImage {
+  width: 49%;
+  height: 150px;
+  display: flex;
+  border: 1px solid red;
+  margin: 0.5%;
+}
+.image {
+  object-fit: cover;
+  object-position: center;
+}
