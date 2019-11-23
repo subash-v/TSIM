@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import SelectEventModule from "../component/SelectEventModule";
+import ProfileModal from "../component/ProfileModal";
 import { showModal, CENTER_MODULE_DEMO } from "../modal.actions.js";
 const mapDispatchToProps = dispatch => {
   return {
@@ -15,11 +15,11 @@ const mapStateToProps = state => {
     loading: state
   };
 };
-const SelectEventContainer = withRouter(
+const ProfileModalContainer = withRouter(
   connect(
     mapStateToProps,
     mapDispatchToProps
-  )(SelectEventModule)
+  )(ProfileModal)
 );
 
-export default SelectEventContainer;
+export default ProfileModalContainer;

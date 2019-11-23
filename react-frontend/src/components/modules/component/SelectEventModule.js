@@ -11,6 +11,7 @@ const eventType = [
 export default class SelectEventModule extends Component {
   state = { active: "" };
   handleClick = val => {
+    console.log(val);
     this.setState({
       active: val
     });
