@@ -4,19 +4,93 @@ import PrimaryHeader from "../HomePage/PrimaryHeader";
 import CenteredContent from "../../core/CenteredContent";
 import Milestone from "../../core/Milestone";
 import Skills from "../Skills/Skills";
+import ToolTip from "../../core/ToolTip";
+import Button from "../../core/Button";
 
 const data = [{}, {}, {}, {}, {}];
-
-const work = [{}, {}, {}, {}];
-const education = [{}, {}, {}, {}];
-const certification = [{}, {}, {}, {}];
-const awards = [{}, {}, {}, {}];
 
 export default class Profile extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      tour1: false,
+      tour2: false,
+      tour3: false,
+      tour4: false,
+      tour5: false,
+      tour6: false,
+      tour7: false,
+      tourcount: 0
+    };
   }
+
+  // incrementTime = () => {
+  //   if (this.state.tour1 === false && this.state.tourcount === 1) {
+  //     this.setState({
+  //       tour1: true,
+  //       tourcount: this.state.tourcount + 1
+  //     });
+  //   } else if (this.state.tour2 === false && this.state.tourcount === 2) {
+  //     this.setState({
+  //       tour2: true,
+  //       tourcount: this.state.tourcount + 1
+  //     });
+  //   } else if (this.state.tour3 === false && this.state.tourcount === 3) {
+  //     this.setState({
+  //       tour3: true,
+  //       tourcount: this.state.tourcount + 1
+  //     });
+  //   } else if (this.state.tour4 === false && this.state.tourcount === 4) {
+  //     this.setState({
+  //       tour4: true,
+  //       tourcount: this.state.tourcount + 1
+  //     });
+  //   } else if (this.state.tour5 === false && this.state.tourcount === 5) {
+  //     this.setState({
+  //       tour5: true,
+  //       tourcount: this.state.tourcount + 1
+  //     });
+  //   } else if (this.state.tour6 === false && this.state.tourcount === 6) {
+  //     this.setState({
+  //       tour6: true,
+  //       tourcount: this.state.tourcount + 1
+  //     });
+  //   } else if (this.state.tour7 === false && this.state.tourcount === 7) {
+  //     this.setState({
+  //       tour7: true,
+  //       tourcount: this.state.tourcount + 1
+  //     });
+  //   } else {
+  //     console.log("end the tour");
+  //   }
+  // };
+
+  startTour = () => {
+    console.log(this.state);
+    if (this.state.tourcount <= 0 && !this.state.tour1) {
+      this.setState({
+        tourcount: this.state.tourcount + 1,
+        tour1: true
+      });
+      console.log(this.state);
+    }
+    // if (this.state.tourcount === 1) {
+    //   var varss = setInterval(() => {
+    //     this.incrementTime();
+    //   }, 1000);
+    // }
+    // if (this.state.tourcount > 7) {
+    //   clearInterval(varss);
+    // }
+  };
+
+  // closeToolTip = () => {
+  //   this.setState({
+  //     tourcount: 0
+  //   });
+  // };
+
+  componentDidMount = () => {};
 
   render() {
     return (
@@ -45,6 +119,34 @@ export default class Profile extends Component {
                   <div className={styles.profileConnections}>
                     <div className={styles.connections}>
                       {this.props.connections ? "" : 0}+ Connections
+                      {this.state.tourcount === 1 && (
+                        <ToolTip
+                          toolTipLeft={"130px"}
+                          toolTipTop={"-20px"}
+                          left={"-8px"}
+                          top={"50px"}
+                          // handleModal={this.state.tour1}
+                          children={
+                            <React.Fragment>
+                              <div className={styles.toolTipHeader}>
+                                Tell us about yourself
+                              </div>
+                              <div className={styles.toolTipBody}>
+                                Let other users know more about you
+                              </div>
+                              <Button
+                                type="primary"
+                                backgroundColor={"#AD5DA3"}
+                                fontColor={"#fff"}
+                                height={30}
+                                width={80}
+                                label="Got It!"
+                                borderRadius={2}
+                              />
+                            </React.Fragment>
+                          }
+                        />
+                      )}
                     </div>
                     <div className={styles.uploadCvButton}>UPLOAD CV</div>
                   </div>
@@ -71,6 +173,16 @@ export default class Profile extends Component {
                       <div className={styles.uploadText}>
                         Upload intro video
                       </div>
+                    </div>
+                    <div
+                      onClick={() => this.startTour()}
+                      className={
+                        // this.state.tourcount > 0
+                        //   ? styles.disableTour
+                        styles.enableTour
+                      }
+                    >
+                      Take Tour
                     </div>
                   </div>
                 </div>

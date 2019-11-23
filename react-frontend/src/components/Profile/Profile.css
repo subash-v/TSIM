@@ -114,6 +114,7 @@
 
 .profileConnections {
   padding-top: 25px;
+  position: relative;
 }
 
 .profileConnections {
@@ -380,4 +381,43 @@
 
 .addAccomplishment {
   padding-top: 50px;
+}
+
+.enableTour {
+  cursor: pointer;
+  pointer-events: all;
+  text-align: right;
+  color: #4f439a;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 19px;
+  padding-bottom: 5px;
+}
+
+.disableTour {
+  cursor: default;
+  pointer-events: none;
+  text-align: right;
+  color: #4f439a;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 19px;
+  padding-bottom: 5px;
+}
+
+/* For Tool tip */
+
+.toolTipHeader {
+  font-size: 18px;
+  font-family: bold;
+  line-height: 24px;
+  color: #ffffff;
+  padding-bottom: 5px;
+}
+
+.toolTipBody {
+  font-size: 14px;
+  line-height: 17px;
+  color: #ffffff;
+  padding-bottom: 5px;
 }
