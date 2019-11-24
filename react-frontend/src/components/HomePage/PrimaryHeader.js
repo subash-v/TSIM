@@ -208,5 +208,5 @@ export default class PrimaryHeader extends Component {
   }
 }
 PrimaryHeader.defaultProps = {
-  login: true
+  login: false
 };
