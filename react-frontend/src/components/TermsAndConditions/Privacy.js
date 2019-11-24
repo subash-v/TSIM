@@ -18,7 +18,7 @@ export default class PrivacyPolicy extends Component {
   render() {
     return (
       <React.Fragment>
-        <PrimaryHeaderContainer history={this.props.history} />
+        <PrimaryHeaderContainer />
         <div className={styles.base}>
           <div className={styles.container}>
             <h2>Privacy Policy</h2>

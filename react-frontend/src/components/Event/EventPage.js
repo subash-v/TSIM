@@ -67,7 +67,7 @@ export default class EventPage extends Component {
       <React.Fragment>
         <div className={styles.base}>
           <div className={styles.headerHolder}>
-            <PrimaryHeaderContainer history={this.props.history} />
+            <PrimaryHeaderContainer />
           </div>
           <CenteredContent>
             <div className={styles.container}>

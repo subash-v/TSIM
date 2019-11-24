@@ -15,7 +15,11 @@
 .logoLinkHolder {
   width: 50%;
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: bottom;
+}
+.loggedInHolder {
+  composes: logoLinkHolder;
+  width: 60%;
 }
 .logoHolder {
   cursor: pointer;
@@ -30,6 +34,10 @@
   width: 50%;
   display: inline-block;
 }
+.loggedinButton {
+  composes: buttonSearchholder;
+  width: 40%;
+}
 .logoHolder {
   width: 165px;
   height: 40px;
@@ -43,6 +51,11 @@
   font-family: bold;
   cursor: pointer;
   color: #1a1a1a;
+}
+.showLine {
+  composes: linkText;
+  border-bottom: 1px solid #4f439a;
+  color: #4f439a;
 }
 .search {
   cursor: pointer;

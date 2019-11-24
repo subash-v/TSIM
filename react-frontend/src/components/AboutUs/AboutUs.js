@@ -22,7 +22,7 @@ export default class TermsOfService extends Component {
   render() {
     return (
       <React.Fragment>
-        <PrimaryHeaderContainer history={this.props.history} />
+        <PrimaryHeaderContainer />
 
         <div className={styles.banner}>
           <div className={styles.title}>The star in me</div>
