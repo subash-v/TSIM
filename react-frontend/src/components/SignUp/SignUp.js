@@ -25,7 +25,6 @@ export default class SignUp extends React.Component {
           <div onClick={this.props.closeModal} className={styles.backCircle}>
             <img src={Back} className={styles.backImg} alt="" />
           </div>
-          <div className={styles.button}></div>
           <div className={styles.signUpContainer}>
             <div className={styles.welTxt}>
               <div className={styles.joinTxt}>Join</div>

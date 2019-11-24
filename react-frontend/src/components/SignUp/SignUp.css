@@ -1,11 +1,10 @@
 .signUpContainer {
   width: 100%;
   height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 100px;
-  padding: 0px 107px 0 200px;
+  margin-top: 120px;
+  overflow: auto;
+  padding: 0px 107px 0 128px;
+  
 }
 
 .welTxt {
@@ -230,18 +229,10 @@ fieldset {
   border-bottom: none;
   border-right: none;
   text-align: center;
-  width: 750px;
-  /* margin-left: 120px; */
+  width: 530px;
+  padding-left: 260px;
   color: rgba(127, 127, 127, 0.5);
   font-size: 12px;
   font-weight: bold;
 }
 
-.button {
-  height: 22px;
-  width: 140px;
-  color: rgba(79, 67, 154, 0.5);
-  font-family: bold;
-  font-size: 14px;
-  line-height: 22px;
-}
