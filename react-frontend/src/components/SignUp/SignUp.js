@@ -29,12 +29,7 @@ export default class SignUp extends React.Component {
           <div className={styles.signUpContainer}>
             <div className={styles.welTxt}>
               <div className={styles.joinTxt}>Join</div>
-              <div
-                className={styles.starTxt}
-                onClick={() => this.props.showTour(this.props)}
-              >
-                The star in me
-              </div>
+              <div className={styles.starTxt}>The star in me</div>
               <div className={styles.welTxt}>
                 <div className={styles.joinTxt}>
                   <input
