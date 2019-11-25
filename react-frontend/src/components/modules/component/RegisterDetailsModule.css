@@ -11,9 +11,124 @@
   background-size: cover;
 }
 .modalBase {
-  width: 400px;
-  height: 395px;
+  width: 700px;
   background: #fff;
   animation: slideUp 300ms ease-in forwards;
   border-radius: 10px;
+}
+.registerHeader {
+  width: 100%;
+  display: inline-block;
+  padding: 25px 30px;
+  border-radius: 10px 10px 0 0;
+  background-color: #ebeced;
+}
+.icon {
+  display: inline-block;
+  padding-right: 18px;
+}
+.registerText {
+  display: inline-block;
+  color: #333333;
+  font-family: bold;
+  font-size: 18px;
+  line-height: 24px;
+  vertical-align: top;
+}
+.verticalScroller {
+  padding: 20px 58px;
+}
+.selectHeader {
+  padding-top: 20px;
+  width: 100%;
+  color: #4f439a;
+  font-family: bold;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+}
+.buildingBlocks {
+  padding-top: 30px;
+  color: #1a1a1a;
+  font-family: bold;
+  font-size: 18px;
+  line-height: 26px;
+}
+.advanceText {
+  color: #000000;
+  font-family: bold;
+  font-size: 12px;
+  line-height: 24px;
+  padding: 8px 0px;
+}
+.iconWithText {
+  padding: 4px 0px;
+}
+.subText {
+  padding-left: 5px;
+  color: #1a1a1a;
+  font-family: regular;
+  font-size: 14px;
+  line-height: 20px;
+  display: inline-block;
+  vertical-align: top;
+}
+.personHolder {
+  border: 1px solid #b2b2b2;
+  padding: 14px 0px;
+  border-left: none;
+  border-right: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 14px;
+}
+.personText {
+  color: #1a1a1a;
+  font-family: bold;
+  font-size: 14px;
+  line-height: 22px;
+}
+.cost {
+  color: #1a1a1a;
+  font-family: regular;
+  font-size: 14px;
+  line-height: 20px;
+}
+.counterText {
+  padding: 0px 20px;
+  vertical-align: middle;
+  color: #4f439a;
+  font-family: bold;
+  font-size: 24px;
+  line-height: 33px;
+  text-align: center;
+}
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+.contentHolder {
+  padding: 0px 30px;
+}
+.counter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.amountHolder {
+  composes: personHolder;
+  border: none;
+  padding: 6px 0px 30px 0px;
+}
+.total {
+  color: #0d1617;
+  font-family: bold;
+  font-size: 12px;
+  line-height: 20px;
+}
+.amount {
+  color: #383737;
+  font-family: bold;
+  font-size: 18px;
 }
