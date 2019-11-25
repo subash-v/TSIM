@@ -108,7 +108,9 @@ export default class Connection extends Component {
       limitForSent: this.state.limitForSent + 4
     });
   };
-
+  onLoadMore = () => {
+    this.props.showAllConnectionModal();
+  };
   render() {
     return (
       <div>
@@ -259,7 +261,10 @@ export default class Connection extends Component {
                     );
                   })}
                 {this.state.limitForSent === sent.length ? null : (
-                  <div className={styles.loadMore} onClick={this.onLoadMore}>
+                  <div
+                    className={styles.loadMore}
+                    onClick={() => this.onLoadMore()}
+                  >
                     <div className={styles.loadMoreText}>SEE MORE</div>
                   </div>
                 )}

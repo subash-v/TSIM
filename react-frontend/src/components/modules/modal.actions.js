@@ -12,6 +12,7 @@ export const PROFILE_MODAL = "ProfileModal";
 export const WORKEXP_MODAL = "WorkExpModal";
 export const SLIDER_COMPONENT = "Slider";
 export const REGISTER_DETAILS_MODAL = "RegisterDetailsModal";
+export const ALL_CONNECTION_MODAL = "AllConnectionModal";
 
 export function showModal(type, ownProps) {
   const scrollPosition =

@@ -12,9 +12,14 @@
 }
 .modalBase {
   width: 700px;
+  max-height: 700px;
+  overflow: scroll;
   background: #fff;
   animation: slideUp 300ms ease-in forwards;
   border-radius: 10px;
+}
+.modalBase::-webkit-scrollbar {
+  display: none;
 }
 .registerHeader {
   width: 100%;
@@ -74,10 +79,8 @@
   vertical-align: top;
 }
 .personHolder {
-  border: 1px solid #b2b2b2;
+  border-top: 1px solid #b2b2b2;
   padding: 14px 0px;
-  border-left: none;
-  border-right: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -119,7 +122,8 @@
 .amountHolder {
   composes: personHolder;
   border: none;
-  padding: 6px 0px 30px 0px;
+  padding: 15px 0px 30px 0px;
+  border-top: 1px solid #b2b2b2;
 }
 .total {
   color: #0d1617;
@@ -131,4 +135,54 @@
   color: #383737;
   font-family: bold;
   font-size: 18px;
+}
+.dataHolder {
+  padding-right: 10px;
+  display: inline-block;
+}
+.accordianHolder {
+  padding: 10px 30px;
+  border: 1px solid #b2b2b2;
+  border-radius: 10px;
+}
+.remaining {
+  color: #ad5da3;
+  font-family: bold;
+  font-size: 12px;
+  line-height: 20px;
+}
+.inputHolder {
+  padding: 10px 0px;
+}
+.attenderHolder {
+}
+.button {
+  float: right;
+}
+.attendeStyle {
+  composes: amountHolder;
+  justify-content: flex-end;
+  padding-top: 10px 0px 30px 0px;
+}
+.orderHeaderHolder {
+  display: flex;
+  justify-content: space-between;
+  background: #b2b2b2;
+  padding: 10px 30px;
+  border: 1px solid #b2b2b2;
+  border-radius: 10px 10px 0px 0px;
+}
+.reviewHolder {
+  border: 1px solid #b2b2b2;
+  border-radius: 10px;
+}
+.reviewDetailsHolder {
+  padding: 10px 30px;
+}
+.attendeeText {
+  padding: 20px 0px 10px 0px;
+  line-height: 22px;
+  font-size: 14px;
+  font-family: regular;
+  color: #333;
 }

@@ -388,7 +388,7 @@ class Connections extends Component {
               })} */}
           </div>
           <div className={styles.requestSection}>
-            <ConnectionRequest />
+            <ConnectionRequest {...this.props} />
           </div>
         </div>
       </React.Fragment>

@@ -1,4 +1,7 @@
 .base {
+  position: absolute;
+  top: 0px;
+  right: 0px;
   width: 50vw;
   height: 100vh;
   float: right;
