@@ -4,12 +4,6 @@
   position: fixed;
   top: 0;
   left: 0;
-  display: flex;
-  display: -webkit-flex;
-  align-items: center;
-  -webkit-align-items: center;
-  justify-content: center;
-  -webkit-justify-content: center;
   z-index: 200;
   overflow: hidden;
 }

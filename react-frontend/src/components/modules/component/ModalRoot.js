@@ -13,6 +13,7 @@ import SelectEventContainer from "../container/SelectEventContainer";
 import ProfileModalContainer from "../container/ProfileModalContainer";
 import Slider from "./SliderComponent/Slider";
 import SliderComponent from "./SliderComponent/SliderComponent";
+import RegisterDetailsModule from "./RegisterDetailsModule";
 //import WorkExpModalContainer from "../container/WorkExpModalContainer";
 const modalRoot = document.getElementById("modal-root");
 
@@ -108,19 +109,25 @@ export default class ModalRoot extends React.Component {
           closeModal={() => this.handleClose()}
           {...this.props.ownProps}
         />
+      ),
+      RegisterDetailsModal: (
+        <RegisterDetailsModule
+          closeModal={() => this.handleClose()}
+          {...this.props.ownProps}
+        />
       )
     };
 
     let SelectedModal = MODAL_COMPONENTS[this.props.modalType];
     // let SelectedModal = MODAL_COMPONENTS["centerModalDemo"];
     const Modal = this.props.modalStatus ? (
-      <ModalPanelRight
+      <ModalPanel
         closeModal={() => {
           this.handleClose();
         }}
       >
         {SelectedModal}
-      </ModalPanelRight>
+      </ModalPanel>
     ) : null;
 
     return ReactDOM.createPortal(Modal, this.el);
