@@ -1,7 +1,6 @@
 import React from "react";
-import styles from "../MyProfile/MyProfile.css";
-import Input2 from "../../../core/Input2";
-
+import styles from "../Settings/MyProfile.css";
+import Input2 from "../../core/Input2";
 
 export default class MyProfile extends React.Component {
   constructor() {
@@ -10,7 +9,7 @@ export default class MyProfile extends React.Component {
       name: "",
       designation: "",
       location: "",
-      summary:""
+      summary: ""
     };
   }
 
@@ -28,7 +27,7 @@ export default class MyProfile extends React.Component {
                   <Input2
                     placeholder="Pratiksha Gupta"
                     value={this.state.name}
-                    onChange={val => this.setState({name:val})}
+                    onChange={val => this.setState({ name: val })}
                     textStyle={{ fontSize: 14 }}
                     height={50}
                     boxy={true}
@@ -46,7 +45,7 @@ export default class MyProfile extends React.Component {
                   <Input2
                     placeholder="Interaction Designer | Visual Designer"
                     value={this.state.designation}
-                    onChange={val => this.setState({designation:val})}
+                    onChange={val => this.setState({ designation: val })}
                     textStyle={{ fontSize: 14 }}
                     height={50}
                     boxy={true}
@@ -64,7 +63,7 @@ export default class MyProfile extends React.Component {
                   <Input2
                     placeholder="Bengaluru, India"
                     value={this.state.location}
-                    onChange={val => this.setState({location:val})}
+                    onChange={val => this.setState({ location: val })}
                     textStyle={{ fontSize: 14 }}
                     height={50}
                     boxy={true}
@@ -80,7 +79,10 @@ export default class MyProfile extends React.Component {
                 <div className={styles.name}>Professional Summary</div>
                 <div>
                   <p className={styles.paragraph}>
-                  For ex:<br/> A Human resources leader with over 18 years of experienceacross Talent Management, HR Policy and Recruitment
+                    For ex:
+                    <br /> A Human resources leader with over 18 years of
+                    experienceacross Talent Management, HR Policy and
+                    Recruitment
                   </p>
                   {/* <Input2
                     placeholder="For ex:
@@ -107,8 +109,5 @@ export default class MyProfile extends React.Component {
         </div>
       </React.Fragment>
     );
-
   }
-
 }
-

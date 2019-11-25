@@ -41,3 +41,13 @@
 .accordionVal:last-child {
   border-bottom: none;
 }
+
+.activeCard {
+  color: #52409f;
+  font-family: regular;
+  font-size: 16px;
+  line-height: 24px;
+  padding-bottom: 16.5px;
+  border-bottom: 1px solid #b2b2b2;
+  cursor: pointer;
+}

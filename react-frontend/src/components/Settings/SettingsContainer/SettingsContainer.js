@@ -1,14 +1,13 @@
 import React from "react";
-import PrimaryHeaderContainer from "../HomePage/container/PrimaryHeaderContainer";
-import styles from "../Settings/Settings.css";
-import Accordion from "../../core/Accordion";
-import MyProfile from "../../components/Settings/MyProfile/MyProfile";
-import Password from "../../components/Settings/Password/Password";
-import Security from "../../components/Settings/Security/Security";
-import PrivacySettings from "../../components/Settings/PrivacySettings/PrivacySettings";
-import ContactInfo from "../../components/Settings/ContactInfo/ContactInfo";
-import ManageNotification from "../../components/Settings/ManageNotification/ManageNotification";
-
+import PrimaryHeaderContainer from "../../HomePage/container/PrimaryHeaderContainer";
+import styles from "../SettingsContainer/SettingsContainer.css";
+import Accordion from "../../../core/Accordion";
+import MyProfile from "../MyProfile";
+import Security from "../Security";
+import PrivacySettings from "../PrivacySettings";
+import ContactInfo from "../ContactInfo";
+import ManageNotification from "../ManageNotification";
+import ManageMembers from "../ManageMembers";
 const accData = [
   {
     title: "PROFILE SETTINGS",
@@ -63,7 +62,11 @@ export default class Settings extends React.Component {
                       {val.context.map(title => (
                         <p
                           onClick={title => this.rightDisplay(title)}
-                          className={styles.accordionVal}
+                          className={
+                            this.state.activeCard === title
+                              ? styles.activeCard
+                              : styles.accordionVal
+                          }
                         >
                           {title}
                         </p>
@@ -80,7 +83,8 @@ export default class Settings extends React.Component {
               <ManageNotification />
             ) : null}
             {this.state.activeCard === "Privacy" ? <PrivacySettings /> : null}
-            {this.state.activeCard === "Security" ? <Password /> : null}
+            {this.state.activeCard === "Security" ? <Security /> : null}
+            {this.state.activeCard === "Blocking" ? <ManageMembers /> : null}
           </div>
         </div>
       </div>

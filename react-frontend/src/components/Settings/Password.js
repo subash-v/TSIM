@@ -1,6 +1,6 @@
 import React from "react";
-import styles from "../Password/Password.css";
-import Input2 from "../../../core/Input2";
+import styles from "../Settings/Password.css";
+import Input2 from "../../core/Input2";
 
 export default class Password extends React.Component {
   constructor() {

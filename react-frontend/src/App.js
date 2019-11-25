@@ -14,15 +14,14 @@ import EventPageContainer from "./components/Event/container/EventPageContainer"
 import HomeContainer from "./components/HomePage/container/HomeContainer";
 import Profile from "./components/Profile/Profile";
 import Feed from "./components/Feed/Feed";
-import Settings from "./components/Settings/Settings";
+import Settings from "./components/Settings/SettingsContainer/SettingsContainer";
 import EventDetailsPageContainer from "./components/Event/container/EventDetailsPageContainer";
-
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={HomeContainer} />
+          <Route exact path="/" component={Settings} />
           <Route path="/blog" component={BlogFeed} />
           <Route path="/events" component={MorePage} />
           <Route path="/terms" component={Terms} />
