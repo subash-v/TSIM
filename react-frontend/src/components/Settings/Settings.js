@@ -36,14 +36,12 @@ export default class Settings extends React.Component {
   };
 
   rightDisplay = title => {
-    console.log("xelpxeekc====>", title.currentTarget.textContent);
     this.setState({
       activeCard: title.currentTarget.textContent
     });
   };
 
   render() {
-    console.log("ACTIVE_CARD", this.state.activeCard);
     return (
       <div>
         <PrimaryHeaderContainer />

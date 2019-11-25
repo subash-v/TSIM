@@ -15,6 +15,7 @@ import edit from "../../../images/Edit-profile.svg";
 import location from "../../../images/Location-white.svg";
 import date_blue from "../../../images/Date-blue.svg";
 import time_blue from "../../../images/time_blue.svg";
+import Counter from "../../general/Counter";
 export default class RegisterDetailsModule extends Component {
   constructor(props) {
     super(props);
@@ -29,7 +30,9 @@ export default class RegisterDetailsModule extends Component {
       mobileno: "",
       name2: "",
       email2: "",
-      mobileno2: ""
+      mobileno2: "",
+      counter: 1,
+      ticketCounter: []
     };
   }
   handleButtonClick = () => {
@@ -55,6 +58,35 @@ export default class RegisterDetailsModule extends Component {
   goBack = () => {
     if (this.state.Proceed != 1) {
       this.setState({ Proceed: this.state.Proceed - 1 });
+    }
+  };
+  setTicketCounter = val => {
+    this.setState({ counter: val });
+  };
+  setcounter = (val, name) => {
+    let newData = [];
+    let dataExist =
+      this.state.ticketCounter &&
+      this.state.ticketCounter.length > 0 &&
+      this.state.ticketCounter.find((ticket, i) => {
+        return ticket.name === name;
+      });
+    if (this.state.ticketCounter.length < 1) {
+      newData.push({ name: name, counter: val });
+      this.setState({ ticketCounter: newData });
+    } else {
+      if (dataExist) {
+        var index = this.state.ticketCounter.findIndex(function(ticket) {
+          return ticket.name == dataExist.name;
+        });
+        newData.push(...this.state.ticketCounter);
+        newData[index].name = name;
+        newData[index].counter = val;
+      } else {
+        newData.push(...this.state.ticketCounter);
+        newData.push({ name: name, counter: val });
+        this.setState({ selected: newData });
+      }
     }
   };
   onOpenAccordian = activeIndex => {
@@ -125,9 +157,10 @@ export default class RegisterDetailsModule extends Component {
                       <div className={styles.cost}>INR 1450 per person</div>
                     </div>
                     <div className={styles.counter}>
-                      <Icon image={sub} size={50} />
-                      <div className={styles.counterText}>1</div>
-                      <Icon image={add_fill} size={50} />
+                      <Counter
+                        value={this.state.counter}
+                        setvalue={val => this.setTicketCounter(val)}
+                      ></Counter>
                     </div>
                   </div>
                 </div>
@@ -192,9 +225,12 @@ export default class RegisterDetailsModule extends Component {
                                   </div>
                                 </div>
                                 <div className={styles.counter}>
-                                  <Icon image={sub} size={50} />
-                                  <div className={styles.counterText}>1</div>
-                                  <Icon image={add_fill} size={50} />
+                                  <Counter
+                                    value={this.state.counter}
+                                    setvalue={val =>
+                                      this.setcounter(val, details.heading)
+                                    }
+                                  ></Counter>
                                 </div>
                               </div>
                             );
@@ -408,11 +444,11 @@ const ticketDetails = [
         count: "14 remaining"
       },
       {
-        heading: "Early Bird Tickets",
+        heading: "snow Bird Tickets",
         subHeading: "INR 1450 per person"
       },
       {
-        heading: "Early Bird Tickets",
+        heading: "black Bird Tickets",
         subHeading: "INR 1450 per person",
         count: "Filling Fast!"
       }
