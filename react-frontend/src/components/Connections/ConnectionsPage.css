@@ -1,0 +1,115 @@
+.headerHolder {
+  margin-bottom: 20px;
+}
+
+.base {
+  width: auto;
+  height: auto;
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.userSection {
+  width: 70%;
+  border: 1px solid #b2b2b2;
+  border-radius: 5px;
+  display: flex;
+  height: auto;
+}
+
+.requestSection {
+  width: 25%;
+  border: 1px solid #b2b2b2;
+  border-radius: 5px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.header {
+  border-bottom: 1px solid #b2b2b2;
+  height: 60px;
+  display: flex;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.userData {
+  margin: 25px 0;
+}
+
+.headingLogo {
+  border: 1px solid black;
+  border-radius: 50%;
+  height: 44px;
+  width: 44px;
+  padding-right: 15px;
+}
+
+.main {
+  display: flex;
+  width: 100%;
+  height: auto;
+  padding: 20px 0;
+
+  border-bottom: 1px solid black;
+  align-items: end;
+}
+
+.bipart {
+  display: flex;
+  width: 100%;
+  height: auto;
+  flex-direction: column;
+  align-items: baseline;
+  padding-left: 15px;
+}
+
+.maining {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.textBase {
+  display: inline-block;
+  width: auto;
+  vertical-align: middle;
+  text-align: left;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.textHighLight {
+  composes: textBase;
+  display: block;
+  color: #1a1a1a;
+}
+
+.subTextHighLight {
+  composes: textBase;
+  display: block;
+  color: #7f7f7f;
+}
+
+.imagebase {
+  margin: 8px 0;
+  display: flex;
+}
+
+.button {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.button:first-child {
+  margin-right: 15px;
+}
+
+.buttonSection {
+  display: inline-block;
+
+  text-align: center;
+  height: auto;
+  padding-top: 15px;
+}
