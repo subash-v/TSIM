@@ -14,6 +14,7 @@ import EventPageContainer from "./components/Event/container/EventPageContainer"
 import HomeContainer from "./components/HomePage/container/HomeContainer";
 import Profile from "./components/Profile/Profile";
 import Feed from "./components/Feed/Feed";
+import EventDetailsPageContainer from "./components/Event/container/EventDetailsPageContainer";
 
 class App extends Component {
   render() {
@@ -28,7 +29,7 @@ class App extends Component {
           <Route path="/visual-profile" component={VisualProfilePage} />
           <Route path="/seek-guide" component={SeekGuide} />
           <Route path="/aboutUs" component={AboutUs} />
-          <Route path="/eventDetails" component={EventDetailsPage} />
+          <Route path="/eventDetails" component={EventDetailsPageContainer} />
           <Route path="/event" component={EventPageContainer} />
           <Route path="/profile" component={Profile} />
           <Route path="/feed" component={Feed} />

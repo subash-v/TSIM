@@ -152,7 +152,12 @@ export default class EventPage extends Component {
               </div>
               <div className={styles.storiesContainer}>
                 {carouselData.map((val, i) => (
-                  <div className={styles.card}>
+                  <div
+                    className={styles.card}
+                    onClick={() => {
+                      this.handleredirect("/eventDetails");
+                    }}
+                  >
                     <Card
                       image={""}
                       heading={val.title}

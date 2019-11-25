@@ -1,0 +1,19 @@
+.showCross {
+  content: "";
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  right: 20px;
+  top: 40px;
+  pointer-events: none;
+  background: url("./Images/canceltransperent.png") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.modalBase {
+  width: 400px;
+  height: 395px;
+  background: #fff;
+  animation: slideUp 300ms ease-in forwards;
+  border-radius: 10px;
+}

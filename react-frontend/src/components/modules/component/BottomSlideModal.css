@@ -1,9 +1,9 @@
 .base {
-  height: auto;
   position: fixed;
-  left: 25%;
   top: 25%;
-  transform: translateY(100%);
+  left: 30%;
+  margin-left: 50px;
+  transform: translate(-50%, -50%);
   animation: slideInUp 200ms forwards;
 }
 .base:before {
@@ -19,11 +19,10 @@
   background-size: cover;
 }
 .crossIconHide {
-   height: auto;
   position: fixed;
-  left: 25%;
   top: 25%;
-  transform: translateY(100%);
+  left: 30%;
+  transform: translate(-50%, -50%);
   animation: slideInUp 200ms forwards;
 }
 .crossIconHide:before {

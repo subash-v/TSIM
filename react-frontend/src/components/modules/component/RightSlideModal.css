@@ -1,6 +1,7 @@
 .base {
   width: 50vw;
   height: 100vh;
+  float: right;
   background: #ffffff;
   animation: slideInLeft 200ms forwards;
 }

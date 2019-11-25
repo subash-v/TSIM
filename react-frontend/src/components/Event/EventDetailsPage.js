@@ -69,7 +69,10 @@ export default class EventDetailsPage extends Component {
                       9 Seats are left!
                     </div>
                     <div className={styles.eventButtonConatiner}>
-                      <div className={styles.eventButton}>
+                      <div
+                        className={styles.eventButton}
+                        onClick={() => this.props.showRegisterDetailsModule()}
+                      >
                         <Button
                           type="primary"
                           backgroundColor={"#4F439A"}
