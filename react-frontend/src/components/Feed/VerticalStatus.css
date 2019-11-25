@@ -63,6 +63,7 @@
 .activeState {
   composes: indicator;
   background: #fff;
+  border: 1px solid #4f439a;
 }
 .inActiveState {
   composes: indicator;
