@@ -3,13 +3,21 @@ import styles from "./ToolTip.css";
 class ToolTip extends Component {
   constructor(props) {
     super(props);
-    this.state = { showScreen: false };
+    this.state = {
+      modalOpen: false
+    };
   }
+
+  closeButton = () => {
+    if (this.props.handleModal) {
+      this.props.handleModal();
+    }
+  };
 
   render() {
     return (
       <div
-        // modalOpen={this.state.showScreen}
+        modalOpen={this.props.showScreen}
         className={styles.base}
         style={{
           left: this.props.toolTipLeft,
@@ -22,7 +30,8 @@ class ToolTip extends Component {
       >
         <div
           className={styles.closeButton}
-          handleModal={this.props.closeButton}
+          handleModal={this.closeButton}
+          onClick={this.props.handleModal}
         ></div>
         <div
           className={styles.main}

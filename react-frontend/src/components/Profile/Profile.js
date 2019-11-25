@@ -20,7 +20,9 @@ export default class Profile extends Component {
       tour5: false,
       tour6: false,
       tour7: false,
-      tourcount: 0
+      tourcount: 0,
+      closeToolTip: false,
+      closeBanner: true
     };
   }
 
@@ -72,18 +74,13 @@ export default class Profile extends Component {
   };
 
   startTour = async () => {
-    console.log(this.state);
-    // if (this.state.tourcount) {
     await this.setState({
       tourcount: this.state.tourcount + 1,
       tour1: true
     });
-    console.log(this.state);
-    // }
   };
 
   closeToolTip = () => {
-    console.log("Hii");
     this.setState({
       tourcount: 0,
       tour1: false,
@@ -92,7 +89,16 @@ export default class Profile extends Component {
       tour4: false,
       tour5: false,
       tour6: false,
-      tour7: false
+      tour7: false,
+      closeToolTip: false,
+      closeBanner: false
+    });
+  };
+
+  closeBannerToolTip = () => {
+    console.log("HHHHHHHHHHH");
+    this.setState({
+      closeBanner: false
     });
   };
 
@@ -130,6 +136,7 @@ export default class Profile extends Component {
                           left={"-8px"}
                           top={"50px"}
                           handleModal={this.closeToolTip}
+                          showScreen={false}
                           children={
                             <React.Fragment>
                               <div className={styles.toolTipHeader}>
@@ -198,6 +205,7 @@ export default class Profile extends Component {
                           top={"50px"}
                           transform={"rotate(180deg)"}
                           handleModal={this.closeToolTip}
+                          showScreen={false}
                           children={
                             <React.Fragment>
                               <div className={styles.toolTipHeader}>
@@ -246,6 +254,7 @@ export default class Profile extends Component {
                     top={"-12px"}
                     transform={"rotate(90deg)"}
                     handleModal={this.closeToolTip}
+                    showScreen={false}
                     children={
                       <React.Fragment>
                         <div className={styles.toolTipHeader}>
@@ -296,6 +305,7 @@ export default class Profile extends Component {
                       left={"-8px"}
                       top={"60px"}
                       handleModal={this.closeToolTip}
+                      showScreen={false}
                       children={
                         <React.Fragment>
                           <div className={styles.toolTipHeader}>
@@ -489,11 +499,12 @@ export default class Profile extends Component {
                   {this.state.tourcount === 5 && (
                     <ToolTip
                       right={"-8px"}
-                      top={"90x"}
-                      toolTipLeft={"-302px"}
-                      toolTipTop={"-50px"}
+                      top={"70px"}
+                      toolTipLeft={"-540px"}
+                      toolTipTop={"-30px"}
                       transform={"rotate(180deg)"}
                       handleModal={this.closeToolTip}
+                      showScreen={false}
                       children={
                         <React.Fragment>
                           <div className={styles.toolTipHeader}>
@@ -523,12 +534,13 @@ export default class Profile extends Component {
                   <Skills title={"Languages"} skills={this.props.skills} />
                   {this.state.tourcount === 6 && (
                     <ToolTip
-                      toolTipLeft={"-302px"}
+                      toolTipLeft={"-510px"}
                       toolTipTop={"-40px"}
                       right={"-8px"}
                       top={"80px"}
                       transform={"rotate(180deg)"}
                       handleModal={this.closeToolTip}
+                      showScreen={false}
                       children={
                         <React.Fragment>
                           <div className={styles.toolTipHeader}>
@@ -557,12 +569,13 @@ export default class Profile extends Component {
                   {" "}
                   {this.state.tourcount === 7 && (
                     <ToolTip
-                      toolTipLeft={"-302px"}
+                      toolTipLeft={"-420px"}
                       toolTipTop={"-20px"}
                       right={"-8px"}
                       top={"60px"}
                       transform={"rotate(180deg)"}
                       handleModal={this.closeToolTip}
+                      showScreen={false}
                       children={
                         <React.Fragment>
                           <div className={styles.toolTipHeader}>
@@ -631,12 +644,14 @@ export default class Profile extends Component {
           </div>{" "}
           <div
             className={
-              this.state.tourcount > 0
+              this.state.tourcount > 0 || this.state.closeBanner === false
                 ? styles.removebanner
                 : styles.notificationToolTip
             }
           >
             <ToolTip
+              handleModal={this.closeBannerToolTip}
+              showScreen={this.state.closeBanner}
               children={
                 <div className={styles.toolTipBanner}>
                   <div className={styles.notifyIcon}></div>Get to know what can
