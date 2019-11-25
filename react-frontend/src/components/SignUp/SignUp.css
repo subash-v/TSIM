@@ -4,7 +4,6 @@
   margin-top: 120px;
   overflow: auto;
   padding: 0px 107px 0 128px;
-  
 }
 
 .welTxt {
@@ -50,8 +49,6 @@
 .img {
   height: 22px;
   width: 22px;
-  display: inline-block;
-  margin-left: 25px;
   border-radius: 5px;
   vertical-align: middle;
 }
@@ -68,9 +65,6 @@
   font-family: semibold;
   font-size: 14px;
   line-height: 22px;
-  text-align: justify;
-  display: inline-block;
-  margin-left: 10px;
 }
 
 .linkedinNfbContainer {
@@ -78,17 +72,12 @@
   height: auto;
   background-color: #4f439a;
   border-radius: 5px;
-  padding: 9px 25px 9px 25px;
+  padding: 9px 0;
   vertical-align: middle;
-  text-align: center;
-}
-
-.linkedinNfbContainer:first-child {
-  float: left;
-}
-
-.linkedinNfbContainer:last-child {
-  float: right;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .socialContainer {
@@ -96,16 +85,19 @@
   height: auto;
   margin-top: 15px;
   margin-bottom: 15px;
-  padding-bottom: 50px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 .nameContainer {
   width: 100%;
   height: auto;
   margin: 0px 0 15px 0;
+  display: flex;
+  justify-content: space-between;
 }
 .inputBox {
   width: 100%;
-  /* margin-right: 30px; */
   height: auto;
   border-radius: 5px;
   border: 1px solid rgba(127, 127, 127, 0.5);
@@ -116,18 +108,14 @@
   width: 49%;
   height: auto;
   border-radius: 5px;
-  display: inline-block;
   border: 1px solid rgba(127, 127, 127, 0.5);
-  margin-right: 5px;
 }
 
 .lastName {
   width: 49%;
   height: auto;
   border-radius: 5px;
-  display: inline-block;
   border: 1px solid rgba(127, 127, 127, 0.5);
-  margin-left: 5px;
 }
 .lastName:last-child {
   float: right;
@@ -144,7 +132,6 @@
 .circle {
   height: 11px;
   width: 11px;
-  /* background-color: #555; */
   border-radius: 50%;
   border: 1px solid #4f439a;
   display: inline-block;
@@ -152,7 +139,6 @@
 .backCircle {
   height: 55px;
   width: 55px;
-  /* background-color: #555; */
   border-radius: 50%;
   background-color: #ffffff;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15);
@@ -160,8 +146,6 @@
   top: 70px;
   left: 25px;
   text-align: center;
-
-  /* border: 1px solid #4f439a; */
 }
 
 .circleTxt {
@@ -188,10 +172,10 @@
   border-radius: 5px;
   display: inline-block;
   padding: 9px 25px 9px 25px;
-  /* margin-right: 5px; */
   color: white;
   text-align: center;
   margin: 15px 0 15px 0;
+  cursor: pointer;
 }
 
 .logInTxt {
@@ -229,10 +213,8 @@ fieldset {
   border-bottom: none;
   border-right: none;
   text-align: center;
-  width: 530px;
-  padding-left: 260px;
+  width: auto;
   color: rgba(127, 127, 127, 0.5);
   font-size: 12px;
   font-weight: bold;
 }
-
