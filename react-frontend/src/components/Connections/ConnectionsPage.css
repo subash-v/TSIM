@@ -14,14 +14,12 @@
   width: 70%;
   border: 1px solid #b2b2b2;
   border-radius: 5px;
-  display: flex;
   height: auto;
+  margin-right: 30px;
 }
 
 .requestSection {
   width: 25%;
-  border: 1px solid #b2b2b2;
-  border-radius: 5px;
   display: inline-block;
   vertical-align: middle;
 }
@@ -36,6 +34,7 @@
 
 .userData {
   margin: 25px 0;
+  padding: 0 15px;
 }
 
 .headingLogo {
@@ -43,7 +42,7 @@
   border-radius: 50%;
   height: 44px;
   width: 44px;
-  padding-right: 15px;
+  margin-right: 15px;
 }
 
 .main {
@@ -60,8 +59,8 @@
   display: flex;
   width: 100%;
   height: auto;
-  flex-direction: column;
-  align-items: baseline;
+  flex-direction: row;
+  align-items: center;
   padding-left: 15px;
 }
 
@@ -72,7 +71,7 @@
 
 .textBase {
   display: inline-block;
-  width: auto;
+  width: 100%;
   vertical-align: middle;
   text-align: left;
   font-weight: bold;
@@ -112,4 +111,31 @@
   text-align: center;
   height: auto;
   padding-top: 15px;
+}
+
+.heading {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.boldText {
+  font-family: bold;
+  padding: 0 5px;
+}
+
+.loadMore {
+  margin: 25px 0;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.loadMoreText {
+  display: inline-block;
+  box-sizing: border-box;
+  border: 1px solid #4f439a;
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: #4f439a;
 }
