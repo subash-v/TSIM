@@ -22,7 +22,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={Settings} />
+          <Route exact path="/" component={HomeContainer} />
           <Route path="/blog" component={BlogFeed} />
           <Route path="/events" component={MorePage} />
           <Route path="/terms" component={Terms} />

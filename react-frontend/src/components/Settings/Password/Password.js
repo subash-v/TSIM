@@ -2,13 +2,11 @@ import React from "react";
 import styles from "../Password/Password.css";
 import Input2 from "../../../core/Input2";
 
-
 export default class Password extends React.Component {
   constructor() {
     super();
     this.state = {
-      password: "",
-   
+      password: ""
     };
   }
 
@@ -37,18 +35,14 @@ export default class Password extends React.Component {
                     // //   this.handleOnFocusInput();
                     // }}
                   />
-
                 </div>
               </div>
-             
-                <div className={styles.saveButton}>Change Password</div>
+
+              <div className={styles.saveButton}>Change Password</div>
             </div>
           </div>
         </div>
       </React.Fragment>
     );
-
   }
-
 }
-
