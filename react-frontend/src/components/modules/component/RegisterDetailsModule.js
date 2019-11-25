@@ -47,9 +47,14 @@ export default class RegisterDetailsModule extends Component {
         review: "active"
       });
     } else {
-      if (this.state.Proceed < 5) {
+      if (this.state.Proceed < 6) {
         this.setState({ Proceed: this.state.Proceed + 1 });
       }
+    }
+  };
+  goBack = () => {
+    if (this.state.Proceed != 1) {
+      this.setState({ Proceed: this.state.Proceed - 1 });
     }
   };
   onOpenAccordian = activeIndex => {
@@ -67,18 +72,20 @@ export default class RegisterDetailsModule extends Component {
         <BottomSlideModal>
           <div className={styles.modalBase}>
             <div className={styles.registerHeader}>
-              <div className={styles.icon}>
+              <div className={styles.icon} onClick={() => this.goBack()}>
                 <Icon image={Back} size={22} />
               </div>
               <div className={styles.registerText}>Registration Details</div>
             </div>
-            <div className={styles.verticalScroller}>
-              <VerticalStatus
-                first={this.state.selectTicket}
-                second={this.state.attendedetails}
-                third={this.state.review}
-              />
-            </div>
+            {this.state.Proceed !== 6 && (
+              <div className={styles.verticalScroller}>
+                <VerticalStatus
+                  first={this.state.selectTicket}
+                  second={this.state.attendedetails}
+                  third={this.state.review}
+                />
+              </div>
+            )}
 
             <div className={styles.contentHolder}>
               <div className={styles.selectHeader}>
@@ -86,6 +93,8 @@ export default class RegisterDetailsModule extends Component {
                   ? "Add attendee details"
                   : this.state.Proceed === 5
                   ? "Review Order"
+                  : this.state.Proceed === 6
+                  ? "Payment Confirmation"
                   : "Select number of tickets"}
               </div>
               {this.state.Proceed < 3 && (
@@ -269,7 +278,7 @@ export default class RegisterDetailsModule extends Component {
                   </div>
                 </div>
               )}
-              {this.state.Proceed === 5 && (
+              {this.state.Proceed > 4 && (
                 <div className={styles.reviewHolder}>
                   <div className={styles.orderHeaderHolder}>
                     <div className={styles.orderHeader}>ORDER SUMMARY</div>
@@ -313,6 +322,14 @@ export default class RegisterDetailsModule extends Component {
                     <div className={styles.attendeeText}>
                       Attendee: <div>Ms. Pratiksha Gupta</div>
                     </div>
+                    {this.state.Proceed === 6 && (
+                      <div className={styles.attendeeText}>
+                        (PAYMENT DONE THROUGH DEBIT CARD)
+                        <div>
+                          Webinar link is sent on pratiksha.g@xelpmoc.in
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               )}

@@ -12,7 +12,7 @@
 }
 .modalBase {
   width: 700px;
-  max-height: 700px;
+  max-height: 800px;
   overflow: scroll;
   background: #fff;
   animation: slideUp 300ms ease-in forwards;
@@ -44,7 +44,7 @@
   padding: 20px 58px;
 }
 .selectHeader {
-  padding-top: 20px;
+  padding: 20px 0px;
   width: 100%;
   color: #4f439a;
   font-family: bold;
@@ -185,4 +185,11 @@
   font-size: 14px;
   font-family: regular;
   color: #333;
+}
+.taxes {
+  color: #383737;
+  font-family: regular;
+  vertical-align: bottom;
+  font-size: 14px;
+  line-height: 19px;
 }
