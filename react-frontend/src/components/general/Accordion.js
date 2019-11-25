@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styles from "./Accordion.css";
 import PropTypes from "prop-types";
 import { Collapse } from "react-collapse";
+import Icon from "../../core/Icon";
 
 export default class Accordion extends Component {
   constructor(props) {
@@ -49,7 +50,7 @@ export default class Accordion extends Component {
             }}
           >
             {this.props.text && (
-              <h2
+              <div
                 className={
                   !(
                     this.props.activeIndex === this.props.currentAccordian &&
@@ -59,8 +60,16 @@ export default class Accordion extends Component {
                     : styles.highlightedAccordianText
                 }
               >
+                {this.props.image && (
+                  <div className={styles.icon}>
+                    <Icon
+                      image={this.props.image}
+                      size={this.props.size}
+                    ></Icon>
+                  </div>
+                )}
                 {this.props.text}
-              </h2>
+              </div>
             )}
             <div
               className={
@@ -74,13 +83,14 @@ export default class Accordion extends Component {
             />
           </div>
         </div>
+
         <Collapse
           isOpened={
             this.props.activeIndex === this.props.currentAccordian &&
             this.state.isOpen
           }
         >
-          {this.props.children}
+          <div className={styles.collapse}> {this.props.children}</div>
         </Collapse>
       </div>
     );
