@@ -6,32 +6,52 @@ import img3 from "../../../../images/Onboarding_Desktop_User_feed.svg";
 import img2 from "../../../../images/Onboarding_Desktop_Events.svg";
 import Image from "../../../../core/Image";
 import Slider from "./Slider";
+import BottomSlideModal from "../BottomSlideModal";
 
 class SliderComponent extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      stopSlider: false
+    };
+  }
+  showEventSelector = () => {
+    if (this.props.showEventSelector) {
+      this.setState({ stopSlider: true });
+      this.props.closeModal();
+      this.props.showEventSelector();
+    }
+  };
   render() {
     return (
-      <div className={styles.baseWrapper}>
-        <div className={styles.base}>
-          <div className={styles.sliderWrapper}>
-            <Slider
-              stepsInfo={stepsInfo}
-              {...this.props}
-              reachedEnd={() => this.props.showEventSelector()}
-            >
-              {stepsInfo &&
-                stepsInfo.map(value => {
-                  return (
-                    <div className={styles.topContainer}>
-                      <div className={styles.innerImage}>
-                        <Image image={value.img} />
+      <React.Fragment>
+        <div className={styles.showCross} onClick={()=>this.props.closeModal()}/>
+      <BottomSlideModal>
+        <div className={styles.baseWrapper}>
+          <div className={styles.base}>
+            <div className={styles.sliderWrapper}>
+              <Slider
+                stepsInfo={stepsInfo}
+                stopSlider={this.state.stopSlider}
+                {...this.props}
+                reachedEnd={() => this.showEventSelector()}
+              >
+                {stepsInfo &&
+                  stepsInfo.map(value => {
+                    return (
+                      <div className={styles.topContainer}>
+                        <div className={styles.innerImage}>
+                          <Image image={value.img} />
+                        </div>
                       </div>
-                    </div>
-                  );
-                })}
-            </Slider>
+                    );
+                  })}
+              </Slider>
+            </div>
           </div>
         </div>
-      </div>
+      </BottomSlideModal>
+      </React.Fragment>
     );
   }
 }

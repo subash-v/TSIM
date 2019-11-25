@@ -67,7 +67,7 @@ export default class EventPage extends Component {
       <React.Fragment>
         <div className={styles.base}>
           <div className={styles.headerHolder}>
-            <PrimaryHeaderContainer history={this.props.history} />
+            <PrimaryHeaderContainer />
           </div>
           <CenteredContent>
             <div className={styles.container}>
@@ -152,7 +152,12 @@ export default class EventPage extends Component {
               </div>
               <div className={styles.storiesContainer}>
                 {carouselData.map((val, i) => (
-                  <div className={styles.card}>
+                  <div
+                    className={styles.card}
+                    onClick={() => {
+                      this.handleredirect("/eventDetails");
+                    }}
+                  >
                     <Card
                       image={""}
                       heading={val.title}

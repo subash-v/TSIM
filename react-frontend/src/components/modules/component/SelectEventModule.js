@@ -21,7 +21,6 @@ export default class SelectEventModule extends Component {
         <div
           style={{
             width: "741px",
-            margin: "auto",
             background: "#fff",
             borderRadius: "5px",
             paddingBottom: " 40px"

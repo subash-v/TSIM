@@ -14,13 +14,14 @@ export default class Slider extends React.Component {
   }
 
   autoRun = () => {
-    this.timer = setTimeout(() => {
+    if(!this.props.stopSlider)
+  {  this.timer = setTimeout(() => {
       this.goForward();
       this.autoRun();
-    }, this.props.interval * 1000);
+    }, this.props.interval * 1000);}
   };
   componentDidMount() {
-    if (this.props.interval) {
+    if (this.props.interval&&!this.props.stopSlider) {
       this.autoRun();
     }
   }
@@ -130,7 +131,7 @@ export default class Slider extends React.Component {
               })}
         </div>
 
-        <div
+        {/* <div
           className={
             this.props &&
             this.props.stepsInfo &&
@@ -142,7 +143,7 @@ export default class Slider extends React.Component {
           <div className={styles.button}>
             <div className={styles.buttonText}>ADD GIFT CARD NOW</div>
           </div>
-        </div>
+        </div> */}
       </div>
     );
   }

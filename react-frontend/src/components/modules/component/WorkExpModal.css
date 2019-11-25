@@ -1,0 +1,80 @@
+.centermodal {
+  background: #ffffff;
+  min-width: 600px;
+  margin: auto;
+  height: auto;
+  color: #222;
+  border-radius: 10px;
+}
+.profileheader {
+  color: #1a1a1a;
+  font-family: bold;
+  font-size: 18px;
+  font-weight: regular;
+  line-height: 24px;
+  display: inline-block;
+}
+.back {
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 5.5px;
+  transform: rotate(135deg);
+}
+.label {
+  font-size: 14px;
+  font-family: bold;
+  padding: 10px;
+}
+
+.headerCont {
+  padding-left: 40px;
+  padding-top: 19px;
+  padding-bottom: 17px;
+}
+.inputbox[type="text"] {
+  box-sizing: border-box;
+  height: 50px;
+  width: 540px;
+  border: 1px solid #b2b2b2;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.txtarea {
+  width: 540px;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  height: 120px;
+  width: 540px;
+  border: 1px solid #b2b2b2;
+  border-radius: 5px;
+  font-size: 16px;
+  resize: none;
+}
+.txtarea::placeholder {
+  font-size: 14px;
+  font-family: regular;
+}
+.brdr {
+  border-bottom: 1px solid #b2b2b2;
+  width: 100%;
+}
+.inpcont {
+  padding: 30px 30px 0 30px;
+}
+.buttonCont {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 30px 30px 30px;
+}
+.workicon {
+  display: flex;
+}
+.active {
+  background-color: #4f439a;
+}
+.radio {
+  height: 10px;
+}

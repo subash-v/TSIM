@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import styles from "./Profile.css";
-import PrimaryHeader from "../HomePage/PrimaryHeader";
 import CenteredContent from "../../core/CenteredContent";
 import Milestone from "../../core/Milestone";
 import Skills from "../Skills/Skills";
 import ToolTip from "../../core/ToolTip";
 import Button from "../../core/Button";
+import PrimaryHeaderContainer from "../HomePage/container/PrimaryHeaderContainer";
 
 const data = [{}, {}, {}, {}, {}];
 
@@ -105,7 +105,7 @@ export default class Profile extends Component {
   render() {
     return (
       <React.Fragment>
-        <PrimaryHeader history={this.props.history} />
+        <PrimaryHeaderContainer />
         <div className={styles.base}>
           <div className={styles.topSection}>
             <CenteredContent contentWidth="1400px">
