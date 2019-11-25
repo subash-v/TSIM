@@ -14,6 +14,7 @@ import EventPageContainer from "./components/Event/container/EventPageContainer"
 import HomeContainer from "./components/HomePage/container/HomeContainer";
 import Profile from "./components/Profile/Profile";
 import Feed from "./components/Feed/Feed";
+import Settings from "./components/Settings/Settings";
 import EventDetailsPageContainer from "./components/Event/container/EventDetailsPageContainer";
 
 class App extends Component {
