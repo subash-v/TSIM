@@ -5,7 +5,7 @@ import image1 from "../../images/Build-your-profile-min.jpg";
 import image2 from "../../images/Resources-min.jpg";
 import image3 from "../../images/Events-min.jpg";
 import image4 from "../../images/Seek-guidance-min.jpg";
-import Button from "../../core/Button copy";
+import Button from "../../core/Button.js";
 import HomepageEventsCarousel from "../general/HomePageEventsCarousel.";
 import Card from "../general/EventCard";
 import Carousel from "../general/Carousel";
@@ -103,7 +103,7 @@ export default class Home extends React.Component {
           }
         >
           {this.state.lastScrollY > 100 ? (
-            <PrimaryHeaderContainer history={this.props.history} />
+            <PrimaryHeaderContainer  />
           ) : (
             <SecondaryHeaderContainer history={this.props.history} />
           )}

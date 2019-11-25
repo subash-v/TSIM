@@ -8,22 +8,62 @@ import NETWORK from "../../images/Connection_line.svg";
 import MORE from "../../images/Menu_Line.svg";
 import profile from "../../images/Profile_Line.svg";
 import MESSAGE from "../../images/Messages_line.svg";
-
+import Filled_Profile from "../../images/Profile_Fill.svg";
+import filled_home from "../../images/Home_selected.svg";
+import filled_event from "../../images/Connection_fill.svg";
+import filled_more from "../../images/Menu_Fill.svg";
+import filled_message from "../../images/Messages_fill.svg";
 import IconWithHeader from "../../core/IconWithHeader";
 import ProfileImage from "../../core/ProfileImage";
+import PropTypes from "prop-types";
 
 const links = [
-  { data: profile, name: "PROFILE", routeLink: "/profile" },
-  { data: HOME, name: "GUIDE", routeLink: "/seek-guide" },
-  { data: NETWORK, name: "EVENTS", routeLink: "/event" },
-  { data: MORE, name: "RESOURCES", routeLink: "/resours" }
+  {
+    data: profile,
+    name: "PROFILE",
+    routeLink: "/profile",
+    filledImage: Filled_Profile
+  },
+  {
+    data: HOME,
+    name: "GUIDE",
+    routeLink: "/seek-guide",
+    filledImage: filled_home
+  },
+  {
+    data: NETWORK,
+    name: "EVENTS",
+    routeLink: "/event",
+    filledImage: filled_event
+  },
+  {
+    data: MORE,
+    name: "RESOURCES",
+    routeLink: "/resours",
+    filledImage: filled_more
+  }
 ];
 const logedInLinks = [
-  { data: HOME, name: "HOME", routeLink: "/" },
-  { data: NETWORK, name: "CONNECTION", routeLink: "/network" },
-  { data: MESSAGE, name: "MESSAGE", routeLink: "/chat" },
-  { data: NETWORK, name: "NOTIFICATION", routeLink: "/notification" },
-  { data: MORE, name: "MORE", routeLink: "/events" }
+  { data: HOME, name: "HOME", routeLink: "/", filledImage: filled_home },
+  {
+    data: NETWORK,
+    name: "CONNECTION",
+    routeLink: "/network",
+    filledImage: filled_event
+  },
+  {
+    data: MESSAGE,
+    name: "MESSAGE",
+    routeLink: "/chat",
+    filledImage: filled_message
+  },
+  {
+    data: NETWORK,
+    name: "NOTIFICATION",
+    routeLink: "/notification",
+    filledImage: filled_event
+  },
+  { data: MORE, name: "MORE", routeLink: "/events", filledImage: filled_more }
 ];
 export default class PrimaryHeader extends Component {
   handleredirect = val => {
@@ -49,7 +89,11 @@ export default class PrimaryHeader extends Component {
             this.props.login ? styles.nonLogedInHeader : styles.headerHolder
           }
         >
-          <div className={styles.logoLinkHolder}>
+          <div
+            className={
+              this.props.login ? styles.loggedInHolder : styles.logoLinkHolder
+            }
+          >
             <div
               className={styles.logoHolder}
               onClick={() => this.handleredirect("/")}
@@ -57,38 +101,64 @@ export default class PrimaryHeader extends Component {
             <div className={styles.linkHolder}>
               {!this.props.login
                 ? links.map((value, i) => {
-                  return (
-                    <div
-                      className={styles.linkText}
-                      onClick={() => this.handleredirect(value.routeLink)}
-                    >
-                      <IconWithHeader
-                        image={value.data}
-                        size={32}
-                        header={value.name}
-                        fontSize={10}
-                      />
-                    </div>
-                  );
-                })
+                    return (
+                      <div
+                        className={
+                          this.props.location &&
+                          this.props.location.pathname === value.routeLink
+                            ? styles.showLine
+                            : styles.linkText
+                        }
+                        onClick={() => this.handleredirect(value.routeLink)}
+                      >
+                        <IconWithHeader
+                          image={
+                            this.props.location &&
+                            this.props.location.pathname === value.routeLink
+                              ? value.filledImage
+                              : value.data
+                          }
+                          size={32}
+                          header={value.name}
+                          fontSize={10}
+                        />
+                      </div>
+                    );
+                  })
                 : logedInLinks.map((value, i) => {
-                  return (
-                    <div
-                      className={styles.loglinkText}
-                      onClick={() => this.handleredirect(value.routeLink)}
-                    >
-                      <IconWithHeader
-                        image={value.data}
-                        size={25}
-                        header={value.name}
-                        fontSize={10}
-                      />
-                    </div>
-                  );
-                })}
+                    return (
+                      <div
+                        className={
+                          this.props.location &&
+                          this.props.location.pathname === value.routeLink
+                            ? styles.showLine
+                            : styles.loglinkText
+                        }
+                        onClick={() => this.handleredirect(value.routeLink)}
+                      >
+                        <IconWithHeader
+                          image={
+                            this.props.location &&
+                            this.props.location.pathname === value.routeLink
+                              ? value.filledImage
+                              : value.data
+                          }
+                          size={25}
+                          header={value.name}
+                          fontSize={10}
+                        />
+                      </div>
+                    );
+                  })}
             </div>
           </div>
-          <div className={styles.buttonSearchholder}>
+          <div
+            className={
+              this.props.login
+                ? styles.loggedinButton
+                : styles.buttonSearchholder
+            }
+          >
             <div className={styles.buttonHolder}>
               <div className={styles.search}>
                 <SearchInput
@@ -137,3 +207,6 @@ export default class PrimaryHeader extends Component {
     );
   }
 }
+PrimaryHeader.defaultProps = {
+  login: false
+};
