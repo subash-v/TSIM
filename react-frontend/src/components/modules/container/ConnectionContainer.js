@@ -1,11 +1,11 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { showModal, CENTER_MODULE_DEMO } from "../modal.actions.js";
+import { showModal, ALL_CONNECTION_MODAL } from "../modal.actions.js";
 import Connections from "../../Connections/ConnectionsPage";
 const mapDispatchToProps = dispatch => {
   return {
-    showCliqCenterModule: data => {
-      dispatch(showModal(CENTER_MODULE_DEMO, data));
+    showAllConnectionModal: data => {
+      dispatch(showModal(ALL_CONNECTION_MODAL, data));
     }
   };
 };
