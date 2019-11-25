@@ -96,7 +96,6 @@ export default class Profile extends Component {
   };
 
   closeBannerToolTip = () => {
-    console.log("HHHHHHHHHHH");
     this.setState({
       closeBanner: false
     });
