@@ -24,7 +24,7 @@
   padding-top: 37px;
   color: #000;
   font-size: 12px;
-  font-family: sans-serif;
+  font-family: bold;
 }
 .secondIndicator {
   width: auto;
@@ -35,7 +35,7 @@
   padding-top: 37px;
   color: #000;
   font-size: 12px;
-  font-family: sans-serif;
+  font-family: bold;
 }
 .thirdIndicator {
   width: auto;
@@ -46,7 +46,7 @@
   padding-top: 37px;
   color: #000;
   font-size: 12px;
-  font-family: sans-serif;
+  font-family: bold;
 }
 .indicator {
   width: 25px;
