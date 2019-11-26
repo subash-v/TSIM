@@ -15,6 +15,7 @@ import Slider from "./SliderComponent/Slider";
 import SliderComponent from "./SliderComponent/SliderComponent";
 import RegisterDetailsModule from "./RegisterDetailsModule";
 import AllConnection from "./AllConnection";
+import EventDetailSliderComponent from '../../Event/EventDetailSlider/EventDetailSliderComponent'
 //import WorkExpModalContainer from "../container/WorkExpModalContainer";
 const modalRoot = document.getElementById("modal-root");
 
@@ -113,6 +114,12 @@ export default class ModalRoot extends React.Component {
       ),
       RegisterDetailsModal: (
         <RegisterDetailsModule
+          closeModal={() => this.handleClose()}
+          {...this.props.ownProps}
+        />
+      ),
+      EventDetailSlider: (
+        <EventDetailSliderComponent
           closeModal={() => this.handleClose()}
           {...this.props.ownProps}
         />
