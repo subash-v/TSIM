@@ -17,6 +17,7 @@ import Feed from "./components/Feed/Feed";
 import Settings from "./components/Settings/Settings";
 import EventDetailsPageContainer from "./components/Event/container/EventDetailsPageContainer";
 import ConnectionsContainer from "./components/modules/container/ConnectionContainer";
+import ProfileContainer from "./components/Profile/container/ProfileContainer";
 class App extends Component {
   render() {
     return (
@@ -32,7 +33,7 @@ class App extends Component {
           <Route path="/aboutUs" component={AboutUs} />
           <Route path="/eventDetails" component={EventDetailsPageContainer} />
           <Route path="/event" component={EventPageContainer} />
-          <Route path="/profile" component={Profile} />
+          <Route path="/profile" component={ProfileContainer} />
           <Route path="/feed" component={Feed} />
           <Route path="/connections" component={ConnectionsContainer} />
         </Switch>

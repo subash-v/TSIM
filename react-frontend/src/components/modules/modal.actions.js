@@ -13,7 +13,7 @@ export const WORKEXP_MODAL = "WorkExpModal";
 export const SLIDER_COMPONENT = "Slider";
 export const REGISTER_DETAILS_MODAL = "RegisterDetailsModal";
 export const ALL_CONNECTION_MODAL = "AllConnectionModal";
-export const UPLOAD_PROFILE_IMAGE_MODAL = "UploadProfile";
+export const UPLOAD_PROFILE_IMAGE_MODAL = "ImageUpload";
 
 export function showModal(type, ownProps) {
   const scrollPosition =

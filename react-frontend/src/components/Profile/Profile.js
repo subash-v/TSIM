@@ -6,6 +6,7 @@ import Skills from "../Skills/Skills";
 import ToolTip from "../../core/ToolTip";
 import Button from "../../core/Button";
 import PrimaryHeaderContainer from "../HomePage/container/PrimaryHeaderContainer";
+import ImageUplaod from "./ImageUpload";
 
 const data = [{}, {}, {}, {}, {}];
 
@@ -104,19 +105,28 @@ export default class Profile extends Component {
     });
   };
 
-  onChange = async event => {
-    console.log("onChange", event);
-    if (event.target.files && event.target.files.length) {
-      let files = [];
-      files.push(URL.createObjectURL(event.target.files[0]));
-      await this.setState({
-        file: files
-      });
-    }
-  };
-
   onLoadMore = () => {
     this.props.showImageUploadModule();
+  };
+
+  handleScroll = () => {
+    this.setState({ lastScrollY: window.scrollY });
+  };
+
+  componentDidMount = () => {
+    window.addEventListener("scroll", this.handleScroll);
+
+    // if (this.state.slideIndex <= this.state.maxSlide) {
+    //   var varss = setInterval(() => {
+    //     this.incrementTime();
+    //   }, 5000);
+    // }
+    // if (this.state.slideIndex > this.state.maxSlide) {
+    //   this.setState({
+    //     slideIndex: 0
+    //   });
+    //   clearInterval(varss);
+    // }
   };
 
   render() {
@@ -208,21 +218,7 @@ export default class Profile extends Component {
                 <div className={styles.uploadImage}>
                   {this.state.file.length > 0 ? (
                     <div className={styles.profileCarousel}>
-                      {this.state.slideIndex === 0 && (
-                        <div className={styles.mySlides}>
-                          <div
-                            style={{
-                              backgroundImage: `url(${this.state.file[0]})`,
-                              backgroundRepeat: "no-repeat",
-                              width: "100%",
-                              height: "50vh",
-                              backgroundPosition: "center"
-                            }}
-                            // src={image0}
-                            className={styles.homepageCarousal}
-                          />
-                        </div>
-                      )}
+                      <ImageUplaod />
                     </div>
                   ) : (
                     <div className={styles.uploadImageDummy}></div>
@@ -230,7 +226,7 @@ export default class Profile extends Component {
                   <div className={styles.uploadImageGroup}>
                     <div
                       className={styles.uploadImages}
-                      onClick={() => this.onLoadMore()}
+                      onClick={() => this.props.showImageUploadModal()}
                     >
                       Upload
                     </div>
