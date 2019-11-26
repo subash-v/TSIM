@@ -1,27 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import ModalPanel from "./ModalPanel";
-import ModalPanelRight from "./ModalPanelRight";
-import Loadable from "react-loadable";
 import DemoModalContainer from "../container/DemoModalContainer";
 import SignInModuleContainer from "../container/SignInModuleContainer";
 import SignUpModuleContainer from "../container/SignUpModuleContainer";
-import SignUp from "../../SignUp/SignUp";
 import FilterModule from "./FilterModule";
 import ForgotPassword from "../../ForgotPassword/ForgotPassword";
 import SelectEventContainer from "../container/SelectEventContainer";
 import ProfileModalContainer from "../container/ProfileModalContainer";
-import Slider from "./SliderComponent/Slider";
 import SliderComponent from "./SliderComponent/SliderComponent";
 import RegisterDetailsModule from "./RegisterDetailsModule";
 import AllConnection from "./AllConnection";
-//import WorkExpModalContainer from "../container/WorkExpModalContainer";
+import UserPostModal from "../../Feed/UserPostModal";
+
 const modalRoot = document.getElementById("modal-root");
-
-const Loader = () => {
-  return <div>loading</div>;
-};
-
 export default class ModalRoot extends React.Component {
   constructor(props) {
     super(props);
@@ -119,6 +111,12 @@ export default class ModalRoot extends React.Component {
       ),
       AllConnectionModal: (
         <AllConnection
+          closeModal={() => this.handleClose()}
+          {...this.props.ownProps}
+        />
+      ),
+      UserPostModal: (
+        <UserPostModal
           closeModal={() => this.handleClose()}
           {...this.props.ownProps}
         />
