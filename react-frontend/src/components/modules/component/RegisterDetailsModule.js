@@ -15,6 +15,9 @@ import edit from "../../../images/Edit-profile.svg";
 import location from "../../../images/Location-white.svg";
 import date_blue from "../../../images/Date-blue.svg";
 import time_blue from "../../../images/time_blue.svg";
+import Counter from "../../general/Counter";
+import AttendeeDetails from "./AttendeeDetails";
+import HorizantalIconWithHeader from "../../../core/HorizantalIconWithHeader";
 export default class RegisterDetailsModule extends Component {
   constructor(props) {
     super(props);
@@ -29,7 +32,11 @@ export default class RegisterDetailsModule extends Component {
       mobileno: "",
       name2: "",
       email2: "",
-      mobileno2: ""
+      mobileno2: "",
+      counter: 1,
+      ticketCounter: [],
+      attende1Detials: null,
+      attende2Detials: null
     };
   }
   handleButtonClick = () => {
@@ -47,8 +54,42 @@ export default class RegisterDetailsModule extends Component {
         review: "active"
       });
     } else {
-      if (this.state.Proceed < 5) {
+      if (this.state.Proceed < 6) {
         this.setState({ Proceed: this.state.Proceed + 1 });
+      }
+    }
+  };
+  goBack = () => {
+    if (this.state.Proceed != 1) {
+      this.setState({ Proceed: this.state.Proceed - 1 });
+    }
+  };
+  setTicketCounter = val => {
+    this.setState({ counter: val });
+  };
+  setcounter = (val, name) => {
+    let newData = [];
+    let dataExist =
+      this.state.ticketCounter &&
+      this.state.ticketCounter.length > 0 &&
+      this.state.ticketCounter.find((ticket, i) => {
+        return ticket.name === name;
+      });
+    if (this.state.ticketCounter.length < 1) {
+      newData.push({ name: name, counter: val });
+      this.setState({ ticketCounter: newData });
+    } else {
+      if (dataExist) {
+        var index = this.state.ticketCounter.findIndex(function(ticket) {
+          return ticket.name == dataExist.name;
+        });
+        newData.push(...this.state.ticketCounter);
+        newData[index].name = name;
+        newData[index].counter = val;
+      } else {
+        newData.push(...this.state.ticketCounter);
+        newData.push({ name: name, counter: val });
+        this.setState({ ticketCounter: newData });
       }
     }
   };
@@ -56,6 +97,12 @@ export default class RegisterDetailsModule extends Component {
     this.setState({
       activeIndex
     });
+  };
+  addAttende1Details = val => {
+    this.setState({ attende1Detials: val });
+  };
+  addAttende2Details = val => {
+    this.setState({ attende2Detials: val });
   };
   render() {
     return (
@@ -67,25 +114,29 @@ export default class RegisterDetailsModule extends Component {
         <BottomSlideModal>
           <div className={styles.modalBase}>
             <div className={styles.registerHeader}>
-              <div className={styles.icon}>
+              <div className={styles.icon} onClick={() => this.goBack()}>
                 <Icon image={Back} size={22} />
               </div>
               <div className={styles.registerText}>Registration Details</div>
             </div>
-            <div className={styles.verticalScroller}>
-              <VerticalStatus
-                first={this.state.selectTicket}
-                second={this.state.attendedetails}
-                third={this.state.review}
-              />
-            </div>
+            {this.state.Proceed !== 6 && (
+              <div className={styles.verticalScroller}>
+                <VerticalStatus
+                  first={this.state.selectTicket}
+                  second={this.state.attendedetails}
+                  third={this.state.review}
+                />
+              </div>
+            )}
 
             <div className={styles.contentHolder}>
               <div className={styles.selectHeader}>
-                {this.state.Proceed == 3 && this.state.Proceed == 4
+                {this.state.Proceed == 3 || this.state.Proceed == 4
                   ? "Add attendee details"
                   : this.state.Proceed === 5
                   ? "Review Order"
+                  : this.state.Proceed === 6
+                  ? "Payment Confirmation"
                   : "Select number of tickets"}
               </div>
               {this.state.Proceed < 3 && (
@@ -99,16 +150,20 @@ export default class RegisterDetailsModule extends Component {
               {this.state.Proceed === 1 && (
                 <div className={styles.registerStaticDetails}>
                   <div className={styles.iconWithText}>
-                    <div className={styles.icon}>
-                      <Icon image={calander} size={15} />
-                    </div>
-                    <div className={styles.subText}>6th September 2019</div>
+                    <HorizantalIconWithHeader
+                      icon={calander}
+                      spacing={"7px"}
+                      size={15}
+                      text={"6th September 2019"}
+                    />
                   </div>
                   <div className={styles.iconWithText}>
-                    <div className={styles.icon}>
-                      <Icon image={time} size={15} />
-                    </div>
-                    <div className={styles.subText}>5:30 pm - 7:30 pm</div>
+                    <HorizantalIconWithHeader
+                      spacing={"7px"}
+                      icon={time}
+                      size={15}
+                      text={"5:30 pm - 7:30 pm"}
+                    />
                   </div>
                   <div className={styles.personHolder}>
                     <div className={styles.textHolder}>
@@ -116,9 +171,10 @@ export default class RegisterDetailsModule extends Component {
                       <div className={styles.cost}>INR 1450 per person</div>
                     </div>
                     <div className={styles.counter}>
-                      <Icon image={sub} size={50} />
-                      <div className={styles.counterText}>1</div>
-                      <Icon image={add_fill} size={50} />
+                      <Counter
+                        value={this.state.counter}
+                        setvalue={val => this.setTicketCounter(val)}
+                      ></Counter>
                     </div>
                   </div>
                 </div>
@@ -132,6 +188,8 @@ export default class RegisterDetailsModule extends Component {
                         key={i}
                         image={val.icon}
                         size={15}
+                        fontColor={"#4F409C"}
+                        fontSize={"14px"}
                         currentAccordian={i}
                         text={val.header}
                         onOpen={index => this.onOpenAccordian(index)}
@@ -159,9 +217,12 @@ export default class RegisterDetailsModule extends Component {
                   {ticketDetails.map((val, i) => {
                     return (
                       <Accordion
+                        offset={"10px 0"}
                         key={3}
                         image={val.icon}
                         size={15}
+                        fontColor={"#4F409C"}
+                        fontSize={"14px"}
                         currentAccordian={3}
                         text={val.header}
                         onOpen={index => this.onOpenAccordian(index)}
@@ -183,9 +244,12 @@ export default class RegisterDetailsModule extends Component {
                                   </div>
                                 </div>
                                 <div className={styles.counter}>
-                                  <Icon image={sub} size={50} />
-                                  <div className={styles.counterText}>1</div>
-                                  <Icon image={add_fill} size={50} />
+                                  <Counter
+                                    value={this.state.counter}
+                                    setvalue={val =>
+                                      this.setcounter(val, details.heading)
+                                    }
+                                  ></Counter>
                                 </div>
                               </div>
                             );
@@ -198,78 +262,21 @@ export default class RegisterDetailsModule extends Component {
               {(this.state.Proceed === 3 || this.state.Proceed === 4) && (
                 <div className={styles.attenderHolder}>
                   <div className={styles.attendes}>
-                    <div className={styles.attendeHeader}>
-                      Attendee 1 <span>(Primary)</span>
-                    </div>
-                    <div className={styles.inputHolder}>
-                      <ControlInput
-                        value={this.state.name}
-                        placeholder={"Name"}
-                        height={40}
-                        onChange={val => {
-                          this.setState({ name: val });
-                        }}
-                      />
-                    </div>
-                    <div className={styles.inputHolder}>
-                      <ControlInput
-                        value={this.state.email}
-                        placeholder={"Email Address"}
-                        height={40}
-                        onChange={val => {
-                          this.setState({ email: val });
-                        }}
-                      />
-                    </div>
-                    <div className={styles.inputHolder}>
-                      <ControlInput
-                        value={this.state.mobileno}
-                        placeholder={"Mobile No."}
-                        height={40}
-                        onChange={val => {
-                          this.setState({ mobileno: val });
-                        }}
-                      />
-                    </div>
+                    <AttendeeDetails
+                      title={"Attendee 1"}
+                      onChange={val => this.addAttende1Details(val)}
+                    />
                   </div>
                   <div className={styles.Attendes}>
-                    <div className={styles.attendeHeader}>
-                      Attendee 2 <span>(Primary)</span>
-                    </div>
-                    <div className={styles.inputHolder}>
-                      <ControlInput
-                        value={this.state.name2}
-                        placeholder={"Name"}
-                        height={40}
-                        onChange={val => {
-                          this.setState({ name2: val });
-                        }}
-                      />
-                    </div>
-                    <div className={styles.inputHolder}>
-                      <ControlInput
-                        value={this.state.email2}
-                        placeholder={"Email Address"}
-                        height={40}
-                        onChange={val => {
-                          this.setState({ email2: val });
-                        }}
-                      />
-                    </div>
-                    <div className={styles.inputHolder}>
-                      <ControlInput
-                        value={this.state.mobileno2}
-                        placeholder={"Mobile No."}
-                        height={40}
-                        onChange={val => {
-                          this.setState({ mobileno2: val });
-                        }}
-                      />
-                    </div>
+                    <AttendeeDetails
+                      title={"Attendee 2"}
+                      subTitle={"Optional"}
+                      onChange={val => this.addAttende2Details(val)}
+                    />
                   </div>
                 </div>
               )}
-              {this.state.Proceed === 5 && (
+              {this.state.Proceed > 4 && (
                 <div className={styles.reviewHolder}>
                   <div className={styles.orderHeaderHolder}>
                     <div className={styles.orderHeader}>ORDER SUMMARY</div>
@@ -283,36 +290,46 @@ export default class RegisterDetailsModule extends Component {
                     </div>
                     <div className={styles.advanceText}>Advanced Level</div>
                     <div className={styles.iconWithText}>
-                      <div className={styles.icon}>
-                        <Icon image={time} size={15} />
-                      </div>
-                      <div className={styles.subText}>5:30 pm - 7:30 pm</div>
+                      <HorizantalIconWithHeader
+                        icon={time}
+                        size={15}
+                        text={"5:30 pm - 7:30 pm"}
+                      />
                     </div>
                     <div className={styles.iconWithText}>
-                      <div className={styles.icon}>
-                        <Icon image={calander} size={15} />
-                      </div>
-                      <div className={styles.subText}>6th September 2019</div>
+                      <HorizantalIconWithHeader
+                        icon={calander}
+                        size={15}
+                        text={"6th September 2019"}
+                      />
                     </div>
 
                     <div className={styles.iconWithText}>
-                      <div className={styles.icon}>
-                        <Icon image={location} size={15} />
-                      </div>
-                      <div className={styles.subText}>DBS, Hyderabad</div>
+                      <HorizantalIconWithHeader
+                        icon={location}
+                        size={15}
+                        text={"DBS, Hyderabad"}
+                      />
                     </div>
                     <div className={styles.iconWithText}>
-                      <div className={styles.icon}>
-                        <Icon image={location} size={15} />
-                      </div>
-                      <div className={styles.subText}>
-                        INR 1,450 x 2 Tickets
-                      </div>
+                      <HorizantalIconWithHeader
+                        icon={location}
+                        size={15}
+                        text={"INR 1,450 x 2 Tickets"}
+                      />
                     </div>
 
                     <div className={styles.attendeeText}>
                       Attendee: <div>Ms. Pratiksha Gupta</div>
                     </div>
+                    {this.state.Proceed === 6 && (
+                      <div className={styles.attendeeText}>
+                        (PAYMENT DONE THROUGH DEBIT CARD)
+                        <div>
+                          Webinar link is sent on pratiksha.g@xelpmoc.in
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               )}
@@ -391,11 +408,11 @@ const ticketDetails = [
         count: "14 remaining"
       },
       {
-        heading: "Early Bird Tickets",
+        heading: "Snow Bird Tickets",
         subHeading: "INR 1450 per person"
       },
       {
-        heading: "Early Bird Tickets",
+        heading: "Black Bird Tickets",
         subHeading: "INR 1450 per person",
         count: "Filling Fast!"
       }

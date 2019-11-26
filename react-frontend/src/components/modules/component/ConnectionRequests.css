@@ -1,6 +1,9 @@
 .base {
   height: auto;
   width: auto;
+  border: 1px solid #b2b2b2;
+  border-radius: 5px;
+  box-shadow: 0 3px 11px 0 rgba(0, 0, 0, 0.1);
 }
 
 .connrequests {

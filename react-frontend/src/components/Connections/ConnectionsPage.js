@@ -6,8 +6,10 @@ import image1 from "../../images/Alicia.png";
 import image2 from "../../images/Alison-min.png";
 import image3 from "../../images/Amanda-min.png";
 import image4 from "../../images/Joe-min.png";
-import ConnectionRequest from "../modules/component/ConnectionRequests";
+//import ConnectionRequest from "../modules/component/ConnectionRequests";
 import NavButton from "../modules/component/NavButton";
+import NumberOfConnections from "../../core/NumberOfConnections";
+import Button from "../../core/Button";
 
 const guideData = [
   {
@@ -160,7 +162,7 @@ const guideData = [
   }
 ];
 
-const userData = [
+const userDatassss = [
   {
     type: "mutual",
     userList: [
@@ -319,7 +321,9 @@ class Connections extends Component {
       guide: true,
       user: false,
       request: true,
-      sent: false
+      sent: false,
+      limitForGuide: 4,
+      limitForUser: 4
     };
   }
 
@@ -327,24 +331,30 @@ class Connections extends Component {
     this.setState({ selectedWeek: index });
   };
 
-  onRequestLoadMore = () => {
-    this.setState({
-      limitForRequest: this.state.limitForRequest + 4
-    });
+  onLoadMore = () => {
+    this.props.showAllConnectionModal();
   };
 
-  onSentLoadMore = () => {
-    this.setState({
-      limitForSent: this.state.limitForSent + 4
-    });
-  };
+  // onRequestLoadMore = () => {
+  //   this.setState({
+  //     limitForGuide: this.state.limitForGuide + 4
+  //   });
+  // };
+
+  // onSentLoadMore = () => {
+  //   this.setState({
+  //     limitForUser: this.state.limitForUser + 4
+  //   });
+  // };
 
   render() {
     return (
       <React.Fragment>
         {" "}
         <div className={styles.headerHolder}>
-          <PrimaryHeaderContainer />
+          <div className={styles.fixedHeader}>
+            <PrimaryHeaderContainer />
+          </div>
         </div>
         <div className={styles.base}>
           <div className={styles.userSection}>
@@ -366,29 +376,149 @@ class Connections extends Component {
                 }}
               ></NavButton>
             </div>
-            {guideData.map((val, i) => {
-              return (
-                <div key={i} className={styles.userData}>
-                  <div className={styles.heading}>
-                    <div className={styles.headingLogo} />
-                    Users you may know based on your {val.type} connections
-                  </div>
-                </div>
-              );
-            })}
-            {/* {guideData &&
+            {this.state.selectedWeek === 1 &&
               guideData.map((val, i) => {
-                <div key={i} className={styles.userData}>
-                  <div className={styles.heading}>
-                    <div className={styles.headingLogo} />
-                    Users you may know based on your {val.type} connections
-                  </div>
-                  {console.log(val)}
-                </div>;
-              })} */}
+                return (
+                  <React.Fragment>
+                    <div key={i} className={styles.userData}>
+                      <div className={styles.heading}>
+                        <div className={styles.headingLogo} />
+                        Users you may know based on your{" "}
+                        <div className={styles.boldText}> {val.type} </div>
+                        connections
+                      </div>
+                      <div className={styles.userData}>
+                        {guideData[i].guideList.map(value => {
+                          return (
+                            <div className={styles.main}>
+                              <div className={styles.maining}>
+                                <img
+                                  src={value.image}
+                                  className={styles.picture}
+                                />
+                              </div>
+                              <div className={styles.bipart}>
+                                <div className={styles.textBase}>
+                                  <div className={styles.textHighLight}>
+                                    {value.name}
+                                  </div>
+                                  <div className={styles.subTextHighLight}>
+                                    {value.profession} | {value.location}
+                                  </div>
+
+                                  <div className={styles.imagebase}>
+                                    <NumberOfConnections
+                                      numberOfConnections={"3"}
+                                    />
+                                  </div>
+                                </div>
+                                <div className={styles.buttonSection}>
+                                  <div className={styles.button}>
+                                    <Button
+                                      type="primary"
+                                      color={"#4F439A"}
+                                      backgroundColor={"#E0DEED"}
+                                      width={"80px"}
+                                      height={30}
+                                      width={"100%"}
+                                      label="CONNECT"
+                                      borderRadius={3}
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                    <div>
+                      {" "}
+                      {this.state.limitForGuide === val.length ? null : (
+                        <div
+                          className={styles.loadMore}
+                          onClick={() => this.onLoadMore()}
+                        >
+                          <div className={styles.loadMoreText}>SEE MORE</div>
+                        </div>
+                      )}
+                    </div>
+                  </React.Fragment>
+                );
+              })}
+            {this.state.selectedWeek === 2 &&
+              userDatassss.map((val, i) => {
+                return (
+                  <React.Fragment>
+                    <div key={i} className={styles.userData}>
+                      <div className={styles.heading}>
+                        <div className={styles.headingLogo} />
+                        Users you may know based on your{" "}
+                        <div className={styles.boldText}> {val.type} </div>
+                        connections
+                      </div>
+                      <div className={styles.userData}>
+                        {userDatassss[i].userList.map(value => {
+                          return (
+                            <div className={styles.main}>
+                              <div className={styles.maining}>
+                                <img
+                                  src={value.image}
+                                  className={styles.picture}
+                                />
+                              </div>
+                              <div className={styles.bipart}>
+                                <div className={styles.textBase}>
+                                  <div className={styles.textHighLight}>
+                                    {value.name}
+                                  </div>
+                                  <div className={styles.subTextHighLight}>
+                                    {value.profession} | {value.location}
+                                  </div>
+
+                                  <div className={styles.imagebase}>
+                                    <NumberOfConnections
+                                      numberOfConnections={"3"}
+                                    />
+                                  </div>
+                                </div>
+                                <div className={styles.buttonSection}>
+                                  <div className={styles.button}>
+                                    <Button
+                                      type="primary"
+                                      color={"#4F439A"}
+                                      backgroundColor={"#E0DEED"}
+                                      width={"80px"}
+                                      height={30}
+                                      width={"100%"}
+                                      label="CONNECT"
+                                      borderRadius={3}
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                    <div>
+                      {" "}
+                      {this.state.limitForGuide === val.length ? null : (
+                        <div
+                          className={styles.loadMore}
+                          onClick={() => this.onLoadMore()}
+                        >
+                          <div className={styles.loadMoreText}>SEE MORE</div>
+                        </div>
+                      )}
+                    </div>
+                  </React.Fragment>
+                );
+              })}
           </div>
           <div className={styles.requestSection}>
-            <ConnectionRequest />
+           
           </div>
         </div>
       </React.Fragment>

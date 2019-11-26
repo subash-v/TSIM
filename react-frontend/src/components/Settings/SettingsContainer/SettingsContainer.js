@@ -38,17 +38,17 @@ export default class Settings extends React.Component {
     this.setState({ activeCard: "changePassword" });
   };
   rightDisplay = title => {
-    console.log("xelpxeekc====>", title.currentTarget.textContent);
     this.setState({
       activeCard: title.currentTarget.textContent
     });
   };
 
   render() {
-    console.log("ACTIVE_CARD", this.props);
     return (
       <div>
-        <PrimaryHeaderContainer />
+        <div className={styles.fixedHeader}>
+          <PrimaryHeaderContainer />
+        </div>{" "}
         <div className={styles.container}>
           <div className={styles.leftContainer}>
             {accData &&

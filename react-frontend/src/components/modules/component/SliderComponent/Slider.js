@@ -14,14 +14,15 @@ export default class Slider extends React.Component {
   }
 
   autoRun = () => {
-    if(!this.props.stopSlider)
-  {  this.timer = setTimeout(() => {
-      this.goForward();
-      this.autoRun();
-    }, this.props.interval * 1000);}
+    if (!this.props.stopSlider) {
+      this.timer = setTimeout(() => {
+        this.goForward();
+        this.autoRun();
+      }, this.props.interval * 1000);
+    }
   };
   componentDidMount() {
-    if (this.props.interval&&!this.props.stopSlider) {
+    if (this.props.interval && !this.props.stopSlider) {
       this.autoRun();
     }
   }
@@ -79,7 +80,7 @@ export default class Slider extends React.Component {
     return (
       <div className={styles.base}>
         {/* <div className={styles.rightArrow} onClick={() => this.goForward()} />
-                <div className={styles.leftArrow} onClick={() => this.goBack()} /> */}
+        <div className={styles.leftArrow} onClick={() => this.goBack()} /> */}
         <div className={styles.sliderWrapper}>
           <div className={styles.slider} style={jukeStyle}>
             <div style={style} className={styles.imageHolder}>

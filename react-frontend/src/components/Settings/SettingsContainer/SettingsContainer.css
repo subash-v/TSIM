@@ -51,3 +51,13 @@
   border-bottom: 1px solid #b2b2b2;
   cursor: pointer;
 }
+.fixedHeader {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  transition: 0.5s;
+  z-index: 1;
+  background: #fff;
+  z-index: 2;
+}
