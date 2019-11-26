@@ -12,6 +12,7 @@ import AddMoreIntrest from "./AddMoreIntrest";
 import GuidesRecommended from "./GuidesRecommended";
 import RecommendedConnection from "./RecommendedConnection";
 import Input2 from "../../core/Input2";
+import FeedCard from "./FeedCard";
 
 const data = [
   {
@@ -393,7 +394,11 @@ export default class Feed extends Component {
                 <div className={styles.topPick}>TOP PICK</div>
               </div>
               {[1, 2, 3, 4, 5].map((data, i) => {
-                return <div className={styles.dataDiv}>{data}</div>;
+                return (
+                  <div className={styles.feedsContainer}>
+                    <FeedCard />
+                  </div>
+                );
               })}
             </div>
           </div>
