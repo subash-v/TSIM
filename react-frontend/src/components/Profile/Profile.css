@@ -68,7 +68,7 @@
 .uploadCvButton {
   color: #4f439a;
   font-size: 14px;
-  font-weight: bold;
+  font-family: bold;
   line-height: 19px;
   padding-bottom: 5px;
 }
@@ -399,7 +399,7 @@
   text-align: right;
   color: #4f439a;
   font-size: 14px;
-  font-weight: bold;
+  font-family: bold;
   line-height: 19px;
   padding-bottom: 5px;
 }
@@ -410,7 +410,7 @@
   text-align: right;
   color: #4f439a;
   font-size: 14px;
-  font-weight: bold;
+  font-family: bold;
   line-height: 19px;
   padding-bottom: 5px;
 }

@@ -35,7 +35,7 @@
   color: #ffffff;
   font-family: "Open Sans";
   font-size: 32px;
-  font-weight: bold;
+  font-family: bold;
   line-height: 36px;
   margin-bottom: 10px;
 }
@@ -87,7 +87,7 @@
 .questionContainer {
   font-family: "Open Sans";
   font-size: 28px;
-  font-weight: bold;
+  font-family: bold;
   line-height: 36px;
   margin-bottom: 5px;
 }

@@ -13,8 +13,8 @@ import RegisterDetailsModule from "./RegisterDetailsModule";
 import AllConnection from "./AllConnection";
 import UserPostModal from "../../Feed/UserPostModal";
 import EventDetailSliderComponent from "../../Event/EventDetailSlider/EventDetailSliderComponent";
-
 const modalRoot = document.getElementById("modal-root");
+
 
 export default class ModalRoot extends React.Component {
   constructor(props) {

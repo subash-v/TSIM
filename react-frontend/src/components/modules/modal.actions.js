@@ -16,6 +16,7 @@ export const ALL_CONNECTION_MODAL = "AllConnectionModal";
 export const USER_POST_MODAL = "UserPostModal";
 export const EVENT_DETAIL_SLIDER_COMPONENT = "EventDetailSlider";
 
+
 export function showModal(type, ownProps) {
   const scrollPosition =
     window.pageYOffset || document.documentElement.scrollTop;
