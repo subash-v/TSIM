@@ -1,0 +1,128 @@
+.createPostContainer {
+  width: 550px;
+  height: auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  margin-bottom: 36px;
+}
+.createPostNav {
+  width: 100%;
+  height: 80px;
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+}
+.writePost {
+  color: #4f439a;
+  font-family: "bold";
+  font-size: 12px;
+  line-height: 20px;
+  position: relative;
+}
+.writePost::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: -24px;
+  background: url("../../images/Createpost.svg");
+  background-position: center;
+  background-size: cover;
+}
+.askQuestion {
+  color: #1a1a1a;
+  font-family: "bold";
+  font-size: 12px;
+  line-height: 20px;
+  position: relative;
+}
+.askQuestion::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: -24px;
+  background: url("../../images/Askquestion.svg");
+  background-position: center;
+  background-size: cover;
+}
+.createPoll {
+  color: #1a1a1a;
+  font-family: "bold";
+  font-size: 12px;
+  line-height: 20px;
+  position: relative;
+}
+.createPoll::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: -24px;
+  background: url("../../images/Createpoll.svg");
+  background-position: center;
+  background-size: cover;
+}
+.imageAndInputHolder {
+  width: 100%;
+  height: 60px;
+  background: rgba(235, 236, 237, 0.5);
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.createPostContainerImage {
+  width: 30px;
+  height: 30px;
+}
+.textArea {
+  padding: 10px;
+}
+
+.commentHolder {
+  border-top: 1px solid #b2b2b2;
+  border-radius: 5px;
+  padding: 10px 0px;
+}
+.iconHolders {
+  border-top: 1px solid #b2b2b2;
+  border-radius: 5px;
+  padding: 14px 0px;
+  display: flex;
+}
+.icon {
+  padding: 0px 17px;
+}
+.labelHolder {
+  width: 100%;
+  border-top: 1px solid #b2b2b2;
+  border-radius: 5px;
+  padding: 14px 0px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.labelText {
+  border: 1px solid #4f439a;
+  border-radius: 15px;
+  font-size: 10px;
+  font-family: bold;
+  color: #4f439a;
+  width: 110px;
+  padding: 0px 5px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.tagHolder {
+  width: 100%;
+}

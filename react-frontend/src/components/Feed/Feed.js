@@ -340,9 +340,26 @@ export default class Feed extends Component {
             <div className={styles.centerSection}>
               <div className={styles.createPostContainer}>
                 <div className={styles.createPostNav}>
-                  <div className={styles.writePost}>Create Post</div>
-                  <div className={styles.askQuestion}>Ask Question</div>
-                  <div className={styles.createPoll}>Create Poll</div>
+                  <div
+                    className={styles.writePost}
+                    onClick={() => this.props.showUserPostModal({ post: true })}
+                  >
+                    Create Post
+                  </div>
+                  <div
+                    className={styles.askQuestion}
+                    onClick={() =>
+                      this.props.showUserPostModal({ question: true })
+                    }
+                  >
+                    Ask Question
+                  </div>
+                  <div
+                    className={styles.createPoll}
+                    onClick={() => this.props.showUserPostModal({ poll: true })}
+                  >
+                    Create Poll
+                  </div>
                 </div>
                 <div className={styles.imageAndInputHolder}>
                   <div className={styles.createPostContainerImage}>
