@@ -1,8 +1,13 @@
 import React from "react";
 import styles from "../Settings/Password.css";
 import Input2 from "../../core/Input2";
-
+import Security from "../Settings/Security";
 export default class Password extends React.Component {
+  // handleredirect = url => {
+  //   if (this.props.history) {
+  //     window.open(url, "_blank");
+  //   }
+  // };
   constructor() {
     super();
     this.state = {
@@ -38,7 +43,12 @@ export default class Password extends React.Component {
                 </div>
               </div>
 
-              <div className={styles.saveButton}>Change Password</div>
+              <div
+                onClick={this.props.onChangePassword}
+                className={styles.saveButton}
+              >
+                Change Password
+              </div>
             </div>
           </div>
         </div>

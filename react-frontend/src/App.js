@@ -17,6 +17,7 @@ import Feed from "./components/Feed/Feed";
 import Settings from "./components/Settings/SettingsContainer/SettingsContainer";
 import EventDetailsPageContainer from "./components/Event/container/EventDetailsPageContainer";
 import ConnectionsContainer from "./components/modules/container/ConnectionContainer";
+
 class App extends Component {
   render() {
     return (

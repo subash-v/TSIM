@@ -8,6 +8,7 @@ import PrivacySettings from "../PrivacySettings";
 import ContactInfo from "../ContactInfo";
 import ManageNotification from "../ManageNotification";
 import ManageMembers from "../ManageMembers";
+import Password from "../Password";
 const accData = [
   {
     title: "PROFILE SETTINGS",
@@ -33,7 +34,9 @@ export default class Settings extends React.Component {
       activeIndex
     });
   };
-
+  onChangePassword = () => {
+    this.setState({ activeCard: "changePassword" });
+  };
   rightDisplay = title => {
     console.log("xelpxeekc====>", title.currentTarget.textContent);
     this.setState({
@@ -42,7 +45,7 @@ export default class Settings extends React.Component {
   };
 
   render() {
-    console.log("ACTIVE_CARD", this.state.activeCard);
+    console.log("ACTIVE_CARD", this.props);
     return (
       <div>
         <PrimaryHeaderContainer />
@@ -83,8 +86,11 @@ export default class Settings extends React.Component {
               <ManageNotification />
             ) : null}
             {this.state.activeCard === "Privacy" ? <PrivacySettings /> : null}
-            {this.state.activeCard === "Security" ? <Security /> : null}
+            {this.state.activeCard === "Security" ? (
+              <Password onChangePassword={() => this.onChangePassword()} />
+            ) : null}
             {this.state.activeCard === "Blocking" ? <ManageMembers /> : null}
+            {this.state.activeCard === "changePassword" ? <Security /> : null}
           </div>
         </div>
       </div>

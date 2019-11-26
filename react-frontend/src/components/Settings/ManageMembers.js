@@ -2,30 +2,30 @@ import React from "react";
 import styles from "../Settings/ManageMembers.css";
 import linkedin from "../../images/prof1.jpeg";
 
-var UserInfo = [
-  { name: "Aishverya Agarwal", imgUrl: linkedin, block: true },
-  { name: "Aishverya Agarwal", imgUrl: linkedin, block: true },
-  { name: "Aishverya Agarwal", imgUrl: linkedin, block: false },
-  { name: "Aishverya Agarwal", imgUrl: linkedin, block: true }
+const UserInfo = [
+  { id: 1, name: "Aishverya Agarwal", imgUrl: linkedin, block: true },
+  { id: 2, name: "Aishverya Agarwal", imgUrl: linkedin, block: true },
+  { id: 3, name: "Aishverya Agarwal", imgUrl: linkedin, block: false },
+  { id: 4, name: "Aishverya Agarwal", imgUrl: linkedin, block: true }
 ];
-
 export default class ManageMembers extends React.Component {
   constructor() {
     super();
     this.state = {
+      UserInfo: [...UserInfo],
       name: "",
       designation: "",
       location: "",
-      summary: "",
-      block: false
+      summary: ""
     };
   }
-  unblock = block => {
-    this.setState({
-      block: !block
-    });
+  unblock = (info, index) => {
+    UserInfo[index].block = !UserInfo[index].block;
+    this.forceUpdate();
+    console.log("===========>>>>", this.state.UserInfo[index]);
   };
   render() {
+    // console.log("USERGVGVGVJHKB", this.state.UserData);
     return (
       <React.Fragment>
         <div className={styles.baseContainer}>
@@ -35,8 +35,9 @@ export default class ManageMembers extends React.Component {
               <div className={styles.lineSeparator}></div>
 
               <div className={styles.choose}>Blocked Members</div>
-              {UserInfo.map(info => (
-                <div className={styles.commonContainer}>
+
+              {this.state.UserInfo.map((info, index) => (
+                <div key={index} className={styles.commonContainer}>
                   <div>
                     <img src={info.imgUrl} className={styles.img} alt="" />
 
@@ -45,10 +46,10 @@ export default class ManageMembers extends React.Component {
 
                   <div>
                     <div
-                      onClick={() => this.unblock(this.state.block)}
+                      onClick={() => this.unblock(info, index)}
                       className={styles.unblock}
                     >
-                      {this.state.block ? "Block" : "Unblock"}
+                      {info.block ? "Unblock" : "Block"}
                     </div>
                   </div>
                 </div>
