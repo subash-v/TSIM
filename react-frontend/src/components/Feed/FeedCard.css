@@ -12,16 +12,25 @@
   padding: 10px 20px;
   position: relative;
 }
-.feedHeaderContainer::before {
-  content: "";
-  width: 4px;
-  height: 18px;
+.feedMenuHolder
+{
+  position: absolute;
+  top: 36px;
+  right: 19px;
+  z-index: 1;
+}
+
+.dottedRightMenu
+{
+  width: 16px;
+  height: 19px;
   position: absolute;
   top: 20px;
-  right: 20px;
-  background: url("../../images/Overflow-menu-black.svg");
+  right: 13px;
+  background: url(/static/media/Overflow-menu-black.b7a6761c.svg);
   background-position: center;
   background-size: cover;
+  cursor: pointer;
 }
 .profileImage {
   width: 50px;
