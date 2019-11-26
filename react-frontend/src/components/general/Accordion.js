@@ -3,6 +3,7 @@ import styles from "./Accordion.css";
 import PropTypes from "prop-types";
 import { Collapse } from "react-collapse";
 import Icon from "../../core/Icon";
+import HorizantalIconWithHeader from "../../core/HorizantalIconWithHeader";
 
 export default class Accordion extends Component {
   constructor(props) {
@@ -60,15 +61,13 @@ export default class Accordion extends Component {
                     : styles.highlightedAccordianText
                 }
               >
-                {this.props.image && (
-                  <div className={styles.icon}>
-                    <Icon
-                      image={this.props.image}
-                      size={this.props.size}
-                    ></Icon>
-                  </div>
-                )}
-                {this.props.text}
+                <HorizantalIconWithHeader
+                  icon={this.props.image}
+                  size={this.props.size}
+                  text={this.props.text}
+                  fontSize={this.props.fontSize}
+                  fontColor={this.props.fontColor}
+                />
               </div>
             )}
             <div
