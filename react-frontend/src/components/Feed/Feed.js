@@ -74,8 +74,9 @@ export default class Feed extends Component {
         {/* <div className={styles.indicatorHolder}>
           <VerticalStatus first="complete" second="active" third="incompele" />
         </div> */}
-
-        <PrimaryHeaderContainer history={this.props.history} />
+        <div className={styles.fixedHeader}>
+          <PrimaryHeaderContainer history={this.props.history} />
+        </div>
         <CenteredContent>
           <div className={styles.heading}>Top Picks</div>
           <div className={styles.imageDisplaySection}>

@@ -44,7 +44,9 @@ export default class Settings extends React.Component {
   render() {
     return (
       <div>
-        <PrimaryHeaderContainer />
+        <div className={styles.fixedHeader}>
+          <PrimaryHeaderContainer />
+        </div>{" "}
         <div className={styles.container}>
           <div className={styles.leftContainer}>
             {accData &&

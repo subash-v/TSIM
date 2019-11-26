@@ -12,7 +12,9 @@ export default class VisualProfilePage extends Component {
       <React.Fragment>
         <div className={styles.base}>
           <div className={styles.headerHolder}>
-            <PrimaryHeaderContainer />
+            <div className={styles.fixedHeader}>
+              <PrimaryHeaderContainer history={this.props.history} />
+            </div>
           </div>
           <CenteredContent>
             <div className={styles.container}>
