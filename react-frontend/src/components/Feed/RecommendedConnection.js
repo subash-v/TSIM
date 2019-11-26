@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import styles from "./GuidesRecommended.css";
+import styles from "./RecommendedConnection.css";
 import profileImage from "../Images/f.jpg";
 import Button from "../general/Button";
-export default class GuidesRecommended extends Component {
+export default class RecommendedConnection extends Component {
   render() {
     return (
       <div className={styles.base}>
@@ -29,7 +29,7 @@ export default class GuidesRecommended extends Component {
               <img src={profileImage} className={styles.dot} alt={"profile"} />
               <img src={profileImage} className={styles.dot} alt={"profile"} />
               {/* <img src={profileImage} className={styles.dot} alt={"profile"} />
-              <span className={styles.more}>+26</span> */}
+          <span className={styles.more}>+26</span> */}
               <div className={styles.mutualConnectionInfo}>
                 2 Mutual Connections
               </div>
@@ -45,13 +45,6 @@ export default class GuidesRecommended extends Component {
                 label="CONNECT"
                 borderRadius={3}
               />
-            </div>
-          </div>
-          <div className={styles.expertDetailsContainer}>
-            <div className={styles.expertHeading}>EXPERT</div>
-            <div className={styles.tagContainer}>
-              <div className={styles.tag}>Interaction Design</div>
-              <div className={styles.tag}>Product strategy</div>
             </div>
           </div>
         </div>
