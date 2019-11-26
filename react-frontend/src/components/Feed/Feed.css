@@ -100,6 +100,11 @@
   border: 1px solid black;
   margin-bottom: 25px;
 }
+.feedsContainer {
+  width: 100%;
+  height: auto;
+  margin-bottom: 25px;
+}
 .recommendedConnectionContainer {
   width: 100%;
   height: auto;
