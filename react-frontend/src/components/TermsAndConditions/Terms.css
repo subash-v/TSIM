@@ -5,10 +5,12 @@
   flex-shrink: 0;
   cursor: pointer;
 }
+
 .boldLogo {
   width: 100%;
   height: auto;
 }
+
 .container {
   margin: 0;
   width: 100%;
@@ -20,22 +22,26 @@
   font-family: bold;
   margin: 20px 0;
 }
+
 .container h3 {
   font-size: 24px;
   font-family: bold;
   margin: 20px 0;
 }
+
 .container h4 {
   font-size: 18px;
   font-family: bold;
   margin: 10px 0;
 }
+
 .container p,
 .container li {
   font-size: 16px;
   line-height: 30px;
   margin-bottom: 20px;
 }
+
 .container a {
   text-decoration: underline;
   font-family: bold;
@@ -45,4 +51,15 @@
   .container {
     padding: 10px 25px;
   }
+}
+
+.fixedHeader {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  transition: 0.5s;
+  z-index: 1;
+  background: #fff;
+  z-index: 2;
 }

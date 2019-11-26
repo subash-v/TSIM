@@ -201,6 +201,7 @@
   width: 100%;
   margin-bottom: 5px;
 }
+
 .editableOptions {
   background: url("../../images/Overflow-menu-black.svg") no-repeat;
   background-size: cover;
@@ -243,14 +244,17 @@
   composes: accomplishmentIcon;
   background: url("../../images/Job-line.svg");
 }
+
 .eduIcon {
   composes: accomplishmentIcon;
   background: url("../../images/Education-line.svg");
 }
+
 .profileIcon {
   composes: accomplishmentIcon;
   background: url("../../images/Certification-Line.svg");
 }
+
 .labelIcon {
   composes: accomplishmentIcon;
   background: url("../../images/Awards-line.svg");
@@ -467,4 +471,15 @@
 
 .removebanner {
   display: none;
+}
+
+.fixedHeader {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  transition: 0.5s;
+  z-index: 1;
+  background: #fff;
+  z-index: 2;
 }

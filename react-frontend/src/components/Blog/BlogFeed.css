@@ -5,25 +5,30 @@
   overflow: auto;
   padding: 20px 0px 40px 0px;
 }
+
 .headerHolder {
   padding-bottom: 20px;
 }
+
 .container {
   width: 100%;
   height: auto;
   padding: 20px 0x;
 }
+
 .bannerBase {
   width: 100%;
   height: 500px;
   display: inline-block;
 }
+
 .bannerContainer {
   width: 60%;
   height: 100%;
   display: inline-block;
   vertical-align: top;
 }
+
 .splitbannerContainer {
   width: 40%;
   height: 100%;
@@ -31,6 +36,7 @@
   padding-left: 5px;
   vertical-align: top;
 }
+
 .banner {
   width: 100%;
   height: 100%;
@@ -41,10 +47,12 @@
   display: flex;
   align-items: flex-end;
 }
+
 .bannerContentBase {
   width: 100%;
   height: auto;
 }
+
 .tagButton {
   width: 120px;
   height: 25px;
@@ -57,6 +65,7 @@
   font-family: bold;
   justify-content: center;
 }
+
 .heading {
   margin: 10px 0px;
   width: 100%;
@@ -67,6 +76,7 @@
   line-height: 32px;
   max-width: 340px;
 }
+
 .task {
   width: 100%;
   height: auto;
@@ -76,6 +86,7 @@
   font-family: 600;
   margin-bottom: 10px;
 }
+
 .dot {
   height: 3px;
   width: 3px;
@@ -85,6 +96,7 @@
   vertical-align: middle;
   margin: 0px 10px;
 }
+
 .description {
   color: #fff;
   font-size: 16px;
@@ -92,6 +104,7 @@
   max-width: 500px;
   margin-bottom: 10px;
 }
+
 .button {
   width: 140px;
   height: 45px;
@@ -104,6 +117,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .splitbanner1 {
   width: calc(100% - 5px);
   height: calc(50% - 5px);
@@ -115,11 +129,13 @@
   align-items: flex-end;
   padding: 20px;
 }
+
 .splitbannerHeading {
   composes: heading;
   font-size: 18px;
   line-height: 24px;
 }
+
 .splitbanner2 {
   composes: splitbanner1;
   height: 50%;
@@ -133,6 +149,7 @@
   width: 100%;
   height: auto;
 }
+
 .storiesHeading {
   width: 100%;
   height: auto;
@@ -142,6 +159,7 @@
   font-size: 16px;
   margin-top: 30px;
 }
+
 .storiesContainer {
   width: 100%;
   height: auto;
@@ -149,6 +167,7 @@
   flex-wrap: wrap;
   align-items: stretch;
 }
+
 .card {
   width: calc((100% / 3));
   padding: 22.5px;
@@ -156,18 +175,32 @@
   flex-shrink: 0;
   display: flex;
 }
+
 .signUpBarContainer {
   width: 100%;
   height: auto;
   margin-bottom: 60px;
   margin-top: 30px;
 }
+
 @media only screen and (max-width: 1024px) {
   .card {
     width: 100%;
     padding: 10px 0;
   }
+
   .container {
     padding: 0 43px;
   }
+}
+
+.fixedHeader {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  transition: 0.5s;
+  z-index: 1;
+  background: #fff;
+  z-index: 2;
 }

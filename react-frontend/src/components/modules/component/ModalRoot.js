@@ -16,7 +16,6 @@ import EventDetailSliderComponent from "../../Event/EventDetailSlider/EventDetai
 
 const modalRoot = document.getElementById("modal-root");
 
-const modalRoot = document.getElementById("modal-root");
 export default class ModalRoot extends React.Component {
   constructor(props) {
     super(props);

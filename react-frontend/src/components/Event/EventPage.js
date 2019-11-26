@@ -4,9 +4,9 @@ import Button from "../general/Button.js";
 import Card from "../general/EventCard";
 import CenteredContent from "../../core/CenteredContent";
 import Footer from "../Footer/Footer";
-import EventSliderComponent from './EventSliderComponent/EventSliderComponent'
+import EventSliderComponent from "./EventSliderComponent/EventSliderComponent";
 import PrimaryHeaderContainer from "../HomePage/container/PrimaryHeaderContainer";
-import FilterSliderComponent from './FilterSliderComponent/FilterSliderComponent'
+import FilterSliderComponent from "./FilterSliderComponent/FilterSliderComponent";
 export const carouselData = [
   {
     title: "WEFT Women Entrepreneurs Annual Conference & Awards 2019",
@@ -68,14 +68,15 @@ export default class EventPage extends Component {
     if (this.props.showEventDetailsModule) {
       this.props.showEventDetailsModule();
     }
-
-  }
+  };
   render() {
     return (
       <React.Fragment>
         <div className={styles.base}>
           <div className={styles.headerHolder}>
-            <PrimaryHeaderContainer />
+            <div className={styles.fixedHeader}>
+              <PrimaryHeaderContainer />
+            </div>{" "}
           </div>
           <React.Fragment>
             <EventSliderComponent {...this.props} />

@@ -104,7 +104,9 @@ export default class Profile extends Component {
   render() {
     return (
       <React.Fragment>
-        <PrimaryHeaderContainer />
+        <div className={styles.fixedHeader}>
+          <PrimaryHeaderContainer />
+        </div>
         <div className={styles.base}>
           <div className={styles.topSection}>
             <CenteredContent contentWidth="1400px">
