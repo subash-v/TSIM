@@ -22,7 +22,10 @@ export default class Profile extends Component {
       tour7: false,
       tourcount: 0,
       closeToolTip: false,
-      closeBanner: true
+      closeBanner: true,
+      file: [],
+      slideIndex: 0,
+      maxSlide: 5
     };
   }
 
@@ -99,6 +102,21 @@ export default class Profile extends Component {
     this.setState({
       closeBanner: false
     });
+  };
+
+  onChange = async event => {
+    console.log("onChange", event);
+    if (event.target.files && event.target.files.length) {
+      let files = [];
+      files.push(URL.createObjectURL(event.target.files[0]));
+      await this.setState({
+        file: files
+      });
+    }
+  };
+
+  onLoadMore = () => {
+    this.props.showImageUploadModule();
   };
 
   render() {
@@ -188,46 +206,65 @@ export default class Profile extends Component {
                   </div>
                 </div>
                 <div className={styles.uploadImage}>
-                  <div className={styles.uploadImageDummy}>
-                    <div className={styles.uploadImageGroup}>
-                      {" "}
-                      <div className={styles.uploadPlusButton}></div>
-                      <div className={styles.uploadPlusButton}></div>
-                      <div className={styles.uploadPlusButton}></div>
-                      <div className={styles.uploadPlusButton}></div>
-                      <div className={styles.uploadPlusButton}></div>
-                      {this.state.tourcount === 2 && (
-                        <ToolTip
-                          toolTipLeft={"-325px"}
-                          toolTipTop={"-40px"}
-                          right={"-8px"}
-                          top={"50px"}
-                          transform={"rotate(180deg)"}
-                          handleModal={this.closeToolTip}
-                          showScreen={false}
-                          children={
-                            <React.Fragment>
-                              <div className={styles.toolTipHeader}>
-                                Add Profile Pictures
-                              </div>
-                              <div className={styles.toolTipBody}>
-                                Its your profile and let’s make it interesting
-                              </div>
-                              <Button
-                                type="primary"
-                                backgroundColor={"#AD5DA3"}
-                                fontColor={"#fff"}
-                                height={30}
-                                width={80}
-                                label="Got It!"
-                                borderRadius={2}
-                                onClick={this.gotItHandler}
-                              />
-                            </React.Fragment>
-                          }
-                        />
+                  {this.state.file.length > 0 ? (
+                    <div className={styles.profileCarousel}>
+                      {this.state.slideIndex === 0 && (
+                        <div className={styles.mySlides}>
+                          <div
+                            style={{
+                              backgroundImage: `url(${this.state.file[0]})`,
+                              backgroundRepeat: "no-repeat",
+                              width: "100%",
+                              height: "50vh",
+                              backgroundPosition: "center"
+                            }}
+                            // src={image0}
+                            className={styles.homepageCarousal}
+                          />
+                        </div>
                       )}
                     </div>
+                  ) : (
+                    <div className={styles.uploadImageDummy}></div>
+                  )}
+                  <div className={styles.uploadImageGroup}>
+                    <div
+                      className={styles.uploadImages}
+                      onClick={() => this.onLoadMore()}
+                    >
+                      Upload
+                    </div>
+                    {this.state.tourcount === 2 && (
+                      <ToolTip
+                        toolTipLeft={"-325px"}
+                        toolTipTop={"-40px"}
+                        right={"-8px"}
+                        top={"50px"}
+                        transform={"rotate(180deg)"}
+                        handleModal={this.closeToolTip}
+                        showScreen={false}
+                        children={
+                          <React.Fragment>
+                            <div className={styles.toolTipHeader}>
+                              Add Profile Pictures
+                            </div>
+                            <div className={styles.toolTipBody}>
+                              Its your profile and let’s make it interesting
+                            </div>
+                            <Button
+                              type="primary"
+                              backgroundColor={"#AD5DA3"}
+                              fontColor={"#fff"}
+                              height={30}
+                              width={80}
+                              label="Got It!"
+                              borderRadius={2}
+                              onClick={this.gotItHandler}
+                            />
+                          </React.Fragment>
+                        }
+                      />
+                    )}
                   </div>
                 </div>
               </div>
