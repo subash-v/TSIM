@@ -13,8 +13,9 @@ import RegisterDetailsModule from "./RegisterDetailsModule";
 import AllConnection from "./AllConnection";
 import UserPostModal from "../../Feed/UserPostModal";
 import EventDetailSliderComponent from "../../Event/EventDetailSlider/EventDetailSliderComponent";
-
+import AddPosFormContainer from "../container/AddPosFormContainer";
 const modalRoot = document.getElementById("modal-root");
+
 
 export default class ModalRoot extends React.Component {
   constructor(props) {
@@ -125,6 +126,11 @@ export default class ModalRoot extends React.Component {
       ),
       UserPostModal: (
         <UserPostModal
+          closeModal={() => this.handleClose()}
+          {...this.props.ownProps}
+        />
+      ), AddPosForm: (
+        <AddPosFormContainer
           closeModal={() => this.handleClose()}
           {...this.props.ownProps}
         />
