@@ -55,7 +55,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #b2b2b2;
+
   border-top: 1px solid #b2b2b2;
 }
 .mutualConnectionImages {
@@ -91,34 +91,4 @@
 }
 .buttonContainer {
   display: flex;
-}
-.expertDetailsContainer {
-  width: 100%;
-  height: auto;
-  margin-top: 12px;
-}
-.expertHeading {
-  color: #7f7f7f;
-  font-family: "semibold";
-  font-size: 8px;
-  line-height: 12px;
-}
-.tagContainer {
-  width: 100%;
-  height: auto;
-  display: flex;
-  margin-top: 10px;
-}
-.tag {
-  width: auto;
-  height: auto;
-  padding: 5px;
-  border: 1px solid #b2b2b2;
-  border-radius: 15px;
-  color: #1a1a1a;
-  font-family: "bold";
-  font-size: 10px;
-  line-height: 18px;
-  text-align: center;
-  margin-right: 5px;
 }
