@@ -169,8 +169,8 @@
 }
 
 .uploadImageSection {
-  width: 320px;
-  height: 450px;
+  max-width: 320px;
+  max-height: 450px;
   border: 1px dashed;
   position: relative;
   margin: 0 30px;
@@ -534,4 +534,55 @@
   background: #000 url("../../images/Cancel-white.svg") no-repeat;
   width: 15px;
   height: 15px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 150%;
+  position: absolute;
+  right: 0px;
+  top: -10px;
+  cursor: pointer;
+}
+
+.imageWithCross {
+  width: 44px;
+  height: 44px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: 1px solid #1a1a1a;
+  border-radius: 50%;
+  position: relative;
+}
+
+.showCropButton {
+  border-radius: 5px;
+  font-family: bold;
+  font-size: 16px;
+  height: auto;
+  padding: 15px 25px;
+  color: #4f439a;
+  background: #fff;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  position: absolute;
+  right: 0;
+}
+
+.uploadImageSection > div > div {
+  border: 1px solid red;
+  width: 100%;
+  padding-bottom: 67%;
+  position: relative;
+}
+
+.uploadImageSection > div > div > div > img {
+  border: 1px solid red;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
