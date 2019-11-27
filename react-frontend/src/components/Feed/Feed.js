@@ -13,6 +13,7 @@ import GuidesRecommended from "./GuidesRecommended";
 import RecommendedConnection from "./RecommendedConnection";
 import Input2 from "../../core/Input2";
 import FeedCard from "./FeedCard";
+import CompleteProfileAlert from "./CompleteProfileAlert";
 
 const data = [
   {
@@ -383,6 +384,9 @@ export default class Feed extends Component {
                   </div>
                 );
               })}
+              <div className={styles.completeProfileAlertContainer}>
+                <CompleteProfileAlert />
+              </div>
             </div>
           </div>
         </CenteredContent>
