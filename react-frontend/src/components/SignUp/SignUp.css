@@ -220,3 +220,39 @@ fieldset {
   font-size: 12px;
   font-family: bold;
 }
+@media only screen and (max-width: 1024px) {
+  .base {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+  }
+  .backCircle {
+    border: none;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    position: absolute;
+    top: 21px;
+    left: 10px;
+    text-align: center;
+    box-shadow: none;
+  }
+  .linkedinNfbContainer {
+    width: 100%;
+    padding: 8px;
+    margin-left: 5px;
+  }
+  .signUpContainer {
+    margin-top: 56px;
+    overflow: auto;
+    padding: 0px 20px;
+  }
+  .backImg {
+    width: 15px;
+    height: 15px;
+    margin: 0px;
+  }
+}
+/* screen size below 400px (iphone4) */
+@media only screen and (max-width: 400px) {
+}
