@@ -16,6 +16,7 @@ import ImageUplaod from "../../Profile/ImageUpload";
 import UserPostModal from "../../Feed/UserPostModal";
 import EventDetailSliderComponent from "../../Event/EventDetailSlider/EventDetailSliderComponent";
 import UploadCV from "./UploadCV";
+import WorkExpModal from "./WorkExpModal";
 const modalRoot = document.getElementById("modal-root");
 
 export default class ModalRoot extends React.Component {
@@ -133,6 +134,12 @@ export default class ModalRoot extends React.Component {
       ),
       UploadCVModal: (
         <UploadCV
+          closeModal={() => this.handleClose()}
+          {...this.props.ownProps}
+        />
+      ),
+      WorkExpModal: (
+        <WorkExpModal
           closeModal={() => this.handleClose()}
           {...this.props.ownProps}
         />

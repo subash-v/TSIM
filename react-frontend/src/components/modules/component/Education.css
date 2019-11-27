@@ -5,15 +5,12 @@
   height: auto;
   color: #222;
   border-radius: 10px;
-  min-width: 800px;
-  min-height: 800px;
-  padding-left: 35px;
 }
 .workheader {
   color: #1a1a1a;
   font-family: bold;
   font-size: 18px;
-  font-family: regular;
+  font-weight: regular;
   line-height: 24px;
   display: inline-block;
 }
@@ -31,7 +28,7 @@
 }
 
 .headerCont {
-  /* padding-left: 40px; */
+  padding-left: 40px;
   padding-top: 36px;
 }
 .inputBox {
@@ -69,7 +66,7 @@
 }
 .workicon {
   display: flex;
-  padding: 18px 0px 0px 0px;
+  padding: 18px 0px 0px 35px;
 }
 .active {
   background-color: #4f439a;
@@ -109,6 +106,8 @@ input[type="file"] {
 }
 .inpcont {
   /* padding-left: 35px; */
+
+  padding-top: 20px;
   padding-right: 15px;
 }
 .radiocont {
@@ -141,11 +140,4 @@ input[type="checkbox"] {
 .inputHolder {
   padding: 5px;
   border-radius: 5px;
-}
-.radioco {
-  display: flex;
-}
-.desccont {
-  padding-left: 3px;
-  padding-top: 10px;
 }
