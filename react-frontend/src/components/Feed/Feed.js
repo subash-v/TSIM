@@ -342,21 +342,25 @@ export default class Feed extends Component {
                 <div className={styles.createPostNav}>
                   <div
                     className={styles.writePost}
-                    onClick={() => this.props.showUserPostModal({ post: true })}
+                    onClick={() =>
+                      this.props.showUserPostModal({ showModal: "post" })
+                    }
                   >
                     Create Post
                   </div>
                   <div
                     className={styles.askQuestion}
                     onClick={() =>
-                      this.props.showUserPostModal({ question: true })
+                      this.props.showUserPostModal({ showModal: "question" })
                     }
                   >
                     Ask Question
                   </div>
                   <div
                     className={styles.createPoll}
-                    onClick={() => this.props.showUserPostModal({ poll: true })}
+                    onClick={() =>
+                      this.props.showUserPostModal({ showModal: "poll" })
+                    }
                   >
                     Create Poll
                   </div>

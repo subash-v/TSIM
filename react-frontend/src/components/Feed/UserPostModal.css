@@ -14,11 +14,12 @@
   justify-content: space-around;
 }
 .writePost {
-  color: #4f439a;
+  color: #1a1a1a;
   font-family: "bold";
   font-size: 12px;
   line-height: 20px;
   position: relative;
+  cursor: pointer;
 }
 .writePost::before {
   content: "";
@@ -31,12 +32,29 @@
   background-position: center;
   background-size: cover;
 }
+.writePostSelected {
+  composes: writePost;
+  color: #4f439a;
+}
+.writePostSelected::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: -24px;
+  background: url("../../images/Createpost_blue.svg");
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+}
 .askQuestion {
   color: #1a1a1a;
   font-family: "bold";
   font-size: 12px;
   line-height: 20px;
   position: relative;
+  cursor: pointer;
 }
 .askQuestion::before {
   content: "";
@@ -48,6 +66,23 @@
   background: url("../../images/Askquestion.svg");
   background-position: center;
   background-size: cover;
+  cursor: pointer;
+}
+.askQuestionSelected {
+  composes: askQuestion;
+  color: #4f439a;
+}
+.askQuestionSelected::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: -24px;
+  background: url("../../images/Askquestion_blue.svg");
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
 }
 .createPoll {
   color: #1a1a1a;
@@ -55,6 +90,7 @@
   font-size: 12px;
   line-height: 20px;
   position: relative;
+  cursor: pointer;
 }
 .createPoll::before {
   content: "";
@@ -64,6 +100,24 @@
   top: 0;
   left: -24px;
   background: url("../../images/Createpoll.svg");
+  background-position: center;
+  background-size: cover;
+}
+.createPollSelected {
+  font-family: "bold";
+  font-size: 12px;
+  line-height: 20px;
+  position: relative;
+  color: #4f439a;
+}
+.createPollSelected::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: -24px;
+  background: url("../../images/Createpoll_blue.svg");
   background-position: center;
   background-size: cover;
 }
@@ -98,6 +152,7 @@
 }
 .icon {
   padding: 0px 17px;
+  cursor: pointer;
 }
 .labelHolder {
   width: 100%;
@@ -124,5 +179,157 @@
 }
 
 .tagHolder {
+  height: 30px;
+  width: auto;
+  border: 1px solid #7f7f7f;
+  border-radius: 15px;
+  color: #4f439a;
+  padding: 6px 22px;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  font-family: bold;
+  cursor: pointer;
+}
+.postHolder {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0px;
+  border-top: 1px solid #b2b2b2;
+  border-radius: 5px;
+  padding: 14px 0px;
+}
+.selectHolder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+}
+.holder {
+  composes: selectHolder;
+  justify-content: flex-end;
   width: 100%;
+}
+.check {
+  box-sizing: border-box;
+  height: 15px;
+  width: 15px;
+  border: 1px solid #4f439a;
+  border-radius: 3px;
+  margin-right: 10px;
+}
+.postuser {
+  color: #333333;
+  font-family: regular;
+  font-size: 14px;
+  line-height: 19px;
+}
+.cancel {
+  color: #7f7f7f;
+  font-family: regular;
+  font-size: 15px;
+  line-height: 22px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+.dropdownHolder {
+  background: #4f439a;
+  border: 1px solid #4f439a;
+  border-radius: 5px 0px 0px 5px;
+  padding: 9px 30px;
+  color: #fff;
+  cursor: pointer;
+}
+.dropdownArrow {
+  box-sizing: border-box;
+  padding: 9px 13px;
+  border: 1px solid #4f439a;
+  border-radius: 0 5px 5px 0;
+  vertical-align: middle;
+  color: #4f439a;
+  cursor: pointer;
+  position: relative;
+}
+.showdropDown {
+  position: absolute;
+  right: 0;
+  top: 40px;
+  width: 200px;
+  border: 1px solid #ebeced;
+  background: #ebeced;
+  border-radius: 5px;
+}
+.dropHeader {
+  border-radius: 5px 5px 0 0;
+  background-color: #ebeced;
+  color: #333333;
+  font-family: bold;
+  font-size: 12px;
+  line-height: 17px;
+  padding: 5px 15px;
+}
+.content {
+  padding: 5px 15px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.text {
+  color: #333333;
+  padding-left: 12px;
+  font-family: regular;
+  font-size: 14px;
+  line-height: 19px;
+}
+.inputContianer {
+  composes: createPostContainer;
+  padding: 0px;
+}
+.topNav {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: #ebeced;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.done {
+  color: #4f439a;
+  font-family: bold;
+  font-size: 16px;
+  line-height: 22px;
+}
+.tagInputHolder {
+  padding: 10px 20px;
+}
+.dataHolder {
+  padding: 5px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.imageWithTextHolder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.profilText {
+  color: #333333;
+  font-family: regular;
+  font-size: 14px;
+  line-height: 19px;
+  padding-left: 26px;
+}
+.pollInputHolder {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.pollBox {
+  width: 100%;
+  padding: 10px 0px;
 }

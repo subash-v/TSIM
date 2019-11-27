@@ -41,20 +41,15 @@ export default class TagsInput extends Component {
   render() {
     return (
       <div className={styles.tags_input}>
+        {/* {this.props.fixedTag && (
+          <div className={styles.tag}>{this.props.fixedTag}</div>
+        )} */}
         {this.props.value.map((tag, index) => (
-          <div className={index == 0 ? styles.fixedTag : styles.tag}>
+          <div className={styles.tag}>
             {tag}
-            {index != 0 && (
-              <div className={styles.delete} onClick={this.handleRemoveTag} />
-            )}
+            <div className={styles.delete} onClick={this.handleRemoveTag} />
           </div>
         ))}
-        <input
-          type="text"
-          style={{ border: "none" }}
-          onChange={this.handleChange}
-          onKeyDown={this.handleKeyDown}
-        />
       </div>
     );
   }
