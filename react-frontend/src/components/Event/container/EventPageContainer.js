@@ -1,7 +1,12 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { showModal, FILTER_MODULE, EVENT_DETAIL_SLIDER_COMPONENT } from "../../modules/modal.actions";
+import {
+  showModal,
+  FILTER_MODULE,
+  EVENT_DETAIL_SLIDER_COMPONENT
+} from "../../modules/modal.actions";
 import EventPage from "../EventPage";
+import { getAllEvents, getEventDetails } from "../../../actions/event.action";
 const mapDispatchToProps = dispatch => {
   return {
     showFilterModule: data => {
@@ -9,14 +14,19 @@ const mapDispatchToProps = dispatch => {
     },
     showEventDetailsModule: data => {
       dispatch(showModal(EVENT_DETAIL_SLIDER_COMPONENT, data));
+    },
+    getAllEvents: () => {
+      dispatch(getAllEvents());
+    },
+    getEventDetails: id => {
+      dispatch(getEventDetails(id));
     }
-
   };
 };
 
 const mapStateToProps = state => {
   return {
-    loading: state
+    event: state.event
   };
 };
 const EventPageContainer = withRouter(

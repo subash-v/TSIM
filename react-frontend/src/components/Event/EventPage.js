@@ -69,6 +69,9 @@ export default class EventPage extends Component {
       this.props.showEventDetailsModule();
     }
   };
+  componentDidMount = () => {
+    this.props.getAllEvents();
+  };
   render() {
     return (
       <React.Fragment>
