@@ -9,6 +9,7 @@ export const SIGNUP_MODULE = "SignUpModule";
 export const FILTER_MODULE = "FilterModule";
 export const FORGOT_PASSWORD_MODULE = "ForgotPassword";
 export const SELECT_EVENT_MODULE = "SelectEventModule";
+export const UPLOADCV_MODULE = "UploadCVModule";
 export function showModal(type, ownProps) {
   const scrollPosition =
     window.pageYOffset || document.documentElement.scrollTop;

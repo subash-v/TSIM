@@ -11,6 +11,7 @@ import SignUp from "../../SignUp/SignUp";
 import FilterModule from "./FilterModule";
 import ForgotPassword from "../../ForgotPassword/ForgotPassword";
 import SelectEventContainer from "../container/SelectEventContainer";
+import UploadCVModalContainer from "../container/UploadCVModalContainer";
 const modalRoot = document.getElementById("modal-root");
 
 const Loader = () => {
@@ -90,6 +91,12 @@ export default class ModalRoot extends React.Component {
       ),
       SelectEventModule: (
         <SelectEventContainer
+          closeModal={() => this.handleClose()}
+          {...this.props.ownProps}
+        />
+      ),
+      UploadCVModule: (
+        <UploadCVModalContainer
           closeModal={() => this.handleClose()}
           {...this.props.ownProps}
         />

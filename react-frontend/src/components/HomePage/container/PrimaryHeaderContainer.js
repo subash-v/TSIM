@@ -4,18 +4,19 @@ import {
   showModal,
   LOGIN_MODULE,
   SIGNUP_MODULE,
-  SLIDER_COMPONENT
+  SLIDER_COMPONENT,
+  UPLOADCV_MODULE
 } from "../../modules/modal.actions";
 import PrimaryHeader from "../PrimaryHeader";
 const mapDispatchToProps = dispatch => {
   return {
     showLoginModule: data => {
-      dispatch(showModal(LOGIN_MODULE, data));
+      dispatch(showModal(UPLOADCV_MODULE, data));
     },
     showSignUpModule: data => {
       dispatch(showModal(SIGNUP_MODULE, data));
-    }
-    , showsliderComponent: data => {
+    },
+    showsliderComponent: data => {
       dispatch(showModal(SLIDER_COMPONENT, data));
     }
   };
