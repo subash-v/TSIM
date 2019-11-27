@@ -4,6 +4,7 @@
   display: inline-block;
   border: 1px solid #b2b2b2;
   border-radius: 5px;
+  margin-top: 10px;
 }
 .pollingTag {
   width: 10%;

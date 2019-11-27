@@ -10,12 +10,12 @@
     height: auto;
     background: #fff;
     transform: translateY(100%);
-    animation: slideUp 300ms ease-in forwards;
+    animation: slideUp 100ms ease-in forwards;
    
   }
   @keyframes slideUp {
     0% {
-      transform: translateY(100%);
+      transform: translateY(0%);
     }
     100% {
       transform: translateY(0%);
