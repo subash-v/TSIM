@@ -51,15 +51,18 @@
   position: relative;
   overflow: hidden;
   display: inline-block;
+  padding-bottom: 10px;
 }
 
 .btn {
   border: 1.2px solid #4f439a;
   color: #4f439a;
   background-color: white;
+  width: 147px;
+  height: 40px;
   padding: 8px 20px;
-  border-radius: 8px;
-  font-size: 20px;
+  border-radius: 5px;
+  font-size: 14px;
   font-weight: bold;
 }
 

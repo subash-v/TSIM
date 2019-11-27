@@ -34,9 +34,11 @@ export default class WorkForm extends Component {
   handleClick = files => {
     console.log(files);
     let existingFile = this.state.files;
-    existingFile.filter(val => {
-      return files !== val.name;
+    var index = existingFile.findIndex(val => {
+      return val.name == files;
     });
+    existingFile.splice(index, 1);
+    this.setState({ files: existingFile });
   };
   render() {
     console.log(this.state.files);

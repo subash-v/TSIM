@@ -16,7 +16,29 @@ export default class VolunteerForm extends Component {
     location: "",
     startdate: "",
     enddate: "",
-    description: ""
+    description: "",
+    files: []
+  };
+  handleChange = files => {
+    console.log(files.length);
+    if (this.state.files.length + files.length <= 3) {
+      let existingFile = this.state.files;
+      existingFile.push(...files);
+      // files.map(file => {
+      //   console.log(file);
+      // });
+      console.log("Existing", existingFile);
+      this.setState({ files: existingFile });
+    }
+  };
+  handleClick = files => {
+    console.log(files);
+    let existingFile = this.state.files;
+    var index = existingFile.findIndex(val => {
+      return val.name == files;
+    });
+    existingFile.splice(index, 1);
+    this.setState({ files: existingFile });
   };
   render() {
     return (
@@ -106,8 +128,27 @@ export default class VolunteerForm extends Component {
         <div className={styles.buttonCont}>
           <div className={styles.uploadcont}>
             {" "}
-            <ButtonWithIcon></ButtonWithIcon>
-            <div style={{ padding: "10px" }}>Upto 3 files</div>
+            <ButtonWithIcon
+              onChange={event => {
+                console.log("Button", event.target.files);
+                this.handleChange(event.target.files);
+              }}
+            ></ButtonWithIcon>
+            <div style={{ padding: "10px" }}>
+              {this.state.files.map(val => (
+                <div>
+                  {val.name}
+                  <button
+                    onClick={() => {
+                      this.handleClick(val.name);
+                    }}
+                  >
+                    remove
+                  </button>
+                </div>
+              ))}
+              Upto 3 files
+            </div>
           </div>
           <Button
             width="674px"
