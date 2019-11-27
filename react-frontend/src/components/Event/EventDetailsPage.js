@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PrimaryHeader from "../HomePage/PrimaryHeader";
 import styles from "./EventDetailsPage.css";
 import Button from "../general/Button.js";
 import Card from "../general/EventCard";
@@ -9,6 +8,8 @@ import { carouselData } from "./EventPage";
 import bannerImage from "../Images/b.jpg";
 import Image from "../../core/Image";
 import profileImage from "../Images/b.jpg";
+import PrimaryHeaderContainer from "../HomePage/container/PrimaryHeaderContainer";
+import EventDetailPageSliderComponent from "./EventDetailPageSlider/EventDetailPageSliderComponent";
 
 export default class EventDetailsPage extends Component {
   render() {
@@ -16,14 +17,17 @@ export default class EventDetailsPage extends Component {
       <React.Fragment>
         <div className={styles.base}>
           <div className={styles.headerHolder}>
-            <PrimaryHeader history={this.props.history} />
+            <div className={styles.fixedHeader}>
+              <PrimaryHeaderContainer />
+            </div>
           </div>
 
           <div className={styles.container}>
             <CenteredContent>
               <div className={styles.bannerDescHolder}>
                 <div className={styles.bannerImage}>
-                  <Image image={bannerImage} />
+                  {/* <Image image={bannerImage} /> */}
+                  <EventDetailPageSliderComponent></EventDetailPageSliderComponent>
                 </div>
                 <div className={styles.descriptionBase}>
                   <div className={styles.descriptionContainer}>
@@ -69,7 +73,10 @@ export default class EventDetailsPage extends Component {
                       9 Seats are left!
                     </div>
                     <div className={styles.eventButtonConatiner}>
-                      <div className={styles.eventButton}>
+                      <div
+                        className={styles.eventButton}
+                        onClick={() => this.props.showRegisterDetailsModule()}
+                      >
                         <Button
                           type="primary"
                           backgroundColor={"#4F439A"}

@@ -1,6 +1,7 @@
 .base {
   width: 100%;
   height: 100%;
+  position: relative;
 }
 
 .topSection {
@@ -67,7 +68,7 @@
 .uploadCvButton {
   color: #4f439a;
   font-size: 14px;
-  font-weight: bold;
+  font-family: bold;
   line-height: 19px;
   padding-bottom: 5px;
 }
@@ -114,6 +115,7 @@
 
 .profileConnections {
   padding-top: 25px;
+  position: relative;
 }
 
 .profileConnections {
@@ -188,6 +190,10 @@
   margin: 0 15px;
 }
 
+.milestoneSection {
+  position: relative;
+}
+
 .uploadImageGroup {
   text-align: center;
   position: absolute;
@@ -195,6 +201,7 @@
   width: 100%;
   margin-bottom: 5px;
 }
+
 .editableOptions {
   background: url("../../images/Overflow-menu-black.svg") no-repeat;
   background-size: cover;
@@ -237,14 +244,17 @@
   composes: accomplishmentIcon;
   background: url("../../images/Job-line.svg");
 }
+
 .eduIcon {
   composes: accomplishmentIcon;
   background: url("../../images/Education-line.svg");
 }
+
 .profileIcon {
   composes: accomplishmentIcon;
   background: url("../../images/Certification-Line.svg");
 }
+
 .labelIcon {
   composes: accomplishmentIcon;
   background: url("../../images/Awards-line.svg");
@@ -279,6 +289,7 @@
 .accomplishmentTag {
   padding-bottom: 50px;
   border-bottom: 3px solid #333;
+  position: relative;
 }
 
 .professionalIcon {
@@ -380,4 +391,95 @@
 
 .addAccomplishment {
   padding-top: 50px;
+}
+
+.enableTour {
+  cursor: pointer;
+  pointer-events: all;
+  text-align: right;
+  color: #4f439a;
+  font-size: 14px;
+  font-family: bold;
+  line-height: 19px;
+  padding-bottom: 5px;
+}
+
+.disableTour {
+  cursor: default;
+  pointer-events: none;
+  text-align: right;
+  color: #4f439a;
+  font-size: 14px;
+  font-family: bold;
+  line-height: 19px;
+  padding-bottom: 5px;
+}
+
+/* For Tool tip */
+
+.toolTipHeader {
+  font-size: 18px;
+  font-family: bold;
+  line-height: 24px;
+  color: #ffffff;
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+.toolTipBody {
+  font-size: 14px;
+  line-height: 17px;
+  color: #ffffff;
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+.notificationToolTip {
+  position: fixed;
+  bottom: 0;
+  cursor: pointer;
+}
+
+.toolTipBanner {
+  font-family: regular;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.toolTipStart {
+  font-size: 18px;
+  font-family: bold;
+  line-height: 24px;
+  text-align: center;
+  border-bottom: 1px dotted;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.notifyIcon {
+  background: url("../../images/Info-Line-white.svg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.removebanner {
+  display: none;
+}
+
+.fixedHeader {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  transition: 0.5s;
+  z-index: 1;
+  background: #fff;
+  z-index: 2;
 }

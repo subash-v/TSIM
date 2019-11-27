@@ -15,7 +15,7 @@ import Textarea from "./Textarea";
 import styles from "./WorkExpModal.css";
 import ButtonWithIcon from "./ButtonWithIcon";
 import InputWithIcon from "./InputWithIcon";
-import info from "../../../images/Info Line.svg";
+import info from "../../../images/Info_Line.svg";
 import cal from "../../../images/calendarEvent .svg";
 import ControlInput from "../../../core/ControlInput";
 import Jobline from "./Jobline";
@@ -47,8 +47,6 @@ export default class WorkExpModal extends Component {
     description: ""
   };
   handleClick = val => {
-    console.log(val.toUpperCase());
-    console.log(val);
     this.setState({
       active: val,
       showModal: val.toUpperCase()

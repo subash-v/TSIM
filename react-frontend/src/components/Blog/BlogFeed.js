@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import styles from "./BlogFeed.css";
 import Card from "../general/Card";
 import CenteredContent from "../../core/CenteredContent";
-import PrimaryHeader from "../HomePage/PrimaryHeader";
-
 import SignUpBar from "./SignUpBar";
 import Footer from "../Footer/Footer";
 import PrimaryHeaderContainer from "../HomePage/container/PrimaryHeaderContainer";
@@ -78,7 +76,9 @@ export default class BlogFeed extends Component {
       <React.Fragment>
         <div className={styles.base}>
           <div className={styles.headerHolder}>
-            <PrimaryHeaderContainer />
+            <div className={styles.fixedHeader}>
+              <PrimaryHeaderContainer />
+            </div>{" "}
           </div>
           <CenteredContent>
             <div className={styles.container}>

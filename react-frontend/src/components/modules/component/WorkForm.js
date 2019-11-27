@@ -3,7 +3,7 @@ import cal from "../../../images/calendarEvent .svg";
 import ButtonWithIcon from "./ButtonWithIcon";
 import Button from "../../../core/Button";
 import InputWithIcon from "./InputWithIcon";
-import info from "../../../images/Info Line.svg";
+import info from "../../../images/Info_Line.svg";
 import styles from "./WorkExpModal.css";
 import ControlInput from "../../../core/ControlInput";
 export default class WorkForm extends Component {

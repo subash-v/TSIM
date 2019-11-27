@@ -1,27 +1,112 @@
 import React, { Component } from "react";
 import styles from "./Profile.css";
-import PrimaryHeader from "../HomePage/PrimaryHeader";
 import CenteredContent from "../../core/CenteredContent";
 import Milestone from "../../core/Milestone";
 import Skills from "../Skills/Skills";
+import ToolTip from "../../core/ToolTip";
+import Button from "../../core/Button";
+import PrimaryHeaderContainer from "../HomePage/container/PrimaryHeaderContainer";
 
 const data = [{}, {}, {}, {}, {}];
-
-const work = [{}, {}, {}, {}];
-const education = [{}, {}, {}, {}];
-const certification = [{}, {}, {}, {}];
-const awards = [{}, {}, {}, {}];
 
 export default class Profile extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      tour1: false,
+      tour2: false,
+      tour3: false,
+      tour4: false,
+      tour5: false,
+      tour6: false,
+      tour7: false,
+      tourcount: 0,
+      closeToolTip: false,
+      closeBanner: true
+    };
   }
+
+  incrementTime = () => {
+    if (this.state.tourcount === 1) {
+      this.setState({
+        tour1: true,
+        tourcount: this.state.tourcount + 1
+      });
+    } else if (this.state.tourcount === 2) {
+      this.setState({
+        tour2: true,
+        tourcount: this.state.tourcount + 1
+      });
+    } else if (this.state.tourcount === 3) {
+      this.setState({
+        tour3: true,
+        tourcount: this.state.tourcount + 1
+      });
+    } else if (this.state.tourcount === 4) {
+      this.setState({
+        tour4: true,
+        tourcount: this.state.tourcount + 1
+      });
+    } else if (this.state.tourcount === 5) {
+      this.setState({
+        tour5: true,
+        tourcount: this.state.tourcount + 1
+      });
+    } else if (this.state.tourcount === 6) {
+      this.setState({
+        tour6: true,
+        tourcount: this.state.tourcount + 1
+      });
+    } else if (this.state.tourcount === 7) {
+      this.setState({
+        tour7: true,
+        tourcount: this.state.tourcount + 1
+      });
+    } else {
+      console.log("end the tour");
+    }
+  };
+
+  gotItHandler = async () => {
+    await this.setState({
+      tourcount: this.state.tourcount + 1
+    });
+  };
+
+  startTour = async () => {
+    await this.setState({
+      tourcount: this.state.tourcount + 1,
+      tour1: true
+    });
+  };
+
+  closeToolTip = () => {
+    this.setState({
+      tourcount: 0,
+      tour1: false,
+      tour2: false,
+      tour3: false,
+      tour4: false,
+      tour5: false,
+      tour6: false,
+      tour7: false,
+      closeToolTip: false,
+      closeBanner: false
+    });
+  };
+
+  closeBannerToolTip = () => {
+    this.setState({
+      closeBanner: false
+    });
+  };
 
   render() {
     return (
       <React.Fragment>
-        <PrimaryHeader history={this.props.history} />
+        <div className={styles.fixedHeader}>
+          <PrimaryHeaderContainer />
+        </div>
         <div className={styles.base}>
           <div className={styles.topSection}>
             <CenteredContent contentWidth="1400px">
@@ -45,6 +130,36 @@ export default class Profile extends Component {
                   <div className={styles.profileConnections}>
                     <div className={styles.connections}>
                       {this.props.connections ? "" : 0}+ Connections
+                      {this.state.tourcount === 1 && (
+                        <ToolTip
+                          toolTipLeft={"130px"}
+                          toolTipTop={"-20px"}
+                          left={"-8px"}
+                          top={"50px"}
+                          handleModal={this.closeToolTip}
+                          showScreen={false}
+                          children={
+                            <React.Fragment>
+                              <div className={styles.toolTipHeader}>
+                                Tell us about yourself
+                              </div>
+                              <div className={styles.toolTipBody}>
+                                Let other users know more about you
+                              </div>
+                              <Button
+                                type="primary"
+                                backgroundColor={"#AD5DA3"}
+                                fontColor={"#fff"}
+                                height={30}
+                                width={80}
+                                label="Got It!"
+                                borderRadius={2}
+                                onClick={this.gotItHandler}
+                              />
+                            </React.Fragment>
+                          }
+                        />
+                      )}
                     </div>
                     <div className={styles.uploadCvButton}>UPLOAD CV</div>
                   </div>
@@ -83,6 +198,37 @@ export default class Profile extends Component {
                       <div className={styles.uploadPlusButton}></div>
                       <div className={styles.uploadPlusButton}></div>
                       <div className={styles.uploadPlusButton}></div>
+                      {this.state.tourcount === 2 && (
+                        <ToolTip
+                          toolTipLeft={"-325px"}
+                          toolTipTop={"-40px"}
+                          right={"-8px"}
+                          top={"50px"}
+                          transform={"rotate(180deg)"}
+                          handleModal={this.closeToolTip}
+                          showScreen={false}
+                          children={
+                            <React.Fragment>
+                              <div className={styles.toolTipHeader}>
+                                Add Profile Pictures
+                              </div>
+                              <div className={styles.toolTipBody}>
+                                Its your profile and let’s make it interesting
+                              </div>
+                              <Button
+                                type="primary"
+                                backgroundColor={"#AD5DA3"}
+                                fontColor={"#fff"}
+                                height={30}
+                                width={80}
+                                label="Got It!"
+                                borderRadius={2}
+                                onClick={this.gotItHandler}
+                              />
+                            </React.Fragment>
+                          }
+                        />
+                      )}
                     </div>
                   </div>
                 </div>
@@ -100,6 +246,38 @@ export default class Profile extends Component {
                 {data.map((val, i) => {
                   return <Milestone key={i} />;
                 })}
+                {this.state.tourcount === 3 && (
+                  <ToolTip
+                    toolTipLeft={"210px"}
+                    toolTipBottom={"-140px"}
+                    toolTipRight={"0px"}
+                    left={"190px"}
+                    top={"-12px"}
+                    transform={"rotate(90deg)"}
+                    handleModal={this.closeToolTip}
+                    showScreen={false}
+                    children={
+                      <React.Fragment>
+                        <div className={styles.toolTipHeader}>
+                          Highlight your professional milestones
+                        </div>
+                        <div className={styles.toolTipBody}>
+                          You can upto 5 major life events/achievements here!
+                        </div>
+                        <Button
+                          type="primary"
+                          backgroundColor={"#AD5DA3"}
+                          fontColor={"#fff"}
+                          height={30}
+                          width={80}
+                          label="Got It!"
+                          borderRadius={2}
+                          onClick={this.gotItHandler}
+                        />
+                      </React.Fragment>
+                    }
+                  />
+                )}
               </div>{" "}
             </CenteredContent>
           </div>
@@ -121,6 +299,39 @@ export default class Profile extends Component {
                   <div className={styles.eduIcon}></div>
                   <div className={styles.profileIcon}></div>
                   <div className={styles.labelIcon}></div>
+                  {this.state.tourcount === 4 && (
+                    <ToolTip
+                      toolTipLeft={"210px"}
+                      toolTipTop={"-50px"}
+                      left={"-8px"}
+                      top={"60px"}
+                      handleModal={this.closeToolTip}
+                      showScreen={false}
+                      children={
+                        <React.Fragment>
+                          <div className={styles.toolTipHeader}>
+                            Narrate your story
+                          </div>
+                          <div className={styles.toolTipBody}>
+                            You can add your
+                            jobs/achievements/awards/education/certifications on
+                            the platform. We’ll help you build your professional
+                            timeline.
+                          </div>
+                          <Button
+                            type="primary"
+                            backgroundColor={"#AD5DA3"}
+                            fontColor={"#fff"}
+                            height={30}
+                            width={80}
+                            label="Got It!"
+                            borderRadius={2}
+                            onClick={this.gotItHandler}
+                          />
+                        </React.Fragment>
+                      }
+                    />
+                  )}
                 </div>
                 <div className={styles.addAccomplishment}>
                   <div className={styles.jobSection}>
@@ -285,12 +496,180 @@ export default class Profile extends Component {
                 </div>
               </div>
               <div className={styles.skillsLanguages}>
-                <Skills title={"Skills"} skills={this.props.skills} />
-                <Skills title={"Languages"} skills={this.props.skills} />
-                <Skills title={"Interests"} skills={this.props.skills} />
-                <Skills title={"Recent Activity"} skills={this.props.skills} />
+                <div style={{ position: "relative" }}>
+                  {this.state.tourcount === 5 && (
+                    <ToolTip
+                      right={"-8px"}
+                      top={"70px"}
+                      toolTipLeft={"-540px"}
+                      toolTipTop={"-30px"}
+                      transform={"rotate(180deg)"}
+                      handleModal={this.closeToolTip}
+                      showScreen={false}
+                      children={
+                        <React.Fragment>
+                          <div className={styles.toolTipHeader}>
+                            Show us what are you skilled at!
+                          </div>
+                          <div className={styles.toolTipBody}>
+                            You can add your skills here. Let other users know
+                            what are your strengths
+                          </div>
+                          <Button
+                            type="primary"
+                            backgroundColor={"#AD5DA3"}
+                            fontColor={"#fff"}
+                            height={30}
+                            width={80}
+                            label="Got It!"
+                            borderRadius={2}
+                            onClick={this.gotItHandler}
+                          />
+                        </React.Fragment>
+                      }
+                    />
+                  )}
+                  <Skills title={"Skills"} skills={this.props.skills} />
+                </div>
+                <div style={{ position: "relative" }}>
+                  <Skills title={"Languages"} skills={this.props.skills} />
+                  {this.state.tourcount === 6 && (
+                    <ToolTip
+                      toolTipLeft={"-510px"}
+                      toolTipTop={"-40px"}
+                      right={"-8px"}
+                      top={"80px"}
+                      transform={"rotate(180deg)"}
+                      handleModal={this.closeToolTip}
+                      showScreen={false}
+                      children={
+                        <React.Fragment>
+                          <div className={styles.toolTipHeader}>
+                            How many languages do you know?
+                          </div>
+                          <div className={styles.toolTipBody}>
+                            Add the laguages that you know. (Bilingual,
+                            Elementry, advanced, etc)
+                          </div>
+                          <Button
+                            type="primary"
+                            backgroundColor={"#AD5DA3"}
+                            fontColor={"#fff"}
+                            height={30}
+                            width={80}
+                            label="Got It!"
+                            borderRadius={2}
+                            onClick={this.gotItHandler}
+                          />
+                        </React.Fragment>
+                      }
+                    />
+                  )}
+                </div>
+                <div style={{ position: "relative" }}>
+                  {" "}
+                  {this.state.tourcount === 7 && (
+                    <ToolTip
+                      toolTipLeft={"-420px"}
+                      toolTipTop={"-20px"}
+                      right={"-8px"}
+                      top={"60px"}
+                      transform={"rotate(180deg)"}
+                      handleModal={this.closeToolTip}
+                      showScreen={false}
+                      children={
+                        <React.Fragment>
+                          <div className={styles.toolTipHeader}>
+                            Tell us your interests
+                          </div>
+                          <div className={styles.toolTipBody}>
+                            Add your interests to make the profile more
+                            interesting
+                          </div>
+                          <Button
+                            type="primary"
+                            backgroundColor={"#AD5DA3"}
+                            fontColor={"#fff"}
+                            height={30}
+                            width={80}
+                            label="Got It!"
+                            borderRadius={2}
+                            onClick={this.gotItHandler}
+                          />
+                        </React.Fragment>
+                      }
+                    />
+                  )}
+                  <Skills title={"Interests"} skills={this.props.skills} />
+                </div>
+                <div style={{ position: "relative" }}>
+                  {" "}
+                  <Skills
+                    title={"Recent Activity"}
+                    skills={this.props.skills}
+                  />
+                  {/* enable this tool tip if the client needs tool tip for recnet activity too */}
+                  {/* {this.state.tourcount === 8 && (  
+                    <ToolTip
+                      toolTipLeft={"130px"}
+                      toolTipTop={"-20px"}
+                      left={"-8px"}
+                      top={"50px"}
+                      handleModal={this.closeToolTip}
+                      children={
+                        <React.Fragment>
+                          <div className={styles.toolTipHeader}>
+                            Show us what are you skilled at!
+                          </div>
+                          <div className={styles.toolTipBody}>
+                            You can add your skills here. Let other users know
+                            what are your strengths
+                          </div>
+                          <Button
+                            type="primary"
+                            backgroundColor={"#AD5DA3"}
+                            fontColor={"#fff"}
+                            height={30}
+                            width={80}
+                            label="Got It!"
+                            borderRadius={2}
+                            onClick={this.gotItHandler}
+                          />
+                        </React.Fragment>
+                      }
+                    />
+                  )} */}
+                </div>
               </div>
             </CenteredContent>
+          </div>{" "}
+          <div
+            className={
+              this.state.tourcount > 0 || this.state.closeBanner === false
+                ? styles.removebanner
+                : styles.notificationToolTip
+            }
+          >
+            <ToolTip
+              handleModal={this.closeBannerToolTip}
+              showScreen={this.state.closeBanner}
+              children={
+                <div className={styles.toolTipBanner}>
+                  <div className={styles.notifyIcon}></div>Get to know what can
+                  be done with your The Star In Me Profile.
+                  <div
+                    className={styles.toolTipStart}
+                    onClick={() => this.startTour()}
+                  >
+                    Start Tour
+                  </div>
+                </div>
+              }
+              toolTipBottom={"0"}
+              toolTipWidth={"100vw"}
+              textWidth={"100%"}
+              displayTriangle={"none"}
+            />
           </div>
         </div>
       </React.Fragment>

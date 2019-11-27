@@ -6,9 +6,11 @@
   padding: 20px 0px 40px 0px;
   background: #ececec;
 }
+
 .headerHolder {
   padding-bottom: 20px;
 }
+
 .bannerDescHolder {
   width: 100%;
   height: 550px;
@@ -16,12 +18,14 @@
   display: inline-block;
   background: #fff;
 }
+
 .bannerImage {
   display: inline-block;
   width: 50%;
   height: 100%;
   vertical-align: top;
 }
+
 .descriptionBase {
   display: inline-block;
   width: 50%;
@@ -29,11 +33,13 @@
   vertical-align: top;
   position: relative;
 }
+
 .descriptionContainer {
   width: 100%;
   height: auto;
   padding: 52px 28px 0px 28px;
 }
+
 .registrationdetails {
   width: 100%;
   height: auto;
@@ -44,9 +50,11 @@
   border-top: 1px solid #ebeced;
   border-bottom: 1px solid #ebeced;
 }
+
 .registrationdetailsContainer {
   display: flex;
 }
+
 .intrested {
   margin-left: 10px;
   font-size: 12px;
@@ -55,6 +63,7 @@
   display: flex;
   align-items: center;
 }
+
 .dot {
   height: 25px;
   width: 25px;
@@ -64,6 +73,7 @@
   margin-right: -5px;
   vertical-align: top;
 }
+
 .more {
   height: 25px;
   width: 25px;
@@ -91,6 +101,7 @@
   height: auto;
   margin-bottom: 25px;
 }
+
 .tagButton {
   width: 120px;
   height: 25px;
@@ -103,6 +114,7 @@
   font-family: bold;
   justify-content: center;
 }
+
 .eventHeading {
   width: 100%;
   height: auto;
@@ -111,6 +123,7 @@
   font-size: 20px;
   line-height: 36px;
 }
+
 .eventlevel {
   color: #000000;
   font-family: "regular";
@@ -118,22 +131,26 @@
   line-height: 26px;
   margin-bottom: 10px;
 }
+
 .eventHostBy {
   composes: eventlevel;
   line-height: 24px;
   margin-bottom: 20px;
 }
+
 .eventAddressBase {
   width: 100%;
   height: auto;
   display: inline-block;
   vertical-align: top;
 }
+
 .eventAdressContainer {
   width: 90%;
   height: auto;
   display: inline-block;
 }
+
 .eventPlaceName {
   width: 100%;
   height: auto;
@@ -142,22 +159,26 @@
   font-size: 16px;
   line-height: 24px;
 }
+
 .address {
   color: #828282;
   font-family: "regular";
   font-size: 14px;
   line-height: 22px;
 }
+
 .mapContainer {
   width: 10%;
   height: auto;
   display: inline-block;
 }
+
 .eventDetails {
   display: flex;
   margin-top: 32px;
   margin-bottom: 20px;
 }
+
 .eventTime {
   padding: 0px 35px;
   position: relative;
@@ -166,6 +187,7 @@
   font-size: 14px;
   line-height: 20px;
 }
+
 .eventTime:before {
   content: "";
   width: 18px;
@@ -177,6 +199,7 @@
   left: 12px;
   top: 2px;
 }
+
 .eventDate {
   padding: 0px 35px;
   position: relative;
@@ -184,6 +207,7 @@
   font-size: 14px;
   line-height: 20px;
 }
+
 .eventDate:before {
   content: "";
   width: 18px;
@@ -195,6 +219,7 @@
   left: 12px;
   top: 2px;
 }
+
 .eventCost {
   padding: 0px 35px;
   position: relative;
@@ -202,6 +227,7 @@
   font-size: 14px;
   line-height: 20px;
 }
+
 .eventCost:before {
   content: "";
   width: 18px;
@@ -213,28 +239,34 @@
   left: 12px;
   top: 2px;
 }
+
 .seatAlertMessage {
   color: #ad5da3;
   font-family: "bold";
   font-size: 12px;
   line-height: 20px;
 }
+
 .eventButtonConatiner {
   display: flex;
   margin-top: 30px;
 }
+
 .eventButton {
   margin-right: 30px;
 }
+
 .detailsHolder {
   width: 100%;
   height: auto;
   padding-top: 30px;
 }
+
 .header {
   display: inline-block;
   padding-bottom: 20px;
 }
+
 .text {
   padding: 0px 16px;
   color: #7f7f7f;
@@ -243,11 +275,13 @@
   line-height: 22px;
   display: inline-block;
 }
+
 .seletedText {
   composes: text;
   color: #1a1a1a;
   padding: 0px 16px 0px 0px;
 }
+
 .desc {
   width: 100%;
   height: auto;
@@ -256,11 +290,13 @@
   font-size: 16px;
   line-height: 24px;
 }
+
 .noteConatiner {
   width: 100%;
   height: auto;
   margin: 30px 0px;
 }
+
 .noteHeading {
   color: #1a1a1a;
   font-family: bold;
@@ -268,30 +304,35 @@
   line-height: 22px;
   margin-bottom: 5px;
 }
+
 .noteDescription {
   color: #7f7f7f;
   font-family: regular;
   font-size: 16px;
   line-height: 22px;
 }
+
 .buttonContainer {
   width: 100%;
   height: auto;
   margin-top: 15px;
   margin-bottom: 50px;
 }
+
 .recommendedEvents {
   margin-top: 36px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .recommendedEventsHeading {
   color: #1a1a1a;
   font-family: "bold";
   font-size: 18px;
   line-height: 24px;
 }
+
 .storiesContainer {
   width: 100%;
   height: auto;
@@ -299,6 +340,7 @@
   flex-wrap: wrap;
   align-items: stretch;
 }
+
 .card {
   width: calc((100% / 3));
   padding: 22.5px;
@@ -306,12 +348,25 @@
   flex-shrink: 0;
   display: flex;
 }
+
 @media only screen and (max-width: 1024px) {
   .card {
     width: 100%;
     padding: 10px 0;
   }
+
   .container {
     padding: 0 43px;
   }
+}
+
+.fixedHeader {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  transition: 0.5s;
+  z-index: 1;
+  background: #fff;
+  z-index: 2;
 }

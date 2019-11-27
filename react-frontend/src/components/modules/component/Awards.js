@@ -3,7 +3,7 @@ import ControlInput from "../../../core/ControlInput";
 import styles from "./Awards.css";
 import InputWithIcon from "./InputWithIcon";
 import Input from "./Input";
-import info from "../../../images/Info Line.svg";
+import info from "../../../images/Info_Line.svg";
 import cal from "../../../images/calendarEvent .svg";
 import ButtonWithIcon from "./ButtonWithIcon";
 import Button from "../../../core/Button";
