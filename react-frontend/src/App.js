@@ -14,6 +14,7 @@ import HomeContainer from "./components/HomePage/container/HomeContainer";
 import Profile from "./components/Profile/Profile";
 import EventDetailsPageContainer from "./components/Event/container/EventDetailsPageContainer";
 import ConnectionsContainer from "./components/modules/container/ConnectionContainer";
+import ProfileContainer from "./components/Profile/container/ProfileContainer";
 import FeedContainer from "./components/Feed/container/FeedContainer";
 class App extends Component {
   render() {
@@ -30,7 +31,7 @@ class App extends Component {
           <Route path="/aboutUs" component={AboutUs} />
           <Route path="/eventDetails" component={EventDetailsPageContainer} />
           <Route path="/event" component={EventPageContainer} />
-          <Route path="/profile" component={Profile} />
+          <Route path="/profile" component={ProfileContainer} />
           <Route path="/feed" component={FeedContainer} />
           <Route path="/connections" component={ConnectionsContainer} />
         </Switch>

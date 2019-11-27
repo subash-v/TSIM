@@ -11,6 +11,8 @@ import ProfileModalContainer from "../container/ProfileModalContainer";
 import SliderComponent from "./SliderComponent/SliderComponent";
 import RegisterDetailsModule from "./RegisterDetailsModule";
 import AllConnection from "./AllConnection";
+import ImageUplaod from "../../Profile/ImageUpload";
+//import WorkExpModalContainer from "../container/WorkExpModalContainer";
 import UserPostModal from "../../Feed/UserPostModal";
 import EventDetailSliderComponent from "../../Event/EventDetailSlider/EventDetailSliderComponent";
 import UploadCV from "./UploadCV";
@@ -138,6 +140,12 @@ export default class ModalRoot extends React.Component {
       ),
       WorkExpModal: (
         <WorkExpModal
+          closeModal={() => this.handleClose()}
+          {...this.props.ownProps}
+        />
+      ),
+      ImageUpload: (
+        <ImageUplaod
           closeModal={() => this.handleClose()}
           {...this.props.ownProps}
         />
