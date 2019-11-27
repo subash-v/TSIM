@@ -132,7 +132,9 @@ export default class Profile extends Component {
   render() {
     return (
       <React.Fragment>
-        <PrimaryHeaderContainer />
+        <div className={styles.fixedHeader}>
+          <PrimaryHeaderContainer />
+        </div>
         <div className={styles.base}>
           <div className={styles.topSection}>
             <CenteredContent contentWidth="1400px">
@@ -187,7 +189,12 @@ export default class Profile extends Component {
                         />
                       )}
                     </div>
-                    <div className={styles.uploadCvButton}>UPLOAD CV</div>
+                    <div
+                      className={styles.uploadCvButton}
+                      onClick={() => this.props.showUploadCvModal()}
+                    >
+                      UPLOAD CV
+                    </div>
                   </div>
                   <div className={styles.dividingLine} />
                   <div className={styles.summary}>

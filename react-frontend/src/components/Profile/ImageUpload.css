@@ -169,11 +169,12 @@
 }
 
 .uploadImageSection {
-  max-width: 320px;
-  max-height: 450px;
+  width: 500px;
+  height: 500px;
   border: 1px dashed;
   position: relative;
   margin: 0 30px;
+  padding: 30px;
 }
 
 .uploadImageDummy {
@@ -569,20 +570,16 @@
 }
 
 .uploadImageSection > div > div {
-  border: 1px solid red;
-  width: 100%;
-  padding-bottom: 67%;
+  width: 80%;
+  padding-bottom: 80%;
   position: relative;
+  margin: 0 auto;
 }
 
 .uploadImageSection > div > div > div > img {
-  border: 1px solid red;
   width: 100%;
   height: 100%;
   position: absolute;
   left: 0;
   top: 0;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }

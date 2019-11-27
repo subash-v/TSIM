@@ -12,6 +12,8 @@ import AddMoreIntrest from "./AddMoreIntrest";
 import GuidesRecommended from "./GuidesRecommended";
 import RecommendedConnection from "./RecommendedConnection";
 import Input2 from "../../core/Input2";
+import FeedCard from "./FeedCard";
+import CompleteProfileAlert from "./CompleteProfileAlert";
 
 const data = [
   {
@@ -73,8 +75,9 @@ export default class Feed extends Component {
         {/* <div className={styles.indicatorHolder}>
           <VerticalStatus first="complete" second="active" third="incompele" />
         </div> */}
-
-        <PrimaryHeaderContainer history={this.props.history} />
+        <div className={styles.fixedHeader}>
+          <PrimaryHeaderContainer history={this.props.history} />
+        </div>
         <CenteredContent>
           <div className={styles.heading}>Top Picks</div>
           <div className={styles.imageDisplaySection}>
@@ -338,9 +341,30 @@ export default class Feed extends Component {
             <div className={styles.centerSection}>
               <div className={styles.createPostContainer}>
                 <div className={styles.createPostNav}>
-                  <div className={styles.writePost}>Create Post</div>
-                  <div className={styles.askQuestion}>Ask Question</div>
-                  <div className={styles.createPoll}>Create Poll</div>
+                  <div
+                    className={styles.writePost}
+                    onClick={() =>
+                      this.props.showUserPostModal({ showModal: "post" })
+                    }
+                  >
+                    Create Post
+                  </div>
+                  <div
+                    className={styles.askQuestion}
+                    onClick={() =>
+                      this.props.showUserPostModal({ showModal: "question" })
+                    }
+                  >
+                    Ask Question
+                  </div>
+                  <div
+                    className={styles.createPoll}
+                    onClick={() =>
+                      this.props.showUserPostModal({ showModal: "poll" })
+                    }
+                  >
+                    Create Poll
+                  </div>
                 </div>
                 <div className={styles.imageAndInputHolder}>
                   <div className={styles.createPostContainerImage}>
@@ -376,8 +400,15 @@ export default class Feed extends Component {
                 <div className={styles.topPick}>TOP PICK</div>
               </div>
               {[1, 2, 3, 4, 5].map((data, i) => {
-                return <div className={styles.dataDiv}>{data}</div>;
+                return (
+                  <div className={styles.feedsContainer}>
+                    <FeedCard />
+                  </div>
+                );
               })}
+              <div className={styles.completeProfileAlertContainer}>
+                <CompleteProfileAlert />
+              </div>
             </div>
           </div>
         </CenteredContent>

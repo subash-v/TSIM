@@ -1,31 +1,19 @@
 import React, { Component } from "react";
 import styles from "./ImageUpload.css";
 import BottomSlideModal from "../modules/component/BottomSlideModal";
-import ReactCrop from "react-image-crop";
-import "react-image-crop/dist/ReactCrop.css";
+
 class ImageUplaod extends Component {
   constructor(props) {
     super(props);
     this.state = {
       file: [],
       slideIndex: 0,
-      maxSlide: 5,
-      crop: {
-        aspect: 1 / 1
-      }
+      maxSlide: 5
     };
   }
 
   onChange = async event => {
     await this.setState({ file: [...this.state.file, ...event.target.files] });
-  };
-
-  handleOnCrop = crop => {
-    console.log(crop);
-    this.setState({
-      crop
-    });
-    console.log(this.state);
   };
 
   removeImageFromList = val => {
@@ -38,6 +26,17 @@ class ImageUplaod extends Component {
     console.log(this.state.file);
   };
 
+  getCroppedImageUrl = () => {
+    let file = this.state.file;
+    if (file.length > 0) {
+      file.map((val, i) => {
+        return this.setState({
+          file: URL.createObjectURL(val[i])
+        });
+      });
+    }
+  };
+
   render() {
     return (
       <BottomSlideModal>
@@ -46,8 +45,10 @@ class ImageUplaod extends Component {
           <div style={{ position: "relative" }}>
             <div className={styles.uploadImageSection}>
               {this.state.file.length > 0 ? (
-                <div className={styles.mySlides}>
-                  {/* <div
+                <div>
+                  <div className={styles.mySlides}>
+                    {" "}
+                    <div
                       style={{
                         backgroundImage: `url(${URL.createObjectURL(
                           this.state.file[0]
@@ -57,14 +58,8 @@ class ImageUplaod extends Component {
                         backgroundSize: "90%"
                       }}
                       className={styles.homepageCarousal}
-                    /> */}
-                  <ReactCrop
-                    src={URL.createObjectURL(this.state.file[0])}
-                    crop={this.state.crop}
-                    width={"500px"}
-                    height={"500px"}
-                    // onChange={this.handleOnCrop  }
-                  />
+                    />
+                  </div>
                 </div>
               ) : (
                 <div className={styles.uploadImageDummy} />
@@ -106,66 +101,6 @@ class ImageUplaod extends Component {
                   ></div>
                 </div>
               )}
-              <div className={styles.uploadPlusButton}>
-                <input
-                  type="file"
-                  accept={"image"}
-                  onChange={e => this.onChange(e)}
-                  style={{
-                    cursor: "pointer",
-                    borderRadius: "50%",
-                    width: "44px",
-                    opacity: "0",
-                    height: "44px"
-                  }}
-                  value={this.value}
-                />
-              </div>
-              <div className={styles.uploadPlusButton}>
-                <input
-                  type="file"
-                  accept={"image"}
-                  onChange={e => this.onChange(e)}
-                  style={{
-                    cursor: "pointer",
-                    borderRadius: "50%",
-                    width: "44px",
-                    opacity: "0",
-                    height: "44px"
-                  }}
-                  value={this.value}
-                />
-              </div>
-              <div className={styles.uploadPlusButton}>
-                <input
-                  type="file"
-                  accept={"image"}
-                  onChange={e => this.onChange(e)}
-                  style={{
-                    cursor: "pointer",
-                    borderRadius: "50%",
-                    width: "44px",
-                    opacity: "0",
-                    height: "44px"
-                  }}
-                  value={this.value}
-                />
-              </div>
-              <div className={styles.uploadPlusButton}>
-                <input
-                  type="file"
-                  accept={"image"}
-                  onChange={e => this.onChange(e)}
-                  style={{
-                    cursor: "pointer",
-                    borderRadius: "50%",
-                    width: "44px",
-                    opacity: "0",
-                    height: "44px"
-                  }}
-                  value={this.value}
-                />
-              </div>
             </div>
           </div>
           <div className={styles.footer}>

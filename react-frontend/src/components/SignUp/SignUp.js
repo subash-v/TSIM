@@ -5,6 +5,9 @@ import Input2 from "../../core/Input2";
 import linkedin from "../../images/Linkedin.svg";
 import Facebook from "../../images/Facebook.svg";
 import Back from "../../images/Back.svg";
+import DesktopOnly from "../general/DesktopOnly";
+import MobileOnly from "../general/MobileOnly";
+import HorizantalIconWithHeader from "../../core/HorizantalIconWithHeader";
 // import { Input2 } from "../../core";
 export default class SignUp extends React.Component {
   constructor() {
@@ -55,17 +58,44 @@ export default class SignUp extends React.Component {
                   // }}
                 />
               </div>
-
-              <div className={styles.socialContainer}>
-                <div className={styles.linkedinNfbContainer}>
-                  <img src={linkedin} className={styles.img} alt="" />
-                  <div className={styles.linkedinTxt}>SignUp with LinkedIn</div>
+              <DesktopOnly>
+                <div className={styles.socialContainer}>
+                  <div className={styles.linkedinNfbContainer}>
+                    <img src={linkedin} className={styles.img} alt="" />
+                    <div className={styles.linkedinTxt}>
+                      SignUp with LinkedIn
+                    </div>
+                  </div>
+                  <div className={styles.linkedinNfbContainer}>
+                    <img src={Facebook} className={styles.img} alt="" />
+                    <div className={styles.linkedinTxt}>
+                      SignUp with LinkedIn
+                    </div>
+                  </div>
                 </div>
-                <div className={styles.linkedinNfbContainer}>
-                  <img src={Facebook} className={styles.img} alt="" />
-                  <div className={styles.linkedinTxt}>SignUp with LinkedIn</div>
+              </DesktopOnly>
+              <MobileOnly>
+                <div className={styles.socialContainer}>
+                  <div className={styles.linkedinNfbContainer}>
+                    <HorizantalIconWithHeader
+                      size={15}
+                      fontSize={12}
+                      fontColor={"#fff"}
+                      icon={linkedin}
+                      text={"SignUp with LinkedIn"}
+                    ></HorizantalIconWithHeader>
+                  </div>
+                  <div className={styles.linkedinNfbContainer}>
+                    <HorizantalIconWithHeader
+                      size={15}
+                      fontSize={12}
+                      fontColor={"#fff"}
+                      icon={Facebook}
+                      text={"SignUp with Facebook"}
+                    ></HorizantalIconWithHeader>
+                  </div>
                 </div>
-              </div>
+              </MobileOnly>
 
               <fieldset>
                 <legend>OR</legend>

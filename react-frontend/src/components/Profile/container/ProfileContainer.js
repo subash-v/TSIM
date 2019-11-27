@@ -2,13 +2,18 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import {
   showModal,
-  UPLOAD_PROFILE_IMAGE_MODAL
+  UPLOAD_PROFILE_IMAGE_MODAL,
+  UPLOAD_CV_MODAL
 } from "../../modules/modal.actions";
 import Profile from "../Profile";
 const mapDispatchToProps = dispatch => {
   return {
     showImageUploadModal: data => {
       dispatch(showModal(UPLOAD_PROFILE_IMAGE_MODAL, data));
+    },
+    showUploadCvModal: data => {
+      console.log("hii");
+      dispatch(showModal(UPLOAD_CV_MODAL, data));
     }
   };
 };

@@ -9,15 +9,13 @@ import VisualProfilePage from "./components/VisualProfile/VisualProfilePage";
 import SeekGuide from "./components/SeekGuide/SeekGuide";
 import AboutUs from "./components/AboutUs/AboutUs";
 import ModalContainer from "./components/modules/container/ModalContainer";
-import EventDetailsPage from "./components/Event/EventDetailsPage";
 import EventPageContainer from "./components/Event/container/EventPageContainer";
 import HomeContainer from "./components/HomePage/container/HomeContainer";
 import Profile from "./components/Profile/Profile";
-import Feed from "./components/Feed/Feed";
-import Settings from "./components/Settings/Settings";
 import EventDetailsPageContainer from "./components/Event/container/EventDetailsPageContainer";
 import ConnectionsContainer from "./components/modules/container/ConnectionContainer";
 import ProfileContainer from "./components/Profile/container/ProfileContainer";
+import FeedContainer from "./components/Feed/container/FeedContainer";
 class App extends Component {
   render() {
     return (
@@ -34,7 +32,7 @@ class App extends Component {
           <Route path="/eventDetails" component={EventDetailsPageContainer} />
           <Route path="/event" component={EventPageContainer} />
           <Route path="/profile" component={ProfileContainer} />
-          <Route path="/feed" component={Feed} />
+          <Route path="/feed" component={FeedContainer} />
           <Route path="/connections" component={ConnectionsContainer} />
         </Switch>
         <ModalContainer />

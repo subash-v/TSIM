@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Accordion.module.css";
+import styles from "./Accordion.css";
 import PropTypes from "prop-types";
 import { Collapse } from "react-collapse";
 

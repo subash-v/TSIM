@@ -68,7 +68,7 @@ export default class Home extends React.Component {
       });
     } else {
       this.setState({
-        slideIndex: 0
+        slideIndex: 1
       });
     }
   };
@@ -83,7 +83,7 @@ export default class Home extends React.Component {
     }
     if (this.state.slideIndex > this.state.maxSlide) {
       this.setState({
-        slideIndex: 0
+        slideIndex: 1
       });
       clearInterval(varss);
     }
