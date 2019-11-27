@@ -5,7 +5,7 @@ export async function post(path, postData) {
   const url = `${API_URL_ROOT}/${path}`;
   return await axios.post(url, postData);
 }
-export async function get(url) {
-  const url = `${API_URL_ROOT}/${url}`;
+export async function get(path) {
+  const url = `${API_URL_ROOT}/${path}`;
   return await axios.get(url);
 }
