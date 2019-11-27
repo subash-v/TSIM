@@ -80,11 +80,6 @@ export default class PrivacySettings extends React.Component {
   onChange = (info, index) => {
     PrivacyInfo[index].allow = !PrivacyInfo[index].allow;
     this.forceUpdate();
-    console.log("===========>>>>", this.state.PrivacyInfo[index]);
-
-    // this.setState({
-    //   allow: !allow
-    // });
   };
 
   render() {
