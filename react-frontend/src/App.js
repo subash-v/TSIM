@@ -15,6 +15,9 @@ import Profile from "./components/Profile/Profile";
 import EventDetailsPageContainer from "./components/Event/container/EventDetailsPageContainer";
 import ConnectionsContainer from "./components/modules/container/ConnectionContainer";
 import FeedContainer from "./components/Feed/container/FeedContainer";
+import Settings from "./components/Settings/SettingsContainer/SettingsContainer";
+import Confirm from "./components/Settings/Confirm";
+
 class App extends Component {
   render() {
     return (
@@ -33,6 +36,7 @@ class App extends Component {
           <Route path="/profile" component={Profile} />
           <Route path="/feed" component={FeedContainer} />
           <Route path="/connections" component={ConnectionsContainer} />
+          <Route path="/settings" component={Settings} />
         </Switch>
         <ModalContainer />
       </BrowserRouter>

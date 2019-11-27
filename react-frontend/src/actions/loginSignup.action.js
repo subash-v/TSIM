@@ -50,3 +50,44 @@ export function getLogin(userLoginDetails) {
     }
   };
 }
+
+export function signUpUserRequest() {
+  return {
+    type: SIGN_UP_USER_REQUEST,
+    status: REQUESTING
+  };
+}
+
+export function signUpUserSuccess(signUpDetails) {
+  return {
+    type: SIGN_UP_USER_SUCCESS,
+    status: SUCCESS,
+    signUpDetails
+  };
+}
+
+export function signUpUserFailure(error) {
+  return {
+    type: SIGN_UP_USER_FAILURE,
+    status: ERROR,
+    error
+  };
+}
+
+export function postSignUp(userSignUpDetails) {
+  return async dispatch => {
+    dispatch(signUpUserRequest());
+    try {
+      let url = `users`;
+      const result = await post(url, userSignUpDetails);
+      const resultJson = await result;
+      if (resultJson.error) {
+        throw new Error(resultJson.message);
+      }
+
+      return dispatch(signUpUserSuccess(resultJson));
+    } catch (e) {
+      return dispatch(signUpUserFailure(e.message));
+    }
+  };
+}

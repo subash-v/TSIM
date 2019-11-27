@@ -78,17 +78,17 @@ export default class MyProfile extends React.Component {
               <div className={styles.nameContainer}>
                 <div className={styles.name}>Professional Summary</div>
                 <div>
-                  <p className={styles.paragraph}>
+                  {/* <p className={styles.paragraph}>
                     For ex:
                     <br /> A Human resources leader with over 18 years of
                     experienceacross Talent Management, HR Policy and
                     Recruitment
-                  </p>
-                  {/* <Input2
+                  </p> */}
+                  <Input2
                     placeholder="For ex:
                    A Human resources leader with over 18 years of experienceacross Talent Management, HR Policy and Recruitment"
                     value={this.state.summary}
-                    onChange={val => this.setState({summary:val})}
+                    onChange={val => this.setState({ summary: val })}
                     textStyle={{ fontSize: 14 }}
                     height={50}
                     boxy={true}
@@ -97,7 +97,7 @@ export default class MyProfile extends React.Component {
                     // // onFocus={() => {
                     // //   this.handleOnFocusInput();
                     // }}
-                  /> */}
+                  />
                 </div>
               </div>
               <div className={styles.buttonContainer}>
