@@ -4,32 +4,32 @@ import ProfileImage from "./ProfileImage";
 import profile from "../Images/f.jpg";
 import Image from "../../core/Image";
 import Button from "../general/Button";
-import FeedCardDottedMenu from './FeedCardDottedMenu/FeedCardDottedMenu'
+import FeedCardDottedMenu from "./FeedCardDottedMenu/FeedCardDottedMenu";
+import PollingResult from "./PollingResult";
+import FeedProfileHolder from "./FeedProfileHolder";
 export default class FeedCard extends Component {
   state = {
     showFeedMenu: false
-  }
+  };
   showFeedMenu = () => {
-    this.setState({ showFeedMenu: !this.state.showFeedMenu })
-  }
+    this.setState({ showFeedMenu: !this.state.showFeedMenu });
+  };
   render() {
     return (
       <div className={styles.base}>
         <div className={styles.feedHeaderContainer}>
-          <div className={styles.profileImage}>
-            <ProfileImage src={profile} />
-          </div>
-          <div className={styles.profileDetails}>
-            <div className={styles.profileName}>The star in me</div>
-            <div className={styles.date}>1 Sept 2019 </div>
-          </div>
-          <div onClick={this.showFeedMenu} className={styles.dottedRightMenu}>
-
-          </div>
-          {this.state.showFeedMenu && <div className={styles.feedMenuHolder}>
-            <FeedCardDottedMenu></FeedCardDottedMenu>
-          </div>}
+          <FeedProfileHolder />
+          <div
+            onClick={this.showFeedMenu}
+            className={styles.dottedRightMenu}
+          ></div>
+          {this.state.showFeedMenu && (
+            <div className={styles.feedMenuHolder}>
+              <FeedCardDottedMenu></FeedCardDottedMenu>
+            </div>
+          )}
         </div>
+
         <div className={styles.feedImage}>
           <Image image={profile} />
         </div>
@@ -89,6 +89,9 @@ export default class FeedCard extends Component {
             <img src={profile} className={styles.dot} alt={"profile"} />
             <span className={styles.more}>+26</span>
             <div className={styles.intrested}>Intrested & 13 Registered</div>
+          </div>
+          <div className={styles.pollingConatiner}>
+            <PollingResult />
           </div>
         </div>
         <div className={styles.likesSection}>
