@@ -1,84 +1,107 @@
 import React, { Component } from "react";
 import BottomSlideModal from "./BottomSlideModal";
-import WorkIcon from "./WorkIcon"
-import icon1 from "./Images/Awards-line.svg";
-import icon2 from "./Images/Certification Line.svg";
-import icon3 from "./Images/Education-line.svg";
-import icon4 from "./Images/Job-line.svg";
+import WorkIcon from "./WorkIcon";
+import awardIcon from "../../../images/Awards-line.svg";
+import awardIconFill from "../../../images/Awards-fill.svg";
+import certificateIcon from "../../../images/Certification Line.svg";
+import certificateIconFill from "../../../images/Certification-Fill .svg";
+import educationIcon from "../../../images/Education-line.svg";
+import educationIconFill from "../../../images/Education-line-fill.svg";
+import jobIconFill from "../../../images/job-line-blue-fill.svg";
+import jobIcon from "../../../images/Job-line.svg";
 import Button from "../../../core/Button";
 import Input from "./Input";
 import Textarea from "./Textarea";
 import styles from "./WorkExpModal.css";
-const IconType=
-[
-  { name: "Awards" },
-  { name: "Certification" },
-  { name: "Edcation" },
-  { name: "Job" }
+import ButtonWithIcon from "./ButtonWithIcon";
+import InputWithIcon from "./InputWithIcon";
+import info from "../../../images/Info Line.svg";
+import cal from "../../../images/calendarEvent .svg";
+import ControlInput from "../../../core/ControlInput";
+import Jobline from "./Jobline";
+import EducationLine from "./EducationLine.js";
+import Certification from "./Certification";
+import Awards from "./Awards";
+
+const IconType = [
+  { name: "JOB", image: jobIcon, image1: jobIconFill },
+  { name: "Education", image: educationIcon, image1: educationIconFill },
+  {
+    name: "Certification",
+    image: certificateIcon,
+    image1: certificateIconFill
+  },
+  { name: "Awards", image: awardIcon, image1: awardIconFill }
 ];
 
 export default class WorkExpModal extends Component {
-  state = { active: "" };
+  state = {
+    active: "JOB",
+    showModal: "JOB",
+    job: "",
+    organization: "",
+    industry: "",
+    location: "",
+    startdate: "",
+    enddate: "",
+    description: ""
+  };
   handleClick = val => {
+    console.log(val.toUpperCase());
     console.log(val);
     this.setState({
-      active: val
+      active: val,
+      showModal: val.toUpperCase()
     });
   };
   render() {
+    console.log(this.state.showModal, this.state.description);
     return (
       <BottomSlideModal width="auto">
         <div className={styles.centermodal}>
           <div className={styles.headerCont}>
-            <div className={styles.profileheader}>Edit Work Experience</div>
-          </div>
-          <div className={styles.brdr}></div>
-       <div className={styles.workicon}>  
-       {IconType.map(val => {
-              return (
-                <WorkIcon src={icon1}
-                  onClick={() => this.handleClick(val.name)}
-                  selected={this.state.active === val.name ? true : false}
-                >
-                  {val.name}
-                </WorkIcon>
-              );
-            })}</div> 
-          <div className={styles.inpcont}>
-          <div>
-          <Input classname={styles.radio} type="radio" name="type"></Input> 
-          <Input type="radio" name="type"></Input>
-          </div>
-            <Input className={styles.input} type="text" placeholder="Designation/Job Position*"></Input>
-            <Input className={styles.Input} type="text" placeholder="
-Organisation/Company*"></Input>
-<Input className={styles.Input} type="text" placeholder="
-Industry*"></Input>
-<Input className={styles.Input} type="text" placeholder="
-Location"></Input>
-
-            <div className={styles.label}>Professional Summary</div>
-            <div>
-              <Textarea
-                placeholder="(For ex: A Human resources leader with over 18 years of experience across Talent management, HR Policy and Recruitment)"
-                rows={"3"}
-              />
+            <div className={styles.workheader}>
+              Add{" "}
+              {this.state.active === "JOB"
+                ? "Work Experience"
+                : this.state.active && this.state.active === "Awards"
+                ? "Honors & Awards"
+                : this.state.active}
             </div>
           </div>
-          <div className={styles.buttonCont}>
-            <Button
-              width="160px"
-              backgroundColor="transparent"
-              color="#4F439A"
-              label="Cancel"
-            ></Button>
-            <Button
-              width="160px"
-              backgroundColor="#E0DEED"
-              color="#4F439A"
-              label="Save Changes"
-            ></Button>
+          <div className={styles.workicon}>
+            {IconType.map(val => {
+              return (
+                <WorkIcon
+                  src={this.state.active === val.name ? val.image1 : val.image}
+                  height="50px"
+                  width="50px"
+                  onClick={() => this.handleClick(val.name)}
+                  selected={this.state.active === val.name ? true : false}
+                ></WorkIcon>
+              );
+            })}
           </div>
+          {this.state.showModal === "JOB" && (
+            <div>
+              <Jobline />
+            </div>
+          )}
+          {this.state.showModal === "EDUCATION" && (
+            <div>
+              <EducationLine />
+            </div>
+          )}
+          {this.state.showModal === "CERTIFICATION" && (
+            <div>
+              <Certification />
+            </div>
+          )}
+          {this.state.showModal === "AWARDS" && (
+            <div>
+              <Awards />
+            </div>
+          )}
         </div>
       </BottomSlideModal>
     );

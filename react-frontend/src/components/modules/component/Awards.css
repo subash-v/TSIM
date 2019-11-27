@@ -5,9 +5,6 @@
   height: auto;
   color: #222;
   border-radius: 10px;
-  min-width: 800px;
-  min-height: 800px;
-  padding-left: 35px;
 }
 .workheader {
   color: #1a1a1a;
@@ -31,7 +28,7 @@
 }
 
 .headerCont {
-  /* padding-left: 40px; */
+  padding-left: 40px;
   padding-top: 36px;
 }
 .inputBox {
@@ -69,7 +66,7 @@
 }
 .workicon {
   display: flex;
-  padding: 18px 0px 0px 0px;
+  padding: 18px 0px 0px 35px;
 }
 .active {
   background-color: #4f439a;
@@ -85,7 +82,7 @@ input[type="radio"] {
 input[type="date"] {
   box-sizing: border-box;
   height: 47px;
-  width: 334px;
+  width: 630px;
   border: 1px solid #b2b2b2;
   border-radius: 5px;
   padding-right: 7px;
@@ -109,6 +106,8 @@ input[type="file"] {
 }
 .inpcont {
   /* padding-left: 35px; */
+
+  padding-top: 20px;
   padding-right: 15px;
 }
 .radiocont {
@@ -124,6 +123,7 @@ label {
   display: flex;
   padding-left: 4px;
   padding-top: 5px;
+  padding-bottom: 10px;
 }
 .checkcont {
   display: flex;
@@ -142,10 +142,6 @@ input[type="checkbox"] {
   padding: 5px;
   border-radius: 5px;
 }
-.radioco {
-  display: flex;
-}
 .desccont {
   padding-left: 3px;
-  padding-top: 10px;
 }

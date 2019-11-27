@@ -9,10 +9,11 @@ import {
   WORKEXP_MODAL
 } from "../../modules/modal.actions";
 import PrimaryHeader from "../PrimaryHeader";
+import WorkExpModal from "../../modules/component/WorkExpModal";
 const mapDispatchToProps = dispatch => {
   return {
     showLoginModule: data => {
-      dispatch(showModal(LOGIN_MODULE, data));
+      dispatch(showModal(WORKEXP_MODAL, data));
     },
     showSignUpModule: data => {
       dispatch(showModal(SIGNUP_MODULE, data));

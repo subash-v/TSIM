@@ -5,9 +5,6 @@
   height: auto;
   color: #222;
   border-radius: 10px;
-  min-width: 800px;
-  min-height: 800px;
-  padding-left: 35px;
 }
 .workheader {
   color: #1a1a1a;
@@ -31,7 +28,7 @@
 }
 
 .headerCont {
-  /* padding-left: 40px; */
+  padding-left: 40px;
   padding-top: 36px;
 }
 .inputBox {
@@ -66,10 +63,12 @@
   display: flex;
   justify-content: flex-end;
   padding: 20px 30px 30px 0px;
+  position: absolute;
+  bottom: 0;
 }
 .workicon {
   display: flex;
-  padding: 18px 0px 0px 0px;
+  padding: 18px 0px 0px 35px;
 }
 .active {
   background-color: #4f439a;
@@ -100,8 +99,6 @@ input[type="file"] {
 .buttonCont {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  bottom: 0;
 }
 .uploadcont {
   display: flex;
@@ -109,11 +106,13 @@ input[type="file"] {
 }
 .inpcont {
   /* padding-left: 35px; */
+
+  padding-top: 20px;
   padding-right: 15px;
 }
 .radiocont {
   display: flex;
-  padding-top: 29px;
+  /* padding-top: 29px; */
   padding-bottom: 17px;
 }
 
@@ -144,8 +143,4 @@ input[type="checkbox"] {
 }
 .radioco {
   display: flex;
-}
-.desccont {
-  padding-left: 3px;
-  padding-top: 10px;
 }
