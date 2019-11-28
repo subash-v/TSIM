@@ -16,6 +16,7 @@ export default class Counter extends Component {
     if (this.state.value > 1) {
       this.setState({ value: this.state.value - 1 });
     }
+    this.props.setvalue(this.state.value - 1);
   };
   increment = () => {
     this.setState({ value: this.state.value + 1 });
@@ -39,11 +40,13 @@ export default class Counter extends Component {
           >
             {this.state.value}
           </div>
-          <Icon
-            image={add_fill}
-            size={this.props.size}
-            selectItem={() => this.increment()}
-          />
+          {this.state.value < this.props.max && (
+            <Icon
+              image={add_fill}
+              size={this.props.size}
+              selectItem={() => this.increment()}
+            />
+          )}
         </div>
       </div>
     );

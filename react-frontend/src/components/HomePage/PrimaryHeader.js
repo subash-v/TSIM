@@ -19,12 +19,14 @@ import PropTypes from "prop-types";
 import DesktopOnly from "../general/DesktopOnly";
 import MobileHeader from "./MobileHeader";
 import MobileOnly from "../general/MobileOnly";
+import { ACCESS_TOKEN } from "../../utils/constant";
+import * as Cookie from "../../utils/Cookie";
 
 const links = [
   {
     data: profile,
     name: "PROFILE",
-    routeLink: "/profile",
+    routeLink: "/visual-profile",
     filledImage: Filled_Profile
   },
   {
@@ -42,7 +44,7 @@ const links = [
   {
     data: MORE,
     name: "RESOURCES",
-    routeLink: "/resours",
+    routeLink: "/blog",
     filledImage: filled_more
   }
 ];
@@ -85,20 +87,19 @@ export default class PrimaryHeader extends Component {
     }
   };
   render() {
+    let isUserLogedIn = false;
     return (
       <React.Fragment>
         <DesktopOnly>
           <div className={styles.headerBase}>
             <div
               className={
-                this.props.login ? styles.nonLogedInHeader : styles.headerHolder
+                isUserLogedIn ? styles.nonLogedInHeader : styles.headerHolder
               }
             >
               <div
                 className={
-                  this.props.login
-                    ? styles.loggedInHolder
-                    : styles.logoLinkHolder
+                  isUserLogedIn ? styles.loggedInHolder : styles.logoLinkHolder
                 }
               >
                 <div
@@ -106,7 +107,7 @@ export default class PrimaryHeader extends Component {
                   onClick={() => this.handleredirect("/")}
                 ></div>
                 <div className={styles.linkHolder}>
-                  {!this.props.login
+                  {!isUserLogedIn
                     ? links.map((value, i) => {
                         return (
                           <div
@@ -161,7 +162,7 @@ export default class PrimaryHeader extends Component {
               </div>
               <div
                 className={
-                  this.props.login
+                  isUserLogedIn
                     ? styles.loggedinButton
                     : styles.buttonSearchholder
                 }
@@ -177,10 +178,8 @@ export default class PrimaryHeader extends Component {
                       borderBottom="none"
                     />
                   </div>
-                  {this.props.login && (
-                    <ProfileImage image={profile} size={2} />
-                  )}
-                  {!this.props.login && (
+                  {isUserLogedIn && <ProfileImage image={profile} size={2} />}
+                  {!isUserLogedIn && (
                     <div
                       className={styles.login}
                       onClick={() => this.showLoginModal()}
@@ -196,7 +195,7 @@ export default class PrimaryHeader extends Component {
                       />
                     </div>
                   )}
-                  {!this.props.login && (
+                  {!isUserLogedIn && (
                     <div
                       className={styles.signup}
                       onClick={() => this.showSignUpModal()}
@@ -227,6 +226,3 @@ export default class PrimaryHeader extends Component {
     );
   }
 }
-PrimaryHeader.defaultProps = {
-  login: false
-};

@@ -8,7 +8,9 @@ const event = (
     loading: false,
     eventDetails: null,
     filterList: null,
-    filterLoader: false
+    filterLoader: false,
+    registerEventList: null,
+    registerEventLoader: false
   },
   action
 ) => {
@@ -65,6 +67,24 @@ const event = (
       return Object.assign({}, state, {
         status: action.status,
         filterLoader: false,
+        error: action.error
+      });
+    case eventAction.GET_REGISTER_EVENT_DETAILS_REQUEST:
+      return Object.assign({}, state, {
+        status: action.status,
+        registerEventLoader: true
+      });
+
+    case eventAction.GET_REGISTER_EVENT_DETAILS_SUCCESS:
+      return Object.assign({}, state, {
+        status: action.status,
+        registerEventLoader: false,
+        registerEventList: action.registerList
+      });
+    case eventAction.GET_REGISTER_EVENT_DETAILS_FAILURE:
+      return Object.assign({}, state, {
+        status: action.status,
+        registerEventLoader: false,
         error: action.error
       });
     default:

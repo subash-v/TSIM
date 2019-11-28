@@ -13,6 +13,13 @@ export const GET_FILTER_REQUEST = "GET_FILTER_REQUEST";
 export const GET_FILTER_SUCCESS = "GET_FILTER_SUCCESS";
 export const GET_FILTER_FAILURE = "GET_FILTER_FAILURE";
 
+export const GET_REGISTER_EVENT_DETAILS_REQUEST =
+  "GET_REGISTER_EVENT_DETAILS_REQUEST";
+export const GET_REGISTER_EVENT_DETAILS_SUCCESS =
+  "GET_REGISTER_EVENT_DETAILS_SUCCESS";
+export const GET_REGISTER_EVENT_DETAILS_FAILURE =
+  "GET_REGISTER_EVENT_DETAILS_FAILURE";
+
 export function getAllEventsRequest() {
   return {
     type: GET_ALL_EVENTS_REQUEST,
@@ -131,6 +138,46 @@ export function getFilterList() {
       return dispatch(getFilterSuccess(resultJson));
     } catch (e) {
       return dispatch(getFilterFailure(e.message));
+    }
+  };
+}
+
+export function getRegisterEventRequest() {
+  return {
+    type: GET_REGISTER_EVENT_DETAILS_REQUEST,
+    status: REQUESTING
+  };
+}
+
+export function getRegisterEventSuccess(registerList) {
+  return {
+    type: GET_REGISTER_EVENT_DETAILS_SUCCESS,
+    status: SUCCESS,
+    registerList
+  };
+}
+
+export function getRegisterEventFailure(error) {
+  return {
+    type: GET_REGISTER_EVENT_DETAILS_FAILURE,
+    status: ERROR,
+    error
+  };
+}
+
+export function getRegisterEvent(id) {
+  return async dispatch => {
+    dispatch(getRegisterEventRequest());
+    try {
+      let url = `events/slots/${id}`;
+      const result = await get(url);
+      const resultJson = await result.data;
+      if (resultJson.error) {
+        throw new Error(resultJson.message);
+      }
+      return dispatch(getRegisterEventSuccess(resultJson));
+    } catch (e) {
+      return dispatch(getRegisterEventFailure(e.message));
     }
   };
 }

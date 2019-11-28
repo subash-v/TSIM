@@ -13,7 +13,9 @@ import EventDetailPageSliderComponent from "./EventDetailPageSlider/EventDetailP
 
 export default class EventDetailsPage extends Component {
   componentDidMount() {
-    this.props.getEventDetails(this.props.match.params.eventId);
+    let eventId = this.props.match.params.eventId;
+    this.props.getEventDetails(eventId);
+    this.props.getRegisterEvent(eventId);
   }
   render() {
     const eventDetails = this.props && this.props.eventDetails;
@@ -21,8 +23,6 @@ export default class EventDetailsPage extends Component {
       this.props &&
       this.props.eventDetails &&
       this.props.eventDetails.eventSlots[0];
-    console.log(this.props);
-    console.log("eventDetails", this.props.match.params.eventId);
     return (
       <React.Fragment>
         <div className={styles.base}>
@@ -114,7 +114,9 @@ export default class EventDetailsPage extends Component {
                     <div className={styles.eventButtonConatiner}>
                       <div
                         className={styles.eventButton}
-                        onClick={() => this.props.showRegisterDetailsModule()}
+                        onClick={() =>
+                          this.props.showRegisterDetailsModule(this.props)
+                        }
                       >
                         <Button
                           type="primary"
