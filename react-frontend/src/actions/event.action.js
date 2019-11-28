@@ -79,7 +79,7 @@ export function getEventDetailsFailure(error) {
 
 export function getEventDetails(id) {
   return async dispatch => {
-    dispatch(getAllEventsRequest());
+    dispatch(getEventDetailsRequest());
     try {
       let url = `events?${id}`;
       const result = await get(url);
@@ -88,9 +88,9 @@ export function getEventDetails(id) {
         throw new Error(resultJson.message);
       }
 
-      return dispatch(getAllEventsSuccess(resultJson));
+      return dispatch(getEventDetailsSuccess(resultJson));
     } catch (e) {
-      return dispatch(getAllEventsFailure(e.message));
+      return dispatch(getEventDetailsFailure(e.message));
     }
   };
 }
