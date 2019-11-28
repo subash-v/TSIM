@@ -17,7 +17,7 @@
 .contentContainer {
   width: 100%;
   height: auto;
-  padding: 20px 20px 10px 20px;
+  padding: 20px 0;
 }
 
 .contentHeading {
@@ -28,6 +28,13 @@
   margin-bottom: 15px;
 }
 
+.homeheadingtext {
+  composes: contentHeading;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .time,
 .date,
 .location {
@@ -35,6 +42,8 @@
   font-family: regular;
   line-height: 20px;
   margin-bottom: 10px;
+  display: flex;
+  align-items: center;
 }
 
 .icons {
@@ -60,11 +69,34 @@
 }
 
 .locationImage {
-  composes: icons;
+  height: 16px;
+  width: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
   background: url("../../images/Location-white.svg") no-repeat;
   background-position: center;
   background-size: cover;
 }
+
+.homeLocationImage {
+  composes: locationImage;
+  height: 16px;
+  width: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  background-position: center;
+  background-size: contain;
+}
+
+.homeLocationText {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 80%;
+}
+
 .eventLabelContainer {
   display: flex;
   position: absolute;

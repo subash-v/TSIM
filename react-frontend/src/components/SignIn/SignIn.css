@@ -9,6 +9,12 @@
 .welTxt {
   display: block;
 }
+.error {
+  color: #ee0f0f;
+  font-family: bold;
+  font-size: 14px;
+  padding-bottom: 5px;
+}
 
 .welcomeTxt {
   color: #4f439a;
@@ -79,6 +85,7 @@
   color: white;
   text-align: center;
   margin: 15px 0 15px 0;
+  cursor: pointer;
 }
 
 .backImg {

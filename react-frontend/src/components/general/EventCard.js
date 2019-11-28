@@ -20,7 +20,15 @@ export default class Card extends Component {
           </div>
         </div>
         <div className={styles.contentContainer}>
-          <div className={styles.contentHeading}>{this.props.heading}</div>
+          <div
+            className={
+              window.location.pathname === "/"
+                ? styles.homeheadingtext
+                : styles.contentHeading
+            }
+          >
+            {this.props.heading}
+          </div>
           <div className={styles.time}>
             <div className={styles.timeImage}></div>
             {this.props.time}
@@ -30,8 +38,22 @@ export default class Card extends Component {
             {this.props.date}
           </div>
           <div className={styles.location}>
-            <div className={styles.locationImage}></div>
-            <span>{this.props.location}</span>
+            <div
+              className={
+                window.location.pathname === "/"
+                  ? styles.homeLocationImage
+                  : styles.locationImage
+              }
+            ></div>
+            <div
+              className={
+                window.location.pathname === "/"
+                  ? styles.homeLocationText
+                  : null
+              }
+            >
+              {this.props.location}
+            </div>
           </div>
         </div>
       </div>

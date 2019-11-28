@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Route, Switch, BrowserRouter } from "react-router-dom";
+import BlogFeed from "./components/Blog/BlogFeed";
 import styles from "./App.css";
 import MorePage from "./components/HomePage/MorePage";
 import Terms from "./components/TermsAndConditions/TermsAndConditions";
@@ -15,6 +16,7 @@ import FeedContainer from "./components/Feed/container/FeedContainer";
 import FeedExtraImagesContainer from "./components/Feed/container/FeedExtraImagesContainer"
 import Settings from "./components/Settings/SettingsContainer/SettingsContainer";
 import BlogContainer from "./components/Blog/container/BlogContainer";
+import EventDetails from "./components/EventDetails/EventDetails";
 import VisualProfileContainer from "./components/VisualProfile/conatiner/VisualProfileContainer";
 import SeekGuideContainer from "./components/SeekGuide/SeekGuideContainer";
 class App extends Component {
@@ -40,6 +42,7 @@ class App extends Component {
           <Route path="/connections" component={ConnectionsContainer} />
           <Route path="/feedImages" component={FeedExtraImagesContainer} />
           <Route path="/settings" component={Settings} />
+          <Route path="/eventDetails" component={EventDetails} />
         </Switch>
         <ModalContainer />
       </BrowserRouter>
