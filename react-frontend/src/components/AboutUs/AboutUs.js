@@ -29,7 +29,7 @@ export default class TermsOfService extends Component {
           <div className={styles.title}>The star in me</div>
         </div>
         <div className={styles.base}>
-          <CenteredContent contentWidth="1400px">
+          <CenteredContent contentWidth="1200px">
             <div className={styles.container}>
               <p className={styles.titleText}>
                 {" "}

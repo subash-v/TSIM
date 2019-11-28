@@ -8,38 +8,13 @@ import image4 from "../../images/Seek-guidance-min.jpg";
 import Button from "../../core/Button.js";
 import HomepageEventsCarousel from "../general/HomePageEventsCarousel.";
 import Card from "../general/EventCard";
+import BlogCard from "../general/Card";
 import Carousel from "../general/Carousel";
 import Footer from "../Footer/Footer";
 import CenteredContent from "../../core/CenteredContent";
 import PrimaryHeaderContainer from "./container/PrimaryHeaderContainer";
 import SecondaryHeaderContainer from "./container/SecondaryHeaderContainer";
 
-const carouselData = [
-  {
-    title: "WEFT Women Entrepreneurs Annual Conference & Awards 2019",
-    time: "10 am – 5 pm",
-    date: "21 Sep, 22 Sep",
-    location: "Koramangala, Bengaluru"
-  },
-  {
-    title: "WEFT Women Entrepreneurs Annual Conference & Awards 2019",
-    time: "10 am – 5 pm",
-    date: "21 Sep, 22 Sep",
-    location: "Koramangala, Bengaluru"
-  },
-  {
-    title: "WEFT Women Entrepreneurs Annual Conference & Awards 2019",
-    time: "10 am – 5 pm",
-    date: "21 Sep, 22 Sep",
-    location: "Koramangala, Bengaluru"
-  },
-  {
-    title: "WEFT Women Entrepreneurs Annual Conference & Awards 2019",
-    time: "10 am – 5 pm",
-    date: "21 Sep, 22 Sep",
-    location: "Koramangala, Bengaluru"
-  }
-];
 export default class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -75,7 +50,8 @@ export default class Home extends React.Component {
 
   componentDidMount = () => {
     window.addEventListener("scroll", this.handleScroll);
-
+    this.props.getAllEvents();
+    this.props.getAllBlogs();
     if (this.state.slideIndex <= this.state.maxSlide) {
       var varss = setInterval(() => {
         this.incrementTime();
@@ -277,7 +253,7 @@ export default class Home extends React.Component {
             )}
           </div>
           <div className={styles.navButtonSection}>
-            <CenteredContent contentWidth={"1400px"}>
+            <CenteredContent contentWidth={"1200px"}>
               <div
                 className={styles.navButton}
                 onClick={() => this.handleCarousel(1)}
@@ -347,20 +323,27 @@ export default class Home extends React.Component {
           </div>
           <div className={styles.carousel}>
             <HomepageEventsCarousel>
-              {carouselData &&
-                carouselData.map((val, i) => {
-                  return (
+              {this.props &&
+                this.props.allEventDetails &&
+                this.props.allEventDetails.map((val, i) => (
+                  <div
+                    className={styles.card}
+                    onClick={() => {
+                      this.handleredirect("/eventDetails");
+                    }}
+                  >
                     <Card
-                      image={""}
+                      image={val.imageUrl}
                       heading={val.title}
-                      time={val.time}
-                      date={val.date}
-                      location={val.location}
+                      time={`${val.eventSlots[0].startTime} - ${val.eventSlots[0].endTime}`}
+                      date={val.eventSlots[0].date}
+                      location={val.eventAddress}
                       key={i}
+                      eventLabels={val.labels}
                       visibleChildrenDesktop={2}
                     />
-                  );
-                })}
+                  </div>
+                ))}
             </HomepageEventsCarousel>
           </div>
         </div>
@@ -374,7 +357,10 @@ export default class Home extends React.Component {
                   Get access to career advice, inspirational stories and curated
                   career resources
                 </div>
-                <div className={styles.gotoFeaturedContent}>
+                <div
+                  className={styles.gotoFeaturedContent}
+                  onClick={() => this.handleredirect("/blog")}
+                >
                   {" "}
                   VIEW ALL <div className={styles.arrow}></div>
                 </div>
@@ -384,20 +370,26 @@ export default class Home extends React.Component {
           <div style={{ display: "flex", justifyContent: "center" }}>
             <div className={styles.featuredCarousel}>
               <Carousel>
-                {carouselData &&
-                  carouselData.map((val, i) => {
-                    return (
-                      <Card
-                        image={""}
+                {this.props &&
+                  this.props.allBlogsDetails &&
+                  this.props.allBlogsDetails.map(val => (
+                    <div
+                      className={styles.card}
+                      onClick={() => {
+                        this.handleredirect("/blogDetails");
+                      }}
+                    >
+                      <BlogCard
+                        name={val.author}
+                        tags={val.labels}
+                        time={val.duration}
                         heading={val.title}
-                        time={val.time}
-                        date={val.date}
-                        location={val.location}
-                        key={i}
-                        visibleChildrenDesktop={2}
+                        shared="12k"
+                        likes="12k"
+                        comments="12k"
                       />
-                    );
-                  })}
+                    </div>
+                  ))}
               </Carousel>
             </div>
           </div>
