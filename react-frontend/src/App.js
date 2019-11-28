@@ -21,18 +21,18 @@ class App extends Component {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={HomeContainer} />
-          <Route path="/blog" component={BlogFeed} />
-          <Route path="/events" component={MorePage} />
-          <Route path="/terms" component={Terms} />
-          <Route path="/privacy" component={Privacy} />
-          <Route path="/visual-profile" component={VisualProfilePage} />
-          <Route path="/seek-guide" component={SeekGuide} />
-          <Route path="/aboutUs" component={AboutUs} />
-          <Route path="/eventDetails" component={EventDetailsPageContainer} />
-          <Route path="/event" component={EventPageContainer} />
-          <Route path="/profile" component={Profile} />
-          <Route path="/feed" component={FeedContainer} />
-          <Route path="/connections" component={ConnectionsContainer} />
+          <Route exact path="/blog" component={BlogFeed} />
+          <Route exact path="/events" component={MorePage} />
+          <Route exact path="/terms" component={Terms} />
+          <Route exact path="/privacy" component={Privacy} />
+          <Route exact path="/visual-profile" component={VisualProfilePage} />
+          <Route exact path="/seek-guide" component={SeekGuide} />
+          <Route exact path="/aboutUs" component={AboutUs} />
+          <Route exact path="/eventDetails" component={EventDetailsPageContainer} />
+          <Route exact path="/event" component={EventPageContainer} />
+          <Route exact path="/profile" component={Profile} />
+          <Route exact path="/feed" component={FeedContainer} />
+          <Route exact path="/connections" component={ConnectionsContainer} />
         </Switch>
         <ModalContainer />
       </BrowserRouter>

@@ -27,6 +27,7 @@ export default class TermsOfService extends Component {
         </div>
         <div className={styles.banner}>
           <div className={styles.title}>The star in me</div>
+          <div className={styles.opactityWrapper}></div>
         </div>
         <div className={styles.base}>
           <CenteredContent contentWidth="1400px">
@@ -34,7 +35,7 @@ export default class TermsOfService extends Component {
               <p className={styles.titleText}>
                 {" "}
                 Unleash the power of branding, connections, networking and
-                guidance through <b>The star in me</b>
+                guidance through <div className={styles.starText}>The star in me</div>
               </p>
               <hr />
               <div className={styles.overview}>
@@ -208,7 +209,7 @@ export default class TermsOfService extends Component {
                       backgroundImage: `url(${image4})`,
                       backgroundSize: "contain",
                       width: "100%",
-                      height: "100%",
+                      height: "442px",
                       backgroundRepeat: "no-repeat",
                       backgroundPosition: "center"
                     }}
