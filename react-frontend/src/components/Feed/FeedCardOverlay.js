@@ -7,6 +7,11 @@ import Button from "../general/Button";
 import FeedCardDottedMenu from "./FeedCardDottedMenu/FeedCardDottedMenu";
 import PollingResult from "./PollingResult";
 import FeedProfileHolder from "./FeedProfileHolder";
+import CommentText from "./CommentText";
+import imageattach from "../../images/Image_add_blue.svg";
+import CommentSection from "./CommentSection";
+import dropdown from "../../images/dropdown-blue.svg";
+import droupup from "../../images/Upvote-line.svg";
 export default class FeedCard extends Component {
   state = {
     showFeedMenu: false
@@ -56,6 +61,36 @@ export default class FeedCard extends Component {
               </div>
               <div className={styles.overlayurl}>
                 mediacampaigns.americanexpress.com
+              </div>
+            </div>
+          </div>
+        </div>
+        <CommentSection />
+        <div className={styles.ans}>
+          55 Answers
+          <div className={styles.drop}>
+            <img src={dropdown} height="12px" width="12px"></img>
+          </div>
+        </div>
+        <div className={styles.commentholder}>
+          <div className={styles.profilepicture}>
+            <img
+              className={styles.commentprofile}
+              src={profile}
+              height="35px"
+              width="35px"
+            />
+          </div>
+          <div className={styles.profilenameholder}>
+            <div className={styles.profilename}>Devanshi Sheth</div>
+            <div className={styles.degn}>Visual Designer | 8 Aug</div>
+            <div className={styles.comment_text}>
+              No plans? We're hosting yet another Design workshop with
+              Roundhouse agency
+            </div>
+            <div className={styles.dropupcont}>
+              <div className={styles.dropup}>
+                <img src={droupup}></img>
               </div>
             </div>
           </div>
