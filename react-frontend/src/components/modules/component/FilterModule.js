@@ -53,7 +53,6 @@ export default class FilterModule extends Component {
   };
   handleChange = () => {};
   render() {
-    console.log(this.props.filterList);
     let currentCategory =
       this.props &&
       this.props.filterList &&

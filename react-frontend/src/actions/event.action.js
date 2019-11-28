@@ -167,7 +167,7 @@ export function getRegisterEventFailure(error) {
 
 export function getRegisterEvent(id) {
   return async dispatch => {
-    dispatch(getFilterRequest());
+    dispatch(getRegisterEventRequest());
     try {
       let url = `events/slots/${id}`;
       const result = await get(url);
@@ -175,9 +175,9 @@ export function getRegisterEvent(id) {
       if (resultJson.error) {
         throw new Error(resultJson.message);
       }
-      return dispatch(getFilterSuccess(resultJson));
+      return dispatch(getRegisterEventSuccess(resultJson));
     } catch (e) {
-      return dispatch(getFilterFailure(e.message));
+      return dispatch(getRegisterEventFailure(e.message));
     }
   };
 }

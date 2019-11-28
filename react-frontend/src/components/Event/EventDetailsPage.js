@@ -23,8 +23,6 @@ export default class EventDetailsPage extends Component {
       this.props &&
       this.props.eventDetails &&
       this.props.eventDetails.eventSlots[0];
-    console.log(this.props);
-    console.log("eventDetails", this.props.match.params.eventId);
     return (
       <React.Fragment>
         <div className={styles.base}>

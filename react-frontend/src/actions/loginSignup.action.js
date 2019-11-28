@@ -1,4 +1,10 @@
-import { SUCCESS, FAILURE, REQUESTING, ERROR } from "../utils/constant";
+import {
+  SUCCESS,
+  FAILURE,
+  REQUESTING,
+  ERROR,
+  ACCESS_TOKEN
+} from "../utils/constant";
 import * as Cookie from "../utils/Cookie.js";
 import { get, post } from "../utils/apiRequest.js";
 
@@ -43,7 +49,7 @@ export function getLogin(userLoginDetails) {
       if (resultJson.error) {
         throw new Error(resultJson.message);
       }
-      Cookie.createCookie("accessToken", JSON.stringify(resultJson.token));
+      Cookie.createCookie(ACCESS_TOKEN, resultJson.token);
       return dispatch(loginUserSuccess(resultJson));
     } catch (e) {
       return dispatch(loginUserFailure(e.message));
@@ -84,7 +90,7 @@ export function postSignUp(userSignUpDetails) {
       if (resultJson.error) {
         throw new Error(resultJson.message);
       }
-      Cookie.createCookie("accessToken", JSON.stringify(resultJson.token));
+      Cookie.createCookie(ACCESS_TOKEN, resultJson.token);
       return dispatch(signUpUserSuccess(resultJson));
     } catch (e) {
       return dispatch(signUpUserFailure(e.message));
