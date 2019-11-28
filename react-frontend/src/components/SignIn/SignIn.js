@@ -20,6 +20,16 @@ export default class SignIn extends React.Component {
       this.props.getLogin(this.state);
     }
   };
+  componentWillReceiveProps = nextProps => {
+    if (
+      nextProps &&
+      nextProps.loginDetails &&
+      nextProps.loginDetails.loginDetails
+    ) {
+      this.props.closeModal();
+    }
+  };
+
   render() {
     return (
       <React.Fragment>
@@ -34,6 +44,12 @@ export default class SignIn extends React.Component {
               <div className={styles.stayConnected}>
                 Stay connected, be informed and keep inspiring.
               </div>
+              {this.props.loginDetails &&
+                this.props.loginDetails.status === "ERROR" && (
+                  <div className={styles.error}>
+                    {this.props.loginDetails.error}
+                  </div>
+                )}
               <div className={styles.inputBox}>
                 <Input2
                   placeholder="Email Address"
