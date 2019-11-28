@@ -12,7 +12,12 @@ import PrimaryHeaderContainer from "../HomePage/container/PrimaryHeaderContainer
 import EventDetailPageSliderComponent from "./EventDetailPageSlider/EventDetailPageSliderComponent";
 
 export default class EventDetailsPage extends Component {
+  componentDidMount() {
+    this.props.getEventDetails(this.props.match.params.eventId);
+  }
   render() {
+    console.log(this.props);
+    console.log("eventDetails", this.props.match.params.eventId);
     return (
       <React.Fragment>
         <div className={styles.base}>
@@ -32,7 +37,14 @@ export default class EventDetailsPage extends Component {
                 <div className={styles.descriptionBase}>
                   <div className={styles.descriptionContainer}>
                     <div className={styles.tagContainer}>
-                      <div className={styles.tagButton}>MANAGEMENT</div>
+                      {this.props &&
+                        this.props.eventDetails &&
+                        this.props.eventDetails.labels &&
+                        this.props.eventDetails.labels.map(label => {
+                          return (
+                            <div className={styles.tagButton}>{label}</div>
+                          );
+                        })}
                     </div>
                     <div className={styles.eventHeading}>
                       Building a Strong Personal Brand by Uma Kasoji

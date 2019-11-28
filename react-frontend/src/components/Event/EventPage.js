@@ -61,8 +61,7 @@ export const carouselData = [
   }
 ];
 export default class EventPage extends Component {
-  handleredirect = (val, id) => {
-    this.props.getEventDetails(id);
+  handleredirect = val => {
     if (this.props.history) {
       this.props.history.push(`${val}`);
     }
@@ -141,7 +140,7 @@ export default class EventPage extends Component {
                     <div
                       className={styles.card}
                       onClick={() => {
-                        this.handleredirect("/eventDetails", val.eventId);
+                        this.handleredirect(`/eventDetails/${val.eventId}`);
                       }}
                     >
                       <Card

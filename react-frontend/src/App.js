@@ -29,7 +29,10 @@ class App extends Component {
           <Route path="/visual-profile" component={VisualProfilePage} />
           <Route path="/seek-guide" component={SeekGuide} />
           <Route path="/aboutUs" component={AboutUs} />
-          <Route path="/eventDetails" component={EventDetailsPageContainer} />
+          <Route
+            path="/eventDetails/:eventId"
+            component={EventDetailsPageContainer}
+          />
           <Route path="/event" component={EventPageContainer} />
           <Route path="/profile" component={ProfileContainer} />
           <Route path="/feed" component={FeedContainer} />

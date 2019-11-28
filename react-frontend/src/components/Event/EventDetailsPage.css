@@ -100,6 +100,8 @@
   width: 100%;
   height: auto;
   margin-bottom: 25px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .tagButton {
@@ -113,6 +115,8 @@
   font-size: 10px;
   font-family: bold;
   justify-content: center;
+  margin-bottom: 5px;
+  margin-right: 5px;
 }
 
 .eventHeading {
