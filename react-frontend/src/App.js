@@ -22,7 +22,7 @@ class App extends Component {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={HomeContainer} />
-          <Route exact path="/blog" component={BlogFeed} />
+          <Route exact path="/blog" component={BlogContainer} />
           <Route exact path="/events" component={MorePage} />
           <Route exact path="/terms" component={Terms} />
           <Route exact path="/privacy" component={Privacy} />
@@ -31,7 +31,7 @@ class App extends Component {
           <Route exact path="/aboutUs" component={AboutUs} />
           <Route exact path="/eventDetails" component={EventDetailsPageContainer} />
           <Route exact path="/event" component={EventPageContainer} />
-          <Route exact path="/profile" component={Profile} />
+          <Route exact path="/profile" component={ProfileContainer} />
           <Route exact path="/feed" component={FeedContainer} />
           <Route exact path="/connections" component={ConnectionsContainer} />
         </Switch>

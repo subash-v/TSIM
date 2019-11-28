@@ -473,6 +473,24 @@ export default class Home extends React.Component {
                         is a holistic solution that helps in attracting,
                         engaging and retaining women talent.
                       </div>
+                      <div className={styles.buttonSection}>
+                        <Button
+                          backgroundColor={"#AD5DA3"}
+                          label="REGISTER FOR AN EVENT"
+                          fontSize={"16px"}
+                          lineHeight={"24px"}
+                          width={"298px"}
+                          height={"70px"}
+                          fontFamily={"bold"}
+                          onClick={() => this.props.showSignUpModule()}
+                        />
+                        <div
+                          className={styles.link}
+                          onClick={() => this.handleredirect("/seek-guide")}
+                        >
+                          Learn more
+                        </div>
+                      </div>{" "}
                     </div>
                   </div>
                 )}
