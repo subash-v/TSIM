@@ -1,4 +1,7 @@
 import React from "react";
+
+import { Breakpoint, BreakpointProvider } from "react-socks";
+
 import styles from "../ForgotPassword/ForgotPassword.css";
 import CenteredContent from "../../core/CenteredContent";
 import Input2 from "../../core/Input2";
@@ -18,49 +21,88 @@ export default class ForgotPassword extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <RightSlideModal>
-          <CenteredContent>
-            <div onClick={this.props.closeModal} className={styles.backCircle}>
-              <img src={Back} className={styles.backImg} alt="" />
-            </div>
-            <div className={styles.baseContainer}>
-              <div className={styles.welTxt}>
-                <div className={styles.forgetPwd}>Forgot Password</div>
-                <div className={styles.stayConnected}>
-                  Enter your email address that you used to register. We'll send
-                  you <br /> an email with a link to reset your password.
-                </div>
+        <BreakpointProvider>
+          <RightSlideModal>
+            <Breakpoint small down>
+              <CenteredContent>
+                <div className={styles.MobileBaseContainer}>
+                  <div className={styles.welTxt}>
+                    <div className={styles.forgetPwd}>Forgot Password</div>
+                    <div className={styles.stayConnected}>
+                      Enter your email address that you used to register. We'll
+                      send you an email with a link to reset your password.
+                    </div>
 
-                <div className={styles.emailAddress}>
-                  <Input2
-                    placeholder="Enter your registered email"
-                    value={this.state.email}
-                    onChange={val => this.setState({ email: val })}
-                    textStyle={{ fontSize: 14 }}
-                    height={50}
-                    boxy={true}
-                    borderColor={"#7f7f7f"}
-                    borderBottom={"#7f7f7f"}
-                    // // onFocus={() => {
-                    // //   this.handleOnFocusInput();
-                    // }}
-                  />
-                </div>
+                    <div className={styles.emailAddress}>
+                      <Input2
+                        placeholder="Enter your registered email"
+                        value={this.state.email}
+                        onChange={val => this.setState({ email: val })}
+                        textStyle={{ fontSize: 14 }}
+                        height={50}
+                        boxy={true}
+                        borderColor={"#7f7f7f"}
+                        borderBottom={"#7f7f7f"}
+                      />
+                    </div>
 
-                <div className={styles.loginButton}>LOGIN</div>
-                <div></div>
-                <div>
-                  <div
-                    className={styles.bckToLogin}
-                    onClick={() => this.props.showLoginModal()}
-                  >
-                    Back to login
+                    <div className={styles.loginButton}>LOGIN</div>
+                    <div></div>
+                    <div>
+                      <div
+                        className={styles.bckToLogin}
+                        onClick={() => this.props.showLoginModal()}
+                      >
+                        Back to login
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </CenteredContent>
-        </RightSlideModal>
+              </CenteredContent>
+            </Breakpoint>
+
+            <Breakpoint large up>
+              <CenteredContent>
+                <div className={styles.baseContainer}>
+                  <div className={styles.welTxt}>
+                    <div className={styles.forgetPwd}>Forgot Password</div>
+                    <div className={styles.stayConnected}>
+                      Enter your email address that you used to register. We'll
+                      send you an email with a link to reset your password.
+                    </div>
+
+                    <div className={styles.emailAddress}>
+                      <Input2
+                        placeholder="Enter your registered email"
+                        value={this.state.email}
+                        onChange={val => this.setState({ email: val })}
+                        textStyle={{ fontSize: 14 }}
+                        height={50}
+                        boxy={true}
+                        borderColor={"#7f7f7f"}
+                        borderBottom={"#7f7f7f"}
+                        // // onFocus={() => {
+                        // //   this.handleOnFocusInput();
+                        // }}
+                      />
+                    </div>
+
+                    <div className={styles.loginButton}>LOGIN</div>
+                    <div></div>
+                    <div>
+                      <div
+                        className={styles.bckToLogin}
+                        onClick={() => this.props.showLoginModal()}
+                      >
+                        Back to login
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CenteredContent>
+            </Breakpoint>
+          </RightSlideModal>
+        </BreakpointProvider>
       </React.Fragment>
     );
   }
