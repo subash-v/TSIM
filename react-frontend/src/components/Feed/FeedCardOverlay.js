@@ -12,12 +12,17 @@ import imageattach from "../../images/Image_add_blue.svg";
 import CommentSection from "./CommentSection";
 import dropdown from "../../images/dropdown-blue.svg";
 import droupup from "../../images/Upvote-line.svg";
+import share from "../../images/ForwardLine.svg";
 export default class FeedCard extends Component {
   state = {
-    showFeedMenu: false
+    showFeedMenu: false,
+    showCommentBox: false
   };
   showFeedMenu = () => {
     this.setState({ showFeedMenu: !this.state.showFeedMenu });
+  };
+  handleClick = () => {
+    this.setState({ showCommentBox: !this.state.showCommentBox });
   };
   render() {
     return (
@@ -88,11 +93,37 @@ export default class FeedCard extends Component {
               No plans? We're hosting yet another Design workshop with
               Roundhouse agency
             </div>
-            <div className={styles.dropupcont}>
-              <div className={styles.dropup}>
-                <img src={droupup}></img>
+            <div className={styles.droupcont}>
+              <div className={styles.dropupcont}>
+                <div className={styles.dropup} onClick={this.handleClick}>
+                  <img src={droupup} height="15px" width="15px"></img>
+                </div>
+                <div className={styles.drouptxt}>120</div>
+              </div>
+
+              <div className={styles.dropupcont}>
+                <div className={styles.droupup}>
+                  <img src={share} height="15px" width="15px"></img>
+                </div>
+                <div className={styles.drouptxt}>12</div>
               </div>
             </div>
+            {this.state.showCommentBox && (
+              <div className={styles.commentBox}>
+                <div className={styles.cprofilepicture}>
+                  <img
+                    className={styles.commentinpprofile}
+                    src={profile}
+                    height="25px"
+                    width="25px"
+                  />
+                </div>
+                <input className={styles.commentinp} type="text" />
+                <div className={styles.combutcont}>
+                  <button className={styles.commentbut}>Post</button>{" "}
+                </div>
+              </div>
+            )}
           </div>
         </div>
         <div className={styles.likesSection}>

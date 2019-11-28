@@ -37,7 +37,7 @@ export default class VisualProfilePage extends Component {
                         "In current times, your digital impression is as important as your offline impression. So, level up your online profile to make a great digital impression."
                       }
                     </div>
-                    <div>
+                    <div onClick={() => this.props.showSignUpModule()}>
                       <Button
                         type="primary"
                         backgroundColor={"#4F439A"}
