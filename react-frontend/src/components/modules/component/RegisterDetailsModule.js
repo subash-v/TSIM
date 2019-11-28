@@ -40,21 +40,20 @@ export default class RegisterDetailsModule extends Component {
     };
   }
   handleButtonClick = () => {
-    if (this.state.Proceed + 1 === 3) {
-      this.setState({
-        Proceed: 3,
-        selectTicket: "complete",
-        attendedetails: "active"
-      });
-    } else if (this.state.Proceed + 1 === 4) {
-      this.setState({
-        Proceed: 4,
-        selectTicket: "complete",
-        attendedetails: "complete",
-        review: "active"
-      });
+    if (this.state.Proceed == 4) {
+      this.props.closeModal();
     } else {
-      if (this.state.Proceed < 6) {
+      if (this.state.Proceed == 2) {
+        let attendeDetails = this.state.attende1Detials;
+        if (
+          attendeDetails &&
+          attendeDetails.name &&
+          attendeDetails.email &&
+          attendeDetails.mobileno
+        ) {
+          this.setState({ Proceed: this.state.Proceed + 1 });
+        }
+      } else {
         this.setState({ Proceed: this.state.Proceed + 1 });
       }
     }
@@ -122,30 +121,45 @@ export default class RegisterDetailsModule extends Component {
             {this.state.Proceed !== 6 && (
               <div className={styles.verticalScroller}>
                 <VerticalStatus
-                  first={this.state.selectTicket}
-                  second={this.state.attendedetails}
-                  third={this.state.review}
+                  first={
+                    this.state.Proceed == 1
+                      ? "active"
+                      : this.state.Proceed > 1 && "complete"
+                  }
+                  second={
+                    this.state.Proceed == 2
+                      ? "active"
+                      : this.state.Proceed > 2 && "complete"
+                  }
+                  third={
+                    this.state.Proceed > 2
+                      ? "active"
+                      : this.state.Proceed > 3 && "complete"
+                  }
                 />
               </div>
             )}
 
             <div className={styles.contentHolder}>
               <div className={styles.selectHeader}>
-                {this.state.Proceed == 3 || this.state.Proceed == 4
+                {this.state.Proceed == 2
                   ? "Add attendee details"
-                  : this.state.Proceed === 5
+                  : this.state.Proceed === 3
                   ? "Review Order"
-                  : this.state.Proceed === 6
+                  : this.state.Proceed === 4
                   ? "Payment Confirmation"
                   : "Select number of tickets"}
               </div>
               {this.state.Proceed < 3 && (
                 <div className={styles.buildingBlocks}>
-                  Building a Strong Personal Brand by Uma Kasoji
+                  {this.props.eventDetails && this.props.eventDetails.title}
                 </div>
               )}
               {this.state.Proceed < 3 && (
-                <div className={styles.advanceText}>Advanced Level</div>
+                <div className={styles.advanceText}>
+                  {this.props.eventDetails &&
+                    this.props.eventDetails.eventLevel}
+                </div>
               )}{" "}
               {this.state.Proceed === 1 && (
                 <div className={styles.registerStaticDetails}>
@@ -154,7 +168,10 @@ export default class RegisterDetailsModule extends Component {
                       icon={calander}
                       spacing={"7px"}
                       size={15}
-                      text={"6th September 2019"}
+                      text={
+                        this.props.registerEventList &&
+                        this.props.registerEventList[0].date
+                      }
                     />
                   </div>
                   <div className={styles.iconWithText}>
@@ -162,26 +179,40 @@ export default class RegisterDetailsModule extends Component {
                       spacing={"7px"}
                       icon={time}
                       size={15}
-                      text={"5:30 pm - 7:30 pm"}
+                      text={`${this.props.registerEventList &&
+                        this.props.registerEventList[0].endTime}-
+                        ${this.props.registerEventList &&
+                          this.props.registerEventList[0].endTime}`}
                     />
                   </div>
-                  <div className={styles.personHolder}>
-                    <div className={styles.textHolder}>
-                      <div className={styles.personText}>Per Person</div>
-                      <div className={styles.cost}>INR 1450 per person</div>
-                    </div>
-                    <div className={styles.counter}>
-                      <Counter
-                        value={this.state.counter}
-                        setvalue={val => this.setTicketCounter(val)}
-                      ></Counter>
-                    </div>
-                  </div>
+                  {this.props.registerEventList &&
+                    this.props.registerEventList[0].eventPackages &&
+                    this.props.registerEventList[0].eventPackages.map(val => {
+                      return (
+                        <div className={styles.personHolder}>
+                          <div className={styles.textHolder}>
+                            <div className={styles.personText}>
+                              {val.seatCategory}
+                            </div>
+                            <div className={styles.cost}>
+                              INR {val.price} per person
+                            </div>
+                          </div>
+                          <div className={styles.counter}>
+                            <Counter
+                              value={this.state.counter}
+                              setvalue={val => this.setTicketCounter(val)}
+                              max={val.maxBookingAllowed}
+                            ></Counter>
+                          </div>
+                        </div>
+                      );
+                    })}
                 </div>
               )}
-              {this.state.Proceed == 2 && (
+              {/* {this.state.Proceed == 2 && (
                 <div className={styles.accordianHolder}>
-                  {accordianDeatils.map((val, i) => {
+                  {/* {accordianDeatils.map((val, i) => {
                     return (
                       <Accordion
                         offset={"10px 0"}
@@ -213,8 +244,8 @@ export default class RegisterDetailsModule extends Component {
                           })}
                       </Accordion>
                     );
-                  })}
-                  {ticketDetails.map((val, i) => {
+                  })} */}
+              {/* {ticketDetails.map((val, i) => {
                     return (
                       <Accordion
                         offset={"10px 0"}
@@ -256,10 +287,10 @@ export default class RegisterDetailsModule extends Component {
                           })}
                       </Accordion>
                     );
-                  })}
+                  })} 
                 </div>
-              )}
-              {(this.state.Proceed === 3 || this.state.Proceed === 4) && (
+              )} */}
+              {this.state.Proceed == 2 && (
                 <div className={styles.attenderHolder}>
                   <div className={styles.attendes}>
                     <AttendeeDetails
@@ -276,83 +307,109 @@ export default class RegisterDetailsModule extends Component {
                   </div>
                 </div>
               )}
-              {this.state.Proceed > 4 && (
-                <div className={styles.reviewHolder}>
-                  <div className={styles.orderHeaderHolder}>
-                    <div className={styles.orderHeader}>ORDER SUMMARY</div>
-                    <div className={styles.editIconHolder}>
-                      <Icon image={edit} size={30} />
-                    </div>
-                  </div>
-                  <div className={styles.reviewDetailsHolder}>
-                    <div className={styles.buildingBlocks}>
-                      Building a Strong Personal Brand by Uma Kasoji
-                    </div>
-                    <div className={styles.advanceText}>Advanced Level</div>
-                    <div className={styles.iconWithText}>
-                      <HorizantalIconWithHeader
-                        icon={time}
-                        size={15}
-                        text={"5:30 pm - 7:30 pm"}
-                      />
-                    </div>
-                    <div className={styles.iconWithText}>
-                      <HorizantalIconWithHeader
-                        icon={calander}
-                        size={15}
-                        text={"6th September 2019"}
-                      />
-                    </div>
-
-                    <div className={styles.iconWithText}>
-                      <HorizantalIconWithHeader
-                        icon={location}
-                        size={15}
-                        text={"DBS, Hyderabad"}
-                      />
-                    </div>
-                    <div className={styles.iconWithText}>
-                      <HorizantalIconWithHeader
-                        icon={location}
-                        size={15}
-                        text={"INR 1,450 x 2 Tickets"}
-                      />
-                    </div>
-
-                    <div className={styles.attendeeText}>
-                      Attendee: <div>Ms. Pratiksha Gupta</div>
-                    </div>
-                    {this.state.Proceed === 6 && (
-                      <div className={styles.attendeeText}>
-                        (PAYMENT DONE THROUGH DEBIT CARD)
-                        <div>
-                          Webinar link is sent on pratiksha.g@xelpmoc.in
+              {(this.state.Proceed == 3 || this.state.Proceed == 4) &&
+                this.props.registerEventList &&
+                this.props.registerEventList[0].eventPackages &&
+                this.props.registerEventList[0].eventPackages.map(val => {
+                  return (
+                    <div className={styles.reviewHolder}>
+                      <div className={styles.orderHeaderHolder}>
+                        <div className={styles.orderHeader}>ORDER SUMMARY</div>
+                        <div className={styles.editIconHolder}>
+                          <Icon image={edit} size={30} />
                         </div>
                       </div>
-                    )}
-                  </div>
-                </div>
-              )}
+                      <div className={styles.reviewDetailsHolder}>
+                        <div className={styles.buildingBlocks}>
+                          Building a Strong Personal Brand by Uma Kasoji
+                        </div>
+                        <div className={styles.advanceText}>Advanced Level</div>
+                        <div className={styles.iconWithText}>
+                          <HorizantalIconWithHeader
+                            icon={time}
+                            size={15}
+                            text={`${this.props.registerEventList &&
+                              this.props.registerEventList[0].endTime}-
+                                ${this.props.registerEventList &&
+                                  this.props.registerEventList[0].endTime}`}
+                          />
+                        </div>
+                        <div className={styles.iconWithText}>
+                          <HorizantalIconWithHeader
+                            icon={calander}
+                            size={15}
+                            text={
+                              this.props.registerEventList &&
+                              this.props.registerEventList[0].date
+                            }
+                          />
+                        </div>
+
+                        <div className={styles.iconWithText}>
+                          <HorizantalIconWithHeader
+                            icon={location}
+                            size={15}
+                            text={
+                              this.props.eventDetails &&
+                              this.props.eventDetails.eventAddress
+                            }
+                          />
+                        </div>
+                        <div className={styles.iconWithText}>
+                          <HorizantalIconWithHeader
+                            icon={location}
+                            size={15}
+                            text={`${val.price} x ${this.state.counter} Tickets`}
+                          />
+                        </div>
+
+                        <div className={styles.attendeeText}>
+                          Attendee:{" "}
+                          <div>
+                            {this.state.attende1Detials &&
+                              this.state.attende1Detials.name}
+                          </div>
+                        </div>
+                        {this.state.Proceed === 4 && (
+                          <div className={styles.attendeeText}>
+                            (PAYMENT DONE THROUGH DEBIT CARD)
+                            <div>
+                              Webinar link is sent on{" "}
+                              {this.state.attende1Detials &&
+                                this.state.attende1Detials.email}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
               <div
                 className={
-                  this.state.Proceed == 3
+                  this.state.Proceed == 3 || this.state.Proceed == 2
                     ? styles.attendeStyle
                     : styles.amountHolder
                 }
               >
-                {this.state.Proceed != 3 && (
-                  <div className={styles.textHolder}>
-                    <div className={styles.total}>Total</div>
-                    <div className={styles.amount}>
-                      INR 1,450{" "}
-                      {this.state.Proceed > 4 && (
-                        <span className={styles.taxes}>
-                          (inclusive of all taxes)
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                )}
+                {this.state.Proceed != 3 &&
+                  this.state.Proceed != 2 &&
+                  this.props.registerEventList &&
+                  this.props.registerEventList[0].eventPackages &&
+                  this.props.registerEventList[0].eventPackages.map(val => {
+                    return (
+                      <div className={styles.textHolder}>
+                        <div className={styles.total}>Total</div>
+                        <div className={styles.amount}>
+                          INR {val.price * this.state.counter}{" "}
+                          {this.state.Proceed > 4 && (
+                            <span className={styles.taxes}>
+                              (inclusive of all taxes)
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                    );
+                  })}
                 <div
                   className={styles.button}
                   onClick={() => this.handleButtonClick()}
@@ -375,47 +432,3 @@ export default class RegisterDetailsModule extends Component {
     );
   }
 }
-
-const accordianDeatils = [
-  {
-    header: "Select Date",
-    icon: date_blue,
-    data: [
-      { time: "Sat, 10 Oct 2019" },
-      { time: "Sat, 10 nov 2019" },
-      { time: "Sat, 10 Dec 2019" }
-    ]
-  },
-  {
-    header: "Select Time",
-    icon: time_blue,
-    data: [
-      { time: "9:30-11:30 am" },
-      { time: "1:30-3:30 pm" },
-      { time: "7:30-9:30 pm" }
-    ]
-  }
-];
-
-const ticketDetails = [
-  {
-    header: "Select Ticket",
-    icon: date_blue,
-    data: [
-      {
-        heading: "Early Bird Tickets",
-        subHeading: "INR 1450 per person",
-        count: "14 remaining"
-      },
-      {
-        heading: "Snow Bird Tickets",
-        subHeading: "INR 1450 per person"
-      },
-      {
-        heading: "Black Bird Tickets",
-        subHeading: "INR 1450 per person",
-        count: "Filling Fast!"
-      }
-    ]
-  }
-];

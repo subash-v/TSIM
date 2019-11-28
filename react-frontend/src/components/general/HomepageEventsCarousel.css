@@ -8,6 +8,7 @@
   height: auto;
   position: relative;
   overflow: hidden;
+  padding: 20px 0;
 }
 .slider {
   width: 100%;
@@ -27,8 +28,12 @@
   /* box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.1); */
 }
 
+.item:first-child {
+  /* margin-left: 0; */
+}
+
 .item:nth-child(even) {
-  padding-right: 0;
+  padding-right: 10px;
 }
 
 .forward {
