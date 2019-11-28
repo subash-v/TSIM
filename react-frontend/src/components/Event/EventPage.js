@@ -61,7 +61,8 @@ export const carouselData = [
   }
 ];
 export default class EventPage extends Component {
-  handleredirect = val => {
+  handleredirect = (val, id) => {
+    this.props.getEventDetails(id);
     if (this.props.history) {
       this.props.history.push(`${val}`);
     }
@@ -74,6 +75,7 @@ export default class EventPage extends Component {
   };
   componentDidMount = () => {
     this.props.getAllEvents();
+    this.props.getFilterList();
   };
   render() {
     return (
@@ -97,7 +99,7 @@ export default class EventPage extends Component {
                 <div className={styles.filterButtonContainer}>
                   <div
                     className={styles.fliterButton}
-                    onClick={() => this.props.showFilterModule()}
+                    onClick={() => this.props.showFilterModule(this.props)}
                   >
                     <Button
                       type="primary"
@@ -139,7 +141,7 @@ export default class EventPage extends Component {
                     <div
                       className={styles.card}
                       onClick={() => {
-                        this.handleredirect("/eventDetails");
+                        this.handleredirect("/eventDetails", val.eventId);
                       }}
                     >
                       <Card
