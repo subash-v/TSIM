@@ -57,7 +57,7 @@
   height: auto;
   text-align: left;
   color: #fff;
-  margin-right: 60px;
+  margin-right: 50px;
   font-size: 16px;
   font-family: bold;
   position: relative;
@@ -93,7 +93,7 @@
 }
 
 .slideshowContainer {
-  /* max-width: 1400px; */
+  /* max-width: 1200px; */
   position: relative;
   margin: auto;
 }
@@ -167,9 +167,9 @@
 
 .eventsSection {
   height: auto;
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 100px 40px;
+  padding: 80px 0px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -287,18 +287,18 @@
   display: flex;
   /* background: #ebeced; */
   margin: 0 auto;
-  max-width: 1400px;
-  padding: 0 40px;
+  max-width: 1200px;
+  padding: 0 0;
 }
 
 .featuredCarousel {
   position: absolute;
   top: 250px;
-  max-width: 1400px;
+  max-width: 1200px;
 }
 
 .footerSection {
-  margin-top: 350px;
+  margin-top: 250px;
   border-top: 1px solid #ebeced;
   padding: 0 40px 50px 40px;
 }

@@ -9,6 +9,7 @@
   height: 365px;
   width: 100%;
   position: relative;
+  margin-top: 80px;
 }
 
 .profileSection {
@@ -22,7 +23,7 @@
   height: auto;
   background: #fff;
   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 15px auto;
   left: 35px;
 }
@@ -294,7 +295,7 @@
 }
 
 .journey {
-  padding-top: 50px; 
+  padding-top: 50px;
   padding: 0 40px;
   margin-top: 50px;
 }

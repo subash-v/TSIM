@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Route, Switch, BrowserRouter } from "react-router-dom";
+import BlogFeed from "./components/Blog/BlogFeed";
 import styles from "./App.css";
 import MorePage from "./components/HomePage/MorePage";
 import Terms from "./components/TermsAndConditions/TermsAndConditions";
