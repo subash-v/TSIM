@@ -84,7 +84,7 @@
   width: 100%;
   height: auto;
   display: flex;
-  align-items: center;
+  text-align: center;
   justify-content: space-between;
   padding: 20px;
   border-top: 1px solid #ebeced;
@@ -117,4 +117,78 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.wishlist {
+  color: #7f7f7f;
+  font-family: "semibold";
+  font-size: 12px;
+  line-height: 17px;
+  position: relative;
+}
+.wishlist::after {
+  content: "";
+  height: 16px;
+  width: 16px;
+  position: absolute;
+  top: 0px;
+  left: -20px;
+  background: url("../../images/Bookmark_off.svg");
+  background-position: center;
+  background-size: cover;
+}
+.likes {
+  color: #7f7f7f;
+  font-family: "semibold";
+  font-size: 12px;
+  line-height: 17px;
+  position: relative;
+  margin-right: 50px;
+}
+.likes::before {
+  content: "";
+  height: 16px;
+  width: 16px;
+  position: absolute;
+  top: 0px;
+  left: -20px;
+  background: url("../../images/Staroff.svg");
+  background-position: center;
+  background-size: cover;
+}
+.comment {
+  color: #7f7f7f;
+  font-family: "semibold";
+  font-size: 12px;
+  line-height: 17px;
+  position: relative;
+  margin-right: 50px;
+}
+.comment::before {
+  content: "";
+  height: 16px;
+  width: 16px;
+  position: absolute;
+  top: 0px;
+  left: -20px;
+  background: url("../../images/Comment.svg");
+  background-position: center;
+  background-size: cover;
+}
+.share {
+  color: #7f7f7f;
+  font-family: "semibold";
+  font-size: 12px;
+  line-height: 17px;
+  position: relative;
+}
+.share::before {
+  content: "";
+  height: 16px;
+  width: 16px;
+  position: absolute;
+  top: 0px;
+  left: -20px;
+  background: url("../../images/Sharefill.svg");
+  background-position: center;
+  background-size: cover;
 }

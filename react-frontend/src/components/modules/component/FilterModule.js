@@ -2,90 +2,12 @@ import React, { Component } from "react";
 import RightSlideModal from "./RightSlideModal";
 import styles from "./FilterModule.css";
 import SelectBox from "../../../core/SelectBox";
-const data = [
-  {
-    category_name: "Category",
-    subCategories: [
-      {
-        category_name: "Ledaership"
-      },
-      {
-        category_name: "Personal Branding"
-      },
-      {
-        category_name: "Career"
-      },
-      {
-        category_name: "negotiation"
-      },
-      {
-        category_name: "Finance"
-      },
-      {
-        category_name: "Product management"
-      },
-      {
-        category_name: "Problem Solving"
-      },
-      {
-        category_name: "Ideation"
-      },
-      {
-        category_name: "Management"
-      },
-      {
-        category_name: "Wellness"
-      }
-    ]
-  },
-  {
-    category_name: "Event Type",
-    subCategories: [
-      {
-        category_name: "8"
-      },
-      {
-        category_name: "9"
-      }
-    ]
-  },
-  {
-    category_name: "Location",
-    subCategories: [
-      {
-        category_name: "10"
-      },
-      {
-        category_name: "11"
-      },
-      {
-        category_name: "12"
-      }
-    ]
-  },
-  {
-    category_name: "Sort By",
-    subCategories: [
-      {
-        category_name: "13"
-      },
-      {
-        category_name: "14"
-      },
-      {
-        category_name: "15"
-      },
-      {
-        category_name: "Sort By"
-      }
-    ]
-  }
-];
 export default class FilterModule extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      hovered: "Category",
+      hovered:
+        this.props && this.props.filterList && this.props.filterList[0].name,
       hoverInType: null,
       selected: []
     };
@@ -109,11 +31,11 @@ export default class FilterModule extends Component {
       this.state.selected &&
       this.state.selected.length > 0 &&
       this.state.selected.find((categories, i) => {
-        return categories.category_name === val.category_name;
+        return categories.name === val.name;
       });
     if (dataExist) {
       var index = this.state.selected.findIndex(function(cat) {
-        return cat.category_name == dataExist.category_name;
+        return cat.name == dataExist.name;
       });
       data.push(...this.state.selected);
       if (index == 0) {
@@ -132,9 +54,10 @@ export default class FilterModule extends Component {
   handleChange = () => {};
   render() {
     let currentCategory =
-      data &&
-      data.find(categories => {
-        return categories.category_name === this.state.hovered;
+      this.props &&
+      this.props.filterList &&
+      this.props.filterList.find(categories => {
+        return categories.name === this.state.hovered;
       });
     return (
       <RightSlideModal>
@@ -164,35 +87,37 @@ export default class FilterModule extends Component {
         </div>
         <div className={styles.categoriesHolder}>
           <div className={styles.categoryDetails}>
-            {data.map((categories, val) => {
-              return (
-                <React.Fragment>
-                  <div
-                    className={
-                      this.state.hovered === categories.category_name
-                        ? styles.categoryDetailsValueWithArrow
-                        : styles.categoryDetailsValue
-                    }
-                    onMouseEnter={() => this.hoverIn(categories.category_name)}
-                    onClick={() => this.handleClick()}
-                  >
-                    {categories.category_name}
+            {this.props &&
+              this.props.filterList &&
+              this.props.filterList.map((categories, val) => {
+                return (
+                  <React.Fragment>
                     <div
                       className={
-                        this.state.hovered === categories.category_name
-                          ? styles.rightArrow
-                          : ""
+                        this.state.hovered === categories.name
+                          ? styles.categoryDetailsValueWithArrow
+                          : styles.categoryDetailsValue
                       }
-                    />
-                  </div>
-                </React.Fragment>
-              );
-            })}
+                      onMouseEnter={() => this.hoverIn(categories.name)}
+                      onClick={() => this.handleClick()}
+                    >
+                      {categories.name}
+                      <div
+                        className={
+                          this.state.hovered === categories.name
+                            ? styles.rightArrow
+                            : ""
+                        }
+                      />
+                    </div>
+                  </React.Fragment>
+                );
+              })}
           </div>
           <div className={styles.subCategoryDetailsHolder}>
             {currentCategory &&
-              currentCategory.subCategories &&
-              currentCategory.subCategories.map((subCategoriesHeader, val) => {
+              currentCategory.lists &&
+              currentCategory.lists.map((subCategoriesHeader, val) => {
                 return (
                   <React.Fragment>
                     <div className={styles.blockHolder}>
@@ -209,8 +134,7 @@ export default class FilterModule extends Component {
                             this.state.selected.length > 0 &&
                             this.state.selected.find(categories => {
                               return (
-                                categories.category_name ===
-                                subCategoriesHeader.category_name
+                                categories.name === subCategoriesHeader.name
                               );
                             })
                               ? true
@@ -224,7 +148,7 @@ export default class FilterModule extends Component {
                           this.handlecategoryClick(subCategoriesHeader)
                         }
                       >
-                        {subCategoriesHeader.category_name}
+                        {subCategoriesHeader.name}
                       </div>
                     </div>
                   </React.Fragment>

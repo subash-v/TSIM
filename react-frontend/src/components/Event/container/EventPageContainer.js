@@ -6,7 +6,11 @@ import {
   EVENT_DETAIL_SLIDER_COMPONENT
 } from "../../modules/modal.actions";
 import EventPage from "../EventPage";
-import { getAllEvents, getEventDetails } from "../../../actions/event.action";
+import {
+  getAllEvents,
+  getEventDetails,
+  getFilterList
+} from "../../../actions/event.action";
 const mapDispatchToProps = dispatch => {
   return {
     showFilterModule: data => {
@@ -20,6 +24,9 @@ const mapDispatchToProps = dispatch => {
     },
     getEventDetails: id => {
       dispatch(getEventDetails(id));
+    },
+    getFilterList: () => {
+      dispatch(getFilterList());
     }
   };
 };
@@ -27,11 +34,16 @@ const mapDispatchToProps = dispatch => {
 const mapStateToProps = state => {
   return {
     allEventDetails: state.event.allEventDetails,
-    eventDetails: state.event.eventDetails
+    eventDetails: state.event.eventDetails,
+    filterList: state.event.filterList,
+    filterLoader: state.event.filterLoader
   };
 };
 const EventPageContainer = withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(EventPage)
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(EventPage)
 );
 
 export default EventPageContainer;
