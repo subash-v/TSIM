@@ -15,7 +15,7 @@
   position: absolute;
   top: 80px;
   border-radius: 15px;
-  width: 100%;
+  width: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,7 +23,8 @@
   background: #fff;
   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
   max-width: 1400px;
-  margin: 0 auto;
+  margin: 15px auto;
+  left: 35px;
 }
 
 .profile {
@@ -31,6 +32,7 @@
   width: 70%;
   height: 100%;
   padding: 0 40px;
+  margin-top: 30px;
 }
 
 .uploadImage {
@@ -288,10 +290,13 @@
 .milestones {
   padding-bottom: 50px;
   border-bottom: 1px solid #ebeced;
+  padding: 0 40px;
 }
 
 .journey {
-  padding-top: 50px;
+  padding-top: 50px; 
+  padding: 0 40px;
+  margin-top: 50px;
 }
 
 .usersJourney {
