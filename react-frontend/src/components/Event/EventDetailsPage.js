@@ -13,7 +13,9 @@ import EventDetailPageSliderComponent from "./EventDetailPageSlider/EventDetailP
 
 export default class EventDetailsPage extends Component {
   componentDidMount() {
-    this.props.getEventDetails(this.props.match.params.eventId);
+    let eventId = this.props.match.params.eventId;
+    this.props.getEventDetails(eventId);
+    this.props.getRegisterEvent(eventId);
   }
   render() {
     console.log(this.props);
@@ -87,7 +89,9 @@ export default class EventDetailsPage extends Component {
                     <div className={styles.eventButtonConatiner}>
                       <div
                         className={styles.eventButton}
-                        onClick={() => this.props.showRegisterDetailsModule()}
+                        onClick={() =>
+                          this.props.showRegisterDetailsModule(this.props)
+                        }
                       >
                         <Button
                           type="primary"

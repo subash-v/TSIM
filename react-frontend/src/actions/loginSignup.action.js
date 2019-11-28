@@ -43,7 +43,7 @@ export function getLogin(userLoginDetails) {
       if (resultJson.error) {
         throw new Error(resultJson.message);
       }
-
+      Cookie.createCookie("accessToken", JSON.stringify(resultJson.token));
       return dispatch(loginUserSuccess(resultJson));
     } catch (e) {
       return dispatch(loginUserFailure(e.message));
@@ -80,11 +80,11 @@ export function postSignUp(userSignUpDetails) {
     try {
       let url = `users`;
       const result = await post(url, userSignUpDetails);
-      const resultJson = await result;
+      const resultJson = await result.data;
       if (resultJson.error) {
         throw new Error(resultJson.message);
       }
-
+      Cookie.createCookie("accessToken", JSON.stringify(resultJson.token));
       return dispatch(signUpUserSuccess(resultJson));
     } catch (e) {
       return dispatch(signUpUserFailure(e.message));
