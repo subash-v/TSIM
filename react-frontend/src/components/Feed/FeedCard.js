@@ -9,8 +9,6 @@ import FeedProfileHolder from "./FeedProfileHolder";
 import CompleteCourseImages from "./CompleteCourseImages/CompleteCourseImages";
 
 
-
-
 export default class FeedCard extends Component {
   state = {
     showFeedMenu: false
@@ -89,8 +87,8 @@ export default class FeedCard extends Component {
               fontColor={"#4F439A"}
               borderColor={"#fff"}
               height={40}
-              width={163}
-              label="I AM INTEREST"
+              width={167}
+              label="I AM INTERESTED"
               borderRadius={5}
             />
           </div>
