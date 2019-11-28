@@ -280,11 +280,6 @@
   background-position: center;
   background-size: cover;
 }
-.pollingConatiner {
-  margin-top: 15px;
-  width: 100%;
-  height: auto;
-}
 
 .pollingResultContainer
 {
@@ -295,4 +290,26 @@
 {
   width:100%;
   height: auto;
+}
+.overlay {
+  position: relative;
+  bottom: 60px;
+  display: block;
+  width: 525px;
+  height: 20%;
+  color: #ffffff;
+  background-color: rgba(26, 26, 26, 0.68);
+  z-index: 2;
+  cursor: pointer;
+}
+.overlayhead {
+  color: #ffffff;
+  font-size: 16px;
+  padding-left: 16px;
+}
+.overlayurl {
+  color: #ffffff;
+  font-size: 12px;
+  padding-left: 17px;
+  padding-top: 5px;
 }

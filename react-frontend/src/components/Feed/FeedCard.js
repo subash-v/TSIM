@@ -9,6 +9,9 @@ import PollingResult from "./PollingResult";
 import FeedProfileHolder from "./FeedProfileHolder";
 import PollingResultWithImage from "./PollingResultWithImage/PollingResultWithImage";
 import CompleteCourseImages from "./CompleteCourseImages/CompleteCourseImages";
+
+
+
 export default class FeedCard extends Component {
   state = {
     showFeedMenu: false
