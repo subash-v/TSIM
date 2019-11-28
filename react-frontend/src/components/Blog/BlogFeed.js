@@ -71,7 +71,13 @@ const data = [
   }
 ];
 export default class BlogFeed extends Component {
+  componentDidMount = () => {
+    if (this.props.getAllBlogs) {
+      this.props.getAllBlogs();
+    }
+  };
   render() {
+    console.log(this.props);
     return (
       <React.Fragment>
         <div className={styles.base}>

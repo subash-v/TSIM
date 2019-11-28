@@ -97,6 +97,21 @@
   display: flex;
   justify-content: space-between;
 }
+.firstName {
+  width: 49%;
+  height: auto;
+  border-radius: 5px;
+  border: 1px solid rgba(127, 127, 127, 0.5);
+  margin-top: 15px;
+}
+
+.lastName {
+  width: 49%;
+  height: auto;
+  border-radius: 5px;
+  border: 1px solid rgba(127, 127, 127, 0.5);
+  margin-top: 15px;
+}
 .inputBox {
   width: 100%;
   height: auto;

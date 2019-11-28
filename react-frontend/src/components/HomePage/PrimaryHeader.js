@@ -16,6 +16,9 @@ import filled_message from "../../images/Messages_fill.svg";
 import IconWithHeader from "../../core/IconWithHeader";
 import ProfileImage from "../../core/ProfileImage";
 import PropTypes from "prop-types";
+import DesktopOnly from "../general/DesktopOnly";
+import MobileHeader from "./MobileHeader";
+import MobileOnly from "../general/MobileOnly";
 
 const links = [
   {
@@ -71,7 +74,7 @@ export default class PrimaryHeader extends Component {
       this.props.history.push(`${val}`);
     }
   };
-  showModal = () => {
+  showLoginModal = () => {
     if (this.props.showLoginModule) {
       this.props.showLoginModule(this.props);
     }
@@ -83,127 +86,144 @@ export default class PrimaryHeader extends Component {
   };
   render() {
     return (
-      <div className={styles.headerBase}>
-        <div
-          className={
-            this.props.login ? styles.nonLogedInHeader : styles.headerHolder
-          }
-        >
-          <div
-            className={
-              this.props.login ? styles.loggedInHolder : styles.logoLinkHolder
-            }
-          >
+      <React.Fragment>
+        <DesktopOnly>
+          <div className={styles.headerBase}>
             <div
-              className={styles.logoHolder}
-              onClick={() => this.handleredirect("/")}
-            ></div>
-            <div className={styles.linkHolder}>
-              {!this.props.login
-                ? links.map((value, i) => {
-                    return (
-                      <div
-                        className={
-                          this.props.location &&
-                          this.props.location.pathname === value.routeLink
-                            ? styles.showLine
-                            : styles.linkText
-                        }
-                        onClick={() => this.handleredirect(value.routeLink)}
-                      >
-                        <IconWithHeader
-                          image={
-                            this.props.location &&
-                            this.props.location.pathname === value.routeLink
-                              ? value.filledImage
-                              : value.data
-                          }
-                          size={32}
-                          header={value.name}
-                          fontSize={10}
-                        />
-                      </div>
-                    );
-                  })
-                : logedInLinks.map((value, i) => {
-                    return (
-                      <div
-                        className={
-                          this.props.location &&
-                          this.props.location.pathname === value.routeLink
-                            ? styles.showLine
-                            : styles.loglinkText
-                        }
-                        onClick={() => this.handleredirect(value.routeLink)}
-                      >
-                        <IconWithHeader
-                          image={
-                            this.props.location &&
-                            this.props.location.pathname === value.routeLink
-                              ? value.filledImage
-                              : value.data
-                          }
-                          size={25}
-                          header={value.name}
-                          fontSize={10}
-                        />
-                      </div>
-                    );
-                  })}
-            </div>
-          </div>
-          <div
-            className={
-              this.props.login
-                ? styles.loggedinButton
-                : styles.buttonSearchholder
-            }
-          >
-            <div className={styles.buttonHolder}>
-              <div className={styles.search}>
-                <SearchInput
-                  uiType="hollow"
-                  placeholder="Search for People, Networks, Blogs & Events"
-                  value={""}
-                  labelText={"Check"}
-                  iconImage={search}
-                  borderBottom="none"
-                />
-              </div>
-              {this.props.login && <ProfileImage image={profile} size={2} />}
-              {!this.props.login && (
-                <div className={styles.login} onClick={() => this.showModal()}>
-                  <Button
-                    type="secondary"
-                    height={40}
-                    width={"100%"}
-                    fontColor={"#4F439A"}
-                    label="LOGIN"
-                    borderRadius="none"
-                    borderColor="#4F439A"
-                  />
-                </div>
-              )}
-              {!this.props.login && (
+              className={
+                this.props.login ? styles.nonLogedInHeader : styles.headerHolder
+              }
+            >
+              <div
+                className={
+                  this.props.login
+                    ? styles.loggedInHolder
+                    : styles.logoLinkHolder
+                }
+              >
                 <div
-                  className={styles.signup}
-                  onClick={() => this.showSignUpModal()}
-                >
-                  <Button
-                    type="primary"
-                    backgroundColor={"#4F439A"}
-                    fontColor={"#ffffff"}
-                    height={40}
-                    borderRadius="none"
-                    width={"100%"}
-                    label="SIGN UP"
-                  />
+                  className={styles.logoHolder}
+                  onClick={() => this.handleredirect("/")}
+                ></div>
+                <div className={styles.linkHolder}>
+                  {!this.props.login
+                    ? links.map((value, i) => {
+                        return (
+                          <div
+                            className={
+                              this.props.location &&
+                              this.props.location.pathname === value.routeLink
+                                ? styles.showLine
+                                : styles.linkText
+                            }
+                            onClick={() => this.handleredirect(value.routeLink)}
+                          >
+                            <IconWithHeader
+                              image={
+                                this.props.location &&
+                                this.props.location.pathname === value.routeLink
+                                  ? value.filledImage
+                                  : value.data
+                              }
+                              size={32}
+                              header={value.name}
+                              fontSize={10}
+                            />
+                          </div>
+                        );
+                      })
+                    : logedInLinks.map((value, i) => {
+                        return (
+                          <div
+                            className={
+                              this.props.location &&
+                              this.props.location.pathname === value.routeLink
+                                ? styles.showLine
+                                : styles.loglinkText
+                            }
+                            onClick={() => this.handleredirect(value.routeLink)}
+                          >
+                            <IconWithHeader
+                              image={
+                                this.props.location &&
+                                this.props.location.pathname === value.routeLink
+                                  ? value.filledImage
+                                  : value.data
+                              }
+                              size={25}
+                              header={value.name}
+                              fontSize={10}
+                            />
+                          </div>
+                        );
+                      })}
                 </div>
-              )}
+              </div>
+              <div
+                className={
+                  this.props.login
+                    ? styles.loggedinButton
+                    : styles.buttonSearchholder
+                }
+              >
+                <div className={styles.buttonHolder}>
+                  <div className={styles.search}>
+                    <SearchInput
+                      uiType="hollow"
+                      placeholder="Search for People, Networks, Blogs & Events"
+                      value={""}
+                      labelText={"Check"}
+                      iconImage={search}
+                      borderBottom="none"
+                    />
+                  </div>
+                  {this.props.login && (
+                    <ProfileImage image={profile} size={2} />
+                  )}
+                  {!this.props.login && (
+                    <div
+                      className={styles.login}
+                      onClick={() => this.showLoginModal()}
+                    >
+                      <Button
+                        type="secondary"
+                        height={40}
+                        width={"100%"}
+                        fontColor={"#4F439A"}
+                        label="LOGIN"
+                        borderRadius="none"
+                        borderColor="#4F439A"
+                      />
+                    </div>
+                  )}
+                  {!this.props.login && (
+                    <div
+                      className={styles.signup}
+                      onClick={() => this.showSignUpModal()}
+                    >
+                      <Button
+                        type="primary"
+                        backgroundColor={"#4F439A"}
+                        fontColor={"#ffffff"}
+                        height={40}
+                        borderRadius="none"
+                        width={"100%"}
+                        label="SIGN UP"
+                      />
+                    </div>
+                  )}
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
+        </DesktopOnly>
+        <MobileOnly>
+          <MobileHeader
+            showSignUpModal={() => this.showSignUpModal()}
+            showLoginModal={() => this.showLoginModal()}
+          />
+        </MobileOnly>
+      </React.Fragment>
     );
   }
 }

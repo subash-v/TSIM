@@ -6,6 +6,9 @@ import Button from "../general/Button.js";
 import SignUpBar from "../Blog/SignUpBar";
 import Footer from "../Footer/Footer";
 import PrimaryHeaderContainer from "../HomePage/container/PrimaryHeaderContainer";
+import DesktopOnly from "../general/DesktopOnly";
+import MobileOnly from "../general/MobileOnly";
+import MobileHeader from "../HomePage/MobileHeader";
 export default class VisualProfilePage extends Component {
   render() {
     return (
@@ -13,7 +16,12 @@ export default class VisualProfilePage extends Component {
         <div className={styles.base}>
           <div className={styles.headerHolder}>
             <div className={styles.fixedHeader}>
-              <PrimaryHeaderContainer history={this.props.history} />
+              <DesktopOnly>
+                <PrimaryHeaderContainer history={this.props.history} />
+              </DesktopOnly>
+              <MobileOnly>
+                <MobileHeader />
+              </MobileOnly>
             </div>
           </div>
           <CenteredContent>
