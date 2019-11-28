@@ -44,7 +44,6 @@ export default class UserPostModal extends Component {
     if (event.target.files[0]) {
       let panImage = URL.createObjectURL(event.target.files[0]);
       this.setState({
-        // file: event.target.files[0],
         image: panImage
       });
     }
@@ -170,7 +169,7 @@ export default class UserPostModal extends Component {
                     textStyle={{ fontSize: 16 }}
                   />
                 </div>
-                <div className={styles.textArea} id="heelo">
+                <div className={styles.textArea}>
                   <TextArea
                     onChange={val => this.setState({ desc: val })}
                     value={this.state.desc}
@@ -205,7 +204,7 @@ export default class UserPostModal extends Component {
                       />
                     </div>
 
-                    <div className={styles.imageContainer} id="hii">
+                    <div className={styles.imageContainer}>
                       <label for="img-icon">
                         <img
                           src={UploadIcon}

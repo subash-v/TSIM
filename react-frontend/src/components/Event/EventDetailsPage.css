@@ -100,6 +100,8 @@
   width: 100%;
   height: auto;
   margin-bottom: 25px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .tagButton {
@@ -113,6 +115,8 @@
   font-size: 10px;
   font-family: bold;
   justify-content: center;
+  margin-bottom: 5px;
+  margin-right: 5px;
 }
 
 .eventHeading {
@@ -180,7 +184,7 @@
 }
 
 .eventTime {
-  padding: 0px 35px;
+  padding: 0px 0px 0px 35px;
   position: relative;
   color: #1a1a1a;
   font-family: "semibold";
@@ -201,7 +205,7 @@
 }
 
 .eventDate {
-  padding: 0px 35px;
+  padding: 0px 0px 0px 35px;
   position: relative;
   font-family: "semibold";
   font-size: 14px;
@@ -221,7 +225,7 @@
 }
 
 .eventCost {
-  padding: 0px 35px;
+  padding: 0px 0px 0px 35px;
   position: relative;
   font-family: "semibold";
   font-size: 14px;

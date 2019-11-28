@@ -40,7 +40,10 @@ const mapStateToProps = state => {
   };
 };
 const EventPageContainer = withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(EventPage)
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(EventPage)
 );
 
 export default EventPageContainer;
