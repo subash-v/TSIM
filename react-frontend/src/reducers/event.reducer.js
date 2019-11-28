@@ -2,10 +2,11 @@ import * as eventAction from "../actions/event.action";
 
 const event = (
   state = {
-    eventDetails: null,
+    allEventDetails: null,
     status: null,
     error: null,
-    loading: false
+    loading: false,
+    eventDetails: null
   },
   action
 ) => {
@@ -20,7 +21,7 @@ const event = (
       return Object.assign({}, state, {
         status: action.status,
         loading: false,
-        eventDetails: action.eventDetails
+        allEventDetails: action.eventDetails
       });
     case eventAction.GET_ALL_EVENTS_FAILURE:
       return Object.assign({}, state, {

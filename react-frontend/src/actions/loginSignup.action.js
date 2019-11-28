@@ -39,7 +39,7 @@ export function getLogin(userLoginDetails) {
     try {
       let url = `users/login`;
       const result = await post(url, userLoginDetails);
-      const resultJson = await result;
+      const resultJson = await result.data;
       if (resultJson.error) {
         throw new Error(resultJson.message);
       }

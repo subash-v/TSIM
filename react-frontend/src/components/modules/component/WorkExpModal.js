@@ -53,7 +53,6 @@ export default class WorkExpModal extends Component {
     });
   };
   render() {
-    console.log(this.state.showModal, this.state.description);
     return (
       <BottomSlideModal width="auto">
         <div className={styles.centermodal}>

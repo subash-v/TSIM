@@ -17,13 +17,11 @@ class ImageUplaod extends Component {
   };
 
   removeImageFromList = val => {
-    console.log(this.state.file);
     let file = this.state.file;
     let newarray = file.splice(0, val);
     this.setState({
       file: newarray
     });
-    console.log(this.state.file);
   };
 
   getCroppedImageUrl = () => {

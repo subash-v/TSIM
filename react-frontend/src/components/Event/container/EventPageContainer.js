@@ -26,7 +26,8 @@ const mapDispatchToProps = dispatch => {
 
 const mapStateToProps = state => {
   return {
-    event: state.event
+    allEventDetails: state.event.allEventDetails,
+    eventDetails: state.event.eventDetails
   };
 };
 const EventPageContainer = withRouter(

@@ -18,8 +18,6 @@ export default class Awards extends Component {
     description: ""
   };
   handleClick = val => {
-    console.log(val.toUpperCase());
-    console.log(val);
     this.setState({
       active: val,
       showModal: val.toUpperCase()

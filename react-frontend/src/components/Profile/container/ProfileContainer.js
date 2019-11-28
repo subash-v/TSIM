@@ -12,7 +12,6 @@ const mapDispatchToProps = dispatch => {
       dispatch(showModal(UPLOAD_PROFILE_IMAGE_MODAL, data));
     },
     showUploadCvModal: data => {
-      console.log("hii");
       dispatch(showModal(UPLOAD_CV_MODAL, data));
     }
   };

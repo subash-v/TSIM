@@ -84,7 +84,6 @@ export function getEventDetails(id) {
       let url = `events?${id}`;
       const result = await get(url);
       const resultJson = await result.data;
-      console.log(resultJson);
       if (resultJson.error) {
         throw new Error(resultJson.message);
       }
