@@ -4,8 +4,7 @@
   margin-top: 120px;
   overflow: auto;
   padding: 0px 107px 0 128px;
-  max-width: 100vh;
-  overflow: auto;
+  max-height: 100vh;
 }
 
 .welTxt {
@@ -25,7 +24,12 @@
   display: inline-block;
   padding-left: 4px;
 }
-
+.error {
+  color: #ee0f0f;
+  font-family: bold;
+  font-size: 14px;
+  padding-bottom: 5px;
+}
 .femaleCheck {
   composes: femaleCheck;
   margin: 15px 0 15px 10px;
@@ -98,19 +102,12 @@
   display: flex;
   justify-content: space-between;
 }
-.inputBox {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-  border: 1px solid rgba(127, 127, 127, 0.5);
-  margin-top: 15px;
-}
-
 .firstName {
   width: 49%;
   height: auto;
   border-radius: 5px;
   border: 1px solid rgba(127, 127, 127, 0.5);
+  margin-top: 15px;
 }
 
 .lastName {
@@ -118,7 +115,17 @@
   height: auto;
   border-radius: 5px;
   border: 1px solid rgba(127, 127, 127, 0.5);
+  margin-top: 15px;
 }
+.inputBox {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  border: 1px solid rgba(127, 127, 127, 0.5);
+  margin-top: 15px;
+  vertical-align: middle;
+}
+
 .lastName:last-child {
   float: right;
 }
@@ -223,8 +230,8 @@ fieldset {
 @media only screen and (max-width: 1024px) {
   .base {
     width: 100vw;
-    height: 100vh;
-    position: fixed;
+    /* height: 100vh;
+    position: fixed; */
   }
   .backCircle {
     border: none;
@@ -237,6 +244,11 @@ fieldset {
     text-align: center;
     box-shadow: none;
   }
+  .backImg {
+    width: 15px;
+    height: 15px;
+    margin: 0px;
+  }
   .linkedinNfbContainer {
     width: 100%;
     padding: 8px;
@@ -247,12 +259,101 @@ fieldset {
     overflow: auto;
     padding: 0px 20px;
   }
-  .backImg {
-    width: 15px;
-    height: 15px;
-    margin: 0px;
+
+  .signUpContainer {
+    width: 100%;
+    height: auto;
+    margin-top: 120px;
+    overflow: auto;
+    padding: 0px 107px 100px 128px;
+    max-height: 100vh;
   }
 }
 /* screen size below 400px (iphone4) */
 @media only screen and (max-width: 400px) {
+  .signUpContainer {
+    width: 100%;
+    height: auto;
+    margin-top: 60px;
+    overflow: auto;
+    padding: 0px 20px 100px 20px;
+    max-height: 100vh;
+  }
+  .joinTxt {
+    color: #4f439a;
+    font-family: bold;
+    font-size: 18px;
+    display: inline-block;
+  }
+  .starTxt {
+    color: #ad5da3;
+    font-family: bold;
+    font-size: 18px;
+    display: inline-block;
+    padding-left: 4px;
+  }
+
+  .linkedinTxt {
+    color: #ffffff;
+    font-family: semibold;
+    font-size: 12px;
+    line-height: 20px;
+  }
+  .fieldset {
+    padding-top: 15px;
+    border-top: 1px solid rgba(127, 127, 127, 0.5);
+    border-left: none;
+    border-bottom: none;
+    border-right: none;
+    text-align: center;
+    width: auto;
+    color: rgba(127, 127, 127, 0.5);
+    font-size: 10px;
+    font-family: bold;
+  }
+  .nameContainer {
+    width: 100%;
+    height: auto;
+    margin: 0px 0 15px 0;
+    display: block;
+    /* justify-content: space-between; */
+  }
+  .socialContainer {
+    width: 100%;
+    height: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    display: block;
+    align-items: center;
+  }
+  .linkedinNfbContainer {
+    width: 100%;
+    height: auto;
+    background-color: #4f439a;
+    border-radius: 5px;
+    padding: 9px 0;
+    vertical-align: middle;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 15px;
+  }
+
+  .firstName {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    border: 1px solid rgba(127, 127, 127, 0.5);
+    margin-top: 15px;
+  }
+
+  .lastName {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    border: 1px solid rgba(127, 127, 127, 0.5);
+    margin-top: 15px;
+  }
 }

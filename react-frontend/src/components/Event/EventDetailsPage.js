@@ -12,7 +12,17 @@ import PrimaryHeaderContainer from "../HomePage/container/PrimaryHeaderContainer
 import EventDetailPageSliderComponent from "./EventDetailPageSlider/EventDetailPageSliderComponent";
 
 export default class EventDetailsPage extends Component {
+  componentDidMount() {
+    let eventId = this.props.match.params.eventId;
+    this.props.getEventDetails(eventId);
+    this.props.getRegisterEvent(eventId);
+  }
   render() {
+    const eventDetails = this.props && this.props.eventDetails;
+    const eventSlot =
+      this.props &&
+      this.props.eventDetails &&
+      this.props.eventDetails.eventSlots[0];
     return (
       <React.Fragment>
         <div className={styles.base}>
@@ -32,15 +42,36 @@ export default class EventDetailsPage extends Component {
                 <div className={styles.descriptionBase}>
                   <div className={styles.descriptionContainer}>
                     <div className={styles.tagContainer}>
-                      <div className={styles.tagButton}>MANAGEMENT</div>
+                      {this.props &&
+                        this.props.eventDetails &&
+                        this.props.eventDetails.labels &&
+                        this.props.eventDetails.labels.map(label => {
+                          return (
+                            <div className={styles.tagButton}>{label}</div>
+                          );
+                        })}
                     </div>
-                    <div className={styles.eventHeading}>
-                      Building a Strong Personal Brand by Uma Kasoji
-                    </div>
-                    <div className={styles.eventlevel}>Advanced Level</div>
-                    <div className={styles.eventHostBy}>
-                      Hosted by Roundhouse agency
-                    </div>
+                    {this.props &&
+                      this.props.eventDetails &&
+                      this.props.eventDetails.title && (
+                        <div className={styles.eventHeading}>
+                          {this.props.eventDetails.title}
+                        </div>
+                      )}
+                    {this.props &&
+                      this.props.eventDetails &&
+                      this.props.eventDetails.eventLevel && (
+                        <div className={styles.eventlevel}>
+                          {this.props.eventDetails.eventLevel} Level
+                        </div>
+                      )}
+                    {this.props &&
+                      this.props.eventDetails &&
+                      this.props.eventDetails.organizer && (
+                        <div className={styles.eventHostBy}>
+                          Hosted by {this.props.eventDetails.organizer}
+                        </div>
+                      )}
                     <div className={styles.eventAddressBase}>
                       <div className={styles.eventAdressContainer}>
                         <div className={styles.eventPlaceName}>
@@ -64,18 +95,28 @@ export default class EventDetailsPage extends Component {
         /> */}
                       </div>
                     </div>
-                    <div className={styles.eventDetails}>
-                      <div className={styles.eventTime}>10 am – 5 pm</div>
-                      <div className={styles.eventDate}>21 Sep, 22 Sep</div>
-                      <div className={styles.eventCost}> INR 1,450</div>
-                    </div>
-                    <div className={styles.seatAlertMessage}>
-                      9 Seats are left!
-                    </div>
+                    {eventSlot && (
+                      <div className={styles.eventDetails}>
+                        <div className={styles.eventTime}>
+                          {eventSlot.startTime} – {eventSlot.endTime}
+                        </div>
+                        <div className={styles.eventDate}>{eventSlot.date}</div>
+                        <div className={styles.eventCost}>
+                          INR {eventSlot.price}
+                        </div>
+                      </div>
+                    )}
+                    {eventSlot && (
+                      <div className={styles.seatAlertMessage}>
+                        {eventSlot.noOfSeats} Seats are left!
+                      </div>
+                    )}
                     <div className={styles.eventButtonConatiner}>
                       <div
                         className={styles.eventButton}
-                        onClick={() => this.props.showRegisterDetailsModule()}
+                        onClick={() =>
+                          this.props.showRegisterDetailsModule(this.props)
+                        }
                       >
                         <Button
                           type="primary"
@@ -130,22 +171,11 @@ export default class EventDetailsPage extends Component {
                   <div className={styles.seletedText}>About the Workshop</div>
                   <div className={styles.text}>Testimonials</div>
                 </div>
-                <div className={styles.desc}>
-                  Create a Personal Brand that expresses your authentic value,
-                  helps you stand out from the crowd, and increases your
-                  visibility, power, and influence Discover your Unique Brand
-                  Essence Build a Brand from the inside out that is deeply
-                  aligned with what you most value and stand for. Put your brand
-                  into motion, by converting the essence of your brand into
-                  concrete and measurable goals, and mindful action. Create a
-                  Personal Brand that expresses your authentic value, helps you
-                  stand out from the crowd, and increases your visibility,
-                  power, and influence Discover your Unique Brand Essence Build
-                  a Brand from the inside out that is deeply aligned with what
-                  you most value and stand for. Put your brand into motion, by
-                  converting the essence of your brand into concrete and
-                  measurable goals, and mindful action.
-                </div>
+                {eventDetails && eventDetails.eventDescription && (
+                  <div className={styles.desc}>
+                    {eventDetails.eventDescription}
+                  </div>
+                )}
                 <div className={styles.noteConatiner}>
                   <div className={styles.noteHeading}>Make a note</div>
                   <div className={styles.noteDescription}>

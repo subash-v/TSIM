@@ -1,0 +1,16 @@
+.inp {
+  border: none;
+  border-radius: 5.5px;
+  padding: 10px;
+}
+.inpicocont {
+  border: 1.2px solid #b2b2b2;
+  margin-right: 7px;
+  display: flex;
+
+  border-radius: 5px;
+}
+.icon {
+  margin: 13px;
+  margin-top: 14px;
+}
