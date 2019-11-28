@@ -14,6 +14,7 @@ import EventDetailsPageContainer from "./components/Event/container/EventDetails
 import ConnectionsContainer from "./components/modules/container/ConnectionContainer";
 import ProfileContainer from "./components/Profile/container/ProfileContainer";
 import FeedContainer from "./components/Feed/container/FeedContainer";
+import Settings from "./components/Settings/SettingsContainer/SettingsContainer";
 import BlogContainer from "./components/Blog/container/BlogContainer";
 class App extends Component {
   render() {
@@ -33,6 +34,7 @@ class App extends Component {
           <Route path="/profile" component={ProfileContainer} />
           <Route path="/feed" component={FeedContainer} />
           <Route path="/connections" component={ConnectionsContainer} />
+          <Route path="/settings" component={Settings} />
         </Switch>
         <ModalContainer />
       </BrowserRouter>
