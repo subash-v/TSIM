@@ -1,46 +1,72 @@
 import React from "react";
-import CenteredContent from "../../core/CenteredContent";
-import styles from "../EventDetails/EventDetails.css";
-import SeekImage from "../../images/entreprener-pic.png";
-import linkedin from "../../images/Linkedin.svg";
-import Facebook from "../../images/Facebook.svg";
+import CenteredContent from "../../../core/CenteredContent";
+import styles from "./BlogDetails.css";
+import SeekImage from "../../images/Resources-min.jpg";
+import facebook from "../../images/Facebook-black.svg";
+import linkedin from "../../images/Linkedin-black.svg";
+import twitter from "../../images/Twitter-black.svg";
+import instagram from "../../images/Instagram.svg";
+import Footer from "../../Footer/Footer";
+import PrimaryHeaderContainer from "../../HomePage/container/PrimaryHeaderContainer";
 
-export default class EventDetails extends React.Component {
+export default class BlogDetails extends React.Component {
   render() {
     return (
       <React.Fragment>
+        <div className={styles.fixedHeader}>
+          <PrimaryHeaderContainer />
+        </div>
         <CenteredContent>
           <div className={styles.baseContainer}>
             <div className={styles.title}>
               Jordan Peterson and the Surrender of the Cultural Gatekeepers
             </div>
-            <div className={styles.subText}>
+            {/* <div className={styles.subText}>
               What a new documentary about the controversial professor tells us
               about the state of the arts
-            </div>
+            </div> */}
 
-            <div className={styles.jobSection}>
-              <div className={styles.jobIcon}></div>
+            <div
+              className={styles.jobSection}
+              style={{
+                display: "flex",
+                paddingBottom: "50px",
+                alignitems: "center"
+              }}
+            >
               <div className={styles.jobDescription}>
-                <div style={{ display: " flex", paddingBottom: "5px" }}>
-                  <div className={styles.jobTitle}>Meghan Daum</div>
-                  <div className={styles.jobDate}>Follow</div>
-                </div>
-                <div className={styles.jobDetails}>
-                  <div className={styles.companyLocation}>
-                    Nov 27 · 10 min read
+                <div className={styles.jobIcon}></div>
+                <div>
+                  <div style={{ display: " flex" }}>
+                    <div className={styles.jobTitle}>Meghan Daum</div>
+                    <div className={styles.jobDate}>Follow</div>
+                  </div>
+                  <div className={styles.jobDetails}>
+                    <div className={styles.companyLocation}>
+                      Nov 27 · 10 min read
+                    </div>
                   </div>
                 </div>
               </div>
               <div className={styles.imageContainer}>
-                <img src={linkedin} className={styles.img} alt="" />
-                <img src={Facebook} className={styles.img} alt="" />
-                <img src={linkedin} className={styles.img} alt="" />
-                <img src={Facebook} className={styles.img} alt="" />
+                <div className={styles.socialBlock}>
+                  <img className={styles.socialImg} src={facebook} alt="" />
+                  <img className={styles.socialImg} src={linkedin} alt="" />
+                  <img className={styles.socialImg} src={twitter} alt="" />
+                  <img className={styles.socialImg} src={instagram} alt="" />
+                </div>
               </div>
             </div>
             <div>
               <img className={styles.image} src={SeekImage} alt="" />
+              {/* <div
+                className={styles.banner}
+                style={{
+                  backgroundImage: `url(${
+                    this.props.image ? this.props.image : SeekImage
+                  })`
+                }}
+              ></div> */}
             </div>
             <p className={styles.paragraph}>
               A recent Sunday evening I squeezed into a tiny movie theater
@@ -200,6 +226,7 @@ export default class EventDetails extends React.Component {
             <div className={styles.tagName}>Jordan peterson</div>
           </div>
         </CenteredContent>
+        <Footer />
       </React.Fragment>
     );
   }

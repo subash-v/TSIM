@@ -5,75 +5,17 @@ import CenteredContent from "../../core/CenteredContent";
 import SignUpBar from "./SignUpBar";
 import Footer from "../Footer/Footer";
 import PrimaryHeaderContainer from "../HomePage/container/PrimaryHeaderContainer";
-const data = [
-  {
-    name: "Pratiksha Gupta",
-    heading: "WEFT Women Entrpreneeurs Annual Conference & Awards 2019",
-    shared: "12k",
-    likes: "12k",
-    comments: "12k",
-    time: 2,
-    tags: ["technology", "technology", "technology"]
-  },
-  {
-    name: "Pratiksha Gupta",
-    heading: "WEFT Women Entrpreneeurs Annual Conference & Awards 2019",
-    shared: "12k",
-    likes: "12k",
-    comments: "12k",
-    time: 2,
-    tags: ["technology", "technology", "technology"]
-  },
-  {
-    name: "Pratiksha Gupta",
-    heading: "WEFT Women Entrpreneeurs Annual Conference & Awards 2019",
-    shared: "12k",
-    likes: "12k",
-    comments: "12k",
-    time: 2,
-    tags: ["technology", "technology", "technology"]
-  },
-  {
-    name: "Pratiksha Gupta",
-    heading: "WEFT Women Entrpreneeurs Annual Conference & Awards 2019",
-    shares: "12k",
-    likes: "12k",
-    comments: "12k",
-    time: 2,
-    tags: ["technology", "technology", "technology"]
-  },
-  {
-    name: "Pratiksha Gupta",
-    heading: "WEFT Women Entrpreneeurs Annual Conference & Awards 2019",
-    shared: "12k",
-    likes: "12k",
-    comments: "12k",
-    time: 2,
-    tags: ["technology", "technology", "technology"]
-  },
-  {
-    name: "Pratiksha Gupta",
-    heading: "WEFT Women Entrpreneeurs Annual Conference & Awards 2019",
-    shared: "12k",
-    likes: "12k",
-    comments: "12k",
-    time: 2,
-    tags: ["technology", "technology", "technology"]
-  },
-  {
-    name: "Pratiksha Gupta",
-    heading: "WEFT Women Entrpreneeurs Annual Conference & Awards 2019",
-    shared: "12k",
-    likes: "12k",
-    comments: "12k",
-    time: 2,
-    tags: ["technology", "technology", "technology"]
-  }
-];
+
 export default class BlogFeed extends Component {
   componentDidMount = () => {
     if (this.props.getAllBlogs) {
       this.props.getAllBlogs();
+    }
+  };
+
+  handleredirect = val => {
+    if (this.props.history) {
+      this.props.history.push(`${val}`);
     }
   };
   render() {
@@ -140,7 +82,12 @@ export default class BlogFeed extends Component {
                   {this.props &&
                     this.props.allBlogsDetails &&
                     this.props.allBlogsDetails.map(val => (
-                      <div className={styles.card}>
+                      <div
+                        className={styles.card}
+                        onClick={() => {
+                          this.handleredirect("/blogDetails");
+                        }}
+                      >
                         <Card
                           name={val.author}
                           tags={val.labels}
