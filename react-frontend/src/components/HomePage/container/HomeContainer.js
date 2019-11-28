@@ -3,6 +3,7 @@ import { withRouter } from "react-router-dom";
 import { showModal, SIGNUP_MODULE } from "../../modules/modal.actions";
 import Home from "../Home";
 import { getAllEvents, getEventDetails } from "../../../actions/event.action";
+import { getAllBlogs } from "../../../actions/blog.action";
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -14,6 +15,9 @@ const mapDispatchToProps = dispatch => {
     },
     getEventDetails: id => {
       dispatch(getEventDetails(id));
+    },
+    getAllBlogs: () => {
+      dispatch(getAllBlogs());
     }
   };
 };
@@ -21,7 +25,8 @@ const mapDispatchToProps = dispatch => {
 const mapStateToProps = state => {
   return {
     loading: state,
-    allEventDetails: state.event.allEventDetails
+    allEventDetails: state.event.allEventDetails,
+    allBlogsDetails: state.blog.allBlogsDetails
   };
 };
 const HomeContainer = withRouter(

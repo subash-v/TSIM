@@ -29,6 +29,24 @@ const event = (
         loading: false,
         error: action.error
       });
+    case eventAction.GET_EVENT_DETAILS_REQUEST:
+      return Object.assign({}, state, {
+        status: action.status,
+        loading: true
+      });
+
+    case eventAction.GET_EVENT_DETAILS_SUCCESS:
+      return Object.assign({}, state, {
+        status: action.status,
+        loading: false,
+        eventDetails: action.eventDetails
+      });
+    case eventAction.GET_EVENT_DETAILS_FAILURE:
+      return Object.assign({}, state, {
+        status: action.status,
+        loading: false,
+        error: action.error
+      });
     default:
       return state;
   }

@@ -8,13 +8,27 @@ export default class Card extends Component {
         <div className={styles.imageBase}>
           <img
             className={styles.storiesImage}
-            src={defaultImage}
+            src={this.props.image ? this.props.image : defaultImage}
             alt="no i"
           ></img>
-          <div className={styles.tags}>MANAGEMENT</div>
+          <div className={styles.eventLabelContainer}>
+            {this.props &&
+              this.props.eventLabels &&
+              this.props.eventLabels.map(label => {
+                return <div className={styles.tags}>{label}</div>;
+              })}
+          </div>
         </div>
         <div className={styles.contentContainer}>
-          <div className={styles.contentHeading}>{this.props.heading}</div>
+          <div
+            className={
+              window.location.pathname === "/"
+                ? styles.homeheadingtext
+                : styles.contentHeading
+            }
+          >
+            {this.props.heading}
+          </div>
           <div className={styles.time}>
             <div className={styles.timeImage}></div>
             {this.props.time}
@@ -24,8 +38,22 @@ export default class Card extends Component {
             {this.props.date}
           </div>
           <div className={styles.location}>
-            <div className={styles.locationImage}></div>
-            {this.props.location}
+            <div
+              className={
+                window.location.pathname === "/"
+                  ? styles.homeLocationImage
+                  : styles.locationImage
+              }
+            ></div>
+            <div
+              className={
+                window.location.pathname === "/"
+                  ? styles.homeLocationText
+                  : null
+              }
+            >
+              {this.props.location}
+            </div>
           </div>
         </div>
       </div>

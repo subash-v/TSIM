@@ -133,24 +133,27 @@ export default class EventPage extends Component {
                 </div>
               </div>
               <div className={styles.storiesContainer}>
-                {carouselData.map((val, i) => (
-                  <div
-                    className={styles.card}
-                    onClick={() => {
-                      this.handleredirect("/eventDetails");
-                    }}
-                  >
-                    <Card
-                      image={""}
-                      heading={val.title}
-                      time={val.time}
-                      date={val.date}
-                      location={val.location}
-                      key={i}
-                      visibleChildrenDesktop={2}
-                    />
-                  </div>
-                ))}
+                {this.props &&
+                  this.props.allEventDetails &&
+                  this.props.allEventDetails.map((val, i) => (
+                    <div
+                      className={styles.card}
+                      onClick={() => {
+                        this.handleredirect("/eventDetails");
+                      }}
+                    >
+                      <Card
+                        image={val.imageUrl}
+                        heading={val.title}
+                        time={`${val.eventSlots[0].startTime} - ${val.eventSlots[0].endTime}`}
+                        date={val.eventSlots[0].date}
+                        location={val.eventAddress}
+                        key={i}
+                        eventLabels={val.labels}
+                        visibleChildrenDesktop={2}
+                      />
+                    </div>
+                  ))}
               </div>
             </div>
           </CenteredContent>

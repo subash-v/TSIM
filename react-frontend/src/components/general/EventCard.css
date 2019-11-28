@@ -6,7 +6,6 @@
   padding: 20px;
   background: #fff;
   box-shadow: 0 12px 12px 0 rgba(0, 0, 0, 0.2);
-
 }
 
 .storiesImage {
@@ -18,7 +17,7 @@
 .contentContainer {
   width: 100%;
   height: auto;
-  padding: 20px 20px 10px 20px;
+  padding: 20px 0;
 }
 
 .contentHeading {
@@ -29,6 +28,13 @@
   margin-bottom: 15px;
 }
 
+.homeheadingtext {
+  composes: contentHeading;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .time,
 .date,
 .location {
@@ -36,6 +42,8 @@
   font-family: regular;
   line-height: 20px;
   margin-bottom: 10px;
+  display: flex;
+  align-items: center;
 }
 
 .icons {
@@ -61,12 +69,42 @@
 }
 
 .locationImage {
-  composes: icons;
+  height: 16px;
+  width: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
   background: url("../../images/Location-white.svg") no-repeat;
   background-position: center;
   background-size: cover;
 }
 
+.homeLocationImage {
+  composes: locationImage;
+  height: 16px;
+  width: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  background-position: center;
+  background-size: contain;
+}
+
+.homeLocationText {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 80%;
+}
+
+.eventLabelContainer {
+  display: flex;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 100%;
+  flex-wrap: wrap;
+}
 .tags {
   box-sizing: border-box;
   height: auto;
@@ -77,10 +115,8 @@
   background-color: rgba(26, 26, 26, 0.6);
   padding: 5px 15px;
   width: auto;
-  display: inline-block;
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
+  margin-right: 5px;
+  margin-bottom: 5px;
   font-size: 12px;
   font-family: bold;
   line-height: 20px;
