@@ -15,6 +15,7 @@ export default class Card extends Component {
             <div className={styles.tagBase}>
               <div className={styles.tagContainer}>
                 {this.props &&
+                  this.props.tags &&
                   this.props.tags.map(tag => {
                     return <div className={styles.tags}>{tag}</div>;
                   })}
@@ -27,7 +28,6 @@ export default class Card extends Component {
           <div className={styles.username}>
             {this.props.name} <span className={styles.or}> | </span>{" "}
             {this.props.time}
-            Mins
           </div>
         </div>
         <div className={styles.actionBarConatiner}>
