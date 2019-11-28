@@ -7,7 +7,6 @@ import Button from "../general/Button";
 import FeedCardDottedMenu from "./FeedCardDottedMenu/FeedCardDottedMenu";
 import PollingResult from "./PollingResult";
 import FeedProfileHolder from "./FeedProfileHolder";
-
 export default class FeedCard extends Component {
   state = {
     showFeedMenu: false
@@ -30,10 +29,6 @@ export default class FeedCard extends Component {
             </div>
           )}
         </div>
-
-        <div className={styles.feedImage}>
-          <Image image={profile} />
-        </div>
         <div className={styles.container}>
           <div className={styles.tagContainer}>
             <div className={styles.tag}>Interaction Design</div>
@@ -53,46 +48,16 @@ export default class FeedCard extends Component {
             <div className={styles.hashTag}>#productivity</div>
             <div className={styles.hashTag}>#productivity</div>
           </div>
-          <div className={styles.eventDetailsContainer}>
-            <div className={styles.time}>3 pm - 5 pm</div>
-            <div className={styles.eventDate}>17th August 2019</div>
-            <div className={styles.location}>Reva University, Bengaluru</div>
-            <div className={styles.cost}>INR 1450</div>
-          </div>
-          <div className={styles.buttonContainer}>
-            <div className={styles.buttonHolder}>
-              <Button
-                type="primary"
-                backgroundColor={"#4F439A"}
-                fontColor={"#ffffff"}
-                borderColor={"#4F439A"}
-                height={40}
-                width={163}
-                label="REGISTER"
-                borderRadius={5}
-              />
+          <div className={styles.feedImage}>
+            <Image image={profile} />
+            <div className={styles.overlay}>
+              <div className={styles.overlayhead}>
+                The all-NEW American Express SmartEarn™ Credit Card
+              </div>
+              <div className={styles.overlayurl}>
+                mediacampaigns.americanexpress.com
+              </div>
             </div>
-            <div className={styles.buttonHolder}></div>
-            <Button
-              type="primary"
-              backgroundColor={"#fff"}
-              fontColor={"#4F439A"}
-              borderColor={"#fff"}
-              height={40}
-              width={167}
-              label="I AM INTERESTED"
-              borderRadius={5}
-            />
-          </div>
-          <div className={styles.registrationdetailsContainer}>
-            <img src={profile} className={styles.dot} alt={"profile"} />
-            <img src={profile} className={styles.dot} alt={"profile"} />
-            <img src={profile} className={styles.dot} alt={"profile"} />
-            <span className={styles.more}>+26</span>
-            <div className={styles.intrested}>Intrested & 13 Registered</div>
-          </div>
-          <div className={styles.pollingConatiner}>
-            <PollingResult />
           </div>
         </div>
         <div className={styles.likesSection}>
