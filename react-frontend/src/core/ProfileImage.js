@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styles from "./ProfileImage.css";
+export const SIZE_0 = 0;
 export const SIZE_1 = 1;
 export const SIZE_2 = 2;
 export const SIZE_3 = 3;
@@ -13,6 +14,9 @@ export default class ProfileImage extends React.Component {
   render() {
     const initials = this.props.initials;
     let className = this.styles.base;
+    if (this.props.size === SIZE_0) {
+      className = this.styles.size0;
+    }
     if (this.props.size === SIZE_1) {
       className = this.styles.size1;
     }

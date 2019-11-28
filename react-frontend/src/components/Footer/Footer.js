@@ -34,7 +34,7 @@ export default class Footer extends React.Component {
           <div className={styles.column}>
             <div
               className={styles.buttons}
-              onClick={() => this.handleredirect("/events")}
+              onClick={() => this.handleredirect("/event")}
             >
               EVENTS <div className={styles.arrow}></div>
             </div>

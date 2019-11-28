@@ -5,14 +5,14 @@ import image1 from "../../images/Build-your-profile-min.jpg";
 import image2 from "../../images/Resources-min.jpg";
 import image3 from "../../images/Events-min.jpg";
 import image4 from "../../images/Seek-guidance-min.jpg";
-import Button from "../../core/Button copy";
-import SecondaryHeader from "./SecondaryHeader";
-import PrimaryHeader from "./PrimaryHeader";
+import Button from "../../core/Button.js";
 import HomepageEventsCarousel from "../general/HomePageEventsCarousel.";
 import Card from "../general/EventCard";
 import Carousel from "../general/Carousel";
 import Footer from "../Footer/Footer";
 import CenteredContent from "../../core/CenteredContent";
+import PrimaryHeaderContainer from "./container/PrimaryHeaderContainer";
+import SecondaryHeaderContainer from "./container/SecondaryHeaderContainer";
 
 const carouselData = [
   {
@@ -68,7 +68,7 @@ export default class Home extends React.Component {
       });
     } else {
       this.setState({
-        slideIndex: 0
+        slideIndex: 1
       });
     }
   };
@@ -83,7 +83,7 @@ export default class Home extends React.Component {
     }
     if (this.state.slideIndex > this.state.maxSlide) {
       this.setState({
-        slideIndex: 0
+        slideIndex: 1
       });
       clearInterval(varss);
     }
@@ -103,9 +103,9 @@ export default class Home extends React.Component {
           }
         >
           {this.state.lastScrollY > 100 ? (
-            <PrimaryHeader history={this.props.history} />
+            <PrimaryHeaderContainer />
           ) : (
-            <SecondaryHeader history={this.props.history} />
+            <SecondaryHeaderContainer history={this.props.history} />
           )}
         </div>
         <div className={styles.topSection}>
@@ -151,10 +151,7 @@ export default class Home extends React.Component {
                     create a visual resume and showcase yourself using videos,
                     pictures and stories?
                   </div>
-                  <div
-                    className={styles.buttonSection}
-                    onClick={() => this.handleredirect("/visual-profile")}
-                  >
+                  <div className={styles.buttonSection}>
                     <Button
                       backgroundColor={"#AD5DA3"}
                       label="BUILD VISUAL PROFILE"
@@ -163,8 +160,14 @@ export default class Home extends React.Component {
                       width={"298px"}
                       height={"70px"}
                       fontFamily={"bold"}
+                      onClick={() => this.props.showSignUpModule()}
                     />
-                    <div className={styles.link}>Learn more</div>
+                    <div
+                      className={styles.link}
+                      onClick={() => this.handleredirect("/visual-profile")}
+                    >
+                      Learn more
+                    </div>
                   </div>
                 </div>
               </div>
@@ -220,8 +223,14 @@ export default class Home extends React.Component {
                       width={"298px"}
                       height={"70px"}
                       fontFamily={"bold"}
+                      onClick={() => this.props.showSignUpModule()}
                     />
-                    <div className={styles.link}>View all events</div>
+                    <div
+                      className={styles.link}
+                      onClick={() => this.handleredirect("/event")}
+                    >
+                      View all events
+                    </div>
                   </div>{" "}
                 </div>
               </div>
@@ -244,10 +253,7 @@ export default class Home extends React.Component {
                     <br />
                     We make networking easy.
                   </div>
-                  <div
-                    className={styles.buttonSection}
-                    onClick={() => this.handleredirect("/visual-profile")}
-                  >
+                  <div className={styles.buttonSection}>
                     {" "}
                     <Button
                       backgroundColor={"#AD5DA3"}
@@ -257,8 +263,14 @@ export default class Home extends React.Component {
                       width={"298px"}
                       height={"70px"}
                       fontFamily={"bold"}
+                      onClick={() => this.props.showSignUpModule()}
                     />
-                    <div className={styles.link}>View all blogs</div>
+                    <div
+                      className={styles.link}
+                      onClick={() => this.handleredirect("/blog")}
+                    >
+                      View all blogs
+                    </div>
                   </div>
                 </div>
               </div>
@@ -326,7 +338,10 @@ export default class Home extends React.Component {
             <div className={styles.eventTitle}>
               View and attend workshops and networking events
             </div>
-            <div className={styles.viewAllButton}>
+            <div
+              className={styles.viewAllButton}
+              onClick={() => this.handleredirect("/event")}
+            >
               VIEW ALL <div className={styles.arrow}></div>
             </div>
           </div>

@@ -1,7 +1,9 @@
-.signUpContainer {
+.signInContainer {
   width: 100%;
   height: auto;
   margin-top: 5%;
+  background: #fff;
+  padding: 207px 80px 0 128px;
 }
 
 .welTxt {
@@ -10,102 +12,20 @@
 
 .welcomeTxt {
   color: #4f439a;
-  font-family: "Open Sans";
+  font-family: bold;
   font-size: 22px;
-  font-weight: bold;
   display: inline-block;
-}
-.starTxt {
-  color: #ad5da3;
-  font-family: "Open Sans";
-  font-size: 22px;
-  font-weight: bold;
-  display: inline-block;
-  padding-left: 4px;
 }
 
-.checkbox {
-  height: 18px;
-  width: 18px;
-  display: inline-block;
-  vertical-align: middle;
-  border: 1px solid #4f439a;
-}
-
-.remPassword {
+.stayConnected {
   color: #7f7f7f;
-  font-family: "Open Sans";
+  font-family: bold;
   font-size: 14px;
   line-height: 20px;
-  display: inline-block;
-}
-.forgotPassword {
-  color: #7f7f7f;
-  font-family: "Open Sans";
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 20px;
-  display: inline-block;
-}
-.forgotPassword:last-child {
-  float: right;
+  margin-top: 10px;
 }
 
-.countryInput {
-  width: 100%;
-  height: auto;
-}
-
-.img {
-  display: inline-block;
-  margin-right: 25px;
-  vertical-align: middle;
-  height: 30px;
-  width: 30px;
-  border: 0.86px solid #4f439a;
-  border-radius: 5px;
-}
-
-.linkedinTxt {
-  color: #ffffff;
-  font-family: "Open Sans";
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 22px;
-  text-align: justify;
-  display: inline-block;
-  margin-left: 10px;
-}
-
-.linkedinNfbContainer {
-  width: 49%;
-  height: auto;
-  background-color: #4f439a;
-  border-radius: 5px;
-  padding: 9px 25px 9px 25px;
-  vertical-align: middle;
-}
-
-.linkedinNfbContainer:first-child {
-  float: left;
-}
-
-.linkedinNfbContainer:last-child {
-  float: right;
-}
-
-.socialContainer {
-  width: 100%;
-  height: auto;
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-.nameContainer {
-  width: 100%;
-  height: auto;
-  margin: 15px 0 15px 0;
-}
-.emailAddress {
+.inputBox {
   width: 100%;
   /* margin-right: 30px; */
   height: auto;
@@ -113,62 +33,42 @@
   border: 1px solid rgba(127, 127, 127, 0.5);
   margin-top: 15px;
 }
-.firstName {
-  width: 49%;
-  height: auto;
-  border-radius: 5px;
-  display: inline-block;
-  border: 1px solid rgba(127, 127, 127, 0.5);
-  margin-right: 5px;
-}
 
-.lastName {
-  width: 49%;
-  height: auto;
-  border-radius: 5px;
-  display: inline-block;
-  border: 1px solid rgba(127, 127, 127, 0.5);
-  margin-left: 5px;
-}
-.lastName:last-child {
-  float: right;
-}
-
-.countrySelection {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-  display: inline-block;
-  border: 1px solid rgba(127, 127, 127, 0.5);
-}
-
-.circle {
-  height: 11px;
-  width: 11px;
-  /* background-color: #555; */
-  border-radius: 50%;
-  border: 1px solid #4f439a;
-  display: inline-block;
-}
-
-.circleTxt {
-  color: rgba(79, 67, 154, 0.5);
-  font-family: "Open Sans";
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 22px;
-  display: inline-block;
-}
-
-.termsNcondition {
-  color: #1a1a1a;
-  font-family: "Open Sans";
-  font-size: 14px;
-  line-height: 22px;
+.passwordBlock {
   margin-top: 15px;
 }
 
-.signUpButton {
+.checkbox {
+  /* -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; */
+  height: 9px;
+  width: 9px;
+  display: inline-block;
+  vertical-align: middle;
+  outline: 2px solid #4f439a;
+  margin-right: 10px;
+}
+
+.remPassword {
+  color: #7f7f7f;
+  font-family: regular;
+  font-size: 14px;
+  line-height: 20px;
+  display: inline-block;
+}
+.forgotPassword {
+  color: #7f7f7f;
+  font-family: bold;
+  font-size: 14px;
+  line-height: 20px;
+  display: inline-block;
+}
+.forgotPassword:last-child {
+  float: right;
+}
+
+.loginButton {
   width: 100%;
   height: auto;
   background-color: #4f439a;
@@ -181,66 +81,103 @@
   margin: 15px 0 15px 0;
 }
 
-.logInTxt {
-  color: #4f439a;
-  font-family: "Open Sans";
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 22px;
-  display: inline-block;
+.backImg {
+  height: 22px;
+  width: 22px;
+  margin-top: 16px;
+  margin-left: 14px;
 }
-
-.accountTxt {
-  color: #ad5da3;
-  font-family: "Open Sans";
-  font-size: 14px;
-  line-height: 22px;
-  display: inline-block;
-}
-
 .starInTxt {
   color: #7f7f7f;
-  font-family: "Open Sans";
+  font-family: regular;
   font-size: 14px;
   line-height: 20px;
   display: inline-block;
 }
-
-.minChar {
-  margin-top: 15px;
-}
-
-fieldset {
-  margin-top: 10px;
-  border-top: 1px solid rgba(127, 127, 127, 0.5);
-  border-left: none;
-  border-bottom: none;
-  border-right: none;
-  text-align: center;
-  width: 1200px;
-  /* margin-left: 120px; */
-  color: rgba(127, 127, 127, 0.5);
-  font-size: 12px;
-  font-weight: bold;
+.signUpNow {
+  color: #4f439a;
+  font-family: bold;
+  font-size: 14px;
+  line-height: 22px;
+  display: inline-block;
+  cursor: pointer;
 }
 
 .loginWith {
   color: #4f439a;
-  font-family: "Open Sans";
+  font-family: bold;
   font-size: 22px;
-  font-weight: bold;
   margin-top: 30px;
   margin-bottom: 10px;
+  cursor: pointer;
+}
+.img {
+  display: inline-block;
+  margin-right: 25px;
+  vertical-align: middle;
+  height: 30px;
+  width: 30px;
+  border: 0.86px solid #4f439a;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.stayConnected {
-  color: #7f7f7f;
-  font-family: "Open Sans";
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 20px;
-  margin-top: 10px;
+.backCircle {
+  height: 55px;
+  width: 55px;
+  /* background-color: #555; */
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15);
+  position: absolute;
+  top: 60px;
+  left: 45px;
+
+  /* border: 1px solid #4f439a; */
 }
-.resetPassword {
-  margin-top: 15px;
+
+@media only screen and (max-width: 400px) {
+  .signInContainer {
+    width: 100%;
+    height: auto;
+    margin-top: 5%;
+    background: #fff;
+    padding: 116px 20px 0 18px;
+  }
+  .backCircle {
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    position: absolute;
+    top: 21px;
+    left: 10px;
+    box-shadow: none;
+
+    /* border: 1px solid #4f439a; */
+  }
+
+  .checkbox {
+    /* -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; */
+    height: 14px;
+    width: 14px;
+    display: inline-block;
+    vertical-align: middle;
+    outline: 2px solid #4f439a;
+    margin-right: 10px;
+  }
+  .forgotPassword {
+    color: #7f7f7f;
+    font-family: bold;
+    font-size: 14px;
+    line-height: 22px;
+    display: inline-block;
+  }
+  .backImg {
+    width: 15px;
+    height: 15px;
+    margin: 0px;
+  }
 }
