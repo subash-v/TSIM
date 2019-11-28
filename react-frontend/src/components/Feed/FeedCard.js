@@ -5,9 +5,7 @@ import profile from "../Images/f.jpg";
 import Image from "../../core/Image";
 import Button from "../general/Button";
 import FeedCardDottedMenu from "./FeedCardDottedMenu/FeedCardDottedMenu";
-import PollingResult from "./PollingResult";
 import FeedProfileHolder from "./FeedProfileHolder";
-import PollingResultWithImage from "./PollingResultWithImage/PollingResultWithImage";
 import CompleteCourseImages from "./CompleteCourseImages/CompleteCourseImages";
 
 
