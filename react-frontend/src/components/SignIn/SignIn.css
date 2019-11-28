@@ -100,6 +100,7 @@
   font-size: 14px;
   line-height: 22px;
   display: inline-block;
+  cursor: pointer;
 }
 
 .loginWith {
@@ -108,6 +109,7 @@
   font-size: 22px;
   margin-top: 30px;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 .img {
   display: inline-block;
@@ -117,6 +119,7 @@
   width: 30px;
   border: 0.86px solid #4f439a;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .backCircle {
@@ -131,4 +134,55 @@
   left: 45px;
 
   /* border: 1px solid #4f439a; */
+}
+
+.MobileBackCircle {
+  height: 14px;
+  width: 18px;
+  position: absolute;
+  left: 20px;
+}
+
+.MobileBackImg {
+  height: 14px;
+  width: 18px;
+  margin-top: 16px;
+}
+
+.MobileSignInContainer {
+  width: 100%;
+  height: auto;
+  background: #fff;
+  padding: 100px 15px 0 20px;
+}
+
+.MobileInputBox {
+  box-sizing: border-box;
+  height: 50px;
+  width: auto;
+  border: 1px solid rgba(127, 127, 127, 0.5);
+  border-radius: 5px;
+  margin: 5px 1px 2px 3px;
+}
+
+.MobileforgotPassword {
+  color: #7f7f7f;
+  /* font-family: bold; */
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  margin-left: 2px;
+}
+
+.MobileLoginButton {
+  width: 100%;
+  height: auto;
+  background-color: #4f439a;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 9px 25px 9px 25px;
+  /* margin-right: 5px; */
+  color: white;
+  text-align: center;
+  margin: 15px 0 15px 0;
 }

@@ -17,10 +17,26 @@ export default class SignUp extends React.Component {
       email: "",
       firstName: "",
       lastName: "",
-      newPassword: "",
-      confirmPassword: ""
+      password: "",
+      confirmPassword: "",
+      gender: false
     };
   }
+
+  handleSignUp = () => {
+    if (this.props.postSignUp) {
+      const reqBody = {
+        firstName: this.state.firstName,
+        lastName: this.state.lastName,
+        email: this.state.email,
+        gender: this.state.gender ? "female" : "male",
+        country: this.state.country,
+        password: this.state.password
+      };
+
+      this.props.postSignUp(reqBody);
+    }
+  };
   render() {
     return (
       <React.Fragment>
@@ -38,7 +54,10 @@ export default class SignUp extends React.Component {
                     className={styles.checkbox}
                     type="checkbox"
                     name="Gender"
-                    value="Female"
+                    value="female"
+                    onChange={val =>
+                      this.setState({ gender: !this.state.gender })
+                    }
                   ></input>
                 </div>
                 <div className={styles.femaleCheck}>Yes, I am female</div>
@@ -156,8 +175,8 @@ export default class SignUp extends React.Component {
               <div className={styles.inputBox}>
                 <Input2
                   placeholder="New Password (Min 6 Characters)"
-                  value={this.state.newPassword}
-                  onChange={val => this.setState({ newPassword: val })}
+                  value={this.state.password}
+                  onChange={val => this.setState({ password: val })}
                   textStyle={{ fontSize: 14 }}
                   height={50}
                   boxy={true}
@@ -192,7 +211,8 @@ export default class SignUp extends React.Component {
               </div>
               <div
                 className={styles.signUpButton}
-                onClick={() => this.props.showTour(this.props)}
+                // onClick={() => this.props.showTour(this.props)}
+                onClick={() => this.handleSignUp()}
               >
                 SIGN UP NOW
               </div>

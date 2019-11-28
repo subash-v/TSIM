@@ -48,7 +48,7 @@ export default class Settings extends React.Component {
       <div>
         <div className={styles.fixedHeader}>
           <PrimaryHeaderContainer />
-        </div>{" "}
+        </div>
         <div className={styles.container}>
           <div className={styles.leftContainer}>
             {accData &&
