@@ -81,7 +81,7 @@ export function getEventDetails(id) {
   return async dispatch => {
     dispatch(getEventDetailsRequest());
     try {
-      let url = `events?${id}`;
+      let url = `events/${id}`;
       const result = await get(url);
       const resultJson = await result.data;
       if (resultJson.error) {
@@ -91,6 +91,46 @@ export function getEventDetails(id) {
       return dispatch(getEventDetailsSuccess(resultJson));
     } catch (e) {
       return dispatch(getEventDetailsFailure(e.message));
+    }
+  };
+}
+
+export function getFilterRequest() {
+  return {
+    type: GET_FILTER_REQUEST,
+    status: REQUESTING
+  };
+}
+
+export function getFilterSuccess(filterList) {
+  return {
+    type: GET_FILTER_SUCCESS,
+    status: SUCCESS,
+    filterList
+  };
+}
+
+export function getFilterFailure(error) {
+  return {
+    type: GET_FILTER_FAILURE,
+    status: ERROR,
+    error
+  };
+}
+
+export function getFilterList() {
+  return async dispatch => {
+    dispatch(getFilterRequest());
+    try {
+      let url = `events/filters`;
+      const result = await get(url);
+      const resultJson = await result.data;
+      if (resultJson.error) {
+        throw new Error(resultJson.message);
+      }
+      return dispatch(getFilterSuccess(resultJson));
+    } catch (e) {
+      return dispatch(getFilterFailure(e.message));
     }
   };
 }
