@@ -6,6 +6,7 @@ import {
   LOGIN_MODULE,
   SIGNUP_MODULE
 } from "../modal.actions.js";
+import { getLogin } from "../../../actions/loginSignup.action";
 import LoginModule from "../component/LoginModule";
 const mapDispatchToProps = dispatch => {
   return {
@@ -17,12 +18,15 @@ const mapDispatchToProps = dispatch => {
     },
     showSignUpModal: data => {
       dispatch(showModal(SIGNUP_MODULE, data));
+    },
+    getLogin: userDetails => {
+      dispatch(getLogin(userDetails));
     }
   };
 };
 const mapStateToProps = state => {
   return {
-    loading: state
+    loginDetails: state.loginSignup
   };
 };
 const SignInModuleContainer = withRouter(

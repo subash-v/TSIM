@@ -3,7 +3,7 @@
   height: auto;
   border-bottom: 1px solid #d3d3d3;
   box-shadow: 0px 2px 4px -2px rgba(0, 0, 0, 0.25);
-  padding: 0px 5px;
+  padding: 10px 25px;
   background: #fff;
 }
 .headerHolder {
@@ -17,6 +17,10 @@
   display: inline-block;
   vertical-align: middle;
 }
+.loggedInHolder {
+  composes: logoLinkHolder;
+  width: 60%;
+}
 .logoHolder {
   cursor: pointer;
   width: 192px;
@@ -29,6 +33,10 @@
 .buttonSearchholder {
   width: 50%;
   display: inline-block;
+}
+.loggedinButton {
+  composes: buttonSearchholder;
+  width: 40%;
 }
 .logoHolder {
   width: 165px;
@@ -44,9 +52,14 @@
   cursor: pointer;
   color: #1a1a1a;
 }
+.showLine {
+  composes: linkText;
+  border-bottom: 1px solid #4f439a;
+  color: #4f439a;
+}
 .search {
   cursor: pointer;
-  padding: 15px 30px 15px 0px;
+  padding-right: 30px;
   width: auto;
   display: inline-block;
   width: 60%;

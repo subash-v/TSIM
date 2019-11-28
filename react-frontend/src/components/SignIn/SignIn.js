@@ -15,6 +15,11 @@ export default class SignIn extends React.Component {
       password: ""
     };
   }
+  handleLogin = () => {
+    if (this.props.getLogin) {
+      this.props.getLogin(this.state);
+    }
+  };
   render() {
     return (
       <React.Fragment>
@@ -72,7 +77,12 @@ export default class SignIn extends React.Component {
                 </div>
               </div>
 
-              <div className={styles.loginButton}>LOGIN</div>
+              <div
+                className={styles.loginButton}
+                onClick={() => this.handleLogin()}
+              >
+                LOGIN
+              </div>
               <div></div>
               <div>
                 <div className={styles.starInTxt}>No Account?&nbsp;&nbsp;</div>

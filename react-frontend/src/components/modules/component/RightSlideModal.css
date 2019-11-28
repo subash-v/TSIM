@@ -1,6 +1,10 @@
 .base {
+  position: absolute;
+  top: 0px;
+  right: 0px;
   width: 50vw;
   height: 100vh;
+  float: right;
   background: #ffffff;
   animation: slideInLeft 200ms forwards;
 }
@@ -36,5 +40,13 @@
   }
   100% {
     transform: translateX(0%);
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .base {
+    width: 100vw;
+    min-height: 100vh;
+    height: 100%;
+    position: fixed;
   }
 }

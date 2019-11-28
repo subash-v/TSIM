@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import styles from "./BlogFeed.css";
 import Card from "../general/Card";
 import CenteredContent from "../../core/CenteredContent";
-import PrimaryHeader from "../HomePage/PrimaryHeader";
-
 import SignUpBar from "./SignUpBar";
 import Footer from "../Footer/Footer";
 import PrimaryHeaderContainer from "../HomePage/container/PrimaryHeaderContainer";
@@ -73,12 +71,19 @@ const data = [
   }
 ];
 export default class BlogFeed extends Component {
+  componentDidMount = () => {
+    if (this.props.getAllBlogs) {
+      this.props.getAllBlogs();
+    }
+  };
   render() {
     return (
       <React.Fragment>
         <div className={styles.base}>
           <div className={styles.headerHolder}>
-            <PrimaryHeaderContainer />
+            <div className={styles.fixedHeader}>
+              <PrimaryHeaderContainer />
+            </div>{" "}
           </div>
           <CenteredContent>
             <div className={styles.container}>
@@ -132,11 +137,21 @@ export default class BlogFeed extends Component {
                 <div className={styles.storiesHeading}>FEATURED STORIES</div>
 
                 <div className={styles.storiesContainer}>
-                  {data.map(val => (
-                    <div className={styles.card}>
-                      <Card {...val} />
-                    </div>
-                  ))}
+                  {this.props &&
+                    this.props.allBlogsDetails &&
+                    this.props.allBlogsDetails.map(val => (
+                      <div className={styles.card}>
+                        <Card
+                          name={val.author}
+                          tags={val.labels}
+                          time={val.duration}
+                          heading={val.title}
+                          shared="12k"
+                          likes="12k"
+                          comments="12k"
+                        />
+                      </div>
+                    ))}
                 </div>
               </div>
               <div className={styles.signUpBarContainer}>

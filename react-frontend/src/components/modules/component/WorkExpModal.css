@@ -1,16 +1,19 @@
 .centermodal {
   background: #ffffff;
-  min-width: 600px;
+  width: auto;
   margin: auto;
   height: auto;
   color: #222;
   border-radius: 10px;
+  min-width: 800px;
+  min-height: 800px;
+  padding-left: 35px;
 }
-.profileheader {
+.workheader {
   color: #1a1a1a;
   font-family: bold;
   font-size: 18px;
-  font-weight: regular;
+  font-family: regular;
   line-height: 24px;
   display: inline-block;
 }
@@ -28,17 +31,14 @@
 }
 
 .headerCont {
-  padding-left: 40px;
-  padding-top: 19px;
-  padding-bottom: 17px;
+  /* padding-left: 40px; */
+  padding-top: 36px;
 }
-.inputbox[type="text"] {
-  box-sizing: border-box;
-  height: 50px;
-  width: 540px;
-  border: 1px solid #b2b2b2;
-  border-radius: 5px;
-  padding: 15px;
+.inputBox {
+  box-sizing: border-box !important;
+  border: 1px solid #b2b2b2 !important;
+  border-radius: 5px !important;
+  padding: 15px !important;
 }
 
 .txtarea {
@@ -61,20 +61,91 @@
   border-bottom: 1px solid #b2b2b2;
   width: 100%;
 }
-.inpcont {
-  padding: 30px 30px 0 30px;
-}
+
 .buttonCont {
   display: flex;
   justify-content: flex-end;
-  padding: 20px 30px 30px 30px;
+  padding: 20px 30px 30px 0px;
 }
 .workicon {
   display: flex;
+  padding: 18px 0px 0px 0px;
 }
 .active {
   background-color: #4f439a;
+  margin-right: 20px;
+  border-radius: 100%;
 }
-.radio {
-  height: 10px;
+input[type="radio"] {
+  height: 18px;
+  width: 18px;
+  background-color: #4f439a;
+  color: #4f439a;
+}
+input[type="date"] {
+  box-sizing: border-box;
+  height: 47px;
+  width: 334px;
+  border: 1px solid #b2b2b2;
+  border-radius: 5px;
+  padding-right: 7px;
+  border: none;
+}
+input[type="file"] {
+  color: transparent;
+}
+.workiconcont {
+  padding-right: 20px;
+}
+.buttonCont {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0;
+}
+.uploadcont {
+  display: flex;
+  padding-left: 5px;
+}
+.inpcont {
+  /* padding-left: 35px; */
+  padding-right: 15px;
+}
+.radiocont {
+  display: flex;
+  padding-top: 29px;
+  padding-bottom: 17px;
+}
+
+label {
+  color: #4f439a;
+}
+.datecont {
+  display: flex;
+  padding-left: 4px;
+  padding-top: 5px;
+}
+.checkcont {
+  display: flex;
+  padding: 15px 0px 15px 0px;
+}
+input[type="checkbox"] {
+  height: 18px;
+  width: 18px;
+}
+.checktxt {
+  padding-left: 10px;
+  color: #7f7f7f;
+  font-size: 14px;
+}
+.inputHolder {
+  padding: 5px;
+  border-radius: 5px;
+}
+.radioco {
+  display: flex;
+}
+.desccont {
+  padding-left: 3px;
+  padding-top: 10px;
 }

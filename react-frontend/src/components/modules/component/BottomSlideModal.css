@@ -1,30 +1,21 @@
 .base {
-  width: 100%;
-  height: auto;
-  display: flex;
-  margin: auto;
-  align-items: center;
-  justify-content: center;
+  position: fixed;
   animation: slideInUp 200ms forwards;
 }
 .base:before {
   content: "";
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   position: absolute;
-  right: 0px;
+  right: 20px;
   top: -40px;
   pointer-events: none;
-  background: url("../../../images/Cross.svg") no-repeat;
+  background: url("./Images/canceltransperent.png") no-repeat;
   background-position: center;
+  background-size: cover;
 }
 .crossIconHide {
-  width: 100%;
-  height: auto;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: fixed;
   animation: slideInUp 200ms forwards;
 }
 .crossIconHide:before {

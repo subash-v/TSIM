@@ -12,7 +12,9 @@ export default class SeekGuide extends Component {
       <React.Fragment>
         <div className={styles.base}>
           <div className={styles.headerHolder}>
-            <PrimaryHeaderContainer history={this.props.history} />
+            <div className={styles.fixedHeader}>
+              <PrimaryHeaderContainer history={this.props.history} />
+            </div>
           </div>
           <CenteredContent>
             <div className={styles.container}>
@@ -29,7 +31,10 @@ export default class SeekGuide extends Component {
                       Reach out to a guide or become one.{" "}
                     </div>
                     <div className={styles.buttonHolder}>
-                      <div className={styles.button}>
+                      <div
+                        className={styles.button}
+                        onClick={() => this.props.showSignUpModule()}
+                      >
                         <Button
                           type="primary"
                           backgroundColor={"#4F439A"}

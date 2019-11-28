@@ -45,9 +45,11 @@ export default class ControlInput extends React.Component {
               paddingLeft: `${this.props.leftChildSize - 10}px`,
               paddingRight: `${this.props.rightChildSize - 10}px`,
               height: `${this.props.height}px`,
+              width: `${this.props.width}px`,
               borderColor: `${this.props.borderColor}`,
               borderBottom: `${this.props.borderBottom}`,
-              background: `${this.props.background}`
+              background: `${this.props.background}`,
+              border: `${this.props.border}`
             }}
           >
             <input

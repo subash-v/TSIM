@@ -17,7 +17,9 @@ export default class MorePage extends Component {
   render() {
     return (
       <div className={styles.moreHolder}>
-        <PrimaryHeaderContainer history={this.props.history} />
+        <div className={styles.fixedHeader}>
+          <PrimaryHeaderContainer history={this.props.history} />
+        </div>{" "}
         <CenteredContent>
           <div className={styles.more}>
             <div className={styles.logoHolder}>

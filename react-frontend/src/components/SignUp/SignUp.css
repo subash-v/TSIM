@@ -1,11 +1,10 @@
 .signUpContainer {
   width: 100%;
   height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 100px;
-  padding: 0px 107px 0 200px;
+  margin-top: 120px;
+  overflow: auto;
+  padding: 0px 107px 0 128px;
+  max-height: 100vh;
 }
 
 .welTxt {
@@ -51,8 +50,6 @@
 .img {
   height: 22px;
   width: 22px;
-  display: inline-block;
-  margin-left: 25px;
   border-radius: 5px;
   vertical-align: middle;
 }
@@ -69,9 +66,6 @@
   font-family: semibold;
   font-size: 14px;
   line-height: 22px;
-  text-align: justify;
-  display: inline-block;
-  margin-left: 10px;
 }
 
 .linkedinNfbContainer {
@@ -79,17 +73,12 @@
   height: auto;
   background-color: #4f439a;
   border-radius: 5px;
-  padding: 9px 25px 9px 25px;
+  padding: 9px 0;
   vertical-align: middle;
-  text-align: center;
-}
-
-.linkedinNfbContainer:first-child {
-  float: left;
-}
-
-.linkedinNfbContainer:last-child {
-  float: right;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .socialContainer {
@@ -97,39 +86,41 @@
   height: auto;
   margin-top: 15px;
   margin-bottom: 15px;
-  padding-bottom: 50px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 .nameContainer {
   width: 100%;
   height: auto;
   margin: 0px 0 15px 0;
+  display: flex;
+  justify-content: space-between;
 }
-.inputBox {
-  width: 100%;
-  /* margin-right: 30px; */
+.firstName {
+  width: 49%;
   height: auto;
   border-radius: 5px;
   border: 1px solid rgba(127, 127, 127, 0.5);
   margin-top: 15px;
 }
 
-.firstName {
-  width: 49%;
-  height: auto;
-  border-radius: 5px;
-  display: inline-block;
-  border: 1px solid rgba(127, 127, 127, 0.5);
-  margin-right: 5px;
-}
-
 .lastName {
   width: 49%;
   height: auto;
   border-radius: 5px;
-  display: inline-block;
   border: 1px solid rgba(127, 127, 127, 0.5);
-  margin-left: 5px;
+  margin-top: 15px;
 }
+.inputBox {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  border: 1px solid rgba(127, 127, 127, 0.5);
+  margin-top: 15px;
+  vertical-align: middle;
+}
+
 .lastName:last-child {
   float: right;
 }
@@ -145,7 +136,6 @@
 .circle {
   height: 11px;
   width: 11px;
-  /* background-color: #555; */
   border-radius: 50%;
   border: 1px solid #4f439a;
   display: inline-block;
@@ -153,7 +143,6 @@
 .backCircle {
   height: 55px;
   width: 55px;
-  /* background-color: #555; */
   border-radius: 50%;
   background-color: #ffffff;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15);
@@ -161,8 +150,6 @@
   top: 70px;
   left: 25px;
   text-align: center;
-
-  /* border: 1px solid #4f439a; */
 }
 
 .circleTxt {
@@ -189,10 +176,10 @@
   border-radius: 5px;
   display: inline-block;
   padding: 9px 25px 9px 25px;
-  /* margin-right: 5px; */
   color: white;
   text-align: center;
   margin: 15px 0 15px 0;
+  cursor: pointer;
 }
 
 .logInTxt {
@@ -230,18 +217,138 @@ fieldset {
   border-bottom: none;
   border-right: none;
   text-align: center;
-  width: 750px;
-  /* margin-left: 120px; */
+  width: auto;
   color: rgba(127, 127, 127, 0.5);
   font-size: 12px;
-  font-weight: bold;
-}
-
-.button {
-  height: 22px;
-  width: 140px;
-  color: rgba(79, 67, 154, 0.5);
   font-family: bold;
-  font-size: 14px;
-  line-height: 22px;
+}
+@media only screen and (max-width: 1024px) {
+  .base {
+    width: 100vw;
+    /* height: 100vh;
+    position: fixed; */
+  }
+  .backCircle {
+    border: none;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    position: absolute;
+    top: 21px;
+    left: 10px;
+    text-align: center;
+    box-shadow: none;
+  }
+  .backImg {
+    width: 15px;
+    height: 15px;
+    margin: 0px;
+  }
+  .linkedinNfbContainer {
+    width: 100%;
+    padding: 8px;
+    margin-left: 5px;
+  }
+  .signUpContainer {
+    margin-top: 56px;
+    overflow: auto;
+    padding: 0px 20px;
+  }
+
+  .signUpContainer {
+    width: 100%;
+    height: auto;
+    margin-top: 120px;
+    overflow: auto;
+    padding: 0px 107px 100px 128px;
+    max-height: 100vh;
+  }
+}
+/* screen size below 400px (iphone4) */
+@media only screen and (max-width: 400px) {
+  .signUpContainer {
+    width: 100%;
+    height: auto;
+    margin-top: 60px;
+    overflow: auto;
+    padding: 0px 20px 100px 20px;
+    max-height: 100vh;
+  }
+  .joinTxt {
+    color: #4f439a;
+    font-family: bold;
+    font-size: 18px;
+    display: inline-block;
+  }
+  .starTxt {
+    color: #ad5da3;
+    font-family: bold;
+    font-size: 18px;
+    display: inline-block;
+    padding-left: 4px;
+  }
+
+  .linkedinTxt {
+    color: #ffffff;
+    font-family: semibold;
+    font-size: 12px;
+    line-height: 20px;
+  }
+  .fieldset {
+    padding-top: 15px;
+    border-top: 1px solid rgba(127, 127, 127, 0.5);
+    border-left: none;
+    border-bottom: none;
+    border-right: none;
+    text-align: center;
+    width: auto;
+    color: rgba(127, 127, 127, 0.5);
+    font-size: 10px;
+    font-family: bold;
+  }
+  .nameContainer {
+    width: 100%;
+    height: auto;
+    margin: 0px 0 15px 0;
+    display: block;
+    /* justify-content: space-between; */
+  }
+  .socialContainer {
+    width: 100%;
+    height: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    display: block;
+    align-items: center;
+  }
+  .linkedinNfbContainer {
+    width: 100%;
+    height: auto;
+    background-color: #4f439a;
+    border-radius: 5px;
+    padding: 9px 0;
+    vertical-align: middle;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 15px;
+  }
+
+  .firstName {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    border: 1px solid rgba(127, 127, 127, 0.5);
+    margin-top: 15px;
+  }
+
+  .lastName {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    border: 1px solid rgba(127, 127, 127, 0.5);
+    margin-top: 15px;
+  }
 }

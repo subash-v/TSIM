@@ -6,13 +6,23 @@ import Button from "../general/Button.js";
 import SignUpBar from "../Blog/SignUpBar";
 import Footer from "../Footer/Footer";
 import PrimaryHeaderContainer from "../HomePage/container/PrimaryHeaderContainer";
+import DesktopOnly from "../general/DesktopOnly";
+import MobileOnly from "../general/MobileOnly";
+import MobileHeader from "../HomePage/MobileHeader";
 export default class VisualProfilePage extends Component {
   render() {
     return (
       <React.Fragment>
         <div className={styles.base}>
           <div className={styles.headerHolder}>
-            <PrimaryHeaderContainer history={this.props.history} />
+            <div className={styles.fixedHeader}>
+              <DesktopOnly>
+                <PrimaryHeaderContainer history={this.props.history} />
+              </DesktopOnly>
+              <MobileOnly>
+                <MobileHeader />
+              </MobileOnly>
+            </div>
           </div>
           <CenteredContent>
             <div className={styles.container}>
@@ -27,7 +37,7 @@ export default class VisualProfilePage extends Component {
                         "In current times, your digital impression is as important as your offline impression. So, level up your online profile to make a great digital impression."
                       }
                     </div>
-                    <div>
+                    <div onClick={() => this.props.showSignUpModule()}>
                       <Button
                         type="primary"
                         backgroundColor={"#4F439A"}
