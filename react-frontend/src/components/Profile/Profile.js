@@ -6,6 +6,7 @@ import Skills from "../Skills/Skills";
 import ToolTip from "../../core/ToolTip";
 import Button from "../../core/Button";
 import PrimaryHeaderContainer from "../HomePage/container/PrimaryHeaderContainer";
+import ImageUplaod from "./ImageUpload";
 
 const data = [{}, {}, {}, {}, {}];
 
@@ -22,7 +23,10 @@ export default class Profile extends Component {
       tour7: false,
       tourcount: 0,
       closeToolTip: false,
-      closeBanner: true
+      closeBanner: true,
+      file: [],
+      slideIndex: 0,
+      maxSlide: 5
     };
   }
 
@@ -101,6 +105,30 @@ export default class Profile extends Component {
     });
   };
 
+  onLoadMore = () => {
+    this.props.showImageUploadModule();
+  };
+
+  handleScroll = () => {
+    this.setState({ lastScrollY: window.scrollY });
+  };
+
+  componentDidMount = () => {
+    window.addEventListener("scroll", this.handleScroll);
+
+    // if (this.state.slideIndex <= this.state.maxSlide) {
+    //   var varss = setInterval(() => {
+    //     this.incrementTime();
+    //   }, 5000);
+    // }
+    // if (this.state.slideIndex > this.state.maxSlide) {
+    //   this.setState({
+    //     slideIndex: 0
+    //   });
+    //   clearInterval(varss);
+    // }
+  };
+
   render() {
     return (
       <React.Fragment>
@@ -161,7 +189,12 @@ export default class Profile extends Component {
                         />
                       )}
                     </div>
-                    <div className={styles.uploadCvButton}>UPLOAD CV</div>
+                    <div
+                      className={styles.uploadCvButton}
+                      onClick={() => this.props.showUploadCvModal()}
+                    >
+                      UPLOAD CV
+                    </div>
                   </div>
                   <div className={styles.dividingLine} />
                   <div className={styles.summary}>
@@ -190,46 +223,51 @@ export default class Profile extends Component {
                   </div>
                 </div>
                 <div className={styles.uploadImage}>
-                  <div className={styles.uploadImageDummy}>
-                    <div className={styles.uploadImageGroup}>
-                      {" "}
-                      <div className={styles.uploadPlusButton}></div>
-                      <div className={styles.uploadPlusButton}></div>
-                      <div className={styles.uploadPlusButton}></div>
-                      <div className={styles.uploadPlusButton}></div>
-                      <div className={styles.uploadPlusButton}></div>
-                      {this.state.tourcount === 2 && (
-                        <ToolTip
-                          toolTipLeft={"-325px"}
-                          toolTipTop={"-40px"}
-                          right={"-8px"}
-                          top={"50px"}
-                          transform={"rotate(180deg)"}
-                          handleModal={this.closeToolTip}
-                          showScreen={false}
-                          children={
-                            <React.Fragment>
-                              <div className={styles.toolTipHeader}>
-                                Add Profile Pictures
-                              </div>
-                              <div className={styles.toolTipBody}>
-                                Its your profile and let’s make it interesting
-                              </div>
-                              <Button
-                                type="primary"
-                                backgroundColor={"#AD5DA3"}
-                                fontColor={"#fff"}
-                                height={30}
-                                width={80}
-                                label="Got It!"
-                                borderRadius={2}
-                                onClick={this.gotItHandler}
-                              />
-                            </React.Fragment>
-                          }
-                        />
-                      )}
+                  {this.state.file.length > 0 ? (
+                    <div className={styles.profileCarousel}>
+                      <ImageUplaod />
                     </div>
+                  ) : (
+                    <div className={styles.uploadImageDummy}></div>
+                  )}
+                  <div className={styles.uploadImageGroup}>
+                    <div
+                      className={styles.uploadImages}
+                      onClick={() => this.props.showImageUploadModal()}
+                    >
+                      Upload
+                    </div>
+                    {this.state.tourcount === 2 && (
+                      <ToolTip
+                        toolTipLeft={"-325px"}
+                        toolTipTop={"-40px"}
+                        right={"-8px"}
+                        top={"50px"}
+                        transform={"rotate(180deg)"}
+                        handleModal={this.closeToolTip}
+                        showScreen={false}
+                        children={
+                          <React.Fragment>
+                            <div className={styles.toolTipHeader}>
+                              Add Profile Pictures
+                            </div>
+                            <div className={styles.toolTipBody}>
+                              Its your profile and let’s make it interesting
+                            </div>
+                            <Button
+                              type="primary"
+                              backgroundColor={"#AD5DA3"}
+                              fontColor={"#fff"}
+                              height={30}
+                              width={80}
+                              label="Got It!"
+                              borderRadius={2}
+                              onClick={this.gotItHandler}
+                            />
+                          </React.Fragment>
+                        }
+                      />
+                    )}
                   </div>
                 </div>
               </div>

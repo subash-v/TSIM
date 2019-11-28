@@ -20,19 +20,13 @@ export default class EducationLine extends Component {
     files: []
   };
   handleChange = files => {
-    console.log(files.length);
     if (this.state.files.length + files.length <= 3) {
       let existingFile = this.state.files;
       existingFile.push(...files);
-      // files.map(file => {
-      //   console.log(file);
-      // });
-      console.log("Existing", existingFile);
       this.setState({ files: existingFile });
     }
   };
   handleClick = files => {
-    console.log(files);
     let existingFile = this.state.files;
     var index = existingFile.findIndex(val => {
       return val.name == files;
@@ -121,7 +115,6 @@ export default class EducationLine extends Component {
             {" "}
             <ButtonWithIcon
               onChange={event => {
-                console.log("Button", event.target.files);
                 this.handleChange(event.target.files);
               }}
             ></ButtonWithIcon>

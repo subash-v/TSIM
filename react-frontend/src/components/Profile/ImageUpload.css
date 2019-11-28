@@ -2,6 +2,8 @@
   width: 100%;
   height: 100%;
   position: relative;
+  background: #fff;
+  padding: 35px;
 }
 
 .topSection {
@@ -69,7 +71,7 @@
 .uploadCvButton {
   color: #4f439a;
   font-size: 14px;
-  font-family: bold;
+  font-weight: bold;
   line-height: 19px;
   padding-bottom: 5px;
 }
@@ -166,14 +168,21 @@
   margin-left: 25px;
 }
 
-.uploadImageDummy {
-  background: url("../../images/Profile-Fill-grey.svg") no-repeat;
-  background-size: 80%;
-  width: auto;
-  height: 50vh;
+.uploadImageSection {
+  width: 500px;
+  height: 500px;
   border: 1px dashed;
-  margin: 20px;
   position: relative;
+  margin: 0 30px;
+  padding: 30px;
+}
+
+.uploadImageDummy {
+  composes: uploadImageSection;
+  border: none;
+  margin: 0;
+  background: url("../../images/Profile-Fill-grey.svg") no-repeat;
+  background-size: 50%;
   background-position: center;
 }
 
@@ -219,14 +228,13 @@
 
 .uploadImageGroup {
   position: absolute;
-  bottom: 30px;
+  bottom: 0;
   width: 100%;
   margin-bottom: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .editableOptions {
   background: url("../../images/Overflow-menu-black.svg") no-repeat;
   background-size: cover;
@@ -269,17 +277,14 @@
   composes: accomplishmentIcon;
   background: url("../../images/Job-line.svg");
 }
-
 .eduIcon {
   composes: accomplishmentIcon;
   background: url("../../images/Education-line.svg");
 }
-
 .profileIcon {
   composes: accomplishmentIcon;
   background: url("../../images/Certification-Line.svg");
 }
-
 .labelIcon {
   composes: accomplishmentIcon;
   background: url("../../images/Awards-line.svg");
@@ -424,7 +429,7 @@
   text-align: right;
   color: #4f439a;
   font-size: 14px;
-  font-family: bold;
+  font-weight: bold;
   line-height: 19px;
   padding-bottom: 5px;
 }
@@ -435,7 +440,7 @@
   text-align: right;
   color: #4f439a;
   font-size: 14px;
-  font-family: bold;
+  font-weight: bold;
   line-height: 19px;
   padding-bottom: 5px;
 }
@@ -498,13 +503,83 @@
   display: none;
 }
 
-.fixedHeader {
+.heading {
+  color: #1a1a1a;
+  font-family: bold;
+  font-size: 22px;
+  line-height: 30px;
+  padding-bottom: 35px;
+}
+
+.footer {
+  color: #7f7f7f;
+  font-family: regular;
+  font-size: 14px;
+  line-height: 24px;
+  padding-left: 30px;
+}
+
+.instruction1 {
+  padding: 25px 0 10px 0;
+}
+.instruction2 {
+  /* padding-bottom: 15px 0; */
+}
+
+.homepageCarousal {
   width: 100%;
+  height: 50vh;
+}
+
+.crossButton {
+  background: #000 url("../../images/Cancel-white.svg") no-repeat;
+  width: 15px;
+  height: 15px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 150%;
+  position: absolute;
+  right: 0px;
+  top: -10px;
+  cursor: pointer;
+}
+
+.imageWithCross {
+  width: 44px;
+  height: 44px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: 1px solid #1a1a1a;
+  border-radius: 50%;
+  position: relative;
+}
+
+.showCropButton {
+  border-radius: 5px;
+  font-family: bold;
+  font-size: 16px;
   height: auto;
-  position: fixed;
-  top: 0;
-  transition: 0.5s;
-  z-index: 1;
+  padding: 15px 25px;
+  color: #4f439a;
   background: #fff;
-  z-index: 2;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  position: absolute;
+  right: 0;
+}
+
+.uploadImageSection > div > div {
+  width: 80%;
+  padding-bottom: 80%;
+  position: relative;
+  margin: 0 auto;
+}
+
+.uploadImageSection > div > div > div > img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
