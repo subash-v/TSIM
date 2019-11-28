@@ -60,3 +60,17 @@
 .buttonHolder {
   display: inline-block;
 }
+
+@media only screen and (max-width: 1024px) {
+  .logoHolder {
+    width: 20px;
+    height: 20px;
+    background: url(../../images/tsim_logo.png) no-repeat;
+    background-size: cover;
+    background-position-x: right;
+    margin-left: 16px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+  }
+}

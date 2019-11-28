@@ -41,7 +41,7 @@
 
 .content {
   color: #ffffff;
-  font-family: "regular";
+  font-family: "semibold";
   font-size: 18px;
   line-height: 28px;
   max-width: 500px;
@@ -123,5 +123,14 @@
   .banner {
     padding: 20px;
     align-items: flex-end;
+  }
+  .heading {
+    font-size: 24px;
+    margin-bottom: 6px;
+  }
+  .content {
+    font-size: 12px;
+    line-height: 22px;
+    margin-bottom: 20px;
   }
 }
