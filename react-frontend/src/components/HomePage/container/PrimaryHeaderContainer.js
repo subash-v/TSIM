@@ -5,9 +5,9 @@ import {
   LOGIN_MODULE,
   SIGNUP_MODULE,
   SLIDER_COMPONENT
-
 } from "../../modules/modal.actions";
 import PrimaryHeader from "../PrimaryHeader";
+import WorkExpModal from "../../modules/component/WorkExpModal";
 const mapDispatchToProps = dispatch => {
   return {
     showLoginModule: data => {
@@ -15,8 +15,8 @@ const mapDispatchToProps = dispatch => {
     },
     showSignUpModule: data => {
       dispatch(showModal(SIGNUP_MODULE, data));
-    }
-    , showsliderComponent: data => {
+    },
+    showsliderComponent: data => {
       dispatch(showModal(SLIDER_COMPONENT, data));
     }
   };

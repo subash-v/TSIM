@@ -22,10 +22,8 @@ export default class ManageMembers extends React.Component {
   unblock = (info, index) => {
     UserInfo[index].block = !UserInfo[index].block;
     this.forceUpdate();
-    console.log("===========>>>>", this.state.UserInfo[index]);
   };
   render() {
-    // console.log("USERGVGVGVJHKB", this.state.UserData);
     return (
       <React.Fragment>
         <div className={styles.baseContainer}>
