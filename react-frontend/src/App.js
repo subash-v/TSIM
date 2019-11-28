@@ -15,6 +15,7 @@ import ProfileContainer from "./components/Profile/container/ProfileContainer";
 import FeedContainer from "./components/Feed/container/FeedContainer";
 import Settings from "./components/Settings/SettingsContainer/SettingsContainer";
 import BlogContainer from "./components/Blog/container/BlogContainer";
+import EventDetails from "./components/EventDetails/EventDetails";
 import VisualProfileContainer from "./components/VisualProfile/conatiner/VisualProfileContainer";
 import SeekGuideContainer from "./components/SeekGuide/SeekGuideContainer";
 class App extends Component {
@@ -39,6 +40,7 @@ class App extends Component {
           <Route path="/feed" component={FeedContainer} />
           <Route path="/connections" component={ConnectionsContainer} />
           <Route path="/settings" component={Settings} />
+          <Route path="/eventDetails" component={EventDetails} />
         </Switch>
         <ModalContainer />
       </BrowserRouter>
