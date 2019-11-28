@@ -29,20 +29,17 @@ export default class UserPostModal extends Component {
       value: "",
       pollText: "",
       showDropDown: false,
-      file: null,
-      image: null
+      image: [],
+      showImageModal: false
     };
   }
-
-  showEventSelector = () => {
-    if (this.props.showEventSelector) {
-      this.setState({ stopSlider: true });
-      this.props.closeModal();
-    }
+  showUploadImage = () => {
+    this.setState({ showImageModal: true });
   };
   handleChange(event) {
     if (event.target.files[0]) {
-      let panImage = URL.createObjectURL(event.target.files[0]);
+      let panImage = [...this.state.image];
+      panImage.push({ file: URL.createObjectURL(event.target.files[0]) });
       this.setState({
         image: panImage
       });
@@ -108,7 +105,13 @@ export default class UserPostModal extends Component {
           <React.Fragment>
             <div className={styles.createPostContainer}>
               <div className={styles.createPostNav}>
-                <div className={styles.writePostMessageBox}>
+                <div
+                  className={
+                    this.state.showModal == "post"
+                      ? styles.writePostMessageBox
+                      : ""
+                  }
+                >
                   <div
                     className={
                       this.state.showModal == "post"
@@ -123,22 +126,38 @@ export default class UserPostModal extends Component {
                 <div
                   className={
                     this.state.showModal == "question"
-                      ? styles.askQuestionSelected
-                      : styles.askQuestion
+                      ? styles.writePostMessageBox
+                      : ""
                   }
-                  onClick={() => this.setState({ showModal: "question" })}
                 >
-                  Ask Question
-                </div>
+                  <div
+                    className={
+                      this.state.showModal == "question"
+                        ? styles.askQuestionSelected
+                        : styles.askQuestion
+                    }
+                    onClick={() => this.setState({ showModal: "question" })}
+                  >
+                    Ask Question
+                  </div>
+                </div>{" "}
                 <div
                   className={
                     this.state.showModal == "poll"
-                      ? styles.createPollSelected
-                      : styles.createPoll
+                      ? styles.writePostMessageBox
+                      : ""
                   }
-                  onClick={() => this.setState({ showModal: "poll" })}
                 >
-                  Create Poll
+                  <div
+                    className={
+                      this.state.showModal == "poll"
+                        ? styles.createPollSelected
+                        : styles.createPoll
+                    }
+                    onClick={() => this.setState({ showModal: "poll" })}
+                  >
+                    Create Poll
+                  </div>
                 </div>
               </div>
               <div className={styles.commentHolder}>
@@ -177,45 +196,46 @@ export default class UserPostModal extends Component {
                     border="none"
                   />
                 </div>
-                <div id="hiii" className={styles.boxContainer}>
-                  <div className={styles.displayBox}>
-                    {this.state.image && (
-                      <div className={styles.imageStyle}>
-                        <img
-                          src={this.state.image}
-                          alt="icon"
-                          height="84px"
-                          width="112px"
+                {this.state.showImageModal && (
+                  <div className={styles.boxContainer}>
+                    <div className={styles.displayBox}>
+                      {this.state.image &&
+                        this.state.image.length > 0 &&
+                        this.state.image.map(val => {
+                          return (
+                            <div className={styles.imageStyle}>
+                              <img
+                                src={val.file}
+                                alt="icon"
+                                height="84px"
+                                width="112px"
+                              />
+                            </div>
+                          );
+                        })}
+                    </div>
+                    <div className={styles.uploadBox}>
+                      <div className={styles.uploadIcon}>
+                        <input
+                          id="img-icon"
+                          type="file"
+                          onChange={e => this.handleChange(e)}
                         />
                       </div>
-                    )}
-                    {this.state.file && (
-                      <div className={styles.iconWithName}>
-                        {this.state.file.name}
-                      </div>
-                    )}
-                  </div>
-                  <div className={styles.uploadBox}>
-                    <div className={styles.uploadIcon}>
-                      <input
-                        id="img-icon"
-                        type="file"
-                        onChange={e => this.handleChange(e)}
-                      />
-                    </div>
 
-                    <div className={styles.imageContainer}>
-                      <label for="img-icon">
-                        <img
-                          src={UploadIcon}
-                          alt="upload"
-                          width="20px"
-                          height="20px"
-                        />
-                      </label>
+                      <div className={styles.imageContainer}>
+                        <label for="img-icon">
+                          <img
+                            src={UploadIcon}
+                            alt="upload"
+                            width="20px"
+                            height="20px"
+                          />
+                        </label>
+                      </div>
                     </div>
                   </div>
-                </div>
+                )}
                 {this.state.showModal == "poll" && (
                   <div className={styles.pollInputHolder}>
                     <div className={styles.pollBox}>
@@ -236,7 +256,10 @@ export default class UserPostModal extends Component {
                 )}
               </div>
               <div className={styles.iconHolders}>
-                <div className={styles.icon}>
+                <div
+                  className={styles.icon}
+                  onClick={() => this.showUploadImage()}
+                >
                   <Icon size={25} image={image_blue} />
                 </div>
                 <div className={styles.icon}>
