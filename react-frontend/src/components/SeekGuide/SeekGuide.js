@@ -31,7 +31,10 @@ export default class SeekGuide extends Component {
                       Reach out to a guide or become one.{" "}
                     </div>
                     <div className={styles.buttonHolder}>
-                      <div className={styles.button}>
+                      <div
+                        className={styles.button}
+                        onClick={() => this.props.showSignUpModule()}
+                      >
                         <Button
                           type="primary"
                           backgroundColor={"#4F439A"}

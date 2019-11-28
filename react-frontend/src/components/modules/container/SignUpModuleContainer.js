@@ -26,7 +26,7 @@ const mapDispatchToProps = dispatch => {
 };
 const mapStateToProps = state => {
   return {
-    loading: state
+    SignUpDetails: state.loginSignup
   };
 };
 const SignUpModuleContainer = withRouter(

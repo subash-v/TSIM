@@ -22,6 +22,15 @@ export default class SignUp extends React.Component {
       gender: false
     };
   }
+  componentWillReceiveProps = nextProps => {
+    if (
+      nextProps &&
+      nextProps.SignUpDetails &&
+      nextProps.SignUpDetails.signUpDetails
+    ) {
+      this.props.showTour(this.props);
+    }
+  };
 
   handleSignUp = () => {
     if (this.props.postSignUp) {
@@ -62,6 +71,12 @@ export default class SignUp extends React.Component {
                 </div>
                 <div className={styles.femaleCheck}>Yes, I am female</div>
               </div>
+              {this.props.SignUpDetails &&
+                this.props.SignUpDetails.status === "ERROR" && (
+                  <div className={styles.error}>
+                    {this.props.SignUpDetails.error}
+                  </div>
+                )}
               <div className={styles.countrySelection}>
                 <Input2
                   placeholder="Select your country"
@@ -211,7 +226,6 @@ export default class SignUp extends React.Component {
               </div>
               <div
                 className={styles.signUpButton}
-                // onClick={() => this.props.showTour(this.props)}
                 onClick={() => this.handleSignUp()}
               >
                 SIGN UP NOW
