@@ -88,6 +88,7 @@ export default class Feed extends Component {
                   width="100%"
                   height="100%"
                   className={styles.imageEventBanner}
+                  alt="someImage"
                 />
                 <div className={styles.overlay}>
                   <div className={styles.bannerEventDetailsContainer}>
@@ -126,6 +127,7 @@ export default class Feed extends Component {
                   width="100%"
                   height="100%"
                   className={styles.image}
+                  alt="someImage"
                 />
                 <div className={styles.overlay}>
                   <div className={styles.bannerStoryContainer}>
@@ -171,6 +173,7 @@ export default class Feed extends Component {
                   width="100%"
                   height="100%"
                   className={styles.image}
+                  alt="someImage"
                 />
                 <div className={styles.overlay}>
                   <div className={styles.bannerStoryContainer}>
@@ -196,6 +199,7 @@ export default class Feed extends Component {
                       width="100%"
                       height="100%"
                       className={styles.image}
+                      alt="someImage"
                     />
                   </div>
                   <div className={styles.connectProfileHolder}>
@@ -205,6 +209,7 @@ export default class Feed extends Component {
                         width="100%"
                         height="100%"
                         className={styles.connectProfileImage}
+                        alt="someImage"
                       />
                     </div>
                     <div className={styles.profileName}>Akarshika Das</div>
@@ -373,6 +378,7 @@ export default class Feed extends Component {
                       width="100%"
                       height="100%"
                       className={styles.connectProfileImage}
+                      alt="someImage"
                     />
                   </div>
                   <Input2

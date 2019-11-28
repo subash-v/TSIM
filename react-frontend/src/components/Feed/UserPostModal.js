@@ -17,7 +17,7 @@ import HorizantalIconWithHeader from "../../core/HorizantalIconWithHeader";
 import ProfileImage from "../../core/ProfileImage";
 import BoxCheck from "../../core/BoxCheck";
 import PollInputBox from "./PollInputBox";
-import UploadIcon from "../../images/Upload.svg";
+import UploadIcon from "../../images/Add-Fill-color.svg";
 export default class UserPostModal extends Component {
   constructor(props) {
     super(props);
@@ -28,8 +28,26 @@ export default class UserPostModal extends Component {
       showModal: this.props.showModal,
       value: "",
       pollText: "",
-      showDropDown: false
+      showDropDown: false,
+      file: null,
+      image: null
     };
+  }
+
+  showEventSelector = () => {
+    if (this.props.showEventSelector) {
+      this.setState({ stopSlider: true });
+      this.props.closeModal();
+    }
+  };
+  handleChange(event) {
+    if (event.target.files[0]) {
+      let panImage = URL.createObjectURL(event.target.files[0]);
+      this.setState({
+        // file: event.target.files[0],
+        image: panImage
+      });
+    }
   }
   handleTagClick(tag) {
     let newTag = this.state.tags;
@@ -91,15 +109,17 @@ export default class UserPostModal extends Component {
           <React.Fragment>
             <div className={styles.createPostContainer}>
               <div className={styles.createPostNav}>
-                <div
-                  className={
-                    this.state.showModal == "post"
-                      ? styles.writePostSelected
-                      : styles.writePost
-                  }
-                  onClick={() => this.setState({ showModal: "post" })}
-                >
-                  Create Post
+                <div className={styles.writePostMessageBox}>
+                  <div
+                    className={
+                      this.state.showModal == "post"
+                        ? styles.writePostSelected
+                        : styles.writePost
+                    }
+                    onClick={() => this.setState({ showModal: "post" })}
+                  >
+                    Create Post
+                  </div>
                 </div>
                 <div
                   className={
@@ -157,23 +177,45 @@ export default class UserPostModal extends Component {
                     height={85}
                     border="none"
                   />
-                </div>{" "}
-                <div className={styles.uploadIcon}>
-                  <input
-                    id="img-icon"
-                    type="file"
-                    onChange={e => this.handleChange(e)}
-                  />
                 </div>
-                <div className={styles.imageContainer}>
-                  <label for="img-icon">
-                    <img
-                      src={UploadIcon}
-                      alt="upload"
-                      width="40px"
-                      height="auto"
-                    />
-                  </label>
+                <div id="hiii" className={styles.boxContainer}>
+                  <div className={styles.displayBox}>
+                    {this.state.image && (
+                      <div className={styles.imageStyle}>
+                        <img
+                          src={this.state.image}
+                          alt="icon"
+                          height="84px"
+                          width="112px"
+                        />
+                      </div>
+                    )}
+                    {this.state.file && (
+                      <div className={styles.iconWithName}>
+                        {this.state.file.name}
+                      </div>
+                    )}
+                  </div>
+                  <div className={styles.uploadBox}>
+                    <div className={styles.uploadIcon}>
+                      <input
+                        id="img-icon"
+                        type="file"
+                        onChange={e => this.handleChange(e)}
+                      />
+                    </div>
+
+                    <div className={styles.imageContainer} id="hii">
+                      <label for="img-icon">
+                        <img
+                          src={UploadIcon}
+                          alt="upload"
+                          width="20px"
+                          height="20px"
+                        />
+                      </label>
+                    </div>
+                  </div>
                 </div>
                 {this.state.showModal == "poll" && (
                   <div className={styles.pollInputHolder}>

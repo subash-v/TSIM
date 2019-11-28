@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import BottomSlideModal from "./BottomSlideModal";
 import styles from "./UploadCV.css";
-import CancelIcon from "../../../images/CancelIcon.svg";
+import CancelIcon from "../../../images/Cancel_FIll.svg";
 import UploadIcon from "../../../images/Upload.svg";
 import Button from "../../general/Button.js";
 

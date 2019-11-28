@@ -16,10 +16,7 @@ const mapStateToProps = state => {
   };
 };
 const ProfileModalContainer = withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(ProfileModal)
+  connect(mapStateToProps, mapDispatchToProps)(ProfileModal)
 );
 
 export default ProfileModalContainer;

@@ -103,7 +103,7 @@ export default class Home extends React.Component {
           }
         >
           {this.state.lastScrollY > 100 ? (
-            <PrimaryHeaderContainer  />
+            <PrimaryHeaderContainer />
           ) : (
             <SecondaryHeaderContainer history={this.props.history} />
           )}

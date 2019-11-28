@@ -18,6 +18,7 @@ export default class Button extends React.Component {
               fontSize: 16,
               fontFamily: "semibold"
             }}
+            fontSize={this.props.fontSize ? this.props.fontSize : "16"}
           />
         );
 
@@ -34,6 +35,7 @@ export default class Button extends React.Component {
               fontSize: 16,
               fontFamily: "semibold"
             }}
+            fontSize={this.props.fontSize ? this.props.fontSize : "16"}
           />
         );
 
