@@ -71,6 +71,11 @@ const data = [
   }
 ];
 export default class BlogFeed extends Component {
+  componentDidMount = () => {
+    if (this.props.getAllBlogs) {
+      this.props.getAllBlogs();
+    }
+  };
   render() {
     return (
       <React.Fragment>
@@ -132,11 +137,21 @@ export default class BlogFeed extends Component {
                 <div className={styles.storiesHeading}>FEATURED STORIES</div>
 
                 <div className={styles.storiesContainer}>
-                  {data.map(val => (
-                    <div className={styles.card}>
-                      <Card {...val} />
-                    </div>
-                  ))}
+                  {this.props &&
+                    this.props.allBlogsDetails &&
+                    this.props.allBlogsDetails.map(val => (
+                      <div className={styles.card}>
+                        <Card
+                          name={val.author}
+                          tags={val.labels}
+                          time={val.duration}
+                          heading={val.title}
+                          shared="12k"
+                          likes="12k"
+                          comments="12k"
+                        />
+                      </div>
+                    ))}
                 </div>
               </div>
               <div className={styles.signUpBarContainer}>

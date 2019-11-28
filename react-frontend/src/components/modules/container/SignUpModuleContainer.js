@@ -6,6 +6,7 @@ import {
   SLIDER_COMPONENT,
   SELECT_EVENT_MODULE
 } from "../modal.actions.js";
+import { postSignUp } from "../../../actions/loginSignup.action";
 import SignUpModule from "../component/SignUpModule.js";
 const mapDispatchToProps = dispatch => {
   return {
@@ -17,6 +18,9 @@ const mapDispatchToProps = dispatch => {
     },
     showEventSelector: data => {
       dispatch(showModal(SELECT_EVENT_MODULE, data));
+    },
+    postSignUp: userDetails => {
+      dispatch(postSignUp(userDetails));
     }
   };
 };

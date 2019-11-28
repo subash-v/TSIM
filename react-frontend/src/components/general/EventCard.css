@@ -6,7 +6,6 @@
   padding: 20px;
   background: #fff;
   box-shadow: 0 12px 12px 0 rgba(0, 0, 0, 0.2);
-
 }
 
 .storiesImage {
@@ -66,7 +65,14 @@
   background-position: center;
   background-size: cover;
 }
-
+.eventLabelContainer {
+  display: flex;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 100%;
+  flex-wrap: wrap;
+}
 .tags {
   box-sizing: border-box;
   height: auto;
@@ -77,10 +83,8 @@
   background-color: rgba(26, 26, 26, 0.6);
   padding: 5px 15px;
   width: auto;
-  display: inline-block;
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
+  margin-right: 5px;
+  margin-bottom: 5px;
   font-size: 12px;
   font-family: bold;
   line-height: 20px;

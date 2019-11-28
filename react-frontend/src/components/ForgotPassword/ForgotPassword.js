@@ -8,6 +8,7 @@ import Input2 from "../../core/Input2";
 import linkedin from "../../images/Linkedin.svg";
 import Facebook from "../../images/Facebook.svg";
 import RightSlideModal from "../modules/component/RightSlideModal";
+import Back from "../../images/Back.svg";
 
 // import { Input2 } from "../../core";
 export default class ForgotPassword extends React.Component {

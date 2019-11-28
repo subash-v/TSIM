@@ -6,7 +6,9 @@ const event = (
     status: null,
     error: null,
     loading: false,
-    eventDetails: null
+    eventDetails: null,
+    filterList: null,
+    filterLoader: false
   },
   action
 ) => {
@@ -27,6 +29,42 @@ const event = (
       return Object.assign({}, state, {
         status: action.status,
         loading: false,
+        error: action.error
+      });
+    case eventAction.GET_EVENT_DETAILS_REQUEST:
+      return Object.assign({}, state, {
+        status: action.status,
+        loading: true
+      });
+
+    case eventAction.GET_EVENT_DETAILS_SUCCESS:
+      return Object.assign({}, state, {
+        status: action.status,
+        loading: false,
+        eventDetails: action.eventDetails
+      });
+    case eventAction.GET_EVENT_DETAILS_FAILURE:
+      return Object.assign({}, state, {
+        status: action.status,
+        loading: false,
+        error: action.error
+      });
+    case eventAction.GET_FILTER_REQUEST:
+      return Object.assign({}, state, {
+        status: action.status,
+        filterLoader: true
+      });
+
+    case eventAction.GET_FILTER_SUCCESS:
+      return Object.assign({}, state, {
+        status: action.status,
+        filterLoader: false,
+        filterList: action.filterList
+      });
+    case eventAction.GET_FILTER_FAILURE:
+      return Object.assign({}, state, {
+        status: action.status,
+        filterLoader: false,
         error: action.error
       });
     default:

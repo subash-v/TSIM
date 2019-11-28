@@ -61,7 +61,8 @@ export const carouselData = [
   }
 ];
 export default class EventPage extends Component {
-  handleredirect = val => {
+  handleredirect = (val, id) => {
+    this.props.getEventDetails(id);
     if (this.props.history) {
       this.props.history.push(`${val}`);
     }
@@ -74,9 +75,9 @@ export default class EventPage extends Component {
   };
   componentDidMount = () => {
     this.props.getAllEvents();
+    this.props.getFilterList();
   };
   render() {
-    console.log(this.props);
     return (
       <React.Fragment>
         <div className={styles.base}>
@@ -98,7 +99,7 @@ export default class EventPage extends Component {
                 <div className={styles.filterButtonContainer}>
                   <div
                     className={styles.fliterButton}
-                    onClick={() => this.props.showFilterModule()}
+                    onClick={() => this.props.showFilterModule(this.props)}
                   >
                     <Button
                       type="primary"
@@ -134,24 +135,27 @@ export default class EventPage extends Component {
                 </div>
               </div>
               <div className={styles.storiesContainer}>
-                {carouselData.map((val, i) => (
-                  <div
-                    className={styles.card}
-                    onClick={() => {
-                      this.handleredirect("/eventDetails");
-                    }}
-                  >
-                    <Card
-                      image={""}
-                      heading={val.title}
-                      time={val.time}
-                      date={val.date}
-                      location={val.location}
-                      key={i}
-                      visibleChildrenDesktop={2}
-                    />
-                  </div>
-                ))}
+                {this.props &&
+                  this.props.allEventDetails &&
+                  this.props.allEventDetails.map((val, i) => (
+                    <div
+                      className={styles.card}
+                      onClick={() => {
+                        this.handleredirect("/eventDetails", val.eventId);
+                      }}
+                    >
+                      <Card
+                        image={val.imageUrl}
+                        heading={val.title}
+                        time={`${val.eventSlots[0].startTime} - ${val.eventSlots[0].endTime}`}
+                        date={val.eventSlots[0].date}
+                        location={val.eventAddress}
+                        key={i}
+                        eventLabels={val.labels}
+                        visibleChildrenDesktop={2}
+                      />
+                    </div>
+                  ))}
               </div>
             </div>
           </CenteredContent>
