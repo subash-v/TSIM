@@ -291,6 +291,11 @@
   width:100%;
   height: auto;
 }
+.completeCourseImagesContainer
+{
+  width:100%;
+  height: auto;
+}
 .overlay {
   position: relative;
   bottom: 60px;
