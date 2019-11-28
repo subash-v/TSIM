@@ -8,6 +8,7 @@
   height: auto;
   position: relative;
   overflow: hidden;
+  padding: 20px 0;
 }
 .slider {
   width: 100%;

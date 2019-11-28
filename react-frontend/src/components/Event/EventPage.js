@@ -76,7 +76,6 @@ export default class EventPage extends Component {
     this.props.getAllEvents();
   };
   render() {
-    console.log(this.props);
     return (
       <React.Fragment>
         <div className={styles.base}>

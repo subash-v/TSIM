@@ -75,7 +75,7 @@ export default class Home extends React.Component {
 
   componentDidMount = () => {
     window.addEventListener("scroll", this.handleScroll);
-
+    this.props.getAllEvents();
     if (this.state.slideIndex <= this.state.maxSlide) {
       var varss = setInterval(() => {
         this.incrementTime();
@@ -95,6 +95,7 @@ export default class Home extends React.Component {
   };
 
   render() {
+    console.log(this.props);
     return (
       <div className={styles.base} ref={this.homeRef}>
         <div
