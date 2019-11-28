@@ -15,7 +15,10 @@ export default class MobileHeader extends Component {
             <div className={styles.searchLoginHolder}>
               <div className={styles.searchIcon}></div>
             </div>
-            <div className={styles.login}>
+            <div
+              className={styles.login}
+              onClick={() => this.props.showLoginModal()}
+            >
               <Button
                 type="secondary"
                 height={30}
@@ -28,7 +31,10 @@ export default class MobileHeader extends Component {
               />
             </div>
 
-            <div className={styles.signup}>
+            <div
+              className={styles.signup}
+              onClick={() => this.props.showSignUpModal()}
+            >
               <Button
                 type="primary"
                 backgroundColor={"#4F439A"}
