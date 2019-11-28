@@ -17,7 +17,7 @@ import HorizantalIconWithHeader from "../../core/HorizantalIconWithHeader";
 import ProfileImage from "../../core/ProfileImage";
 import BoxCheck from "../../core/BoxCheck";
 import PollInputBox from "./PollInputBox";
-
+import UploadIcon from "../../images/Upload.svg";
 export default class UserPostModal extends Component {
   constructor(props) {
     super(props);
@@ -150,13 +150,30 @@ export default class UserPostModal extends Component {
                     textStyle={{ fontSize: 16 }}
                   />
                 </div>
-                <div className={styles.textArea}>
+                <div className={styles.textArea} id="heelo">
                   <TextArea
                     onChange={val => this.setState({ desc: val })}
                     value={this.state.desc}
                     height={85}
                     border="none"
                   />
+                </div>{" "}
+                <div className={styles.uploadIcon}>
+                  <input
+                    id="img-icon"
+                    type="file"
+                    onChange={e => this.handleChange(e)}
+                  />
+                </div>
+                <div className={styles.imageContainer}>
+                  <label for="img-icon">
+                    <img
+                      src={UploadIcon}
+                      alt="upload"
+                      width="40px"
+                      height="auto"
+                    />
+                  </label>
                 </div>
                 {this.state.showModal == "poll" && (
                   <div className={styles.pollInputHolder}>
