@@ -141,6 +141,10 @@
     text-align: left;
     
   }
+  .eventSlideBar
+  {
+    height: 210px;
+  }
   .eventSlideBar ul{
    
     list-style: none;

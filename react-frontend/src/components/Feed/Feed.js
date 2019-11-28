@@ -389,9 +389,9 @@ export default class Feed extends Component {
                     boxy={true}
                     borderColor={"transparent"}
                     borderBottom={"transparent"}
-                    // // onFocus={() => {
-                    // //   this.handleOnFocusInput();
-                    // }}
+                  // // onFocus={() => {
+                  // //   this.handleOnFocusInput();
+                  // }}
                   />
                 </div>
               </div>
@@ -402,7 +402,7 @@ export default class Feed extends Component {
               {[1, 2, 3, 4, 5].map((data, i) => {
                 return (
                   <div className={styles.feedsContainer}>
-                    <FeedCard />
+                    <FeedCard updateImages={(data) => this.props && this.props.updateImages(data)} />
                   </div>
                 );
               })}

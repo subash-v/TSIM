@@ -54,9 +54,9 @@ export default class FeedCard extends Component {
             <div className={styles.hashTag}>#productivity</div>
             <div className={styles.hashTag}>#productivity</div>
           </div>
-          {/* <div className={styles.completeCourseImagesContainer}>
-            <CompleteCourseImages />
-          </div> */}
+          <div className={styles.completeCourseImagesContainer}>
+            <CompleteCourseImages updateImages={(data) => this.props && this.props.updateImages(data)} />
+          </div>
           {/* <div className={styles.pollingResultContainer}>
 
             <PollingResultWithImage></PollingResultWithImage>
