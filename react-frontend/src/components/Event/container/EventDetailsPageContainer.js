@@ -1,6 +1,10 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { showModal, REGISTER_DETAILS_MODAL } from "../../modules/modal.actions";
+import {
+  showModal,
+  REGISTER_DETAILS_MODAL,
+  SIGNUP_MODULE
+} from "../../modules/modal.actions";
 import EventDetailsPage from "../EventDetailsPage";
 import {
   getEventDetails,
@@ -21,6 +25,9 @@ const mapDispatchToProps = dispatch => {
     },
     bookEvent: (id, details) => {
       dispatch(bookEvent(id, details));
+    },
+    showSignUpModal: data => {
+      dispatch(showModal(SIGNUP_MODULE, data));
     }
   };
 };

@@ -69,7 +69,7 @@ const logedInLinks = [
   {
     data: NETWORK,
     name: "CONNECTION",
-    routeLink: "/network",
+    routeLink: "/connections",
     filledImage: FILLED_NETWORK
   },
   {
