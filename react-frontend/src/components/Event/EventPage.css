@@ -60,7 +60,7 @@
 .filterBase {
   width: 100%;
   height: auto;
-  padding: 25px 120px;
+  padding: 0px 120px 25px 120px;
   background: #ffffff;
 }
 
