@@ -87,49 +87,51 @@ export default class EventPage extends Component {
             </div>
           </div>
           <React.Fragment>
-            <div className={styles.eventSlideHolder}>
-              <EventSliderComponent {...this.props} />
-            </div>
-            <DesktopOnly>
-              <div className={styles.filterBase}>
-                <div className={styles.tagAndFilter}>
-                  <FilterSliderComponent></FilterSliderComponent>
-                  <div className={styles.filterButtonContainer}>
-                    <div
-                      className={styles.fliterButton}
-                      onClick={() => this.props.showFilterModule(this.props)}
-                    >
-                      <Button
-                        type="primary"
-                        backgroundColor={"transparent"}
-                        fontColor={"#4F439A"}
-                        height={40}
-                        width={118}
-                        label="Fliter"
-                        borderRadius={10}
-                      />
+            <CenteredContent>
+              <div className={styles.eventSlideHolder}>
+                <EventSliderComponent {...this.props} />
+              </div>
+              <DesktopOnly>
+                <div className={styles.filterBase}>
+                  <div className={styles.tagAndFilter}>
+                    <FilterSliderComponent></FilterSliderComponent>
+                    <div className={styles.filterButtonContainer}>
+                      <div
+                        className={styles.fliterButton}
+                        onClick={() => this.props.showFilterModule(this.props)}
+                      >
+                        <Button
+                          type="primary"
+                          backgroundColor={"transparent"}
+                          fontColor={"#4F439A"}
+                          height={40}
+                          width={118}
+                          label="Fliter"
+                          borderRadius={10}
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </DesktopOnly>
-            <MobileOnly>
-              <div
-                className={styles.fliterButton}
-                onClick={() => this.props.showFilterModule(this.props)}
-              >
-                <Button
-                  type="primary"
-                  backgroundColor={"transparent"}
-                  borderColor={"#4F439A"}
-                  fontColor={"#4F439A"}
-                  height={30}
-                  width={90}
-                  label="FLITER"
-                  borderRadius={0}
-                />
-              </div>
-            </MobileOnly>
+              </DesktopOnly>
+              <MobileOnly>
+                <div
+                  className={styles.fliterButton}
+                  onClick={() => this.props.showFilterModule(this.props)}
+                >
+                  <Button
+                    type="primary"
+                    backgroundColor={"transparent"}
+                    borderColor={"#4F439A"}
+                    fontColor={"#4F439A"}
+                    height={30}
+                    width={90}
+                    label="FLITER"
+                    borderRadius={0}
+                  />
+                </div>
+              </MobileOnly>
+            </CenteredContent>
           </React.Fragment>
           <CenteredContent>
             <div className={styles.container}>

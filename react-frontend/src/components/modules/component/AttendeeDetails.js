@@ -56,6 +56,7 @@ export default class AttendeeDetails extends Component {
             value={this.state.mobileno}
             placeholder={"Mobile No."}
             height={40}
+            type={"number"}
             onChange={val => {
               this.handleChange({ mobileno: val });
             }}
