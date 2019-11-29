@@ -34,7 +34,7 @@ export default class BlogDetails extends React.Component {
                     <div className={styles.jobTitle}>
                       {this.props.blogDetails && this.props.blogDetails.author}
                     </div>
-                    <div className={styles.jobDate}>Follow</div>
+                    {/* <div className={styles.jobDate}>Follow</div> */}
                   </div>
                   <div className={styles.jobDetails}>
                     <div className={styles.companyLocation}>
@@ -47,10 +47,34 @@ export default class BlogDetails extends React.Component {
               </div>
               <div className={styles.imageContainer}>
                 <div className={styles.socialBlock}>
-                  <img className={styles.socialImg} src={facebook} alt="" />
-                  <img className={styles.socialImg} src={linkedin} alt="" />
-                  <img className={styles.socialImg} src={twitter} alt="" />
-                  <img className={styles.socialImg} src={instagram} alt="" />
+                  <a
+                    href="https://www.facebook.com/femmevista"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img className={styles.socialImg} src={facebook} alt="" />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/company/femmevista"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img className={styles.socialImg} src={linkedin} alt="" />
+                  </a>
+                  <a
+                    href="https://twitter.com/@thestarinme1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img className={styles.socialImg} src={twitter} alt="" />
+                  </a>
+                  <a
+                    href="https://www.instagram.com/the.star.in.me/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img className={styles.socialImg} src={instagram} alt="" />
+                  </a>
                 </div>
               </div>
             </div>
