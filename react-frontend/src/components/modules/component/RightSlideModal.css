@@ -7,7 +7,8 @@
   float: right;
   background: #ffffff;
   animation: slideInLeft 200ms forwards;
-  overflow: scroll;
+  /* overflow-y: scroll;
+  overflow-x: hidden; */
 }
 .base:before {
   content: "";
@@ -21,13 +22,13 @@
   background-position: center;
 }
 .crossIconHide {
-  height: 100vh;
+  height: auto;
   position: fixed;
   width: 100%;
   display: flex;
   justify-content: center;
   animation: slideInUp 200ms forwards;
-  overflow: scroll;
+  overflow: hidden;
 }
 .crossIconHide:before {
   display: none;
