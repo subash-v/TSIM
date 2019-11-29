@@ -68,3 +68,40 @@
   background: #fff;
   z-index: 2;
 }
+@media only screen and (max-width: 1024px) {
+  .base {
+    height: 100%;
+  }
+  .sliderWrapper {
+    height: 100%;
+  }
+  .navHolder {
+    bottom: 10px;
+    left: 0px;
+  }
+  .label {
+    font-size: 12px;
+    padding: 10px 0px;
+    text-align: center;
+  }
+  .border {
+    padding: 30px 10px;
+    width: 33.3%;
+  }
+  .linkText {
+    padding: 0px;
+    font-size: 14px;
+    border: 1px solid #ffff;
+    width: 60px;
+    border-radius: 50%;
+    background: #fff;
+    height: 60px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: bold;
+    cursor: pointer;
+    color: #1a1a1a;
+  }
+}
