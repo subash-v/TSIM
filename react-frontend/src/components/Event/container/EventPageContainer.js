@@ -3,7 +3,8 @@ import { withRouter } from "react-router-dom";
 import {
   showModal,
   FILTER_MODULE,
-  EVENT_DETAIL_SLIDER_COMPONENT
+  EVENT_DETAIL_SLIDER_COMPONENT,
+  SIGNUP_MODULE
 } from "../../modules/modal.actions";
 import EventPage from "../EventPage";
 import {
@@ -21,6 +22,9 @@ const mapDispatchToProps = dispatch => {
     },
     getAllEvents: () => {
       dispatch(getAllEvents());
+    },
+    showSignUpModal: data => {
+      dispatch(showModal(SIGNUP_MODULE, data));
     },
     getEventDetails: id => {
       dispatch(getEventDetails(id));
@@ -40,10 +44,7 @@ const mapStateToProps = state => {
   };
 };
 const EventPageContainer = withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(EventPage)
+  connect(mapStateToProps, mapDispatchToProps)(EventPage)
 );
 
 export default EventPageContainer;

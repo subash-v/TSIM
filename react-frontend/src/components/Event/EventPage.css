@@ -60,7 +60,7 @@
 .filterBase {
   width: 100%;
   height: auto;
-  padding: 25px 120px;
+  padding: 0px 16px 25px 120px;
   background: #ffffff;
 }
 
@@ -107,11 +107,14 @@
 
 .card {
   width: calc((100% / 3));
-  padding: 22.5px;
+  padding: 45px;
   padding-left: 0px;
   flex-shrink: 0;
   display: flex;
   cursor: pointer;
+}
+.card:nth-child(3n) {
+  padding-right: 0px;
 }
 .fixedHeader {
   width: 100%;

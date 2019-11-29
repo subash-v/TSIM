@@ -172,8 +172,8 @@
   width: calc((100% / 3));
   padding: 22.5px;
   padding-left: 0px;
-  flex-shrink: 0;
-  display: flex;
+  /* flex-shrink: 0;
+  display: flex; */
 }
 
 .signUpBarContainer {

@@ -115,36 +115,5 @@ export const stepsInfo = [
     time: "2 pm – 5 pm",
     date: "21 Sep",
     location: "Koramangala, Bengaluru"
-  },
-  {
-    id: 6,
-    stepNumber: 6,
-    img: img2,
-    headerText: "stepNumber: 6",
-    title: "Building a Strong Personal Brand by Uma Kasoji 6",
-    time: "3 pm – 5 pm",
-    date: "21 Sep",
-    location: "Koramangala, Bengaluru"
-  },
-
-  {
-    id: 7,
-    stepNumber: 7,
-    img: img3,
-    headerText: "stepNumber: 7",
-    title: "Building a Strong Personal Brand by Uma Kasoji7",
-    time: "4 pm – 5 pm",
-    date: "21 Sep",
-    location: "Koramangala, Bengaluru"
-  },
-  {
-    id: 8,
-    stepNumber: 8,
-    img: img4,
-    headerText: "stepNumber: 8",
-    title: "Building a Strong Personal Brand by Uma Kasoji,8",
-    time: "4:30 pm – 5 pm",
-    date: "21 Sep, 22 Sep",
-    location: "Koramangala, Bengaluru"
   }
 ];
