@@ -187,7 +187,9 @@ export default class EventDetailsPage extends Component {
               <div className={styles.detailsHolder}>
                 <div className={styles.header}>
                   <div className={styles.seletedText}>About the Workshop</div>
-                  <div className={styles.text}>Testimonials</div>
+                  <DesktopOnly>
+                    <div className={styles.text}>Testimonials</div>
+                  </DesktopOnly>
                 </div>
                 {eventDetails && eventDetails.eventDescription && (
                   <div className={styles.desc}>
