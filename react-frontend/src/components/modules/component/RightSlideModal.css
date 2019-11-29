@@ -7,8 +7,8 @@
   float: right;
   background: #ffffff;
   animation: slideInLeft 200ms forwards;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  /* overflow-y: scroll;
+  overflow-x: hidden; */
 }
 .base:before {
   content: "";

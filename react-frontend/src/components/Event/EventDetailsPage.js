@@ -147,7 +147,10 @@ export default class EventDetailsPage extends Component {
                         />
                       </div>
                       <DesktopOnly>
-                        <div className={styles.eventButton}>
+                        <div
+                          className={styles.eventButton}
+                          onClick={this.props.showSignUpModal}
+                        >
                           <Button
                             type="primary"
                             backgroundColor={"#fff"}
@@ -160,7 +163,10 @@ export default class EventDetailsPage extends Component {
                         </div>
                       </DesktopOnly>
                       <MobileOnly>
-                        <div className={styles.eventButton}>
+                        <div
+                          className={styles.eventButton}
+                          onClick={this.props.showSignUpModal}
+                        >
                           <Button
                             type="primary"
                             backgroundColor={"#fff"}
