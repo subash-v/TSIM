@@ -29,7 +29,7 @@ export default class TermsOfService extends Component {
                 {" "}
                 Unleash the power of branding, connections, networking and
                 guidance through{" "}
-                <div className={styles.starText}>The star in me</div>
+                <div className={styles.starText}>The STAR IN ME</div>
               </p>
               <hr />
               <div className={styles.overview}>
