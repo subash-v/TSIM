@@ -24,8 +24,8 @@ import filled_event from "../../images/Events_header_fill.svg";
 import RESOURCES from "../../images/Resources_Header.svg";
 import FILLED_RESOURCES from "../../images/Resources_Header_blue.svg";
 
-// import FILLED_NOTIFICATION from "../../images";
-// import NOTIFICATION from "../../images";
+import FILLED_NOTIFICATION from "../../images/Notification_on_blue.svg";
+import NOTIFICATION from "../../images/Notification_off.svg";
 
 import IconWithHeader from "../../core/IconWithHeader";
 import ProfileImage from "../../core/ProfileImage";
@@ -79,10 +79,10 @@ const logedInLinks = [
     filledImage: filled_message
   },
   {
-    data: NETWORK,
+    data: NOTIFICATION,
     name: "NOTIFICATION",
     routeLink: "/notification",
-    filledImage: FILLED_NETWORK
+    filledImage: FILLED_NOTIFICATION
   },
   { data: MORE, name: "MORE", routeLink: "/events", filledImage: filled_more }
 ];
@@ -103,7 +103,7 @@ export default class PrimaryHeader extends Component {
     }
   };
   render() {
-    let isUserLogedIn = false;
+    let isUserLogedIn = true;
     return (
       <React.Fragment>
         <DesktopOnly>
@@ -194,7 +194,7 @@ export default class PrimaryHeader extends Component {
                       borderBottom="none"
                     />
                   </div>
-                  {isUserLogedIn && <ProfileImage image={profile} size={2} />}
+                  {isUserLogedIn && <ProfileImage image={profile} size={0} />}
                   {!isUserLogedIn && (
                     <div
                       className={styles.login}
@@ -234,6 +234,7 @@ export default class PrimaryHeader extends Component {
         </DesktopOnly>
         <MobileOnly>
           <MobileHeader
+            {...this.props}
             showSignUpModal={() => this.showSignUpModal()}
             showLoginModal={() => this.showLoginModal()}
           />
