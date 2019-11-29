@@ -203,7 +203,16 @@
   margin-bottom: 50px;
 }
 
-.arrow {
+.arrowb {
+  background: url("../../images/forward-color-blue.svg") no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 15px;
+  height: 15px;
+  margin-left: 5px;
+}
+
+.arrowp {
   background: url("../../images/forward-color.svg") no-repeat;
   background-position: center;
   background-size: cover;
@@ -243,8 +252,8 @@
 }
 
 .featIcon {
-  width: 102px;
-  height: 102px;
+  width: 110px;
+  height: 100px;
   background: url("../../images/featured.svg") no-repeat;
   background-size: cover;
   background-position: center;

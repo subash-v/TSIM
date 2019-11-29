@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styles from "./SecondaryHeader.css";
 import Button from "../general/Button";
-import search from "../../core/img/Search.svg";
+import search from "../../core/img/Search-white.svg";
 import Icon from "../../core/Icon";
 export default class SecondaryHeader extends Component {
   handleredirect = () => {
@@ -53,6 +53,8 @@ export default class SecondaryHeader extends Component {
                   fontColor={"#4F439A"}
                   height={40}
                   width={120}
+                  borderColor={"#ffffff"}
+                  borderRadius={"5px"}
                   label="SIGN UP"
                 />
               </div>

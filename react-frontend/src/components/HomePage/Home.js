@@ -132,6 +132,7 @@ export default class Home extends React.Component {
                     create a visual resume and showcase yourself using videos,
                     pictures and stories?
                   </div>
+<<<<<<< Updated upstream
                   <React.Fragment>
                     <Media query="(min-width:1024px)">
                       <div className={styles.buttonSection}>
@@ -174,6 +175,27 @@ export default class Home extends React.Component {
                       </div>
                     </Media>
                   </React.Fragment>
+=======
+                  <div className={styles.buttonSection}>
+                    <Button
+                      backgroundColor={"#AD5DA3"}
+                      label="BUILD VISUAL PROFILE"
+                      fontSize={"16px"}
+                      lineHeight={"24px"}
+                      width={"298px"}
+                      height={"70px"}
+                      borderRadius={"5px"}
+                      fontFamily={"bold"}
+                      onClick={() => this.props.showSignUpModule()}
+                    />
+                    <div
+                      className={styles.link}
+                      onClick={() => this.handleredirect("/visual-profile")}
+                    >
+                      Learn more
+                    </div>
+                  </div>
+>>>>>>> Stashed changes
                 </div>
               </div>
             )}
@@ -187,11 +209,41 @@ export default class Home extends React.Component {
                   className={styles.homepageCarousal}
                 />
                 <div className={styles.text}>
+<<<<<<< Updated upstream
                   <div className={styles.title}>Look for Apt Guidance</div>{" "}
                   <div className={styles.subText}>
                     If you need career guidance, then look no further. You can
                     find a career guide who has walked your path and can guide
                     you on your journey.
+=======
+                  <div className={styles.title}>Seek Guidance</div>{" "}
+                  <div className={styles.subText}>
+                  There are times when we need more than a sounding board. 
+                  <br/>
+                  We need a person with experience in our field, to guide us.
+                    <br />
+                    <br />
+                    Reach out to a guide or become one.
+                  </div>
+                  <div className={styles.buttonSection}>
+                    <Button
+                      backgroundColor={"#AD5DA3"}
+                      label="SEEK GUIDANCE"
+                      fontSize={"16px"}
+                      lineHeight={"24px"}
+                      width={"298px"}
+                      height={"70px"}
+                      borderRadius={"5px"}
+                      fontFamily={"bold"}
+                      onClick={() => this.props.showSignUpModule()}
+                    />
+                    <div
+                      className={styles.link}
+                      onClick={() => this.handleredirect("/seek-guide")}
+                    >
+                      Learn more
+                    </div>
+>>>>>>> Stashed changes
                   </div>
                   <React.Fragment>
                     <DesktopOnly>
@@ -257,6 +309,7 @@ export default class Home extends React.Component {
                     <br />
                     We make networking easy.
                   </div>
+<<<<<<< Updated upstream
                   <React.Fragment>
                     <DesktopOnly>
                       <div className={styles.buttonSection}>
@@ -299,6 +352,27 @@ export default class Home extends React.Component {
                       </div>{" "}
                     </MobileOnly>
                   </React.Fragment>
+=======
+                  <div className={styles.buttonSection}>
+                    <Button
+                      backgroundColor={"#AD5DA3"}
+                      label="REGISTER FOR AN EVENT"
+                      fontSize={"16px"}
+                      lineHeight={"24px"}
+                      width={"298px"}
+                      height={"70px"}
+                      borderRadius={"5px"}
+                      fontFamily={"bold"}
+                      onClick={() => this.props.showSignUpModule()}
+                    />
+                    <div
+                      className={styles.link}
+                      onClick={() => this.handleredirect("/event")}
+                    >
+                      View all events
+                    </div>
+                  </div>{" "}
+>>>>>>> Stashed changes
                 </div>
               </div>
             )}
@@ -320,6 +394,7 @@ export default class Home extends React.Component {
                     <br />
                     We make networking easy.
                   </div>
+<<<<<<< Updated upstream
                   <React.Fragment>
                     <DesktopOnly>
                       {" "}
@@ -366,10 +441,33 @@ export default class Home extends React.Component {
                       </div>
                     </MobileOnly>
                   </React.Fragment>
+=======
+                  <div className={styles.buttonSection}>
+                    {" "}
+                    <Button
+                      backgroundColor={"#AD5DA3"}
+                      label="READ OUR BLOGS"
+                      fontSize={"16px"}
+                      lineHeight={"24px"}
+                      width={"298px"}
+                      height={"70px"}
+                      borderRadius={"5px"}
+                      fontFamily={"bold"}
+                      onClick={() => this.props.showSignUpModule()}
+                    />
+                    <div
+                      className={styles.link}
+                      onClick={() => this.handleredirect("/blog")}
+                    >
+                      View all blogs
+                    </div>
+                  </div>
+>>>>>>> Stashed changes
                 </div>
               </div>
             )}
           </div>
+<<<<<<< Updated upstream
           <React.Fragment>
             <Media query="(max-width:767px)">
               <div className={styles.navButtonSection}>
@@ -429,6 +527,45 @@ export default class Home extends React.Component {
                   ></ProgressBar>
                   <div style={{ border: "1px solid red" }}></div>
                 </MobileOnly> */}
+=======
+          <div className={styles.navButtonSection}>
+            <CenteredContent contentWidth={"1200px"}>
+              <div
+                className={styles.navButton}
+                onClick={() => this.handleCarousel(1)}
+              >
+                BUILD
+                <br /> VISUAL PROFILE
+                <div
+                  className={
+                    this.state.slideIndex === 1 ? styles.innerTriangle : null
+                  }
+                ></div>
+              </div>
+              <div
+                className={styles.navButton}
+                onClick={() => this.handleCarousel(2)}
+              >
+                SEEK
+                <br /> GUIDANCE
+                <div
+                  className={
+                    this.state.slideIndex === 2 ? styles.innerTriangle : null
+                  }
+                ></div>
+              </div>
+              <div
+                className={styles.navButton}
+                onClick={() => this.handleCarousel(3)}
+              >
+                FIND
+                <br /> INTERESTING EVENTS
+                <div
+                  className={
+                    this.state.slideIndex === 3 ? styles.innerTriangle : null
+                  }
+                ></div>
+>>>>>>> Stashed changes
               </div>
             </Media>
             <Media query="(min-width:1024px)">
@@ -512,6 +649,7 @@ export default class Home extends React.Component {
                 VIEW ALL <div className={styles.arrow}></div>
               </div>
             </div>
+<<<<<<< Updated upstream
           </Media>
           <Media query="(max-width:767px)">
             <div className={styles.eventsLink}>
@@ -530,6 +668,13 @@ export default class Home extends React.Component {
                   VIEW ALL <div className={styles.arrow}></div>
                 </div>
               </div>
+=======
+            <div
+              className={styles.viewAllButton}
+              onClick={() => this.handleredirect("/event")}
+            >
+              VIEW ALL <div className={styles.arrowp}></div>
+>>>>>>> Stashed changes
             </div>
           </Media>
           <div className={styles.carousel}>
@@ -573,7 +718,7 @@ export default class Home extends React.Component {
                   onClick={() => this.handleredirect("/blog")}
                 >
                   {" "}
-                  VIEW ALL <div className={styles.arrow}></div>
+                  VIEW ALL <div className={styles.arrowb}></div>
                 </div>
               </div>
             </div>
