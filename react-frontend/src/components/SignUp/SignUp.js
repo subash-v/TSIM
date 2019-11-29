@@ -28,7 +28,7 @@ export default class SignUp extends React.Component {
       nextProps.SignUpDetails &&
       nextProps.SignUpDetails.signUpDetails
     ) {
-      this.props.showTour(this.props);
+      // this.props.showTour(this.props);
     }
   };
 
