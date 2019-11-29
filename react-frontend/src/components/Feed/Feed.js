@@ -14,6 +14,7 @@ import RecommendedConnection from "./RecommendedConnection";
 import Input2 from "../../core/Input2";
 import FeedCard from "./FeedCard";
 import CompleteProfileAlert from "./CompleteProfileAlert";
+import FeedCardOverlay from "./FeedCardOverlay";
 
 const data = [
   {
@@ -412,6 +413,8 @@ export default class Feed extends Component {
                   </div>
                 );
               })}
+              <FeedCardOverlay />
+              <FeedCardOverlay />
               <div className={styles.completeProfileAlertContainer}>
                 <CompleteProfileAlert />
               </div>
