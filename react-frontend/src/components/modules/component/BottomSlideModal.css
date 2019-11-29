@@ -3,6 +3,7 @@
   max-height: calc(100vh - 150px);
   position: fixed;
   animation: slideInUp 200ms forwards;
+  overflow-y: scroll;
 }
 .base:before {
   content: "";
@@ -17,10 +18,11 @@
   background-size: cover;
 }
 .crossIconHide {
-  height: auto;
+  height: 100%;
   max-height: calc(100vh - 150px);
   position: fixed;
-  animation: slideInUp 200ms forwards;
+  animation: BottomSlideModal_slideInUp__1N8ro 200ms forwards;
+  overflow-y: scroll;
 }
 .crossIconHide:before {
   display: none;
