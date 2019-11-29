@@ -7,7 +7,7 @@
   float: right;
   background: #ffffff;
   animation: slideInLeft 200ms forwards;
-  height: 100vh;
+  overflow: scroll;
 }
 .base:before {
   content: "";
@@ -24,11 +24,10 @@
   height: 100vh;
   position: fixed;
   width: 100%;
-  height: auto;
   display: flex;
-  align-items: center;
   justify-content: center;
   animation: slideInUp 200ms forwards;
+  overflow: scroll;
 }
 .crossIconHide:before {
   display: none;
