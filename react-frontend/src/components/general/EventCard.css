@@ -180,4 +180,7 @@
   .cardBase {
     white-space: normal;
   }
+  .contentHeading {
+    font-size: 16px;
+  }
 }
