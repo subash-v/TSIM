@@ -426,20 +426,39 @@ export default class RegisterDetailsModule extends Component {
                       </div>
                     );
                   })}
-                <div
-                  className={styles.button}
-                  onClick={() => this.handleButtonClick()}
-                >
-                  <Button
-                    type="primary"
-                    backgroundColor={"#4F439A"}
-                    fontColor={"#fff"}
-                    height={50}
-                    width={170}
-                    label="Proceed"
-                    borderRadius={5}
-                  />
-                </div>
+
+                {this.state.Proceed <= 3 ? (
+                  <div
+                    className={styles.button}
+                    onClick={() => this.handleButtonClick()}
+                  >
+                    {" "}
+                    <Button
+                      type="primary"
+                      backgroundColor={"#4F439A"}
+                      fontColor={"#fff"}
+                      height={50}
+                      width={170}
+                      label="Proceed"
+                      borderRadius={5}
+                    />
+                  </div>
+                ) : (
+                  <div
+                    className={styles.button}
+                    onClick={() => this.props.closeModal()}
+                  >
+                    <Button
+                      type="primary"
+                      backgroundColor={"#4F439A"}
+                      fontColor={"#fff"}
+                      height={50}
+                      width={170}
+                      label="BACK TO EVENTS"
+                      borderRadius={5}
+                    />
+                  </div>
+                )}
               </div>
             </div>
           </div>
