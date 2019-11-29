@@ -329,7 +329,7 @@ export default class Home extends React.Component {
                   <div
                     className={styles.card}
                     onClick={() => {
-                      this.handleredirect("/eventDetails");
+                      this.handleredirect(`/eventDetails/${val.eventId}`);
                     }}
                   >
                     <Card

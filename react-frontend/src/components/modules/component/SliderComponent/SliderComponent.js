@@ -25,32 +25,35 @@ class SliderComponent extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className={styles.showCross} onClick={()=>this.props.closeModal()}/>
-      <BottomSlideModal>
-        <div className={styles.baseWrapper}>
-          <div className={styles.base}>
-            <div className={styles.sliderWrapper}>
-              <Slider
-                stepsInfo={stepsInfo}
-                stopSlider={this.state.stopSlider}
-                {...this.props}
-                reachedEnd={() => this.showEventSelector()}
-              >
-                {stepsInfo &&
-                  stepsInfo.map(value => {
-                    return (
-                      <div className={styles.topContainer}>
-                        <div className={styles.innerImage}>
-                          <Image image={value.img} />
+        <div
+          className={styles.showCross}
+          onClick={() => this.props.closeModal()}
+        />
+        <BottomSlideModal>
+          <div className={styles.baseWrapper}>
+            <div className={styles.base}>
+              <div className={styles.sliderWrapper}>
+                <Slider
+                  stepsInfo={stepsInfo}
+                  stopSlider={this.state.stopSlider}
+                  {...this.props}
+                  reachedEnd={() => this.showEventSelector()}
+                >
+                  {stepsInfo &&
+                    stepsInfo.map(value => {
+                      return (
+                        <div className={styles.topContainer}>
+                          <div className={styles.innerImage}>
+                            <Image image={value.img} />
+                          </div>
                         </div>
-                      </div>
-                    );
-                  })}
-              </Slider>
+                      );
+                    })}
+                </Slider>
+              </div>
             </div>
           </div>
-        </div>
-      </BottomSlideModal>
+        </BottomSlideModal>
       </React.Fragment>
     );
   }

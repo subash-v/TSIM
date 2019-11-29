@@ -37,11 +37,50 @@ export default class RegisterDetailsModule extends Component {
       ticketCounter: [],
       attende1Detials: null,
       attende2Detials: null,
-      showInputError: false
+      showInputError: false,
+      eventPackages: null
     };
   }
+  componentWillReceiveProps = nextProps => {
+    if (nextProps && nextProps.paymentDetails) {
+      this.setState({ Procced: 4 });
+    }
+  };
   handleButtonClick = () => {
-    if (this.state.Proceed == 4) {
+    let eventPages =
+      this.props.registerEventList &&
+      this.props.registerEventList[0].eventPackages[0];
+    let attende = [];
+    if (this.state.attende1Detials) {
+      attende.push({
+        name: this.state.attende1Detials.name,
+        email: this.state.attende1Detials.email,
+        mobile: this.state.attende1Detials.mobileno,
+        primary: true
+      });
+    }
+    if (this.state.attende2Detials) {
+      attende.push({
+        name: this.state.attende2Detials.name,
+        email: this.state.attende2Detials.email,
+        mobile: this.state.attende2Detials.mobileno
+      });
+    }
+    if (this.state.Proceed == 3) {
+      let data = {
+        userId: 3,
+        slotId: this.props.registerEventList[0].eventSlotId,
+        seats: [
+          {
+            packageId: eventPages.eventPackageId,
+            noOfSeats: this.state.counter,
+            price: this.state.counter * eventPages.price
+          }
+        ],
+        attendees: [...attende]
+      };
+      this.props.bookEvent(this.props.registerEventList[0].eventSlotId, data);
+    } else if (this.state.Proceed == 4) {
       this.props.closeModal();
       window.scrollTo(0, 0);
     } else {
