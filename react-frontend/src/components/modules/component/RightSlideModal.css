@@ -1,5 +1,5 @@
 .base {
-  position: absolute;
+  position: fixed;
   top: 0px;
   right: 0px;
   width: 50vw;
@@ -7,6 +7,7 @@
   float: right;
   background: #ffffff;
   animation: slideInLeft 200ms forwards;
+  overflow: scroll;
 }
 .base:before {
   content: "";
@@ -20,12 +21,13 @@
   background-position: center;
 }
 .crossIconHide {
+  height: 100vh;
+  position: fixed;
   width: 100%;
-  height: auto;
   display: flex;
-  align-items: center;
   justify-content: center;
   animation: slideInUp 200ms forwards;
+  overflow: scroll;
 }
 .crossIconHide:before {
   display: none;

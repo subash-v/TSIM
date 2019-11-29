@@ -6,6 +6,73 @@ import SignUpBar from "./SignUpBar";
 import Footer from "../Footer/Footer";
 import PrimaryHeaderContainer from "../HomePage/container/PrimaryHeaderContainer";
 
+import DesktopOnly from "../general/DesktopOnly";
+import MobileOnly from "../general/MobileOnly";
+const data = [
+  {
+    name: "Pratiksha Gupta",
+    heading: "WEFT Women Entrpreneeurs Annual Conference & Awards 2019",
+    shared: "12k",
+    likes: "12k",
+    comments: "12k",
+    time: 2,
+    tags: ["technology", "technology", "technology"]
+  },
+  {
+    name: "Pratiksha Gupta",
+    heading: "WEFT Women Entrpreneeurs Annual Conference & Awards 2019",
+    shared: "12k",
+    likes: "12k",
+    comments: "12k",
+    time: 2,
+    tags: ["technology", "technology", "technology"]
+  },
+  {
+    name: "Pratiksha Gupta",
+    heading: "WEFT Women Entrpreneeurs Annual Conference & Awards 2019",
+    shared: "12k",
+    likes: "12k",
+    comments: "12k",
+    time: 2,
+    tags: ["technology", "technology", "technology"]
+  },
+  {
+    name: "Pratiksha Gupta",
+    heading: "WEFT Women Entrpreneeurs Annual Conference & Awards 2019",
+    shares: "12k",
+    likes: "12k",
+    comments: "12k",
+    time: 2,
+    tags: ["technology", "technology", "technology"]
+  },
+  {
+    name: "Pratiksha Gupta",
+    heading: "WEFT Women Entrpreneeurs Annual Conference & Awards 2019",
+    shared: "12k",
+    likes: "12k",
+    comments: "12k",
+    time: 2,
+    tags: ["technology", "technology", "technology"]
+  },
+  {
+    name: "Pratiksha Gupta",
+    heading: "WEFT Women Entrpreneeurs Annual Conference & Awards 2019",
+    shared: "12k",
+    likes: "12k",
+    comments: "12k",
+    time: 2,
+    tags: ["technology", "technology", "technology"]
+  },
+  {
+    name: "Pratiksha Gupta",
+    heading: "WEFT Women Entrpreneeurs Annual Conference & Awards 2019",
+    shared: "12k",
+    likes: "12k",
+    comments: "12k",
+    time: 2,
+    tags: ["technology", "technology", "technology"]
+  }
+];
 export default class BlogFeed extends Component {
   componentDidMount = () => {
     if (this.props.getAllBlogs) {
@@ -101,10 +168,17 @@ export default class BlogFeed extends Component {
                     ))}
                 </div>
               </div>
+              <DesktopOnly>
+                <div className={styles.signUpBarContainer}>
+                  <SignUpBar />
+                </div>
+              </DesktopOnly>
+            </div>
+            <MobileOnly>
               <div className={styles.signUpBarContainer}>
                 <SignUpBar />
               </div>
-            </div>
+            </MobileOnly>
           </CenteredContent>
           <div className={styles.footerSection}>
             <Footer history={this.props.history} />

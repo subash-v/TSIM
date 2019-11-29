@@ -4,7 +4,8 @@ import { showModal, REGISTER_DETAILS_MODAL } from "../../modules/modal.actions";
 import EventDetailsPage from "../EventDetailsPage";
 import {
   getEventDetails,
-  getRegisterEvent
+  getRegisterEvent,
+  bookEvent
 } from "../../../actions/event.action";
 
 const mapDispatchToProps = dispatch => {
@@ -17,6 +18,9 @@ const mapDispatchToProps = dispatch => {
     },
     getRegisterEvent: id => {
       dispatch(getRegisterEvent(id));
+    },
+    bookEvent: (id, details) => {
+      dispatch(bookEvent(id, details));
     }
   };
 };
@@ -24,7 +28,11 @@ const mapDispatchToProps = dispatch => {
 const mapStateToProps = state => {
   return {
     eventDetails: state.event.eventDetails,
-    registerEventList: state.event.registerEventList
+    registerEventList: state.event.registerEventList,
+    paymentStatus: state.event.paymentStatus,
+    paymentDetails: state.event.paymentDetails,
+    paymentLoader: state.event.paymentLoader,
+    paymentError: state.event.paymentError
   };
 };
 const EventDetailsPageContainer = withRouter(

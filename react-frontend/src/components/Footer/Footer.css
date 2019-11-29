@@ -112,3 +112,47 @@
   display: inline-block;
   vertical-align: middle;
 }
+@media only screen and (max-width: 1024px) {
+  .footerContainer {
+    padding: 20px;
+  }
+  .appLogo {
+    height: 28px;
+    width: 116px;
+  }
+  .copyrightTxt {
+    font-size: 12px;
+    line-height: 20px;
+  }
+  .columnContainer {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 22px;
+  }
+  .mobileColumn {
+    cursor: pointer;
+    margin-bottom: 25px;
+  }
+  .buttons {
+    font-size: 12px;
+  }
+  .feedbackBlock {
+    max-width: none;
+    margin: 0;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  .socialImg {
+    height: 35px;
+    width: 35px;
+  }
+  .bottomContainer {
+    display: flex;
+    max-width: none;
+    margin: 20px 0px 0px 0px;
+  }
+}

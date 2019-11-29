@@ -20,6 +20,10 @@ export const GET_REGISTER_EVENT_DETAILS_SUCCESS =
 export const GET_REGISTER_EVENT_DETAILS_FAILURE =
   "GET_REGISTER_EVENT_DETAILS_FAILURE";
 
+export const BOOK_EVENT_REQUEST = "BOOK_EVENT_REQUEST";
+export const BOOK_EVENT_SUCCESS = "BOOK_EVENT_SUCCESS";
+export const BOOK_EVENT_FAILURE = "BOOK_EVENT_FAILURE";
+
 export function getAllEventsRequest() {
   return {
     type: GET_ALL_EVENTS_REQUEST,
@@ -171,6 +175,46 @@ export function getRegisterEvent(id) {
     try {
       let url = `events/slots/${id}`;
       const result = await get(url);
+      const resultJson = await result.data;
+      if (resultJson.error) {
+        throw new Error(resultJson.message);
+      }
+      return dispatch(getRegisterEventSuccess(resultJson));
+    } catch (e) {
+      return dispatch(getRegisterEventFailure(e.message));
+    }
+  };
+}
+
+export function bookEventRequest() {
+  return {
+    type: BOOK_EVENT_REQUEST,
+    status: REQUESTING
+  };
+}
+
+export function bookEventSuccess(paymentMessage) {
+  return {
+    type: BOOK_EVENT_SUCCESS,
+    status: SUCCESS,
+    paymentMessage
+  };
+}
+
+export function bookEventFailure(error) {
+  return {
+    type: BOOK_EVENT_FAILURE,
+    status: ERROR,
+    error
+  };
+}
+
+export function bookEvent(id, details) {
+  return async dispatch => {
+    dispatch(getRegisterEventRequest());
+    try {
+      let url = `events/booking/${id}`;
+      const result = await post(url, details);
       const resultJson = await result.data;
       if (resultJson.error) {
         throw new Error(resultJson.message);
