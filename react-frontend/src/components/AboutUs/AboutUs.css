@@ -180,7 +180,38 @@
   z-index: 2;
 }
 @media only screen and (max-width: 768px) {
-  .container {
-    padding: 60px 40px;
+  .leftSection {
+    width: 100%;
+  }
+  .rightSection {
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+  }
+
+  .overview {
+    margin: 20px 0;
+    /* display: flex; */
+    display: inline-block;
+    width: 100%;
+    height: auto;
+  }
+
+  .image {
+    width: 320px;
+    height: 200px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
+  .summary {
+    padding-top: 40px;
+    font-size: 14px;
+    line-height: 22px;
+    font-family: regular;
+    text-align: left;
+  }
+  .overviewSecond {
+    padding: 25px;
   }
 }
