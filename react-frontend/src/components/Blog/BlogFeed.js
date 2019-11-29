@@ -5,6 +5,8 @@ import CenteredContent from "../../core/CenteredContent";
 import SignUpBar from "./SignUpBar";
 import Footer from "../Footer/Footer";
 import PrimaryHeaderContainer from "../HomePage/container/PrimaryHeaderContainer";
+import DesktopOnly from "../general/DesktopOnly";
+import MobileOnly from "../general/MobileOnly";
 const data = [
   {
     name: "Pratiksha Gupta",
@@ -154,10 +156,17 @@ export default class BlogFeed extends Component {
                     ))}
                 </div>
               </div>
+              <DesktopOnly>
+                <div className={styles.signUpBarContainer}>
+                  <SignUpBar />
+                </div>
+              </DesktopOnly>
+            </div>
+            <MobileOnly>
               <div className={styles.signUpBarContainer}>
                 <SignUpBar />
               </div>
-            </div>
+            </MobileOnly>
           </CenteredContent>
           <div className={styles.footerSection}>
             <Footer history={this.props.history} />
