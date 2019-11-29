@@ -50,7 +50,7 @@
   font-size: 28px;
   line-height: 40px;
   font-family: bold;
-  /* border-left: 5px solid #77c09e; */
+  /* border-left: 5px solid #4f439a; */
 }
 
 .summary {
@@ -118,13 +118,13 @@
 
 .rightheader {
   composes: header;
-  border-right: 5px solid #77c09e;
+  border-right: 5px solid #4f439a;
   padding-right: 20px;
 }
 
 .leftheader {
   composes: header;
-  border-left: 5px solid #77c09e;
+  border-left: 5px solid #4f439a;
   padding-left: 20px;
 }
 
