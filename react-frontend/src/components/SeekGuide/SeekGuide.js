@@ -6,6 +6,7 @@ import Button from "../general/Button.js";
 import SignUpBar from "../Blog/SignUpBar";
 import Footer from "../Footer/Footer";
 import PrimaryHeaderContainer from "../HomePage/container/PrimaryHeaderContainer";
+import FooterContainer from "../Footer/FooterContainer";
 export default class SeekGuide extends Component {
   render() {
     return (
@@ -108,7 +109,7 @@ export default class SeekGuide extends Component {
             </div>
           </CenteredContent>
           <div className={styles.footerSection}>
-            <Footer history={this.props.history} />
+            <FooterContainer />
           </div>
         </div>
       </React.Fragment>

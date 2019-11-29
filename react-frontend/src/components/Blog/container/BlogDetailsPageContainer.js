@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { getAllBlogs, getBlogsDetails } from "../../../actions/blog.action";
+import { GET_IN_TOUCH, showModal } from "../../modules/modal.actions";
 import BlogDetails from "../BlogDetails/BlogDetails";
 const mapDispatchToProps = dispatch => {
   return {
@@ -9,6 +10,9 @@ const mapDispatchToProps = dispatch => {
     },
     getBlogsDetails: id => {
       dispatch(getBlogsDetails(id));
+    },
+    showGetInTouchModal: data => {
+      dispatch(showModal(GET_IN_TOUCH, data));
     }
   };
 };

@@ -1,6 +1,6 @@
 .base {
-  height: 100vh;
-  max-height: calc(100vh - 250px);
+  height: auto;
+  max-height: calc(100vh - 150px);
   position: fixed;
   animation: slideInUp 200ms forwards;
 }
@@ -17,8 +17,8 @@
   background-size: cover;
 }
 .crossIconHide {
-  height: 100vh;
-  max-height: calc(100vh - 250px);
+  height: auto;
+  max-height: calc(100vh - 150px);
   position: fixed;
   animation: slideInUp 200ms forwards;
 }

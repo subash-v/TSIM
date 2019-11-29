@@ -117,7 +117,8 @@ const event = (
     case eventAction.PAYMENT_STATUS_REQUEST:
       return Object.assign({}, state, {
         paymentStatus: action.status,
-        paymentLoader: true
+        paymentLoader: true,
+        paymentDetails: null
       });
 
     case eventAction.PAYMENT_STATUS_SUCCESS:

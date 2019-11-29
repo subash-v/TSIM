@@ -1,5 +1,5 @@
 import { SUCCESS, FAILURE, REQUESTING, ERROR } from "../utils/constant";
-import { get, post } from "../utils/apiRequest.js";
+import { get, post, put } from "../utils/apiRequest.js";
 
 export const GET_ALL_EVENTS_REQUEST = "GET_ALL_EVENTS_REQUEST";
 export const GET_ALL_EVENTS_SUCCESS = "GET_ALL_EVENTS_SUCCESS";
@@ -258,7 +258,7 @@ export function paymentStatus(id, details) {
     dispatch(paymentStatusRequest());
     try {
       let url = `events/booking/${id}`;
-      const result = await post(url, details);
+      const result = await put(url, details);
       const resultJson = await result.data;
       if (resultJson.error) {
         throw new Error(resultJson.message);
