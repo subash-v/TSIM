@@ -17,8 +17,8 @@ export default class FeedCard extends Component {
   state = {
     showFeedMenu: false,
     showCommentBox: false,
-    showComments:false, 
-    comments:[]
+    showComments: false,
+    comments: []
   };
   showFeedMenu = () => {
     this.setState({ showFeedMenu: !this.state.showFeedMenu });
@@ -26,15 +26,12 @@ export default class FeedCard extends Component {
   handleClick = () => {
     this.setState({ showCommentBox: !this.state.showCommentBox });
   };
-  // handleClickComment=()=>
   handleChange(event) {
-    console.log(event);
     let existingFile = this.state.comments;
     existingFile.push(...event);
     this.setState({ comments: existingFile });
-    };
-    
-  
+  }
+
   render() {
     return (
       <div className={styles.base}>
@@ -105,10 +102,8 @@ export default class FeedCard extends Component {
               Roundhouse agency
             </div>
             {this.state.comments.map(val => (
-                <div>
-                  {val}
-                 </div>
-              ))}
+              <div>{val}</div>
+            ))}
             <div className={styles.droupcont}>
               <div className={styles.dropupcont}>
                 <div className={styles.dropup} onClick={this.handleClick}>
@@ -134,9 +129,18 @@ export default class FeedCard extends Component {
                     width="25px"
                   />
                 </div>
-                <input className={styles.commentinp} type="text"  onChange={event => this.handleChange(event.target.value)}/>
+                <input
+                  className={styles.commentinp}
+                  type="text"
+                  onChange={event => this.handleChange(event.target.value)}
+                />
                 <div className={styles.combutcont}>
-                  <button className={styles.commentbut} onClick={() => this.handleClickComment()}>Post</button>{" "}
+                  <button
+                    className={styles.commentbut}
+                    onClick={() => this.handleClickComment()}
+                  >
+                    Post
+                  </button>{" "}
                 </div>
               </div>
             )}

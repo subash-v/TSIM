@@ -17,6 +17,7 @@ import Settings from "./components/Settings/SettingsContainer/SettingsContainer"
 import BlogContainer from "./components/Blog/container/BlogContainer";
 import VisualProfileContainer from "./components/VisualProfile/conatiner/VisualProfileContainer";
 import SeekGuideContainer from "./components/SeekGuide/SeekGuideContainer";
+import BlogDetailsContainer from "./components/Blog/container/BlogDetailsPageContainer";
 class App extends Component {
   render() {
     return (
@@ -34,6 +35,7 @@ class App extends Component {
             path="/eventDetails/:eventId"
             component={EventDetailsPageContainer}
           />
+          <Route path="/blogDetails/:blogId" component={BlogDetailsContainer} />
           <Route path="/event" component={EventPageContainer} />
           <Route path="/profile" component={ProfileContainer} />
           <Route path="/feed" component={FeedContainer} />
