@@ -142,7 +142,7 @@ export default class PrimaryHeader extends Component {
                                   ? value.filledImage
                                   : value.data
                               }
-                              size={32}
+                              size={26}
                               header={value.name}
                               fontSize={10}
                             />
