@@ -176,7 +176,9 @@
   flex-shrink: 0;
   display: flex;
 }
-
+.card:nth-child(3n) {
+  padding-right: 0px;
+}
 .signUpBarContainer {
   width: 100%;
   height: auto;
