@@ -17,10 +17,35 @@ export default class SignUp extends React.Component {
       email: "",
       firstName: "",
       lastName: "",
-      newPassword: "",
-      confirmPassword: ""
+      password: "",
+      confirmPassword: "",
+      gender: false
     };
   }
+  componentWillReceiveProps = nextProps => {
+    if (
+      nextProps &&
+      nextProps.SignUpDetails &&
+      nextProps.SignUpDetails.signUpDetails
+    ) {
+      this.props.showTour(this.props);
+    }
+  };
+
+  handleSignUp = () => {
+    if (this.props.postSignUp) {
+      const reqBody = {
+        firstName: this.state.firstName,
+        lastName: this.state.lastName,
+        email: this.state.email,
+        gender: this.state.gender ? "female" : "male",
+        country: this.state.country,
+        password: this.state.password
+      };
+
+      this.props.postSignUp(reqBody);
+    }
+  };
   render() {
     return (
       <React.Fragment>
@@ -38,13 +63,23 @@ export default class SignUp extends React.Component {
                     className={styles.checkbox}
                     type="checkbox"
                     name="Gender"
-                    value="Female"
+                    value="female"
+                    onChange={val =>
+                      this.setState({ gender: !this.state.gender })
+                    }
                   ></input>
                 </div>
                 <div className={styles.femaleCheck}>Yes, I am female</div>
               </div>
+              {this.props.SignUpDetails &&
+                this.props.SignUpDetails.status === "ERROR" && (
+                  <div className={styles.error}>
+                    {this.props.SignUpDetails.error}
+                  </div>
+                )}
               <div className={styles.countrySelection}>
                 <Input2
+                  disabled={!this.state.gender}
                   placeholder="Select your country"
                   value={this.state.country}
                   onChange={val => this.setState({ country: val })}
@@ -109,6 +144,7 @@ export default class SignUp extends React.Component {
               <div className={styles.nameContainer}>
                 <div className={styles.firstName}>
                   <Input2
+                    disabled={!this.state.gender}
                     placeholder="First Name"
                     value={this.state.firstName}
                     onChange={val => this.setState({ firstName: val })}
@@ -124,6 +160,7 @@ export default class SignUp extends React.Component {
                 </div>
                 <div className={styles.lastName}>
                   <Input2
+                    disabled={!this.state.gender}
                     placeholder="Last Name"
                     value={this.state.lastName}
                     onChange={val => this.setState({ lastName: val })}
@@ -140,6 +177,7 @@ export default class SignUp extends React.Component {
               </div>
               <div className={styles.inputBox}>
                 <Input2
+                  disabled={!this.state.gender}
                   placeholder="Email Address"
                   value={this.state.email}
                   onChange={val => this.setState({ email: val })}
@@ -155,9 +193,10 @@ export default class SignUp extends React.Component {
               </div>
               <div className={styles.inputBox}>
                 <Input2
+                  disabled={!this.state.gender}
                   placeholder="New Password (Min 6 Characters)"
-                  value={this.state.newPassword}
-                  onChange={val => this.setState({ newPassword: val })}
+                  value={this.state.password}
+                  onChange={val => this.setState({ password: val })}
                   textStyle={{ fontSize: 14 }}
                   height={50}
                   boxy={true}
@@ -170,6 +209,7 @@ export default class SignUp extends React.Component {
               </div>
               <div className={styles.inputBox}>
                 <Input2
+                  disabled={!this.state.gender}
                   placeholder="Confirm Password"
                   value={this.state.confirmPassword}
                   onChange={val => this.setState({ confirmPassword: val })}
@@ -192,7 +232,8 @@ export default class SignUp extends React.Component {
               </div>
               <div
                 className={styles.signUpButton}
-                onClick={() => this.props.showTour(this.props)}
+                onClick={() => this.handleSignUp()}
+                disabled={false}
               >
                 SIGN UP NOW
               </div>

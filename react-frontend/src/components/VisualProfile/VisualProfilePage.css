@@ -33,16 +33,15 @@
 
 .heading {
   color: #ffffff;
-  font-family: "Open Sans";
+  font-family: "bold";
   font-size: 32px;
-  font-family: bold;
   line-height: 36px;
   margin-bottom: 10px;
 }
 
 .content {
   color: #ffffff;
-  font-family: "Open Sans";
+  font-family: "semibold";
   font-size: 18px;
   line-height: 28px;
   max-width: 500px;
@@ -77,9 +76,8 @@
 }
 
 .questionContainer {
-  font-family: "Open Sans";
+  font-family: "bold";
   font-size: 28px;
-  font-family: bold;
   line-height: 36px;
   margin-bottom: 5px;
 }
@@ -103,7 +101,7 @@
 .buttonContainer {
   width: 100%;
   height: auto;
-  margin-top: 75px
+  margin-top: 75px;
 }
 
 .signUpBarContainer {
@@ -119,4 +117,54 @@
   z-index: 1;
   background: #fff;
   z-index: 2;
+}
+@media only screen and (max-width: 1024px) {
+  .banner {
+    padding: 20px;
+    align-items: flex-end;
+  }
+  .heading {
+    font-size: 24px;
+    margin-bottom: 6px;
+  }
+  .content {
+    font-size: 12px;
+    line-height: 22px;
+    margin-bottom: 20px;
+  }
+  .aboutBase {
+    width: 100%;
+    height: auto;
+    display: block;
+    padding: 25px 20px;
+    margin: 0px;
+  }
+  .aboutConatiner {
+    width: 100%;
+    height: auto;
+    display: block;
+    height: auto;
+  }
+  .aboutContent {
+    padding-top: 0px;
+  }
+  .buttonContainer {
+    margin-top: 25px;
+  }
+  .videoContainer {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin-top: 10px;
+  }
+  .questionContainer {
+    font-size: 16px;
+    display: flex;
+  }
+  .quetionWithColor {
+    margin-left: 5px;
+  }
+  .answer {
+    font-size: 14px;
+  }
 }

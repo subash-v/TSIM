@@ -1,0 +1,54 @@
+.base {
+  width: 100%;
+  height: auto;
+  background: #ffffff;
+}
+.container {
+  width: 100%;
+  height: auto;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 25px;
+  height: 20px;
+  background: url(../../images/tsim_logo.png) no-repeat;
+  background-size: cover;
+  background-position-x: right;
+  cursor: pointer;
+}
+.searchLoginContainer {
+  display: flex;
+  align-items: center;
+}
+.searchLoginHolder {
+  width: 30px;
+  height: 30px;
+  background: #ececec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 16px;
+}
+.searchIcon {
+  width: 16px;
+  height: 16px;
+  background: url(../../images/Search.svg) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.menu {
+  width: 16px;
+  height: 16px;
+  background: url(../../images/Menu_Line.svg) no-repeat;
+  background-size: cover;
+  background-position: center;
+}

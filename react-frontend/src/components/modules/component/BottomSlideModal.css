@@ -1,4 +1,6 @@
 .base {
+  height: auto;
+  max-height: calc(100vh - 150px);
   position: fixed;
   animation: slideInUp 200ms forwards;
 }
@@ -8,13 +10,15 @@
   height: 50px;
   position: absolute;
   right: 20px;
-  top: -40px;
+  top: 0px;
   pointer-events: none;
   background: url("./Images/canceltransperent.png") no-repeat;
   background-position: center;
   background-size: cover;
 }
 .crossIconHide {
+  height: auto;
+  max-height: calc(100vh - 150px);
   position: fixed;
   animation: slideInUp 200ms forwards;
 }
@@ -23,7 +27,7 @@
 }
 .content {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 @keyframes slideInUp {
   0% {

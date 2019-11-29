@@ -3,6 +3,8 @@ import styles from "./SignUpBar.css";
 import SearchAndUpdate from "../general/SearchAndUpdate";
 import signUpImage from "../Images/Signupbanner.svg";
 import Input2 from "../../core/Input2";
+import DesktopOnly from "../general/DesktopOnly";
+import MobileOnly from "../general/MobileOnly";
 export default class SignUpBar extends Component {
   constructor() {
     super();
@@ -15,8 +17,17 @@ export default class SignUpBar extends Component {
       <div className={styles.signupHolder}>
         <div className={styles.signUpContainer}>
           <div className={styles.signup}>
-            <div className={styles.signupText} style={{fontSize:this.props.fontSize}}>{this.props.heading}</div>
-
+            <DesktopOnly>
+              <div
+                className={styles.signupText}
+                style={{ fontSize: this.props.fontSize }}
+              >
+                {this.props.heading}
+              </div>
+            </DesktopOnly>
+            <MobileOnly>
+              <div className={styles.signupText}>{this.props.heading}</div>
+            </MobileOnly>
             <div className={styles.subText}>{this.props.content}</div>
             {this.props.content2 && (
               <div className={styles.subText}>

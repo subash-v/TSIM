@@ -13,9 +13,11 @@ export const WORKEXP_MODAL = "WorkExpModal";
 export const SLIDER_COMPONENT = "Slider";
 export const REGISTER_DETAILS_MODAL = "RegisterDetailsModal";
 export const ALL_CONNECTION_MODAL = "AllConnectionModal";
+export const UPLOAD_PROFILE_IMAGE_MODAL = "ImageUpload";
 export const USER_POST_MODAL = "UserPostModal";
 export const EVENT_DETAIL_SLIDER_COMPONENT = "EventDetailSlider";
-
+export const UPLOAD_CV_MODAL = "UploadCVModal";
+export const GET_IN_TOUCH = "GetInTouchModal";
 
 export function showModal(type, ownProps) {
   const scrollPosition =

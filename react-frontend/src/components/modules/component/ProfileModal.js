@@ -17,13 +17,13 @@ export default class ProfileModal extends Component {
 
           <div className={styles.inpcont}>
             <div className={styles.label}>Name</div>
-            <Input className={styles.input} type="text"></Input>
+            <Input className={styles.input} type="text" height="50px" width="540px"></Input>
             <div className={styles.label}>Designation</div>
-            <Input className={styles.Input} type="text"></Input>
+            <Input className={styles.Input} type="text" height="50px" width="540px"></Input>
             <div className={styles.label}>Location</div>
             <div>
               {" "}
-              <Input className={styles.Input} type="text"></Input>
+              <Input className={styles.Input} type="text" height="50px" width="540px"></Input>
             </div>
             <div className={styles.label}>Professional Summary</div>
             <div>

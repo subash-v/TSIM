@@ -7,6 +7,10 @@ import Footer from "../Footer/Footer";
 import EventSliderComponent from "./EventSliderComponent/EventSliderComponent";
 import PrimaryHeaderContainer from "../HomePage/container/PrimaryHeaderContainer";
 import FilterSliderComponent from "./FilterSliderComponent/FilterSliderComponent";
+import MobileOnly from "../general/MobileOnly";
+import DesktopOnly from "../general/DesktopOnly";
+import MobileHeader from "../HomePage/MobileHeader";
+import FooterContainer from "../Footer/FooterContainer";
 export const carouselData = [
   {
     title: "WEFT Women Entrepreneurs Annual Conference & Awards 2019",
@@ -69,6 +73,10 @@ export default class EventPage extends Component {
       this.props.showEventDetailsModule();
     }
   };
+  componentDidMount = () => {
+    this.props.getAllEvents();
+    this.props.getFilterList();
+  };
   render() {
     return (
       <React.Fragment>
@@ -76,31 +84,52 @@ export default class EventPage extends Component {
           <div className={styles.headerHolder}>
             <div className={styles.fixedHeader}>
               <PrimaryHeaderContainer />
-            </div>{" "}
+            </div>
           </div>
           <React.Fragment>
-            <EventSliderComponent {...this.props} />
-            <div className={styles.filterBase}>
-              <div className={styles.tagAndFilter}>
-                <FilterSliderComponent></FilterSliderComponent>
-                <div className={styles.filterButtonContainer}>
-                  <div
-                    className={styles.fliterButton}
-                    onClick={() => this.props.showFilterModule()}
-                  >
-                    <Button
-                      type="primary"
-                      backgroundColor={"transparent"}
-                      fontColor={"#4F439A"}
-                      height={40}
-                      width={118}
-                      label="Fliter"
-                      borderRadius={10}
-                    />
+            <div className={styles.eventSlideHolder}>
+              <EventSliderComponent {...this.props} />
+            </div>
+            <DesktopOnly>
+              <div className={styles.filterBase}>
+                <div className={styles.tagAndFilter}>
+                  <FilterSliderComponent></FilterSliderComponent>
+                  <div className={styles.filterButtonContainer}>
+                    <div
+                      className={styles.fliterButton}
+                      onClick={() => this.props.showFilterModule(this.props)}
+                    >
+                      <Button
+                        type="primary"
+                        backgroundColor={"transparent"}
+                        fontColor={"#4F439A"}
+                        height={40}
+                        width={118}
+                        label="Fliter"
+                        borderRadius={10}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </DesktopOnly>
+            <MobileOnly>
+              <div
+                className={styles.fliterButton}
+                onClick={() => this.props.showFilterModule(this.props)}
+              >
+                <Button
+                  type="primary"
+                  backgroundColor={"transparent"}
+                  borderColor={"#4F439A"}
+                  fontColor={"#4F439A"}
+                  height={30}
+                  width={90}
+                  label="FLITER"
+                  borderRadius={0}
+                />
+              </div>
+            </MobileOnly>
           </React.Fragment>
           <CenteredContent>
             <div className={styles.container}>
@@ -108,43 +137,48 @@ export default class EventPage extends Component {
                 <div className={styles.recommendedEventsHeading}>
                   Recommended Events
                 </div>
-                <div className={styles.viewAllButtonContainer}>
-                  <Button
-                    type="primary"
-                    backgroundColor={"#E0DEED"}
-                    borderColor="#E0DEED"
-                    fontColor={"#4F439A"}
-                    height={50}
-                    width={210}
-                    label="VIEW ALL"
-                    borderRadius={10}
-                  />
-                </div>
-              </div>
-              <div className={styles.storiesContainer}>
-                {carouselData.map((val, i) => (
-                  <div
-                    className={styles.card}
-                    onClick={() => {
-                      this.handleredirect("/eventDetails");
-                    }}
-                  >
-                    <Card
-                      image={""}
-                      heading={val.title}
-                      time={val.time}
-                      date={val.date}
-                      location={val.location}
-                      key={i}
-                      visibleChildrenDesktop={2}
+                <DesktopOnly>
+                  <div className={styles.viewAllButtonContainer}>
+                    <Button
+                      type="primary"
+                      backgroundColor={"#E0DEED"}
+                      borderColor="#E0DEED"
+                      fontColor={"#4F439A"}
+                      height={50}
+                      width={210}
+                      label="VIEW ALL"
+                      borderRadius={10}
                     />
                   </div>
-                ))}
+                </DesktopOnly>
+              </div>
+              <div className={styles.storiesContainer}>
+                {this.props &&
+                  this.props.allEventDetails &&
+                  this.props.allEventDetails.map((val, i) => (
+                    <div
+                      className={styles.card}
+                      onClick={() => {
+                        this.handleredirect(`/eventDetails/${val.eventId}`);
+                      }}
+                    >
+                      <Card
+                        image={val.imageUrl}
+                        heading={val.title}
+                        time={`${val.eventSlots[0].startTime} - ${val.eventSlots[0].endTime}`}
+                        date={val.eventSlots[0].date}
+                        location={val.eventAddress}
+                        key={i}
+                        eventLabels={val.labels}
+                        visibleChildrenDesktop={2}
+                      />
+                    </div>
+                  ))}
               </div>
             </div>
           </CenteredContent>
           <div className={styles.footerSection}>
-            <Footer history={this.props.history} />
+            <FooterContainer />
           </div>
         </div>
       </React.Fragment>

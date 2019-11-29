@@ -14,6 +14,7 @@ import RecommendedConnection from "./RecommendedConnection";
 import Input2 from "../../core/Input2";
 import FeedCard from "./FeedCard";
 import CompleteProfileAlert from "./CompleteProfileAlert";
+import FeedCardOverlay from "./FeedCardOverlay";
 
 const data = [
   {
@@ -88,6 +89,7 @@ export default class Feed extends Component {
                   width="100%"
                   height="100%"
                   className={styles.imageEventBanner}
+                  alt="someImage"
                 />
                 <div className={styles.overlay}>
                   <div className={styles.bannerEventDetailsContainer}>
@@ -126,6 +128,7 @@ export default class Feed extends Component {
                   width="100%"
                   height="100%"
                   className={styles.image}
+                  alt="someImage"
                 />
                 <div className={styles.overlay}>
                   <div className={styles.bannerStoryContainer}>
@@ -171,6 +174,7 @@ export default class Feed extends Component {
                   width="100%"
                   height="100%"
                   className={styles.image}
+                  alt="someImage"
                 />
                 <div className={styles.overlay}>
                   <div className={styles.bannerStoryContainer}>
@@ -196,6 +200,7 @@ export default class Feed extends Component {
                       width="100%"
                       height="100%"
                       className={styles.image}
+                      alt="someImage"
                     />
                   </div>
                   <div className={styles.connectProfileHolder}>
@@ -205,6 +210,7 @@ export default class Feed extends Component {
                         width="100%"
                         height="100%"
                         className={styles.connectProfileImage}
+                        alt="someImage"
                       />
                     </div>
                     <div className={styles.profileName}>Akarshika Das</div>
@@ -373,6 +379,7 @@ export default class Feed extends Component {
                       width="100%"
                       height="100%"
                       className={styles.connectProfileImage}
+                      alt="someImage"
                     />
                   </div>
                   <Input2
@@ -406,6 +413,8 @@ export default class Feed extends Component {
                   </div>
                 );
               })}
+              <FeedCardOverlay />
+              <FeedCardOverlay />
               <div className={styles.completeProfileAlertContainer}>
                 <CompleteProfileAlert />
               </div>

@@ -6,12 +6,13 @@
   width: auto;
   height: auto;
   display: flex;
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
+  margin-top: 150px;
 }
 
 .userSection {
-  width: 70%;
+  width: 65%;
   border: 1px solid #b2b2b2;
   border-radius: 5px;
   height: auto;
@@ -20,7 +21,7 @@
 }
 
 .requestSection {
-  width: 25%;
+  width: 30%;
   display: inline-block;
   vertical-align: middle;
 }
@@ -129,7 +130,8 @@
   margin: 25px 0;
   width: 100%;
   text-align: center;
-  cursor: pointer;
+  /* cursor: pointer; */
+  pointer-events: none;
 }
 
 .loadMoreText {

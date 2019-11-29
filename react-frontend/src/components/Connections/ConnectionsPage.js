@@ -6,7 +6,7 @@ import image1 from "../../images/Alicia.png";
 import image2 from "../../images/Alison-min.png";
 import image3 from "../../images/Amanda-min.png";
 import image4 from "../../images/Joe-min.png";
-//import ConnectionRequest from "../modules/component/ConnectionRequests";
+import ConnectionRequest from "../modules/component/ConnectionRequests";
 import NavButton from "../modules/component/NavButton";
 import NumberOfConnections from "../../core/NumberOfConnections";
 import Button from "../../core/Button";
@@ -518,7 +518,7 @@ class Connections extends Component {
               })}
           </div>
           <div className={styles.requestSection}>
-           
+            <ConnectionRequest />
           </div>
         </div>
       </React.Fragment>
