@@ -181,7 +181,7 @@
 }
 
 .eventTime {
-  padding: 0px 0px 0px 35px;
+  padding: 0px 0px 0px 23px;
   position: relative;
   color: #1a1a1a;
   font-family: "semibold";
@@ -197,7 +197,7 @@
   background: url(../../images/time.svg) no-repeat;
   background-size: cover;
   background-position: center;
-  left: 12px;
+  left: 0px;
   top: 2px;
 }
 
@@ -368,8 +368,7 @@
   }
   .bannerImage {
     width: 100%;
-
-    height: auto;
+    height: 500px;
     display: block;
   }
   .descriptionBase {

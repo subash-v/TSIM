@@ -149,6 +149,33 @@
 .imageBase {
   position: relative;
 }
+
+@media only screen and (max-width: 768px) {
+  .storiesImage {
+    height: 154px;
+  }
+
+  .homeheadingtext {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .time,
+  .date,
+  .location {
+    font-size: 14px;
+    line-height: 14px;
+  }
+  .cardBase {
+    padding: 15px;
+  }
+
+  .tags {
+    font-size: 10px;
+    font-family: bold;
+    line-height: 18px;
+    padding: 5px;
+  }
+}
 @media only screen and (max-width: 1024px) {
   .cardBase {
     white-space: normal;

@@ -4,7 +4,7 @@ import BlogFeed from "./components/Blog/BlogFeed";
 import styles from "./App.css";
 import MorePage from "./components/HomePage/MorePage";
 import Terms from "./components/TermsAndConditions/TermsAndConditions";
-import Privacy from "./components/TermsAndConditions/TermsAndConditions";
+import Privacy from "./components/TermsAndConditions/Privacy";
 import AboutUs from "./components/AboutUs/AboutUs";
 import ModalContainer from "./components/modules/container/ModalContainer";
 import EventPageContainer from "./components/Event/container/EventPageContainer";

@@ -18,10 +18,10 @@ export default class TermsOfService extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className={styles.banner}>
+        {/* <div className={styles.banner}>
           <div className={styles.title}>The star in me</div>
           <div className={styles.opactityWrapper}></div>
-        </div>
+        </div> */}
         <div className={styles.base}>
           <CenteredContent contentWidth="1200px">
             <div className={styles.container}>
@@ -37,7 +37,7 @@ export default class TermsOfService extends Component {
                   <div
                     className={styles.image}
                     style={{
-                      backgroundImage: `url(${image1})`,
+                      // backgroundImage: `url(${image1})`,
                       backgroundSize: "cover"
                     }}
                   ></div>
