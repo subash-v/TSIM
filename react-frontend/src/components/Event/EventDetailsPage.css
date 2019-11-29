@@ -351,13 +351,86 @@
 }
 
 @media only screen and (max-width: 1024px) {
+  .base {
+    background: #fff;
+  }
   .card {
     width: 100%;
     padding: 10px 0;
   }
 
   .container {
-    padding: 0 43px;
+    padding: 0;
+  }
+  .bannerDescHolder {
+    height: auto;
+    display: block;
+  }
+  .bannerImage {
+    width: 100%;
+
+    height: auto;
+    display: block;
+  }
+  .descriptionBase {
+    width: 100%;
+
+    height: auto;
+    display: block;
+  }
+  .registrationdetails {
+    position: static;
+  }
+  .descriptionContainer {
+    padding: 15px;
+  }
+  .eventButton {
+    margin-right: 0px;
+  }
+  .eventDetails {
+    display: block;
+  }
+  .eventTime {
+    margin-bottom: 10px;
+  }
+  .eventCost {
+    margin-bottom: 10px;
+  }
+  .eventDate {
+    margin-bottom: 10px;
+  }
+  .eventHeading {
+    font-size: 16px;
+  }
+  .eventlevel {
+    font-size: 12px;
+  }
+  .detailsHolder {
+    padding-top: 0px;
+    padding: 15px;
+    background: #fff;
+  }
+  .recommendedEvents {
+    margin-top: 0px;
+    padding-left: 15px;
+  }
+  .storiesContainer {
+    padding: 15px;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: auto;
+  }
+  .storiesContainer::-webkit-scrollbar {
+    display: none;
+  }
+  .card {
+    display: inline-block;
+    margin-right: 5px;
+  }
+  .viewAllButtonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 

@@ -149,3 +149,8 @@
 .imageBase {
   position: relative;
 }
+@media only screen and (max-width: 1024px) {
+  .cardBase {
+    white-space: normal;
+  }
+}
