@@ -79,6 +79,7 @@ export default class SignUp extends React.Component {
                 )}
               <div className={styles.countrySelection}>
                 <Input2
+                  disabled={!this.state.gender}
                   placeholder="Select your country"
                   value={this.state.country}
                   onChange={val => this.setState({ country: val })}
@@ -143,6 +144,7 @@ export default class SignUp extends React.Component {
               <div className={styles.nameContainer}>
                 <div className={styles.firstName}>
                   <Input2
+                    disabled={!this.state.gender}
                     placeholder="First Name"
                     value={this.state.firstName}
                     onChange={val => this.setState({ firstName: val })}
@@ -158,6 +160,7 @@ export default class SignUp extends React.Component {
                 </div>
                 <div className={styles.lastName}>
                   <Input2
+                    disabled={!this.state.gender}
                     placeholder="Last Name"
                     value={this.state.lastName}
                     onChange={val => this.setState({ lastName: val })}
@@ -174,6 +177,7 @@ export default class SignUp extends React.Component {
               </div>
               <div className={styles.inputBox}>
                 <Input2
+                  disabled={!this.state.gender}
                   placeholder="Email Address"
                   value={this.state.email}
                   onChange={val => this.setState({ email: val })}
@@ -189,6 +193,7 @@ export default class SignUp extends React.Component {
               </div>
               <div className={styles.inputBox}>
                 <Input2
+                  disabled={!this.state.gender}
                   placeholder="New Password (Min 6 Characters)"
                   value={this.state.password}
                   onChange={val => this.setState({ password: val })}
@@ -204,6 +209,7 @@ export default class SignUp extends React.Component {
               </div>
               <div className={styles.inputBox}>
                 <Input2
+                  disabled={!this.state.gender}
                   placeholder="Confirm Password"
                   value={this.state.confirmPassword}
                   onChange={val => this.setState({ confirmPassword: val })}
@@ -227,6 +233,7 @@ export default class SignUp extends React.Component {
               <div
                 className={styles.signUpButton}
                 onClick={() => this.handleSignUp()}
+                disabled={false}
               >
                 SIGN UP NOW
               </div>

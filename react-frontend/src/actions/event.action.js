@@ -24,6 +24,10 @@ export const BOOK_EVENT_REQUEST = "BOOK_EVENT_REQUEST";
 export const BOOK_EVENT_SUCCESS = "BOOK_EVENT_SUCCESS";
 export const BOOK_EVENT_FAILURE = "BOOK_EVENT_FAILURE";
 
+export const PAYMENT_STATUS_REQUEST = "PAYMENT_STATUS_REQUEST";
+export const PAYMENT_STATUS_SUCCESS = "PAYMENT_STATUS_SUCCESS";
+export const PAYMENT_STATUS_FAILURE = "PAYMENT_STATUS_FAILURE";
+
 export function getAllEventsRequest() {
   return {
     type: GET_ALL_EVENTS_REQUEST,
@@ -211,7 +215,7 @@ export function bookEventFailure(error) {
 
 export function bookEvent(id, details) {
   return async dispatch => {
-    dispatch(getRegisterEventRequest());
+    dispatch(bookEventRequest());
     try {
       let url = `events/booking/${id}`;
       const result = await post(url, details);
@@ -219,9 +223,49 @@ export function bookEvent(id, details) {
       if (resultJson.error) {
         throw new Error(resultJson.message);
       }
-      return dispatch(getRegisterEventSuccess(resultJson));
+      return dispatch(bookEventSuccess(resultJson));
     } catch (e) {
-      return dispatch(getRegisterEventFailure(e.message));
+      return dispatch(bookEventFailure(e.message));
+    }
+  };
+}
+
+export function paymentStatusRequest() {
+  return {
+    type: PAYMENT_STATUS_REQUEST,
+    status: REQUESTING
+  };
+}
+
+export function paymentStatusSuccess(paymentStatus) {
+  return {
+    type: PAYMENT_STATUS_SUCCESS,
+    status: SUCCESS,
+    paymentStatus
+  };
+}
+
+export function paymentStatusFailure(error) {
+  return {
+    type: PAYMENT_STATUS_FAILURE,
+    status: ERROR,
+    error
+  };
+}
+
+export function paymentStatus(id, details) {
+  return async dispatch => {
+    dispatch(paymentStatusRequest());
+    try {
+      let url = `events/booking/${id}`;
+      const result = await post(url, details);
+      const resultJson = await result.data;
+      if (resultJson.error) {
+        throw new Error(resultJson.message);
+      }
+      return dispatch(paymentStatusSuccess(resultJson));
+    } catch (e) {
+      return dispatch(paymentStatusFailure(e.message));
     }
   };
 }

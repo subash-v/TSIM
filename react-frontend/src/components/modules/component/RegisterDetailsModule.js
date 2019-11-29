@@ -18,6 +18,7 @@ import time_blue from "../../../images/time_blue.svg";
 import Counter from "../../general/Counter";
 import AttendeeDetails from "./AttendeeDetails";
 import HorizantalIconWithHeader from "../../../core/HorizantalIconWithHeader";
+import { RAZOR_PAY_ID } from "../../../utils/constant";
 export default class RegisterDetailsModule extends Component {
   constructor(props) {
     super(props);
@@ -38,12 +39,48 @@ export default class RegisterDetailsModule extends Component {
       attende1Detials: null,
       attende2Detials: null,
       showInputError: false,
-      eventPackages: null
+      eventPackages: null,
+      registerdAddress: null,
+      totalPrice: 0,
+      eventId: null
     };
   }
   componentWillReceiveProps = nextProps => {
+    let totalPrice = this.state.totalPrice * 1000000;
     if (nextProps && nextProps.paymentDetails) {
-      this.setState({ Procced: 4 });
+      let options = {
+        key: RAZOR_PAY_ID,
+        amount: totalPrice, // 2000 paise = INR 20, amount in paisa
+        name: "Merchant Name",
+        description: "Purchase Description",
+        image: "/your_logo.png",
+        order_id:
+          nextProps.paymentDetails &&
+          nextProps.paymentDetails.data &&
+          nextProps.paymentDetails.data.orderId,
+        handler: function(response) {
+          let details = {
+            referenceId: response.razorpay_payment_id,
+            signature: response.razorpay_signature,
+            orderId: response.razorpay_order_id
+          };
+          nextProps.paymentStatus(this.state.eventId, details);
+        },
+        prefill: {
+          name: this.state.attende1Detials.name,
+          email: this.state.attende1Detials.email
+        },
+        notes: {
+          address: this.state.registerdAddress
+        },
+        theme: {
+          color: "#F37254"
+        }
+      };
+
+      let rzp = new window.Razorpay(options);
+      rzp.open();
+      //this.setState({ Procced: 4 });
     }
   };
   handleButtonClick = () => {
@@ -67,6 +104,11 @@ export default class RegisterDetailsModule extends Component {
       });
     }
     if (this.state.Proceed == 3) {
+      this.setState({
+        registerdAddress: attende,
+        totalPrice: this.state.counter * eventPages.price,
+        eventId: this.props.registerEventList[0].eventSlotId
+      });
       let data = {
         userId: 3,
         slotId: this.props.registerEventList[0].eventSlotId,

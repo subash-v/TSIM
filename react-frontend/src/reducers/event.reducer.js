@@ -17,7 +17,9 @@ const event = (
     paymentStatus: null,
     paymentDetails: null,
     paymentLoader: false,
-    paymentError: null
+    paymentError: null,
+
+    paymentStatusDetails: null
   },
   action
 ) => {
@@ -107,6 +109,24 @@ const event = (
         paymentDetails: action.paymentMessage
       });
     case eventAction.BOOK_EVENT_FAILURE:
+      return Object.assign({}, state, {
+        paymentStatus: action.status,
+        paymentLoader: false,
+        paymentError: action.error
+      });
+    case eventAction.PAYMENT_STATUS_REQUEST:
+      return Object.assign({}, state, {
+        paymentStatus: action.status,
+        paymentLoader: true
+      });
+
+    case eventAction.PAYMENT_STATUS_SUCCESS:
+      return Object.assign({}, state, {
+        paymentStatus: action.status,
+        paymentLoader: false,
+        paymentStatusDetails: action.paymentStatus
+      });
+    case eventAction.PAYMENT_STATUS_FAILURE:
       return Object.assign({}, state, {
         paymentStatus: action.status,
         paymentLoader: false,

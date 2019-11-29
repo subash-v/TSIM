@@ -20,6 +20,7 @@ export default class EventDetailsPage extends Component {
     this.props.getRegisterEvent(eventId);
   }
   render() {
+    console.log(this.props);
     const eventDetails = this.props && this.props.eventDetails;
     const eventSlot =
       this.props &&
@@ -37,10 +38,19 @@ export default class EventDetailsPage extends Component {
           <div className={styles.container}>
             <CenteredContent>
               <div className={styles.bannerDescHolder}>
-                <div className={styles.bannerImage}>
-                  {/* <Image image={bannerImage} /> */}
-                  <EventDetailPageSliderComponent></EventDetailPageSliderComponent>
-                </div>
+                {eventDetails && eventDetails.imageUrl && (
+                  <div className={styles.bannerImage}>
+                    {eventDetails && eventDetails.imageUrl ? (
+                      <Image
+                        image={eventDetails.imageUrl}
+                        width="100%"
+                        height="100%"
+                      />
+                    ) : (
+                      <EventDetailPageSliderComponent></EventDetailPageSliderComponent>
+                    )}
+                  </div>
+                )}
                 <div className={styles.descriptionBase}>
                   <div className={styles.descriptionContainer}>
                     <div className={styles.tagContainer}>
@@ -76,13 +86,19 @@ export default class EventDetailsPage extends Component {
                       )}
                     <div className={styles.eventAddressBase}>
                       <div className={styles.eventAdressContainer}>
-                        <div className={styles.eventPlaceName}>
-                          Bangalore International Centre
-                        </div>
+                        {eventDetails && eventDetails.locality && (
+                          <div className={styles.eventPlaceName}>
+                            {eventDetails.locality}
+                          </div>
+                        )}
                         <div className={styles.address}>
                           No. 7, 4th Main Rd, Stage 2{" "}
                         </div>
-                        <div className={styles.address}>Domlur, Bengaluru</div>
+                        {eventDetails && eventDetails.eventAddress && (
+                          <div className={styles.address}>
+                            {eventDetails.eventAddress}
+                          </div>
+                        )}
                       </div>
                       <div className={styles.mapContainer}>
                         {/* <Map
@@ -187,7 +203,9 @@ export default class EventDetailsPage extends Component {
               <div className={styles.detailsHolder}>
                 <div className={styles.header}>
                   <div className={styles.seletedText}>About the Workshop</div>
-                  <div className={styles.text}>Testimonials</div>
+                  <DesktopOnly>
+                    <div className={styles.text}>Testimonials</div>
+                  </DesktopOnly>
                 </div>
                 {eventDetails && eventDetails.eventDescription && (
                   <div className={styles.desc}>

@@ -56,6 +56,7 @@
   border-radius: 3px;
   background-color: #ffffff;
   margin: 0 10px;
+  pointer-events: all;
   cursor: pointer;
 }
 
@@ -114,7 +115,7 @@
 }
 @media only screen and (max-width: 1024px) {
   .footerContainer {
-    padding: 20px;
+    padding: 25px;
   }
   .appLogo {
     height: 28px;
