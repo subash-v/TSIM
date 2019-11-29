@@ -95,61 +95,62 @@ export default class BlogFeed extends Component {
               <PrimaryHeaderContainer />
             </div>{" "}
           </div>
-         
+
           <CenteredContent>
-          <MobileOnly>
-            <div>
-              <BlogSliderComponent></BlogSliderComponent>
-            </div>
-          </MobileOnly>
-            <div className={styles.container}>
-            
-            <DesktopOnly>
-              <div className={styles.bannerBase}>
-                <div className={styles.bannerContainer}>
-                  <div className={styles.banner}>
-                    <div className={styles.bannerContentBase}>
-                      <div className={styles.tagButton}>Self Improvement</div>
-                      <div className={styles.heading}>
-                        Why “Me time” is essential?
-                      </div>
-                      <div className={styles.task}>
-                        Uma Kasoji <span className={styles.dot} /> 2 Mins
-                      </div>
-                      <div className={styles.description}>
-                        When was the last time you took a moment for yourself?
-                        Most of us tend to lead super-charged lives that are
-                        incredibly hectic. And if we do manage…
-                      </div>
-                      <div className={styles.button}>Read More</div>
-                    </div>
-                  </div>
-                </div>
-                <div className={styles.splitbannerContainer}>
-                  <div className={styles.splitbanner1}>
-                    <div className={styles.bannerContentBase}>
-                      <div className={styles.tagButton}>CAREER</div>
-                      <div className={styles.splitbannerHeading}>
-                        WEFT Women Entrepreneurs Annual Conference & Awards 2019
-                      </div>
-                      <div className={styles.task}>
-                        Pratiksha Gupta <span className={styles.dot} /> 2 Mins
-                      </div>
-                    </div>
-                  </div>
-                  <div className={styles.splitbanner2}>
-                    <div className={styles.bannerContentBase}>
-                      <div className={styles.tagButton}>CAREER</div>
-                      <div className={styles.splitbannerHeading}>
-                        WEFT Women Entrepreneurs Annual Conference & Awards 2019
-                      </div>
-                      <div className={styles.task}>
-                        Pratiksha Gupta <span className={styles.dot} /> 2 Mins
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            <MobileOnly>
+              <div>
+                <BlogSliderComponent></BlogSliderComponent>
               </div>
+            </MobileOnly>
+            <div className={styles.container}>
+              <DesktopOnly>
+                <div className={styles.bannerBase}>
+                  <div className={styles.bannerContainer}>
+                    <div className={styles.banner}>
+                      <div className={styles.bannerContentBase}>
+                        <div className={styles.tagButton}>Self Improvement</div>
+                        <div className={styles.heading}>
+                          Why “Me time” is essential?
+                        </div>
+                        <div className={styles.task}>
+                          Uma Kasoji <span className={styles.dot} /> 2 Mins
+                        </div>
+                        <div className={styles.description}>
+                          When was the last time you took a moment for yourself?
+                          Most of us tend to lead super-charged lives that are
+                          incredibly hectic. And if we do manage…
+                        </div>
+                        <div className={styles.button}>Read More</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className={styles.splitbannerContainer}>
+                    <div className={styles.splitbanner1}>
+                      <div className={styles.bannerContentBase}>
+                        <div className={styles.tagButton}>CAREER</div>
+                        <div className={styles.splitbannerHeading}>
+                          WEFT Women Entrepreneurs Annual Conference & Awards
+                          2019
+                        </div>
+                        <div className={styles.task}>
+                          Pratiksha Gupta <span className={styles.dot} /> 2 Mins
+                        </div>
+                      </div>
+                    </div>
+                    <div className={styles.splitbanner2}>
+                      <div className={styles.bannerContentBase}>
+                        <div className={styles.tagButton}>CAREER</div>
+                        <div className={styles.splitbannerHeading}>
+                          WEFT Women Entrepreneurs Annual Conference & Awards
+                          2019
+                        </div>
+                        <div className={styles.task}>
+                          Pratiksha Gupta <span className={styles.dot} /> 2 Mins
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </DesktopOnly>
               <div className={styles.storiesBase}>
                 <div className={styles.storiesHeading}>FEATURED STORIES</div>
@@ -161,7 +162,7 @@ export default class BlogFeed extends Component {
                       <div
                         className={styles.card}
                         onClick={() => {
-                          this.handleredirect("/blogDetails");
+                          this.handleredirect(`/blogDetails/${val.blogId}`);
                         }}
                       >
                         <Card

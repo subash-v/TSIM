@@ -57,17 +57,17 @@ export default class Home extends React.Component {
     window.addEventListener("scroll", this.handleScroll);
     this.props.getAllEvents();
     this.props.getAllBlogs();
-    // if (this.state.slideIndex <= this.state.maxSlide) {
-    //   var varss = setInterval(() => {
-    //     this.incrementTime();
-    //   }, 5000);
-    // }
-    // if (this.state.slideIndex > this.state.maxSlide) {
-    //   this.setState({
-    //     slideIndex: 1
-    //   });
-    //   clearInterval(varss);
-    // }
+    if (this.state.slideIndex <= this.state.maxSlide) {
+      var varss = setInterval(() => {
+        this.incrementTime();
+      }, 5000);
+    }
+    if (this.state.slideIndex > this.state.maxSlide) {
+      this.setState({
+        slideIndex: 1
+      });
+      clearInterval(varss);
+    }
   };
   handleredirect = val => {
     if (this.props.history) {

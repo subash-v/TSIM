@@ -41,7 +41,11 @@ export default class EventDetailsPage extends Component {
                 {eventDetails && eventDetails.imageUrl && (
                   <div className={styles.bannerImage}>
                     {eventDetails && eventDetails.imageUrl ? (
-                      <Image image={eventDetails.imageUrl} />
+                      <Image
+                        image={eventDetails.imageUrl}
+                        width="100%"
+                        height="100%"
+                      />
                     ) : (
                       <EventDetailPageSliderComponent></EventDetailPageSliderComponent>
                     )}
