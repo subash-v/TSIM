@@ -29,6 +29,11 @@ export default class AttendeeDetails extends Component {
             onChange={val => {
               this.handleChange({ name: val });
             }}
+            borderColor={
+              this.props.showInputError && !this.state.name
+                ? "#d81818"
+                : "#d2d2d2"
+            }
           />
         </div>
         <div className={styles.inputHolder}>
@@ -39,6 +44,11 @@ export default class AttendeeDetails extends Component {
             onChange={val => {
               this.handleChange({ email: val });
             }}
+            borderColor={
+              this.props.showInputError && !this.state.email
+                ? "#d81818"
+                : "#d2d2d2"
+            }
           />
         </div>
         <div className={styles.inputHolder}>
@@ -49,6 +59,11 @@ export default class AttendeeDetails extends Component {
             onChange={val => {
               this.handleChange({ mobileno: val });
             }}
+            borderColor={
+              this.props.showInputError && !this.state.mobileno
+                ? "#d81818"
+                : "#d2d2d2"
+            }
           />
         </div>
       </div>

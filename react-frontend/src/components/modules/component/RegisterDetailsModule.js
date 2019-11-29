@@ -36,15 +36,18 @@ export default class RegisterDetailsModule extends Component {
       counter: 1,
       ticketCounter: [],
       attende1Detials: null,
-      attende2Detials: null
+      attende2Detials: null,
+      showInputError: false
     };
   }
   handleButtonClick = () => {
     if (this.state.Proceed == 4) {
       this.props.closeModal();
+      window.scrollTo(0, 0);
     } else {
       if (this.state.Proceed == 2) {
         let attendeDetails = this.state.attende1Detials;
+        let attende2Details = this.state.attende2Detials;
         if (
           attendeDetails &&
           attendeDetails.name &&
@@ -52,9 +55,21 @@ export default class RegisterDetailsModule extends Component {
           attendeDetails.mobileno
         ) {
           this.setState({ Proceed: this.state.Proceed + 1 });
+          window.scrollTo(0, 0);
+        } else if (
+          attende2Details &&
+          attende2Details.name &&
+          attende2Details.email &&
+          attende2Details.mobileno
+        ) {
+          this.setState({ Proceed: this.state.Proceed + 1 });
+          window.scrollTo(0, 0);
+        } else {
+          this.setState({ showInputError: true });
         }
       } else {
         this.setState({ Proceed: this.state.Proceed + 1 });
+        window.scrollTo(0, 0);
       }
     }
   };
@@ -98,10 +113,10 @@ export default class RegisterDetailsModule extends Component {
     });
   };
   addAttende1Details = val => {
-    this.setState({ attende1Detials: val });
+    this.setState({ attende1Detials: val, showInputError: false });
   };
   addAttende2Details = val => {
-    this.setState({ attende2Detials: val });
+    this.setState({ attende2Detials: val, showInputError: false });
   };
   render() {
     return (
@@ -296,6 +311,7 @@ export default class RegisterDetailsModule extends Component {
                     <AttendeeDetails
                       title={"Attendee 1"}
                       onChange={val => this.addAttende1Details(val)}
+                      showInputError={this.state.showInputError}
                     />
                   </div>
                   <div className={styles.Attendes}>

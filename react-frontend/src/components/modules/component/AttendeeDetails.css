@@ -14,6 +14,10 @@
 .inputHolder {
   padding: 10px 0px;
 }
+.inputErrorText {
+  color: #d81818;
+  font-size: 10px;
+}
 .attendeHeader {
   color: #1a1a1a;
   font-family: bold;
