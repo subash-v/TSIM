@@ -64,7 +64,7 @@ class SliderComponent extends Component {
                         return (
                           <div className={styles.topContainer}>
                             <div className={styles.innerImage}>
-                              <Image image={value.img} />
+                             <img src={value.img} />
                             </div>
                           </div>
                         );
