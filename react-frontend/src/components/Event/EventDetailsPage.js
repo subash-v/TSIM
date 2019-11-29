@@ -20,6 +20,7 @@ export default class EventDetailsPage extends Component {
     this.props.getRegisterEvent(eventId);
   }
   render() {
+    console.log(this.props);
     const eventDetails = this.props && this.props.eventDetails;
     const eventSlot =
       this.props &&
@@ -76,13 +77,19 @@ export default class EventDetailsPage extends Component {
                       )}
                     <div className={styles.eventAddressBase}>
                       <div className={styles.eventAdressContainer}>
-                        <div className={styles.eventPlaceName}>
-                          Bangalore International Centre
-                        </div>
+                        {eventDetails && eventDetails.locality && (
+                          <div className={styles.eventPlaceName}>
+                            {eventDetails.locality}
+                          </div>
+                        )}
                         <div className={styles.address}>
                           No. 7, 4th Main Rd, Stage 2{" "}
                         </div>
-                        <div className={styles.address}>Domlur, Bengaluru</div>
+                        {eventDetails && eventDetails.eventAddress && (
+                          <div className={styles.address}>
+                            {eventDetails.eventAddress}
+                          </div>
+                        )}
                       </div>
                       <div className={styles.mapContainer}>
                         {/* <Map
