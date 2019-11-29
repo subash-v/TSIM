@@ -19,6 +19,7 @@ import Media from "react-media";
 import DesktopOnly from "../general/DesktopOnly";
 import MobileOnly from "../general/MobileOnly";
 import ProgressBar from "../../core/ProgressBar";
+import FooterContainer from "../Footer/FooterContainer";
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -606,7 +607,7 @@ export default class Home extends React.Component {
           </div>
         </div>
         <div className={styles.footerSection}>
-          <Footer history={this.props.history} />
+          <FooterContainer />
         </div>
       </div>
     );

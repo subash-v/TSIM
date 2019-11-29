@@ -9,6 +9,7 @@ import PrimaryHeaderContainer from "../HomePage/container/PrimaryHeaderContainer
 import DesktopOnly from "../general/DesktopOnly";
 import MobileOnly from "../general/MobileOnly";
 import BlogSliderComponent from "./BlogSliderComponent";
+import FooterContainer from "../Footer/FooterContainer";
 const data = [
   {
     name: "Pratiksha Gupta",
@@ -191,7 +192,7 @@ export default class BlogFeed extends Component {
             </MobileOnly>
           </CenteredContent>
           <div className={styles.footerSection}>
-            <Footer history={this.props.history} />
+            <FooterContainer />
           </div>
         </div>
       </React.Fragment>

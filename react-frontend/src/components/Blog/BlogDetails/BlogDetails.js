@@ -8,6 +8,7 @@ import twitter from "../../../images/Twitter-black.svg";
 import instagram from "../../../images/Instagram.svg";
 import Footer from "../../Footer/Footer";
 import PrimaryHeaderContainer from "../../HomePage/container/PrimaryHeaderContainer";
+import FooterContainer from "../../Footer/FooterContainer";
 
 export default class BlogDetails extends React.Component {
   componentDidMount() {
@@ -107,7 +108,7 @@ export default class BlogDetails extends React.Component {
             <div className={styles.tagName}>Jordan peterson</div>
           </div>
         </CenteredContent>
-        <Footer />
+        <FooterContainer />
       </React.Fragment>
     );
   }

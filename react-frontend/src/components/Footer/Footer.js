@@ -16,6 +16,9 @@ export default class Footer extends React.Component {
       window.open(url, "_blank");
     }
   };
+  handleBackToTop = () => {
+    window.scroll({ top: 0, behavior: "smooth" });
+  };
   render() {
     return (
       <React.Fragment>
@@ -71,6 +74,7 @@ export default class Footer extends React.Component {
                 TERMS AND CONDITIONS <div className={styles.arrow}></div>
               </div>
             </div>
+            showGetInTouchModal
           </div>
 
           <div className={styles.feedbackBlock}>
@@ -87,7 +91,10 @@ export default class Footer extends React.Component {
               <img className={styles.socialImg} src={youtube} alt="" />
             </div>
 
-            <div className={styles.touch}>
+            <div
+              className={styles.touch}
+              onClick={() => this.props.showGetInTouchModal()}
+            >
               <p>GET IN TOUCH</p>
             </div>
 

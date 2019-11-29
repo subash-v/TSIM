@@ -103,7 +103,7 @@ export default class PrimaryHeader extends Component {
     }
   };
   render() {
-    let isUserLogedIn = true;
+    let isUserLogedIn = Cookie.getCookie(ACCESS_TOKEN) ? true : false;
     return (
       <React.Fragment>
         <DesktopOnly>

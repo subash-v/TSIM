@@ -8,6 +8,8 @@ import image3 from "../../images/digital-portfolio.png";
 import image4 from "../../images/entreprener-pic.png";
 import DesktopOnly from "../general/DesktopOnly";
 import MobileOnly from "../general/MobileOnly";
+import FooterContainer from "../Footer/FooterContainer";
+
 export default class TermsOfService extends Component {
   componentDidMount = () => {
     setTimeout(() => {
@@ -284,7 +286,7 @@ export default class TermsOfService extends Component {
             </div>{" "}
           </CenteredContent>
           <div className={styles.footer}>
-            <Footer {...this.props} />
+            <FooterContainer />
           </div>
         </div>
       </React.Fragment>

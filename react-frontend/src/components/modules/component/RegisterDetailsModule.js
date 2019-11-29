@@ -42,15 +42,17 @@ export default class RegisterDetailsModule extends Component {
       eventPackages: null,
       registerdAddress: null,
       totalPrice: 0,
-      eventId: null
+      eventId: null,
+      showPaymentModal: false
     };
   }
   componentWillReceiveProps = nextProps => {
-    let totalPrice = this.state.totalPrice * 1000000;
+    let totalPrice = this.state.totalPrice;
     if (nextProps && nextProps.paymentDetails) {
       let options = {
         key: RAZOR_PAY_ID,
-        amount: totalPrice, // 2000 paise = INR 20, amount in paisa
+        amount: totalPrice * 100,
+        currency: "INR", // 2000 paise = INR 20, amount in paisa
         name: "Merchant Name",
         description: "Purchase Description",
         image: "/your_logo.png",
@@ -64,7 +66,7 @@ export default class RegisterDetailsModule extends Component {
             signature: response.razorpay_signature,
             orderId: response.razorpay_order_id
           };
-          nextProps.paymentStatus(this.state.eventId, details);
+          nextProps.paymentStatus(2, details);
         },
         prefill: {
           name: this.state.attende1Detials.name,
@@ -80,7 +82,9 @@ export default class RegisterDetailsModule extends Component {
 
       let rzp = new window.Razorpay(options);
       rzp.open();
-      //this.setState({ Procced: 4 });
+    }
+    if (nextProps && nextProps.paymentStatusDetails) {
+      this.setState({ showPaymentModal: true });
     }
   };
   handleButtonClick = () => {
@@ -213,7 +217,9 @@ export default class RegisterDetailsModule extends Component {
           <div className={styles.modalBase}>
             <div className={styles.registerHeader}>
               <div className={styles.icon} onClick={() => this.goBack()}>
-                <Icon image={Back} size={22} />
+                {!this.state.showPaymentModal && (
+                  <Icon image={Back} size={22} />
+                )}
               </div>
               <div className={styles.registerText}>Registration Details</div>
             </div>
@@ -233,7 +239,9 @@ export default class RegisterDetailsModule extends Component {
                   third={
                     this.state.Proceed > 2
                       ? "active"
-                      : this.state.Proceed > 3 && "complete"
+                      : (this.state.Proceed > 3 ||
+                          this.state.showPaymentModal) &&
+                        "complete"
                   }
                 />
               </div>
@@ -407,7 +415,7 @@ export default class RegisterDetailsModule extends Component {
                   </div>
                 </div>
               )}
-              {(this.state.Proceed == 3 || this.state.Proceed == 4) &&
+              {(this.state.Proceed == 3 || this.state.showPaymentModal) &&
                 this.props.registerEventList &&
                 this.props.registerEventList[0].eventPackages &&
                 this.props.registerEventList[0].eventPackages.map(val => {
@@ -470,7 +478,7 @@ export default class RegisterDetailsModule extends Component {
                               this.state.attende1Detials.name}
                           </div>
                         </div>
-                        {this.state.Proceed === 4 && (
+                        {this.state.showPaymentModal && (
                           <div className={styles.attendeeText}>
                             (PAYMENT DONE THROUGH DEBIT CARD)
                             <div>

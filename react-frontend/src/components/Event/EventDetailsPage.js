@@ -12,6 +12,7 @@ import PrimaryHeaderContainer from "../HomePage/container/PrimaryHeaderContainer
 import EventDetailPageSliderComponent from "./EventDetailPageSlider/EventDetailPageSliderComponent";
 import DesktopOnly from "../general/DesktopOnly";
 import MobileOnly from "../general/MobileOnly";
+import FooterContainer from "../Footer/FooterContainer";
 
 export default class EventDetailsPage extends Component {
   componentDidMount() {
@@ -20,7 +21,6 @@ export default class EventDetailsPage extends Component {
     this.props.getRegisterEvent(eventId);
   }
   render() {
-    console.log(this.props);
     const eventDetails = this.props && this.props.eventDetails;
     const eventSlot =
       this.props &&
@@ -290,7 +290,7 @@ export default class EventDetailsPage extends Component {
           </div>
 
           <div className={styles.footerSection}>
-            <Footer history={this.props.history} />
+            <FooterContainer />
           </div>
         </div>
       </React.Fragment>
