@@ -10,6 +10,8 @@ import Image from "../../core/Image";
 import profileImage from "../Images/b.jpg";
 import PrimaryHeaderContainer from "../HomePage/container/PrimaryHeaderContainer";
 import EventDetailPageSliderComponent from "./EventDetailPageSlider/EventDetailPageSliderComponent";
+import DesktopOnly from "../general/DesktopOnly";
+import MobileOnly from "../general/MobileOnly";
 
 export default class EventDetailsPage extends Component {
   componentDidMount() {
@@ -128,17 +130,33 @@ export default class EventDetailsPage extends Component {
                           borderRadius={10}
                         />
                       </div>
-                      <div className={styles.eventButton}>
-                        <Button
-                          type="primary"
-                          backgroundColor={"#fff"}
-                          fontColor={"#4F439A"}
-                          height={50}
-                          width={210}
-                          label="I am interested"
-                          borderRadius={10}
-                        />
-                      </div>
+                      <DesktopOnly>
+                        <div className={styles.eventButton}>
+                          <Button
+                            type="primary"
+                            backgroundColor={"#fff"}
+                            fontColor={"#4F439A"}
+                            height={50}
+                            width={210}
+                            label="I am interested"
+                            borderRadius={10}
+                          />
+                        </div>
+                      </DesktopOnly>
+                      <MobileOnly>
+                        <div className={styles.eventButton}>
+                          <Button
+                            type="primary"
+                            backgroundColor={"#fff"}
+                            borderColor={"#fff"}
+                            fontColor={"#4F439A"}
+                            height={50}
+                            width={150}
+                            label="I am interested"
+                            borderRadius={10}
+                          />
+                        </div>
+                      </MobileOnly>
                     </div>
                   </div>
                   <div className={styles.registrationdetails}>
@@ -197,24 +215,28 @@ export default class EventDetailsPage extends Component {
                 </div>
               </div>
             </CenteredContent>
-            <hr />
+            <DesktopOnly>
+              <hr />
+            </DesktopOnly>
             <CenteredContent>
               <div className={styles.recommendedEvents}>
                 <div className={styles.recommendedEventsHeading}>
                   Recommended Events
                 </div>
-                <div className={styles.viewAllButtonContainer}>
-                  <Button
-                    type="primary"
-                    backgroundColor={"#E0DEED"}
-                    borderColor="#E0DEED"
-                    fontColor={"#4F439A"}
-                    height={50}
-                    width={210}
-                    label="VIEW ALL"
-                    borderRadius={10}
-                  />
-                </div>
+                <DesktopOnly>
+                  <div className={styles.viewAllButtonContainer}>
+                    <Button
+                      type="primary"
+                      backgroundColor={"#E0DEED"}
+                      borderColor="#E0DEED"
+                      fontColor={"#4F439A"}
+                      height={50}
+                      width={210}
+                      label="VIEW ALL"
+                      borderRadius={10}
+                    />
+                  </div>
+                </DesktopOnly>
               </div>
               <div className={styles.storiesContainer}>
                 {carouselData.map((val, i) => (
@@ -231,6 +253,21 @@ export default class EventDetailsPage extends Component {
                   </div>
                 ))}
               </div>
+              <MobileOnly>
+                <div className={styles.viewAllButtonContainer}>
+                  <Button
+                    type="primary"
+                    backgroundColor={"#FFF"}
+                    borderColor="#4F439A"
+                    fontColor={"#4F439A"}
+                    height={30}
+                    width={99}
+                    fontSize={"12px"}
+                    label="VIEW ALL"
+                    borderRadius={0}
+                  />
+                </div>
+              </MobileOnly>
             </CenteredContent>
           </div>
 

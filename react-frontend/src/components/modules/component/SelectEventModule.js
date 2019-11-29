@@ -9,7 +9,7 @@ const eventType = [
   { name: "Build your profile" }
 ];
 export default class SelectEventModule extends Component {
-  state = { active: "" };
+  state = { active: eventType[0].name };
   handleClick = val => {
     this.setState({
       active: val

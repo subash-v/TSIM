@@ -2,15 +2,22 @@ import * as eventAction from "../actions/event.action";
 
 const event = (
   state = {
-    allEventDetails: null,
     status: null,
     error: null,
     loading: false,
     eventDetails: null,
+    allEventDetails: null,
+
     filterList: null,
     filterLoader: false,
+
     registerEventList: null,
-    registerEventLoader: false
+    registerEventLoader: false,
+
+    paymentStatus: null,
+    paymentDetails: null,
+    paymentLoader: false,
+    paymentError: null
   },
   action
 ) => {
@@ -86,6 +93,24 @@ const event = (
         status: action.status,
         registerEventLoader: false,
         error: action.error
+      });
+    case eventAction.BOOK_EVENT_REQUEST:
+      return Object.assign({}, state, {
+        paymentStatus: action.status,
+        paymentLoader: true
+      });
+
+    case eventAction.BOOK_EVENT_SUCCESS:
+      return Object.assign({}, state, {
+        paymentStatus: action.status,
+        paymentLoader: false,
+        paymentDetails: action.paymentMessage
+      });
+    case eventAction.BOOK_EVENT_FAILURE:
+      return Object.assign({}, state, {
+        paymentStatus: action.status,
+        paymentLoader: false,
+        paymentError: action.error
       });
     default:
       return state;

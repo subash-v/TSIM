@@ -5,6 +5,7 @@ import CenteredContent from "../../core/CenteredContent";
 import SignUpBar from "./SignUpBar";
 import Footer from "../Footer/Footer";
 import PrimaryHeaderContainer from "../HomePage/container/PrimaryHeaderContainer";
+
 import DesktopOnly from "../general/DesktopOnly";
 import MobileOnly from "../general/MobileOnly";
 import BlogSliderComponent from "./BlogSliderComponent";
@@ -79,6 +80,12 @@ export default class BlogFeed extends Component {
       this.props.getAllBlogs();
     }
   };
+
+  handleredirect = val => {
+    if (this.props.history) {
+      this.props.history.push(`${val}`);
+    }
+  };
   render() {
     return (
       <React.Fragment>
@@ -151,7 +158,12 @@ export default class BlogFeed extends Component {
                   {this.props &&
                     this.props.allBlogsDetails &&
                     this.props.allBlogsDetails.map(val => (
-                      <div className={styles.card}>
+                      <div
+                        className={styles.card}
+                        onClick={() => {
+                          this.handleredirect("/blogDetails");
+                        }}
+                      >
                         <Card
                           name={val.author}
                           tags={val.labels}

@@ -10,10 +10,12 @@ import HomepageEventsCarousel from "../general/HomePageEventsCarousel.";
 import Card from "../general/EventCard";
 import BlogCard from "../general/Card";
 import Carousel from "../general/Carousel";
+import HomePageBannerCarousel from "../general/HomePageBannerCarousel";
 import Footer from "../Footer/Footer";
 import CenteredContent from "../../core/CenteredContent";
 import PrimaryHeaderContainer from "./container/PrimaryHeaderContainer";
 import SecondaryHeaderContainer from "./container/SecondaryHeaderContainer";
+import Media from "react-media";
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -52,17 +54,17 @@ export default class Home extends React.Component {
     window.addEventListener("scroll", this.handleScroll);
     this.props.getAllEvents();
     this.props.getAllBlogs();
-    if (this.state.slideIndex <= this.state.maxSlide) {
-      var varss = setInterval(() => {
-        this.incrementTime();
-      }, 5000);
-    }
-    if (this.state.slideIndex > this.state.maxSlide) {
-      this.setState({
-        slideIndex: 1
-      });
-      clearInterval(varss);
-    }
+    // if (this.state.slideIndex <= this.state.maxSlide) {
+    //   var varss = setInterval(() => {
+    //     this.incrementTime();
+    //   }, 5000);
+    // }
+    // if (this.state.slideIndex > this.state.maxSlide) {
+    //   this.setState({
+    //     slideIndex: 1
+    //   });
+    //   clearInterval(varss);
+    // }
   };
   handleredirect = val => {
     if (this.props.history) {
@@ -158,17 +160,24 @@ export default class Home extends React.Component {
                   className={styles.homepageCarousal}
                 />
                 <div className={styles.text}>
-                  <div className={styles.title}>Welcome to The star in me</div>{" "}
+                  <div className={styles.title}>Look for Apt Guidance</div>{" "}
                   <div className={styles.subText}>
-                    Designed to be a professional ecosystem, The star in me
-                    provides women with an entire spectrum of resources that
-                    equip them for success.
-                    <br />
-                    <br />
-                    For organizations that value diversity, The star in me is a
-                    holistic solution that helps in attracting, engaging and
-                    retaining women talent.
+                    If you need career guidance, then look no further. You can
+                    find a career guide who has walked your path and can guide
+                    you on your journey.
                   </div>
+                  <div className={styles.buttonSection}>
+                    <Button
+                      backgroundColor={"#4F439A"}
+                      label="Find your guide"
+                      fontSize={"16px"}
+                      lineHeight={"24px"}
+                      width={"298px"}
+                      height={"70px"}
+                      fontFamily={"bold"}
+                      onClick={() => this.handleredirect("/seek-guide")}
+                    />
+                  </div>{" "}
                 </div>
               </div>
             )}
@@ -252,58 +261,128 @@ export default class Home extends React.Component {
               </div>
             )}
           </div>
-          <div className={styles.navButtonSection}>
-            <CenteredContent contentWidth={"1200px"}>
-              <div
-                className={styles.navButton}
-                onClick={() => this.handleCarousel(1)}
-              >
-                BUILD
-                <br /> VISUAL PROFILE
+
+          <Media query="(max-width:767px)">
+            <div className={styles.navButtonSection}>
+              {/* <CenteredContent contentWidth={"1200px"}> */}{" "}
+              <React.Fragment>
+                {" "}
+                <HomePageBannerCarousel>
+                  <div
+                    className={styles.navButton}
+                    onClick={() => this.handleCarousel(1)}
+                  >
+                    BUILD
+                    <br /> VISUAL PROFILE
+                    <div
+                      className={
+                        this.state.slideIndex === 1
+                          ? styles.innerTriangle
+                          : null
+                      }
+                    ></div>
+                  </div>
+                  <div
+                    className={styles.navButton}
+                    onClick={() => this.handleCarousel(2)}
+                  >
+                    LOOK FOR
+                    <br /> APT GUIDANCE
+                    <div
+                      className={
+                        this.state.slideIndex === 2
+                          ? styles.innerTriangle
+                          : null
+                      }
+                    ></div>
+                  </div>
+                  <div
+                    className={styles.navButton}
+                    onClick={() => this.handleCarousel(3)}
+                  >
+                    FIND
+                    <br /> INTERESTING EVENTS
+                    <div
+                      className={
+                        this.state.slideIndex === 3
+                          ? styles.innerTriangle
+                          : null
+                      }
+                    ></div>
+                  </div>
+                  <div
+                    className={styles.navButton}
+                    onClick={() => this.handleCarousel(4)}
+                  >
+                    FEATURED
+                    <br /> STORIES
+                    <div
+                      className={
+                        this.state.slideIndex === 4
+                          ? styles.innerTriangle
+                          : null
+                      }
+                    ></div>
+                  </div>
+                </HomePageBannerCarousel>
+              </React.Fragment>
+              {/* </CenteredContent> */}
+            </div>
+          </Media>
+          <Media query="(min-width:1024px)">
+            <div className={styles.navButtonSection}>
+              <CenteredContent contentWidth={"1200px"}>
                 <div
-                  className={
-                    this.state.slideIndex === 1 ? styles.innerTriangle : null
-                  }
-                ></div>
-              </div>
-              <div
-                className={styles.navButton}
-                onClick={() => this.handleCarousel(2)}
-              >
-                LOOK FOR
-                <br /> APT GUIDANCE
+                  className={styles.navButton}
+                  onClick={() => this.handleCarousel(1)}
+                >
+                  BUILD
+                  <br /> VISUAL PROFILE
+                  <div
+                    className={
+                      this.state.slideIndex === 1 ? styles.innerTriangle : null
+                    }
+                  ></div>
+                </div>
                 <div
-                  className={
-                    this.state.slideIndex === 2 ? styles.innerTriangle : null
-                  }
-                ></div>
-              </div>
-              <div
-                className={styles.navButton}
-                onClick={() => this.handleCarousel(3)}
-              >
-                FIND
-                <br /> INTERESTING EVENTS
+                  className={styles.navButton}
+                  onClick={() => this.handleCarousel(2)}
+                >
+                  LOOK FOR
+                  <br /> APT GUIDANCE
+                  <div
+                    className={
+                      this.state.slideIndex === 2 ? styles.innerTriangle : null
+                    }
+                  ></div>
+                </div>
                 <div
-                  className={
-                    this.state.slideIndex === 3 ? styles.innerTriangle : null
-                  }
-                ></div>
-              </div>
-              <div
-                className={styles.navButton}
-                onClick={() => this.handleCarousel(4)}
-              >
-                FEATURED
-                <br /> STORIES
+                  className={styles.navButton}
+                  onClick={() => this.handleCarousel(3)}
+                >
+                  FIND
+                  <br /> INTERESTING EVENTS
+                  <div
+                    className={
+                      this.state.slideIndex === 3 ? styles.innerTriangle : null
+                    }
+                  ></div>
+                </div>
                 <div
-                  className={
-                    this.state.slideIndex === 4 ? styles.innerTriangle : null
-                  }
-                ></div>
-              </div>
-            </CenteredContent>
-          </div>
+                  className={styles.navButton}
+                  onClick={() => this.handleCarousel(4)}
+                >
+                  FEATURED
+                  <br /> STORIES
+                  <div
+                    className={
+                      this.state.slideIndex === 4 ? styles.innerTriangle : null
+                    }
+                  ></div>
+                </div>
+              </CenteredContent>
+            </div>
+          </Media>
 
           <div className={styles.opactityWrapper}></div>
         </div>
@@ -329,7 +408,7 @@ export default class Home extends React.Component {
                   <div
                     className={styles.card}
                     onClick={() => {
-                      this.handleredirect("/eventDetails");
+                      this.handleredirect(`/eventDetails/${val.eventId}`);
                     }}
                   >
                     <Card
