@@ -137,8 +137,9 @@
   justify-content: center;
   color: #fff;
   z-index: 1;
-  width: 50%;
-  left: 120px;
+  width: 1200px;
+  /* width: 50%; */
+  /* left: 120px; */
 }
 
 .title {
@@ -146,11 +147,13 @@
   font-family: bold;
   line-height: 56px;
   margin-bottom: 20px;
+  width: 50%;
 }
 .subText {
   font-size: 18px;
   line-height: 28px;
   margin-bottom: 36px;
+  width: 50%;
 }
 .link {
   font-size: 18px;
@@ -312,4 +315,28 @@
   z-index: 1;
   background: #fff;
   z-index: 2;
+}
+
+@media only screen and (max-width: 768px) {
+  .text {
+    width: auto;
+    left: 0;
+    padding: 0 20px;
+  }
+  .title {
+    width: 100%;
+    font-size: 24px;
+    line-height: 30px;
+  }
+  .subText {
+    width: 100%;
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .navButton {
+    width: 100%;
+    padding: 15px;
+    font-size: 12px;
+    line-height: 20px;
+  }
 }

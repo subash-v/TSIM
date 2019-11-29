@@ -6,10 +6,6 @@ import image1 from "../../images/overview.png";
 import image2 from "../../images/networking-tsim.png";
 import image3 from "../../images/digital-portfolio.png";
 import image4 from "../../images/entreprener-pic.png";
-import logo1 from "../../images/diamond.svg";
-import logo2 from "../../images/chess.svg";
-import logo3 from "../../images/pencil.svg";
-import PrimaryHeaderContainer from "../HomePage/container/PrimaryHeaderContainer";
 
 export default class TermsOfService extends Component {
   componentDidMount = () => {
@@ -22,9 +18,6 @@ export default class TermsOfService extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className={styles.fixedHeader}>
-          <PrimaryHeaderContainer />
-        </div>
         <div className={styles.banner}>
           <div className={styles.title}>The star in me</div>
           <div className={styles.opactityWrapper}></div>
@@ -35,7 +28,8 @@ export default class TermsOfService extends Component {
               <p className={styles.titleText}>
                 {" "}
                 Unleash the power of branding, connections, networking and
-                guidance through <div className={styles.starText}>The star in me</div>
+                guidance through{" "}
+                <div className={styles.starText}>The star in me</div>
               </p>
               <hr />
               <div className={styles.overview}>
