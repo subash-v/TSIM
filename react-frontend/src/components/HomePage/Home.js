@@ -137,7 +137,7 @@ export default class Home extends React.Component {
                     <Media query="(min-width:1024px)">
                       <div className={styles.buttonSection}>
                         <Button
-                        borderRadius={5}
+                          borderRadius={5}
                           backgroundColor={"#AD5DA3"}
                           label="BUILD VISUAL PROFILE"
                           fontSize={"16px"}
@@ -158,7 +158,7 @@ export default class Home extends React.Component {
                     <Media query="(max-width:768px)">
                       <div className={styles.buttonSection}>
                         <Button
-                        borderRadius={5}
+                          borderRadius={5}
                           backgroundColor={"#AD5DA3"}
                           label="BUILD VISUAL PROFILE"
                           fontSize={"14px"}
@@ -190,7 +190,7 @@ export default class Home extends React.Component {
                   className={styles.homepageCarousal}
                 />
                 <div className={styles.text}>
-                  <div className={styles.title}>Look for Apt Guidance</div>{" "}
+                  <div className={styles.title}>Seek Guidance</div>{" "}
                   <div className={styles.subText}>
                     If you need career guidance, then look no further. You can
                     find a career guide who has walked your path and can guide
@@ -200,7 +200,7 @@ export default class Home extends React.Component {
                     <DesktopOnly>
                       <div className={styles.buttonSection}>
                         <Button
-                        borderRadius={5}
+                          borderRadius={5}
                           backgroundColor={"#AD5DA3"}
                           label="Find your guide"
                           fontSize={"16px"}
@@ -222,7 +222,7 @@ export default class Home extends React.Component {
                       {" "}
                       <div className={styles.buttonSection}>
                         <Button
-                        borderRadius={5}
+                          borderRadius={5}
                           backgroundColor={"#AD5DA3"}
                           label="Find your guide"
                           fontSize={"14px"}
@@ -266,7 +266,7 @@ export default class Home extends React.Component {
                     <DesktopOnly>
                       <div className={styles.buttonSection}>
                         <Button
-                        borderRadius={5}
+                          borderRadius={5}
                           backgroundColor={"#AD5DA3"}
                           label="REGISTER FOR AN EVENT"
                           fontSize={"16px"}
@@ -287,7 +287,7 @@ export default class Home extends React.Component {
                     <MobileOnly>
                       <div className={styles.buttonSection}>
                         <Button
-                        borderRadius={5}
+                          borderRadius={5}
                           backgroundColor={"#AD5DA3"}
                           label="REGISTER FOR AN EVENT"
                           fontSize={"14px"}
@@ -333,7 +333,7 @@ export default class Home extends React.Component {
                       <div className={styles.buttonSection}>
                         {" "}
                         <Button
-                        borderRadius={5}
+                          borderRadius={5}
                           backgroundColor={"#AD5DA3"}
                           label="READ OUR BLOGS"
                           fontSize={"16px"}
@@ -356,7 +356,7 @@ export default class Home extends React.Component {
                       <div className={styles.buttonSection}>
                         {" "}
                         <Button
-                        borderRadius={5}
+                          borderRadius={5}
                           backgroundColor={"#AD5DA3"}
                           label="READ OUR BLOGS"
                           fontSize={"14px"}
@@ -460,8 +460,8 @@ export default class Home extends React.Component {
                     className={styles.navButton}
                     onClick={() => this.handleCarousel(2)}
                   >
-                    LOOK FOR
-                    <br /> APT GUIDANCE
+                    SEEK
+                    <br /> GUIDANCE
                     <div
                       className={
                         this.state.slideIndex === 2
@@ -580,7 +580,7 @@ export default class Home extends React.Component {
                   onClick={() => this.handleredirect("/blog")}
                 >
                   {" "}
-                  VIEW ALL <div className={styles.arrow}></div>
+                  VIEW ALL <div className={styles.arrowb}></div>
                 </div>
               </div>
             </div>
