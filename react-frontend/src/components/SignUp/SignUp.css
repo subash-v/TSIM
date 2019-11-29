@@ -24,7 +24,12 @@
   display: inline-block;
   padding-left: 4px;
 }
-
+.error {
+  color: #ee0f0f;
+  font-family: bold;
+  font-size: 14px;
+  padding-bottom: 5px;
+}
 .femaleCheck {
   composes: femaleCheck;
   margin: 15px 0 15px 10px;

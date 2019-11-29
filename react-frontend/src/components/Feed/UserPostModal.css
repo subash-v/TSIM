@@ -39,7 +39,6 @@
 .writePostSelected {
   composes: writePost;
   color: #4f439a;
-
 }
 
 .writePostMessageBox {
@@ -49,7 +48,7 @@
   border-radius: 5px;
   margin-left: -21px;
   margin-bottom: 13px;
-  background-color: #E0DEED;
+  background-color: #e0deed;
 }
 
 .writePostMessageBox::after {
@@ -58,13 +57,11 @@
   top: 30px;
   left: 17px;
   background-color: transparent;
-  border-top: 15px solid #E0DEED;
+  border-top: 15px solid #e0deed;
   border-right: 15px solid transparent;
   border-left: 15px solid transparent;
   border-bottom: none;
 }
-
-
 
 .writePostSelected::before {
   content: "";
@@ -77,7 +74,6 @@
   background-position: center;
   background-size: cover;
   cursor: pointer;
-
 }
 
 .askQuestion {
@@ -408,28 +404,30 @@
 .imageContainer {
   padding: 13px 46px 32px 45px;
   align-items: center;
-
 }
 
 .uploadBox {
   width: 112px;
   height: 85px;
   box-sizing: border-box;
-  border: 1px dashed #E0DEED;
+  border: 1px dashed #e0deed;
   border-radius: 5px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 .displayBox {
-
+  display: flex;
   margin-right: 10px;
   border-radius: 5px;
+  flex-wrap: wrap;
 }
 
 .boxContainer {
   display: flex;
+  flex-direction: row;
   margin-bottom: 30px;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .imageStyle {

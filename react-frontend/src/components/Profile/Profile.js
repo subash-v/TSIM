@@ -137,7 +137,7 @@ export default class Profile extends Component {
         </div>
         <div className={styles.base}>
           <div className={styles.topSection}>
-            <CenteredContent contentWidth="1400px">
+            <CenteredContent contentWidth="1200px">
               <div className={styles.profileSection}>
                 <div className={styles.profile}>
                   <div className={styles.nameWithEdit}>
@@ -157,7 +157,7 @@ export default class Profile extends Component {
                   </div>
                   <div className={styles.profileConnections}>
                     <div className={styles.connections}>
-                      {this.props.connections ? "" : 0}+ Connections
+                      {this.props.connections ? "" : 0} Connections
                       {this.state.tourcount === 1 && (
                         <ToolTip
                           toolTipLeft={"130px"}
@@ -274,7 +274,7 @@ export default class Profile extends Component {
             </CenteredContent>
           </div>{" "}
           <div className={styles.milestones}>
-            <CenteredContent contentWidth="1400px">
+            <CenteredContent contentWidth="1200px">
               {" "}
               <div className={styles.summaryHeader}>Milestones</div>
               <div className={styles.milestoneList}>
@@ -320,7 +320,7 @@ export default class Profile extends Component {
             </CenteredContent>
           </div>
           <div className={styles.journey}>
-            <CenteredContent contentWidth="1400px">
+            <CenteredContent contentWidth="1200px">
               <div className={styles.usersJourney}>
                 <div className={styles.summaryHeader}>
                   {this.props.username ? this.props.userName : "User"}'s
@@ -332,6 +332,7 @@ export default class Profile extends Component {
                     ? this.props.accomplishment
                     : "ADD ACOMPLISHMENTS"}
                 </div>
+
                 <div className={styles.accomplishmentTag}>
                   <div className={styles.boxIcon}></div>
                   <div className={styles.eduIcon}></div>
