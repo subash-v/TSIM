@@ -38,10 +38,15 @@ export default class EventDetailsPage extends Component {
           <div className={styles.container}>
             <CenteredContent>
               <div className={styles.bannerDescHolder}>
-                <div className={styles.bannerImage}>
-                  {/* <Image image={bannerImage} /> */}
-                  <EventDetailPageSliderComponent></EventDetailPageSliderComponent>
-                </div>
+                {eventDetails && eventDetails.imageUrl && (
+                  <div className={styles.bannerImage}>
+                    {eventDetails && eventDetails.imageUrl ? (
+                      <Image image={eventDetails.imageUrl} />
+                    ) : (
+                      <EventDetailPageSliderComponent></EventDetailPageSliderComponent>
+                    )}
+                  </div>
+                )}
                 <div className={styles.descriptionBase}>
                   <div className={styles.descriptionContainer}>
                     <div className={styles.tagContainer}>
