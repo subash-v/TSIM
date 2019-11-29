@@ -6,6 +6,9 @@ import image1 from "../../images/overview.png";
 import image2 from "../../images/networking-tsim.png";
 import image3 from "../../images/digital-portfolio.png";
 import image4 from "../../images/entreprener-pic.png";
+import DesktopOnly from "../general/DesktopOnly";
+import MobileOnly from "../general/MobileOnly";
+import FooterContainer from "../Footer/FooterContainer";
 
 export default class TermsOfService extends Component {
   componentDidMount = () => {
@@ -29,7 +32,7 @@ export default class TermsOfService extends Component {
                 {" "}
                 Unleash the power of branding, connections, networking and
                 guidance through{" "}
-                <div className={styles.starText}>The star in me</div>
+                <div className={styles.starText}>The STAR IN ME</div>
               </p>
               <hr />
               <div className={styles.overview}>
@@ -37,16 +40,23 @@ export default class TermsOfService extends Component {
                   <div
                     className={styles.image}
                     style={{
-                      // backgroundImage: `url(${image1})`,
+                      backgroundImage: `url(${image1})`,
                       backgroundSize: "cover"
                     }}
                   ></div>
                 </div>
                 <div className={styles.rightSection}>
                   <div className={styles.overviewText}>
-                    <div className={styles.rightheader}>
-                      The <strong>Overview</strong>
-                    </div>
+                    <DesktopOnly>
+                      <div className={styles.rightheader}>
+                        The <strong>Overview</strong>
+                      </div>
+                    </DesktopOnly>
+                    <MobileOnly>
+                      <div className={styles.leftheader}>
+                        The <strong>Overview</strong>
+                      </div>
+                    </MobileOnly>
                     <div className={styles.summary}>
                       <b>The star in me</b> is a career advancement platform for
                       women leaders of today and tomorrow and a diversity
@@ -86,9 +96,17 @@ export default class TermsOfService extends Component {
                 </div>
                 <div className={styles.rightSection}>
                   <div className={styles.overviewText}>
-                    <div className={styles.rightheader}>
-                      Her <strong>Digital Portfolio</strong>
-                    </div>
+                    <DesktopOnly>
+                      <div className={styles.rightheader}>
+                        Her <strong>Digital Portfolio</strong>
+                      </div>
+                    </DesktopOnly>
+                    <MobileOnly>
+                      <div className={styles.leftheader}>
+                        Her <strong>Digital Portfolio</strong>
+                      </div>
+                    </MobileOnly>
+
                     <div className={styles.summary}>
                       Resumes and CVs are notorious for lacking interactivity
                       and encouraging readers to skim through them as fast as
@@ -197,23 +215,46 @@ export default class TermsOfService extends Component {
               <hr /> */}
               <div className={styles.overview}>
                 <div className={styles.leftSection}>
-                  <div
-                    className={styles.image}
-                    style={{
-                      backgroundImage: `url(${image4})`,
-                      backgroundSize: "contain",
-                      width: "100%",
-                      height: "442px",
-                      backgroundRepeat: "no-repeat",
-                      backgroundPosition: "center"
-                    }}
-                  ></div>
+                  <DesktopOnly>
+                    <div
+                      className={styles.image}
+                      style={{
+                        backgroundImage: `url(${image4})`,
+                        backgroundSize: "contain",
+                        width: "100%",
+                        height: "442px",
+                        backgroundRepeat: "no-repeat",
+                        backgroundPosition: "center"
+                      }}
+                    ></div>
+                  </DesktopOnly>
+                  <MobileOnly>
+                    <div
+                      className={styles.image}
+                      style={{
+                        backgroundImage: `url(${image4})`,
+                        backgroundSize: "contain",
+                        width: "100%",
+                        height: "250px",
+                        backgroundRepeat: "no-repeat",
+                        backgroundPosition: "center"
+                      }}
+                    ></div>
+                  </MobileOnly>
                 </div>
                 <div className={styles.rightSection}>
                   <div className={styles.overviewText}>
-                    <div className={styles.rightheader}>
-                      The <strong>Entrepreneurs</strong>
-                    </div>
+                    <DesktopOnly>
+                      <div className={styles.rightheader}>
+                        The <strong>Entrepreneurs</strong>
+                      </div>
+                    </DesktopOnly>
+                    <MobileOnly>
+                      <div className={styles.leftheader}>
+                        The <strong>Entrepreneurs</strong>
+                      </div>
+                    </MobileOnly>
+
                     <div className={styles.summary}>
                       <b>Mahua Mukherjee</b> has conceptualized and led multiple
                       global change initiatives spanning 19 years in IT service
@@ -245,7 +286,7 @@ export default class TermsOfService extends Component {
             </div>{" "}
           </CenteredContent>
           <div className={styles.footer}>
-            <Footer {...this.props} />
+            <FooterContainer />
           </div>
         </div>
       </React.Fragment>

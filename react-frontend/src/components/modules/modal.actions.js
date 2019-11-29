@@ -17,6 +17,7 @@ export const UPLOAD_PROFILE_IMAGE_MODAL = "ImageUpload";
 export const USER_POST_MODAL = "UserPostModal";
 export const EVENT_DETAIL_SLIDER_COMPONENT = "EventDetailSlider";
 export const UPLOAD_CV_MODAL = "UploadCVModal";
+export const GET_IN_TOUCH = "GetInTouchModal";
 
 export function showModal(type, ownProps) {
   const scrollPosition =

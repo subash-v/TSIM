@@ -1,11 +1,10 @@
 .base {
-  width: 100%;
+  width: auto;
   height: 100%;
-  overflow-x: hidden !important;
 }
 
 .topSection {
-  width: 100%;
+  width: auto;
   height: 768px;
   min-height: 768px;
   display: flex;
@@ -349,7 +348,7 @@
   }
   .navButton {
     width: 100%;
-    padding: 15px;
+    padding: 15px 0px 15px 15px;
     font-size: 12px;
     line-height: 20px;
     background: none;
@@ -429,5 +428,8 @@
   }
   .homepageCarousal {
     background-position: center;
+  }
+  .navButtonSection {
+    height: 70px;
   }
 }

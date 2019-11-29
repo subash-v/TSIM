@@ -56,12 +56,13 @@
   border-radius: 3px;
   background-color: #ffffff;
   margin: 0 10px;
+  pointer-events: all;
   cursor: pointer;
 }
 
-.socialImg:first-child {
+/* .socialImg:first-child {
   margin-left: 0;
-}
+}*/
 
 .socialImg:last-child {
   margin-right: 0;

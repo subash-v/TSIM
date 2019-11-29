@@ -20,3 +20,13 @@ export async function get(path) {
   const url = `${API_URL_ROOT}/${path}`;
   return await axios.get(url, config);
 }
+
+export async function put(path, postData) {
+  let config = {
+    headers: {
+      Authorization: "Bearer " + Cookie.getCookie(ACCESS_TOKEN)
+    }
+  };
+  const url = `${API_URL_ROOT}/${path}`;
+  return await axios.put(url, postData, config);
+}

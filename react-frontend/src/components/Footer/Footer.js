@@ -9,12 +9,16 @@ import tsim_logo from "../../images/tsim_logo.png";
 import mail from "../../images/Mail.svg";
 import DesktopOnly from "../general/DesktopOnly";
 import MobileOnly from "../general/MobileOnly";
+import { Link } from "react-router-dom";
 
 export default class Footer extends React.Component {
   handleredirect = url => {
     if (this.props.history) {
       window.open(url, "_blank");
     }
+  };
+  handleBackToTop = () => {
+    window.scroll({ top: 0, behavior: "smooth" });
   };
   render() {
     return (
@@ -71,6 +75,7 @@ export default class Footer extends React.Component {
                 TERMS AND CONDITIONS <div className={styles.arrow}></div>
               </div>
             </div>
+            showGetInTouchModal
           </div>
 
           <div className={styles.feedbackBlock}>
@@ -80,14 +85,47 @@ export default class Footer extends React.Component {
 
           <div className={styles.bottomContainer}>
             <div className={styles.socialBlock}>
-              <img className={styles.socialImg} src={facebook} alt="" />
-              <img className={styles.socialImg} src={linkedin} alt="" />
-              <img className={styles.socialImg} src={twitter} alt="" />
-              <img className={styles.socialImg} src={instagram} alt="" />
-              <img className={styles.socialImg} src={youtube} alt="" />
+              <a
+                href="https://www.facebook.com/femmevista"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img className={styles.socialImg} src={facebook} alt="" />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/femmevista"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img className={styles.socialImg} src={linkedin} alt="" />
+              </a>
+              <a
+                href="https://twitter.com/@thestarinme1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img className={styles.socialImg} src={twitter} alt="" />
+              </a>
+              <a
+                href="https://www.instagram.com/the.star.in.me/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img className={styles.socialImg} src={instagram} alt="" />
+              </a>
+              <a
+                href="https://www.youtube.com/channel/UC_s2GyPvpcM_sRaFrwXj5-w/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img className={styles.socialImg} src={youtube} alt="" />
+              </a>
             </div>
 
-            <div className={styles.touch}>
+            <div
+              className={styles.touch}
+              onClick={() => this.props.showGetInTouchModal()}
+            >
               <p>GET IN TOUCH</p>
             </div>
 
@@ -165,11 +203,41 @@ export default class Footer extends React.Component {
             </div>
             <div className={styles.bottomContainer}>
               <div className={styles.socialBlock}>
-                <img className={styles.socialImg} src={facebook} alt="" />
-                <img className={styles.socialImg} src={linkedin} alt="" />
-                <img className={styles.socialImg} src={twitter} alt="" />
-                <img className={styles.socialImg} src={instagram} alt="" />
-                <img className={styles.socialImg} src={youtube} alt="" />
+                <a
+                  href="https://www.facebook.com/femmevista"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img className={styles.socialImg} src={facebook} alt="" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/femmevista"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img className={styles.socialImg} src={linkedin} alt="" />
+                </a>
+                <a
+                  href="https://twitter.com/@thestarinme1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img className={styles.socialImg} src={twitter} alt="" />
+                </a>
+                <a
+                  href="https://www.instagram.com/the.star.in.me/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img className={styles.socialImg} src={instagram} alt="" />
+                </a>
+                <a
+                  href="https://www.youtube.com/channel/UC_s2GyPvpcM_sRaFrwXj5-w/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img className={styles.socialImg} src={youtube} alt="" />
+                </a>
               </div>
             </div>
           </div>

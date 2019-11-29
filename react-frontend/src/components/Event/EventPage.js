@@ -10,6 +10,7 @@ import FilterSliderComponent from "./FilterSliderComponent/FilterSliderComponent
 import MobileOnly from "../general/MobileOnly";
 import DesktopOnly from "../general/DesktopOnly";
 import MobileHeader from "../HomePage/MobileHeader";
+import FooterContainer from "../Footer/FooterContainer";
 export const carouselData = [
   {
     title: "WEFT Women Entrepreneurs Annual Conference & Awards 2019",
@@ -177,7 +178,7 @@ export default class EventPage extends Component {
             </div>
           </CenteredContent>
           <div className={styles.footerSection}>
-            <Footer history={this.props.history} />
+            <FooterContainer />
           </div>
         </div>
       </React.Fragment>
