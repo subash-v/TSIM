@@ -2,18 +2,24 @@ import React, { Component } from "react";
 import styles from "./MobileHeader.css";
 import Image from "../../core/Image";
 import Button from "../general/Button";
+import menu from "../../images/Menu_Line.svg"
 export default class MobileHeader extends Component {
+  state={
+    showSearch:false
+  }
   render() {
     return (
       <div className={styles.base}>
         <div className={styles.container}>
           <div className={styles.logoContainer}>
-            <div className={styles.menu}></div>
             <div className={styles.logo}></div>
           </div>
           <div className={styles.searchLoginContainer}>
             <div className={styles.searchLoginHolder}>
-              <div className={styles.searchIcon}></div>
+              <div className={styles.searchIcon} //onClick={()=>this.setState({showSearch:!this.state.showSearch})}//
+              >
+  
+              </div>
             </div>
             <div
               className={styles.login}
@@ -47,7 +53,10 @@ export default class MobileHeader extends Component {
               />
             </div>
           </div>
+          <div className={styles.menu}></div>
         </div>
+
+
       </div>
     );
   }
