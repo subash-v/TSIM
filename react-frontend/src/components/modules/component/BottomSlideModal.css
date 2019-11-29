@@ -10,7 +10,7 @@
   height: 50px;
   position: absolute;
   right: 20px;
-  top: -40px;
+  top: 0px;
   pointer-events: none;
   background: url("./Images/canceltransperent.png") no-repeat;
   background-position: center;
