@@ -1,12 +1,22 @@
 import React, { Component } from "react";
 import styles from "./SecondaryHeader.css";
 import Button from "../general/Button";
-import search from "../../core/img/Search.svg";
+import search from "../../core/img/Search-white.svg";
 import Icon from "../../core/Icon";
 export default class SecondaryHeader extends Component {
   handleredirect = () => {
     if (this.props.history) {
       this.props.history.push(`/`);
+    }
+  };
+  showModal = () => {
+    if (this.props.showLoginModule) {
+      this.props.showLoginModule(this.props);
+    }
+  };
+  showSignUpModal = () => {
+    if (this.props.showSignUpModule) {
+      this.props.showSignUpModule(this.props);
     }
   };
   render() {
@@ -23,7 +33,7 @@ export default class SecondaryHeader extends Component {
             </div>
 
             <div className={styles.buttonHolder}>
-              <div className={styles.login}>
+              <div className={styles.login} onClick={() => this.showModal()}>
                 <Button
                   type="secondary"
                   height={40}
@@ -33,13 +43,18 @@ export default class SecondaryHeader extends Component {
                   borderColor="none"
                 />
               </div>
-              <div className={styles.signup}>
+              <div
+                className={styles.signup}
+                onClick={() => this.showSignUpModal()}
+              >
                 <Button
                   type="primary"
                   backgroundColor={"#fff"}
                   fontColor={"#4F439A"}
                   height={40}
                   width={120}
+                  borderColor={"#ffffff"}
+                  borderRadius={"5px"}
                   label="SIGN UP"
                 />
               </div>

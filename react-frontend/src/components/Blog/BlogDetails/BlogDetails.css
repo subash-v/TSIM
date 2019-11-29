@@ -1,0 +1,296 @@
+.title {
+  font-size: 30px;
+  font-family: bold;
+  line-height: 38px;
+  margin-bottom: 20px;
+}
+.subText {
+  font-size: 18px;
+  line-height: 28px;
+  margin-bottom: 36px;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.profileImg {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  margin: 50px 0;
+}
+
+.name {
+  font-size: 16px;
+  font-style: regular;
+}
+.picture {
+  flex-direction: row;
+}
+.jobSection {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  /* align-items: center; */
+}
+.professionalIcon {
+  height: 50px;
+  width: 50px;
+  margin-right: 4px;
+}
+.jobIcon {
+  composes: professionalIcon;
+  background: url("../../../images/Job-line-blue.svg") no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-right: 15px;
+}
+
+.jobTitle {
+  color: #1a1a1a;
+  font-family: bold;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.horizontalLine {
+  width: 1px;
+  border: 1px solid #7f7f7f;
+  height: auto;
+  margin: 0 20px;
+}
+
+.jobDate {
+  color: #7f7f7f;
+  font-family: regular;
+  font-size: 14px;
+  line-height: 22px;
+  border: 1px solid #7f7f7f;
+  border-radius: 10%;
+  padding: 2px 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.companyName {
+  color: #4f439a;
+  font-family: regular;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.companyLocation {
+  color: #7f7f7f;
+  font-family: regular;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.companyDescription {
+  color: lightgray;
+  font-family: regular;
+  font-size: 14px;
+  line-height: 22px;
+  padding-top: 15px;
+}
+
+.paragraph {
+  color: #000;
+  font-family: regular;
+  font-size: 16px;
+  line-height: 24px;
+  margin-top: 2em;
+}
+.image {
+  width: 100%;
+}
+.baseContainer {
+  padding: 0 20px 20px 20px;
+  margin-top: 120px;
+  border-bottom: 1px solid #ebeced;
+}
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: "5px";
+}
+
+.img {
+  display: inline-block;
+  vertical-align: middle;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  border: none;
+  margin-left: 5px;
+}
+
+.imageContainer {
+  /* margin-left: 400px; */
+  display: flex;
+}
+.tagName {
+  display: inline-block;
+  padding: 8px;
+  background-color: rgba(0, 0, 0, 0.05);
+  color: rgba(0, 0, 0, 0.54);
+  margin-left: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.jobDescription {
+  width: 100%;
+  display: flex;
+}
+.socialImg {
+  padding-left: 5px;
+}
+
+.fixedHeader {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  transition: 0.5s;
+  z-index: 1;
+  background: #fff;
+  z-index: 2;
+}
+@media only screen and (max-width: 768px) {
+  .baseContainer {
+    padding: 0 20px 20px 20px;
+  }
+
+  .title {
+    font-size: 40px;
+    font-family: bold;
+    line-height: 48px;
+    margin-bottom: 20px;
+  }
+  .subText {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 20px;
+    color: rgba(0, 0, 0, 0.54);
+  }
+  .professionalIcon {
+    height: 48px;
+    width: 48px;
+  }
+  .jobTitle {
+    color: #1a1a1a;
+    font-family: bold;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .jobDate {
+    color: #7f7f7f;
+    font-family: regular;
+    font-size: 16px;
+    line-height: 24px;
+    border: 1px solid #7f7f7f;
+    border-radius: 10%;
+    padding: 00px 0px;
+    margin-left: 4px;
+    cursor: pointer;
+    display: flex;
+    /* display: none; */
+  }
+  .jobSection {
+    /* display: flex; */
+    flex-direction: column-reverse;
+  }
+  .leftWrapper {
+    display: flex;
+    margin-top: 20px;
+  }
+  .tagName {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.05);
+    color: rgba(0, 0, 0, 0.54);
+    margin: 0 0 5px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .wrapper {
+    display: " flex";
+  }
+  .paragraph {
+    color: #000;
+    font-family: regular;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 2em;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .baseContainer {
+    padding: 0 20px 20px 20px;
+  }
+
+  .title {
+    font-size: 40px;
+    font-family: bold;
+    line-height: 48px;
+    margin-bottom: 20px;
+  }
+  .subText {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 20px;
+    color: rgba(0, 0, 0, 0.54);
+  }
+  .professionalIcon {
+    height: 48px;
+    width: 48px;
+  }
+  .jobTitle {
+    color: #1a1a1a;
+    font-family: bold;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .jobDate {
+    color: #7f7f7f;
+    font-family: regular;
+    font-size: 16px;
+    line-height: 24px;
+    border: 1px solid #7f7f7f;
+    border-radius: 10%;
+    padding: 00px 0px;
+    margin-left: 4px;
+    cursor: pointer;
+    display: flex;
+    /* display: none; */
+  }
+  .jobSection {
+    flex-direction: row;
+    margin-bottom: 50px;
+  }
+  .leftWrapper {
+    display: flex;
+    margin-top: 20px;
+  }
+  .tagName {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.05);
+    color: rgba(0, 0, 0, 0.54);
+    margin: 0 0 5px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .wrapper {
+    display: " flex";
+  }
+  .paragraph {
+    color: #000;
+    font-family: regular;
+    font-size: 20px;
+    line-height: 28px;
+    margin-top: 2em;
+  }
+}

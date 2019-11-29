@@ -1,11 +1,10 @@
 .base {
-  width: 100%;
+  width: auto;
   height: 100%;
-  overflow-x: hidden;
 }
 
 .topSection {
-  width: 100%;
+  width: auto;
   height: 768px;
   min-height: 768px;
   display: flex;
@@ -57,7 +56,7 @@
   height: auto;
   text-align: left;
   color: #fff;
-  margin-right: 60px;
+  margin-right: 50px;
   font-size: 16px;
   font-family: bold;
   position: relative;
@@ -93,7 +92,7 @@
 }
 
 .slideshowContainer {
-  /* max-width: 1400px; */
+  /* max-width: 1200px; */
   position: relative;
   margin: auto;
 }
@@ -137,8 +136,9 @@
   justify-content: center;
   color: #fff;
   z-index: 1;
-  width: 50%;
-  left: 120px;
+  width: 1200px;
+  /* width: 50%; */
+  /* left: 120px; */
 }
 
 .title {
@@ -146,11 +146,13 @@
   font-family: bold;
   line-height: 56px;
   margin-bottom: 20px;
+  width: 50%;
 }
 .subText {
   font-size: 18px;
   line-height: 28px;
   margin-bottom: 36px;
+  width: 50%;
 }
 .link {
   font-size: 18px;
@@ -167,9 +169,9 @@
 
 .eventsSection {
   height: auto;
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 100px 40px;
+  padding: 80px 0px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -200,7 +202,16 @@
   margin-bottom: 50px;
 }
 
-.arrow {
+.arrowb {
+  background: url("../../images/forward-color-blue.svg") no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 15px;
+  height: 15px;
+  margin-left: 5px;
+}
+
+.arrowp {
   background: url("../../images/forward-color.svg") no-repeat;
   background-position: center;
   background-size: cover;
@@ -240,8 +251,8 @@
 }
 
 .featIcon {
-  width: 102px;
-  height: 102px;
+  width: 110px;
+  height: 100px;
   background: url("../../images/featured.svg") no-repeat;
   background-size: cover;
   background-position: center;
@@ -279,24 +290,26 @@
   width: 100%;
   height: 80px;
   z-index: 2;
+  top: 0;
+  position: absolute;
 }
 
 .featuredHeader {
   display: flex;
   /* background: #ebeced; */
   margin: 0 auto;
-  max-width: 1400px;
-  padding: 0 40px;
+  max-width: 1200px;
+  padding: 0 0;
 }
 
 .featuredCarousel {
-  position: absolute;
-  top: 250px;
-  max-width: 1400px;
+  position: relative;
+  top: -150px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .footerSection {
-  margin-top: 350px;
   border-top: 1px solid #ebeced;
   padding: 0 40px 50px 40px;
 }
@@ -310,4 +323,113 @@
   z-index: 1;
   background: #fff;
   z-index: 2;
+}
+.eventsMobileSection {
+  display: flex;
+}
+.eventButton {
+}
+
+@media only screen and (max-width: 768px) {
+  .text {
+    width: auto;
+    left: 0;
+    padding: 0 20px;
+  }
+  .title {
+    width: 100%;
+    font-size: 24px;
+    line-height: 30px;
+  }
+  .subText {
+    width: 100%;
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .navButton {
+    width: 100%;
+    padding: 15px 0px 15px 15px;
+    font-size: 12px;
+    line-height: 20px;
+    background: none;
+  }
+  .navButtonSection {
+    padding: 0;
+    background-color: rgba(127, 127, 127, 0.4);
+  }
+  .activeNavButton {
+    composes: navButton;
+    background: rgba(26, 26, 26, 0.4);
+    border-radius: 0;
+  }
+  .eventsSection {
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+  }
+  .eventsLink {
+    width: 100%;
+    position: relative;
+  }
+  .eventText,
+  .featTitle {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 26px;
+  }
+  .eventTitle,
+  .subTitle {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 26px;
+    width: 90%;
+  }
+  .calendarIcon,
+  .featIcon {
+    display: none;
+  }
+  .viewAllButton {
+    background: none;
+    align-items: baseline;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 26px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: auto;
+    width: auto;
+  }
+  .arrow {
+    background-size: contain;
+    width: 9px;
+    height: 9px;
+  }
+
+  .featuredCarousel {
+    position: relative;
+    top: -115px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .footerSection {
+    padding: 0;
+  }
+  .buttonSection {
+    flex-direction: column;
+    align-items: baseline;
+  }
+  .link {
+    margin-left: 0;
+    margin-top: 25px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .homepageCarousal {
+    background-position: center;
+  }
+  .navButtonSection {
+    height: 70px;
+  }
 }

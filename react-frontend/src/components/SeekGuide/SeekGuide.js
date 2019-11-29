@@ -1,18 +1,21 @@
 import React, { Component } from "react";
 import styles from "./SeekGuide.css";
 import CenteredContent from "../../core/CenteredContent";
-import PrimaryHeader from "../HomePage/PrimaryHeader";
 import VideoComponent from "../general/VideoComponent";
 import Button from "../general/Button.js";
 import SignUpBar from "../Blog/SignUpBar";
 import Footer from "../Footer/Footer";
+import PrimaryHeaderContainer from "../HomePage/container/PrimaryHeaderContainer";
+import FooterContainer from "../Footer/FooterContainer";
 export default class SeekGuide extends Component {
   render() {
     return (
       <React.Fragment>
         <div className={styles.base}>
           <div className={styles.headerHolder}>
-            <PrimaryHeader history={this.props.history} />
+            <div className={styles.fixedHeader}>
+              <PrimaryHeaderContainer history={this.props.history} />
+            </div>
           </div>
           <CenteredContent>
             <div className={styles.container}>
@@ -29,7 +32,10 @@ export default class SeekGuide extends Component {
                       Reach out to a guide or become one.{" "}
                     </div>
                     <div className={styles.buttonHolder}>
-                      <div className={styles.button}>
+                      <div
+                        className={styles.button}
+                        onClick={() => this.props.showSignUpModule()}
+                      >
                         <Button
                           type="primary"
                           backgroundColor={"#4F439A"}
@@ -37,17 +43,6 @@ export default class SeekGuide extends Component {
                           height={50}
                           width={210}
                           label="Seek Guidance"
-                          borderRadius={10}
-                        />
-                      </div>
-                      <div className={styles.button}>
-                        <Button
-                          type="primary"
-                          backgroundColor={"#4F439A"}
-                          fontColor={"#fff"}
-                          height={50}
-                          width={210}
-                          label="Register as a guide"
                           borderRadius={10}
                         />
                       </div>
@@ -61,11 +56,13 @@ export default class SeekGuide extends Component {
                     <div className={styles.questionContainer}>
                       <div className={styles.question}>How do I </div>
                       <div className={styles.quetionWithColor}>
-                      seek guidance?
+                        seek guidance?
                       </div>
                     </div>
                     <div className={styles.answer}>
-                    Get career guidance from experts in your field. And if you are an expert yourself, do register as a guide to help others. 
+                      Get career guidance from experts in your field. And if you
+                      are an expert yourself, do register as a guide to help
+                      others.
                     </div>
                     <div className={styles.buttonContainer}>
                       <Button
@@ -112,7 +109,7 @@ export default class SeekGuide extends Component {
             </div>
           </CenteredContent>
           <div className={styles.footerSection}>
-            <Footer history={this.props.history} />
+            <FooterContainer />
           </div>
         </div>
       </React.Fragment>

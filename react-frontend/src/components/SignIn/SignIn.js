@@ -4,30 +4,57 @@ import CenteredContent from "../../core/CenteredContent";
 import Input2 from "../../core/Input2";
 import linkedin from "../../images/Linkedin.svg";
 import Facebook from "../../images/Facebook.svg";
+import Back from "../../images/Back.svg";
 
 // import { Input2 } from "../../core";
 export default class SignIn extends React.Component {
   constructor() {
     super();
     this.state = {
-      country: ""
+      email: "",
+      password: ""
     };
   }
+  handleLogin = () => {
+    if (this.props.getLogin) {
+      this.props.getLogin(this.state);
+    }
+  };
+  componentWillReceiveProps = nextProps => {
+    if (
+      nextProps &&
+      nextProps.loginDetails &&
+      nextProps.loginDetails.loginDetails
+    ) {
+      this.props.closeModal();
+    }
+  };
+
   render() {
     return (
       <React.Fragment>
         <CenteredContent>
-          <div className={styles.signUpContainer}>
+          <div onClick={this.props.closeModal} className={styles.backCircle}>
+            <img src={Back} className={styles.backImg} alt="" />
+          </div>
+
+          <div className={styles.signInContainer}>
             <div className={styles.welTxt}>
               <div className={styles.welcomeTxt}>Welcome Back</div>
               <div className={styles.stayConnected}>
                 Stay connected, be informed and keep inspiring.
               </div>
-              <div className={styles.emailAddress}>
+              {this.props.loginDetails &&
+                this.props.loginDetails.status === "ERROR" && (
+                  <div className={styles.error}>
+                    {this.props.loginDetails.error}
+                  </div>
+                )}
+              <div className={styles.inputBox}>
                 <Input2
                   placeholder="Email Address"
-                  value={this.state.country}
-                  onChange={val => this.onChange(val)}
+                  value={this.state.email}
+                  onChange={val => this.setState({ email: val })}
                   textStyle={{ fontSize: 14 }}
                   height={50}
                   boxy={true}
@@ -35,11 +62,11 @@ export default class SignIn extends React.Component {
                   borderBottom={"#7f7f7f"}
                 />
               </div>
-              <div className={styles.emailAddress}>
+              <div className={styles.inputBox}>
                 <Input2
                   placeholder="Password"
-                  value={this.state.country}
-                  onChange={val => this.onChange(val)}
+                  value={this.state.password}
+                  onChange={val => this.setState({ password: val })}
                   textStyle={{ fontSize: 14 }}
                   height={50}
                   boxy={true}
@@ -50,7 +77,7 @@ export default class SignIn extends React.Component {
                   // }}
                 />
               </div>
-              <div className={styles.resetPassword}>
+              <div className={styles.passwordBlock}>
                 <input
                   className={styles.checkbox}
                   type="checkbox"
@@ -58,15 +85,32 @@ export default class SignIn extends React.Component {
                   value="true"
                 ></input>
                 <div className={styles.remPassword}>Remember password</div>
-                <div className={styles.forgotPassword}>Forgot password?</div>
+                <div
+                  className={styles.forgotPassword}
+                  onClick={() => this.props.showForgotPassword(this.props)}
+                >
+                  Forgot password?
+                </div>
               </div>
 
-              <div className={styles.signUpButton}>LOGIN</div>
+              <div
+                className={styles.loginButton}
+                onClick={() => this.handleLogin()}
+              >
+                LOGIN
+              </div>
               <div></div>
               <div>
                 <div className={styles.starInTxt}>No Account?&nbsp;&nbsp;</div>
 
-                <div className={styles.logInTxt}>Sign up now</div>
+                <div
+                  className={styles.signUpNow}
+                  onClick={() => {
+                    this.props.showSignUpModal();
+                  }}
+                >
+                  Sign up now
+                </div>
               </div>
               <div className={styles.loginWith}>Login with</div>
             </div>

@@ -1,18 +1,29 @@
 import React, { Component } from "react";
 import styles from "./VisualProfilePage.css";
 import CenteredContent from "../../core/CenteredContent";
-import PrimaryHeader from "../HomePage/PrimaryHeader";
 import VideoComponent from "../general/VideoComponent";
 import Button from "../general/Button.js";
 import SignUpBar from "../Blog/SignUpBar";
 import Footer from "../Footer/Footer";
+import PrimaryHeaderContainer from "../HomePage/container/PrimaryHeaderContainer";
+import DesktopOnly from "../general/DesktopOnly";
+import MobileOnly from "../general/MobileOnly";
+import MobileHeader from "../HomePage/MobileHeader";
+import FooterContainer from "../Footer/FooterContainer";
 export default class VisualProfilePage extends Component {
   render() {
     return (
       <React.Fragment>
         <div className={styles.base}>
           <div className={styles.headerHolder}>
-            <PrimaryHeader history={this.props.history} />
+            <div className={styles.fixedHeader}>
+              <DesktopOnly>
+                <PrimaryHeaderContainer history={this.props.history} />
+              </DesktopOnly>
+              <MobileOnly>
+                <MobileHeader />
+              </MobileOnly>
+            </div>
           </div>
           <CenteredContent>
             <div className={styles.container}>
@@ -27,7 +38,7 @@ export default class VisualProfilePage extends Component {
                         "In current times, your digital impression is as important as your offline impression. So, level up your online profile to make a great digital impression."
                       }
                     </div>
-                    <div>
+                    <div onClick={() => this.props.showSignUpModule()}>
                       <Button
                         type="primary"
                         backgroundColor={"#4F439A"}
@@ -100,7 +111,7 @@ export default class VisualProfilePage extends Component {
             </div>
           </CenteredContent>
           <div className={styles.footerSection}>
-            <Footer history={this.props.history} />
+            <FooterContainer />
           </div>
         </div>
       </React.Fragment>

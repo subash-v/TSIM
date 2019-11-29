@@ -16,7 +16,10 @@
 
 .overview {
   margin: 95px 0;
-  display: flex;
+  /* display: flex; */
+  display: inline-block;
+  width: 100%;
+  height: auto;
 }
 
 .overviewSecond {
@@ -33,6 +36,14 @@
   font-family: regular;
   width: 100%;
   text-align: center;
+  display: inline-block;
+}
+
+.starText {
+  color: #ad5da3;
+  font-family: regular;
+  font-size: 18px;
+  display: inline-block;
 }
 
 .header {
@@ -124,7 +135,7 @@
 
 .banner {
   width: 100%;
-  height: 650px;
+  height: 450px;
   min-height: 650px;
   background-image: linear-gradient(
       to left,
@@ -137,14 +148,70 @@
   position: relative;
 }
 
-.title {
-  font-size: 70px;
-  line-height: 78px;
+.opactityWrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: rgb(0, 0, 0, 0.5);
+  z-index: 0;
+}
 
-  color: #fff;
+.title {
+  font-size: 40px;
+  line-height: 78px;
   font-family: bold;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
+  color: #ad5da3;
+}
+
+.fixedHeader {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  transition: 0.5s;
+  z-index: 1;
+  background: #fff;
+  z-index: 2;
+}
+@media only screen and (max-width: 768px) {
+  .leftSection {
+    width: 100%;
+  }
+  .rightSection {
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+  }
+
+  .overview {
+    margin: 20px 0;
+    /* display: flex; */
+    display: inline-block;
+    width: 100%;
+    height: auto;
+  }
+
+  .image {
+    width: 320px;
+    height: 200px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
+  .summary {
+    padding-top: 40px;
+    font-size: 14px;
+    line-height: 22px;
+    font-family: regular;
+    text-align: left;
+  }
+  .overviewSecond {
+    padding: 25px;
+  }
 }

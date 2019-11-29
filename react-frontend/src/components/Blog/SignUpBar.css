@@ -22,13 +22,13 @@
   width: 100%;
   color: #ffffff;
   font-size: 32px;
-  font-weight: bold;
+  font-family: "bold";
   line-height: 40px;
   margin-bottom: 10px;
 }
 .subText {
   color: #ffffff;
-  font-family: "Open Sans";
+  font-family: "regular";
   font-size: 16px;
   line-height: 24px;
 }
@@ -97,7 +97,40 @@
   border-radius: 10px;
   color: #ffffff;
   font-size: 16px;
-  font-weight: bold;
+  font-family: bold;
   line-height: 24px;
   text-align: center;
+}
+@media only screen and (max-width: 1024px) {
+  .signupHolder {
+    border-radius: 0px;
+    padding: 20px;
+  }
+  .signUpContainer {
+    display: block;
+  }
+  .signup {
+    width: 100%;
+    display: block;
+  }
+  .imageHolder {
+    width: 100%;
+    display: block;
+    margin-top: 25px;
+  }
+  .inputHolder {
+    width: 60%;
+  }
+  .buttonHolder {
+    width: 40%;
+  }
+  .signupText {
+    font-size: 24px;
+  }
+  .subText {
+    font-size: 14px;
+  }
+  .inputBase {
+    margin-top: 25px;
+  }
 }
