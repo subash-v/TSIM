@@ -391,13 +391,25 @@
     display: block;
   }
   .eventTime {
+    padding: 0px 0px 0px 23px;
     margin-bottom: 10px;
+  }
+  .eventTime::before {
+    left: 0px;
   }
   .eventCost {
+    padding: 0px 0px 0px 23px;
     margin-bottom: 10px;
   }
+  .eventCost::before {
+    left: 0px;
+  }
   .eventDate {
+    padding: 0px 0px 0px 23px;
     margin-bottom: 10px;
+  }
+  .eventDate::before {
+    left: 0px;
   }
   .eventHeading {
     font-size: 16px;

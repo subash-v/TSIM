@@ -82,37 +82,53 @@ export default class EventPage extends Component {
         <div className={styles.base}>
           <div className={styles.headerHolder}>
             <div className={styles.fixedHeader}>
-              <DesktopOnly>
-                <PrimaryHeaderContainer />
-              </DesktopOnly>
-              <MobileOnly>
-                <MobileHeader />
-              </MobileOnly>
+              <PrimaryHeaderContainer />
             </div>
           </div>
           <React.Fragment>
-            <EventSliderComponent {...this.props} />
-            <div className={styles.filterBase}>
-              <div className={styles.tagAndFilter}>
-                <FilterSliderComponent></FilterSliderComponent>
-                <div className={styles.filterButtonContainer}>
-                  <div
-                    className={styles.fliterButton}
-                    onClick={() => this.props.showFilterModule(this.props)}
-                  >
-                    <Button
-                      type="primary"
-                      backgroundColor={"transparent"}
-                      fontColor={"#4F439A"}
-                      height={40}
-                      width={118}
-                      label="Fliter"
-                      borderRadius={10}
-                    />
+            <div className={styles.eventSlideHolder}>
+              <EventSliderComponent {...this.props} />
+            </div>
+            <DesktopOnly>
+              <div className={styles.filterBase}>
+                <div className={styles.tagAndFilter}>
+                  <FilterSliderComponent></FilterSliderComponent>
+                  <div className={styles.filterButtonContainer}>
+                    <div
+                      className={styles.fliterButton}
+                      onClick={() => this.props.showFilterModule(this.props)}
+                    >
+                      <Button
+                        type="primary"
+                        backgroundColor={"transparent"}
+                        fontColor={"#4F439A"}
+                        height={40}
+                        width={118}
+                        label="Fliter"
+                        borderRadius={10}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </DesktopOnly>
+            <MobileOnly>
+              <div
+                className={styles.fliterButton}
+                onClick={() => this.props.showFilterModule(this.props)}
+              >
+                <Button
+                  type="primary"
+                  backgroundColor={"transparent"}
+                  borderColor={"#4F439A"}
+                  fontColor={"#4F439A"}
+                  height={30}
+                  width={90}
+                  label="FLITER"
+                  borderRadius={0}
+                />
+              </div>
+            </MobileOnly>
           </React.Fragment>
           <CenteredContent>
             <div className={styles.container}>
@@ -120,18 +136,20 @@ export default class EventPage extends Component {
                 <div className={styles.recommendedEventsHeading}>
                   Recommended Events
                 </div>
-                <div className={styles.viewAllButtonContainer}>
-                  <Button
-                    type="primary"
-                    backgroundColor={"#E0DEED"}
-                    borderColor="#E0DEED"
-                    fontColor={"#4F439A"}
-                    height={50}
-                    width={210}
-                    label="VIEW ALL"
-                    borderRadius={10}
-                  />
-                </div>
+                <DesktopOnly>
+                  <div className={styles.viewAllButtonContainer}>
+                    <Button
+                      type="primary"
+                      backgroundColor={"#E0DEED"}
+                      borderColor="#E0DEED"
+                      fontColor={"#4F439A"}
+                      height={50}
+                      width={210}
+                      label="VIEW ALL"
+                      borderRadius={10}
+                    />
+                  </div>
+                </DesktopOnly>
               </div>
               <div className={styles.storiesContainer}>
                 {this.props &&
