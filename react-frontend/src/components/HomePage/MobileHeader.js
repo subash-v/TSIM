@@ -7,11 +7,16 @@ export default class MobileHeader extends Component {
   state={
     showSearch:false
   }
+  handleredirect = val => {
+    if (this.props.history) {
+      this.props.history.push(`${val}`);
+    }
+  };
   render() {
     return (
       <div className={styles.base}>
         <div className={styles.container}>
-          <div className={styles.logoContainer}>
+          <div className={styles.logoContainer} onClick={()=>this.handleredirect("/")}>
             <div className={styles.logo}></div>
           </div>
           <div className={styles.searchLoginContainer}>
@@ -53,7 +58,7 @@ export default class MobileHeader extends Component {
               />
             </div>
           </div>
-          <div className={styles.menu}></div>
+          <div className={styles.menu} onClick={()=>this.handleredirect("/events")}></div>
         </div>
 
 
