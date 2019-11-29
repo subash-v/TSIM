@@ -73,15 +73,18 @@
   .forward {
     display: none;
   }
+  .item:first-child {
+    margin-left: 15px;
+  }
+  .item:last-child {
+    margin-right: 15px;
+  }
 }
 @media only screen and (max-width: 768px) {
   .item {
-    width: 38.33%;
-    padding: 0;
+    width: 25%;
   }
   .slider {
     transition: none;
-    padding-bottom: 0;
-    margin-bottom: -5px;
   }
 }
