@@ -170,10 +170,11 @@
 
 .card {
   width: calc((100% / 3));
+  height: 500px;
   padding: 22.5px;
   padding-left: 0px;
-  /* flex-shrink: 0;
-  display: flex; */
+  flex-shrink: 0;
+  display: flex;
 }
 
 .signUpBarContainer {
