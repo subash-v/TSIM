@@ -8,6 +8,7 @@ import PrimaryHeaderContainer from "../HomePage/container/PrimaryHeaderContainer
 
 import DesktopOnly from "../general/DesktopOnly";
 import MobileOnly from "../general/MobileOnly";
+import BlogSliderComponent from "./BlogSliderComponent";
 const data = [
   {
     name: "Pratiksha Gupta",
@@ -94,8 +95,16 @@ export default class BlogFeed extends Component {
               <PrimaryHeaderContainer />
             </div>{" "}
           </div>
+         
           <CenteredContent>
+          <MobileOnly>
+            <div>
+              <BlogSliderComponent></BlogSliderComponent>
+            </div>
+          </MobileOnly>
             <div className={styles.container}>
+            
+            <DesktopOnly>
               <div className={styles.bannerBase}>
                 <div className={styles.bannerContainer}>
                   <div className={styles.banner}>
@@ -141,7 +150,7 @@ export default class BlogFeed extends Component {
                   </div>
                 </div>
               </div>
-
+              </DesktopOnly>
               <div className={styles.storiesBase}>
                 <div className={styles.storiesHeading}>FEATURED STORIES</div>
 

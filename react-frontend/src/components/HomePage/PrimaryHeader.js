@@ -4,17 +4,33 @@ import Button from "../general/Button";
 import SearchInput from "../general/SearchInput";
 import search from "../../core/img/Search.svg";
 import HOME from "../../images/Home.svg";
+import filled_home from "../../images/Home_selected_blue.svg";
+
 import NETWORK from "../../images/Connection_line.svg";
+import FILLED_NETWORK from "../../images/Connection_fill_blue.svg";
+
 import MORE from "../../images/Menu_Line.svg";
-import profile from "../../images/Profile_Line.svg";
+import filled_more from "../../images/Menu_Fill_blue.svg";
+
 import MESSAGE from "../../images/Messages_line.svg";
-import Filled_Profile from "../../images/Profile_Fill.svg";
-import filled_home from "../../images/Home_selected.svg";
-import filled_event from "../../images/Connection_fill.svg";
-import filled_more from "../../images/Menu_Fill.svg";
-import filled_message from "../../images/Messages_fill.svg";
+import filled_message from "../../images/Messages_line_blue.svg";
+
+import profile from "../../images/Profile_Line.svg";
+import Filled_Profile from "../../images/Profile_Fill_blue.svg";
+
+import EVENT from "../../images/Events_header.svg";
+import filled_event from "../../images/Events_header_fill.svg";
+
+import RESOURCES from "../../images/Resources_Header.svg";
+import FILLED_RESOURCES from "../../images/Resources_Header_blue.svg";
+
+import FILLED_NOTIFICATION from "../../images/Notification_on_blue.svg";
+import NOTIFICATION from "../../images/Notification_off.svg";
+
 import IconWithHeader from "../../core/IconWithHeader";
 import ProfileImage from "../../core/ProfileImage";
+import GUIDE from "../../images/Guides_header.svg";
+import GUIDE_Fill from "../../images/Guides_header_blue.svg";
 import PropTypes from "prop-types";
 import DesktopOnly from "../general/DesktopOnly";
 import MobileHeader from "./MobileHeader";
@@ -30,22 +46,22 @@ const links = [
     filledImage: Filled_Profile
   },
   {
-    data: HOME,
+    data: GUIDE,
     name: "GUIDE",
     routeLink: "/seek-guide",
-    filledImage: filled_home
+    filledImage: GUIDE_Fill
   },
   {
-    data: NETWORK,
+    data: EVENT,
     name: "EVENTS",
     routeLink: "/event",
     filledImage: filled_event
   },
   {
-    data: MORE,
+    data: RESOURCES,
     name: "RESOURCES",
     routeLink: "/blog",
-    filledImage: filled_more
+    filledImage: FILLED_RESOURCES
   }
 ];
 const logedInLinks = [
@@ -54,7 +70,7 @@ const logedInLinks = [
     data: NETWORK,
     name: "CONNECTION",
     routeLink: "/network",
-    filledImage: filled_event
+    filledImage: FILLED_NETWORK
   },
   {
     data: MESSAGE,
@@ -63,10 +79,10 @@ const logedInLinks = [
     filledImage: filled_message
   },
   {
-    data: NETWORK,
+    data: NOTIFICATION,
     name: "NOTIFICATION",
     routeLink: "/notification",
-    filledImage: filled_event
+    filledImage: FILLED_NOTIFICATION
   },
   { data: MORE, name: "MORE", routeLink: "/events", filledImage: filled_more }
 ];
@@ -87,7 +103,7 @@ export default class PrimaryHeader extends Component {
     }
   };
   render() {
-    let isUserLogedIn = false;
+    let isUserLogedIn = true;
     return (
       <React.Fragment>
         <DesktopOnly>
@@ -126,7 +142,7 @@ export default class PrimaryHeader extends Component {
                                   ? value.filledImage
                                   : value.data
                               }
-                              size={32}
+                              size={26}
                               header={value.name}
                               fontSize={10}
                             />
@@ -178,7 +194,7 @@ export default class PrimaryHeader extends Component {
                       borderBottom="none"
                     />
                   </div>
-                  {isUserLogedIn && <ProfileImage image={profile} size={2} />}
+                  {isUserLogedIn && <ProfileImage image={profile} size={0} />}
                   {!isUserLogedIn && (
                     <div
                       className={styles.login}
@@ -218,6 +234,7 @@ export default class PrimaryHeader extends Component {
         </DesktopOnly>
         <MobileOnly>
           <MobileHeader
+            {...this.props}
             showSignUpModal={() => this.showSignUpModal()}
             showLoginModal={() => this.showLoginModal()}
           />

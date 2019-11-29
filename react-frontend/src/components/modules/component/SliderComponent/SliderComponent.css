@@ -51,3 +51,19 @@
   justify-content: center;
   position: absolute;
 }
+
+@media only screen and (max-width: 1024px) {
+  .baseWrapper {
+    width: 100vw;
+    height: 100vh;
+  }
+  .base {
+    padding: 10%;
+  }
+  .sliderWrapper {
+    height: 100%;
+  }
+  .topContainer {
+    height: 100%;
+  }
+}

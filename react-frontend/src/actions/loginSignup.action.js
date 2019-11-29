@@ -3,7 +3,8 @@ import {
   FAILURE,
   REQUESTING,
   ERROR,
-  ACCESS_TOKEN
+  ACCESS_TOKEN,
+  USER_DETAILS
 } from "../utils/constant";
 import * as Cookie from "../utils/Cookie.js";
 import { get, post } from "../utils/apiRequest.js";
@@ -50,6 +51,7 @@ export function getLogin(userLoginDetails) {
         throw new Error(resultJson.message);
       }
       Cookie.createCookie(ACCESS_TOKEN, resultJson.token);
+      Cookie.createCookie(USER_DETAILS, resultJson.token);
       return dispatch(loginUserSuccess(resultJson));
     } catch (e) {
       return dispatch(loginUserFailure(e.message));
@@ -91,6 +93,7 @@ export function postSignUp(userSignUpDetails) {
         throw new Error(resultJson.message);
       }
       Cookie.createCookie(ACCESS_TOKEN, resultJson.token);
+      Cookie.createCookie(USER_DETAILS, resultJson.token);
       return dispatch(signUpUserSuccess(resultJson));
     } catch (e) {
       return dispatch(signUpUserFailure(e.message));

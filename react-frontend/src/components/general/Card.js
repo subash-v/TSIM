@@ -48,16 +48,14 @@ export default class Card extends Component {
             {this.props.time}
           </div>
         </div>
-        {window.location.pathname === "/" ? null : (
-          <div className={styles.actionBarConatiner}>
-            <div className={styles.actionsHolder}>
-              <div className={styles.action}>{this.props.likes}</div>
-              <div className={styles.action}>{this.props.comments}</div>
-              <div className={styles.action}>{this.props.shared}</div>
-            </div>
-            <div className={styles.wishlist}>wish</div>
+        <div className={styles.actionBarConatiner}>
+          <div className={styles.actionsHolder}>
+            <div className={styles.likes}>{this.props.likes}</div>
+            <div className={styles.comment}>{this.props.comments}</div>
+            <div className={styles.share}>{this.props.shared}</div>
           </div>
-        )}
+          <div className={styles.wishlist}></div>
+        </div>
       </div>
     );
   }

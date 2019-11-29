@@ -199,4 +199,7 @@
   .attendeStyle {
     justify-content: center;
   }
+  .verticalScroller {
+    padding: 20px 30px;
+  }
 }

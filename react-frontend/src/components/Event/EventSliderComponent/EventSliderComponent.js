@@ -21,19 +21,19 @@ class EventSliderComponent extends Component {
       this.props.showEventSelector();
     }
   };
-  showEventDetailsModule = () => {
-    if (this.props.showEventDetailsModule) {
-      this.props.showEventDetailsModule();
-    }
-  };
+  // showEventDetailsModule = () => {
+  //   if (this.props.showEventDetailsModule) {
+  //     this.props.showEventDetailsModule();
+  //   }
+  // };
   render() {
     return (
       <React.Fragment>
         <div
           className={styles.baseWrapper}
-          onClick={() => {
-            this.showEventDetailsModule();
-          }}
+          // onClick={() => {
+          //   this.showEventDetailsModule();
+          // }}
         >
           <div className={styles.base}>
             <div className={styles.sliderWrapper}>

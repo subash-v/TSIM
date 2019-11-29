@@ -116,6 +116,9 @@ export default class RegisterDetailsModule extends Component {
     if (this.state.Proceed != 1) {
       this.setState({ Proceed: this.state.Proceed - 1 });
     }
+    if (this.state.Proceed == 1) {
+      this.props.closeModal();
+    }
   };
   setTicketCounter = val => {
     this.setState({ counter: val });

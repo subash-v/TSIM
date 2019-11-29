@@ -1,11 +1,11 @@
 import React from "react";
 import CenteredContent from "../../../core/CenteredContent";
 import styles from "./BlogDetails.css";
-import SeekImage from "../../images/Resources-min.jpg";
-import facebook from "../../images/Facebook-black.svg";
-import linkedin from "../../images/Linkedin-black.svg";
-import twitter from "../../images/Twitter-black.svg";
-import instagram from "../../images/Instagram.svg";
+import SeekImage from "../../../images/Resources-min.jpg";
+import facebook from "../../../images/Facebook-black.svg";
+import linkedin from "../../../images/Linkedin-black.svg";
+import twitter from "../../../images/Twitter-black.svg";
+import instagram from "../../../images/Instagram.svg";
 import Footer from "../../Footer/Footer";
 import PrimaryHeaderContainer from "../../HomePage/container/PrimaryHeaderContainer";
 
@@ -21,23 +21,12 @@ export default class BlogDetails extends React.Component {
             <div className={styles.title}>
               Jordan Peterson and the Surrender of the Cultural Gatekeepers
             </div>
-            {/* <div className={styles.subText}>
-              What a new documentary about the controversial professor tells us
-              about the state of the arts
-            </div> */}
 
-            <div
-              className={styles.jobSection}
-              style={{
-                display: "flex",
-                paddingBottom: "50px",
-                alignitems: "center"
-              }}
-            >
-              <div className={styles.jobDescription}>
+            <div className={styles.jobSection}>
+              <div className={styles.leftWrapper}>
                 <div className={styles.jobIcon}></div>
                 <div>
-                  <div style={{ display: " flex" }}>
+                  <div className={styles.wrapper}>
                     <div className={styles.jobTitle}>Meghan Daum</div>
                     <div className={styles.jobDate}>Follow</div>
                   </div>

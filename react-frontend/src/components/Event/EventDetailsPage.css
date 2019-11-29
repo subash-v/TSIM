@@ -181,7 +181,7 @@
 }
 
 .eventTime {
-  padding: 0px 0px 0px 35px;
+  padding: 0px 0px 0px 23px;
   position: relative;
   color: #1a1a1a;
   font-family: "semibold";
@@ -197,7 +197,7 @@
   background: url(../../images/time.svg) no-repeat;
   background-size: cover;
   background-position: center;
-  left: 12px;
+  left: 0px;
   top: 2px;
 }
 
@@ -351,13 +351,97 @@
 }
 
 @media only screen and (max-width: 1024px) {
+  .base {
+    background: #fff;
+  }
   .card {
     width: 100%;
     padding: 10px 0;
   }
 
   .container {
-    padding: 0 43px;
+    padding: 0;
+  }
+  .bannerDescHolder {
+    height: auto;
+    display: block;
+  }
+  .bannerImage {
+    width: 100%;
+    height: 500px;
+    display: block;
+  }
+  .descriptionBase {
+    width: 100%;
+
+    height: auto;
+    display: block;
+  }
+  .registrationdetails {
+    position: static;
+  }
+  .descriptionContainer {
+    padding: 15px;
+  }
+  .eventButton {
+    margin-right: 0px;
+  }
+  .eventDetails {
+    display: block;
+  }
+  .eventTime {
+    padding: 0px 0px 0px 23px;
+    margin-bottom: 10px;
+  }
+  .eventTime::before {
+    left: 0px;
+  }
+  .eventCost {
+    padding: 0px 0px 0px 23px;
+    margin-bottom: 10px;
+  }
+  .eventCost::before {
+    left: 0px;
+  }
+  .eventDate {
+    padding: 0px 0px 0px 23px;
+    margin-bottom: 10px;
+  }
+  .eventDate::before {
+    left: 0px;
+  }
+  .eventHeading {
+    font-size: 16px;
+  }
+  .eventlevel {
+    font-size: 12px;
+  }
+  .detailsHolder {
+    padding-top: 0px;
+    padding: 15px;
+    background: #fff;
+  }
+  .recommendedEvents {
+    margin-top: 0px;
+    padding-left: 15px;
+  }
+  .storiesContainer {
+    padding: 15px;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: auto;
+  }
+  .storiesContainer::-webkit-scrollbar {
+    display: none;
+  }
+  .card {
+    display: inline-block;
+    margin-right: 5px;
+  }
+  .viewAllButtonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
