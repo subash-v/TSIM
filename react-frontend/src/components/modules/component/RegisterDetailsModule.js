@@ -36,15 +36,18 @@ export default class RegisterDetailsModule extends Component {
       counter: 1,
       ticketCounter: [],
       attende1Detials: null,
-      attende2Detials: null
+      attende2Detials: null,
+      showInputError: false
     };
   }
   handleButtonClick = () => {
     if (this.state.Proceed == 4) {
       this.props.closeModal();
+      window.scrollTo(0, 0);
     } else {
       if (this.state.Proceed == 2) {
         let attendeDetails = this.state.attende1Detials;
+        let attende2Details = this.state.attende2Detials;
         if (
           attendeDetails &&
           attendeDetails.name &&
@@ -52,9 +55,21 @@ export default class RegisterDetailsModule extends Component {
           attendeDetails.mobileno
         ) {
           this.setState({ Proceed: this.state.Proceed + 1 });
+          window.scrollTo(0, 0);
+        } else if (
+          attende2Details &&
+          attende2Details.name &&
+          attende2Details.email &&
+          attende2Details.mobileno
+        ) {
+          this.setState({ Proceed: this.state.Proceed + 1 });
+          window.scrollTo(0, 0);
+        } else {
+          this.setState({ showInputError: true });
         }
       } else {
         this.setState({ Proceed: this.state.Proceed + 1 });
+        window.scrollTo(0, 0);
       }
     }
   };
@@ -98,10 +113,10 @@ export default class RegisterDetailsModule extends Component {
     });
   };
   addAttende1Details = val => {
-    this.setState({ attende1Detials: val });
+    this.setState({ attende1Detials: val, showInputError: false });
   };
   addAttende2Details = val => {
-    this.setState({ attende2Detials: val });
+    this.setState({ attende2Detials: val, showInputError: false });
   };
   render() {
     return (
@@ -296,6 +311,7 @@ export default class RegisterDetailsModule extends Component {
                     <AttendeeDetails
                       title={"Attendee 1"}
                       onChange={val => this.addAttende1Details(val)}
+                      showInputError={this.state.showInputError}
                     />
                   </div>
                   <div className={styles.Attendes}>
@@ -410,20 +426,39 @@ export default class RegisterDetailsModule extends Component {
                       </div>
                     );
                   })}
-                <div
-                  className={styles.button}
-                  onClick={() => this.handleButtonClick()}
-                >
-                  <Button
-                    type="primary"
-                    backgroundColor={"#4F439A"}
-                    fontColor={"#fff"}
-                    height={50}
-                    width={170}
-                    label="Proceed"
-                    borderRadius={5}
-                  />
-                </div>
+
+                {this.state.Proceed <= 3 ? (
+                  <div
+                    className={styles.button}
+                    onClick={() => this.handleButtonClick()}
+                  >
+                    {" "}
+                    <Button
+                      type="primary"
+                      backgroundColor={"#4F439A"}
+                      fontColor={"#fff"}
+                      height={50}
+                      width={170}
+                      label="Proceed"
+                      borderRadius={5}
+                    />
+                  </div>
+                ) : (
+                  <div
+                    className={styles.button}
+                    onClick={() => this.props.closeModal()}
+                  >
+                    <Button
+                      type="primary"
+                      backgroundColor={"#4F439A"}
+                      fontColor={"#fff"}
+                      height={50}
+                      width={170}
+                      label="BACK TO EVENTS"
+                      borderRadius={5}
+                    />
+                  </div>
+                )}
               </div>
             </div>
           </div>

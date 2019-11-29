@@ -45,17 +45,6 @@ export default class SeekGuide extends Component {
                           borderRadius={10}
                         />
                       </div>
-                      <div className={styles.button}>
-                        <Button
-                          type="primary"
-                          backgroundColor={"#4F439A"}
-                          fontColor={"#fff"}
-                          height={50}
-                          width={210}
-                          label="Register as a guide"
-                          borderRadius={10}
-                        />
-                      </div>
                     </div>
                   </div>
                 </div>
