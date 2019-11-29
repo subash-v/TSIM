@@ -18,7 +18,7 @@ export default class VerticalStatus extends Component {
       <div className={styles.verticalStatusHolder}>
         <div className={styles.firstIndicator}>
           <div className={this.checkStatus(this.props.first)}></div>
-          SELECT TICKITES
+          SELECT TICKETES
         </div>
         <div className={styles.secondIndicator}>
           <div className={this.checkStatus(this.props.second)}></div>
