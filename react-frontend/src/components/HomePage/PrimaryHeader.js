@@ -234,6 +234,7 @@ export default class PrimaryHeader extends Component {
         </DesktopOnly>
         <MobileOnly>
           <MobileHeader
+          {...this.props}
             showSignUpModal={() => this.showSignUpModal()}
             showLoginModal={() => this.showLoginModal()}
           />
