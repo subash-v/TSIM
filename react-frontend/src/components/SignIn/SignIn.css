@@ -139,17 +139,15 @@
   position: absolute;
   top: 60px;
   left: 45px;
-
-  /* border: 1px solid #4f439a; */
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 768px) {
   .signInContainer {
     width: 100%;
     height: auto;
     margin-top: 5%;
     background: #fff;
-    padding: 116px 20px 0 18px;
+    padding: 116px 20px 20px 18px;
   }
   .backCircle {
     height: 18px;
@@ -186,5 +184,9 @@
     width: 15px;
     height: 15px;
     margin: 0px;
+  }
+  .forgotPassword:last-child {
+    width: 100%;
+    float: none;
   }
 }
