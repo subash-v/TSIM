@@ -66,4 +66,7 @@
   .topContainer {
     height: 100%;
   }
+  .innerImage {
+    height: 200%;
+  }
 }
