@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styles from './CompleteCourseImages.css'
+import { Link } from 'react-router-dom'
 import img1 from "../../Images/b.jpg";
 import img2 from "../../Images/f.jpg";
 import img3 from "../../Images/p.jpg";
@@ -17,7 +18,7 @@ export default class CompleteCourseImages extends Component {
     render() {
         const mainresults = pollingResult.slice(0, 4);
         const results = pollingResult.slice(4);
-        const len = results.length;
+        const len = results.length + 1;
         return (
             <div className={styles.baseWrapper}>
                 {mainresults.map((m, i) => {
@@ -26,8 +27,8 @@ export default class CompleteCourseImages extends Component {
 
                             <div className={styles.imageWrapper}>
                                 <img src={m.img}></img>
-                                <div className={i === 3 ? styles.overLay : styles.nooverLay}>
-                                    <div className={styles.pollPercentage}>{i === 3 ? "+" + len + " more" : null}</div>
+                                <div className={i === 3 && pollingResult.length > 4 ? styles.overLay : styles.nooverLay}>
+                                    {i === 3 && pollingResult.length > 4 && <Link to="/feedImages" style={{ textDecoration: 'none' }}><div className={styles.pollPercentage} onClick={() => this.props && this.props.updateImages(pollingResult)}> {"+" + len + " more"}</div></Link>}
                                 </div>
 
                             </div>

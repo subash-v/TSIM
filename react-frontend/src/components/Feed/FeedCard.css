@@ -279,8 +279,16 @@
   background-position: center;
   background-size: cover;
 }
-.pollingConatiner {
-  margin-top: 15px;
+
+.pollingResultContainer {
+  width: 100%;
+  height: auto;
+}
+.completeCourseImagesContainer {
+  width: 100%;
+  height: auto;
+}
+.completeCourseImagesContainer {
   width: 100%;
   height: auto;
 }

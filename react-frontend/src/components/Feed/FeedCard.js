@@ -5,8 +5,9 @@ import profile from "../Images/f.jpg";
 import Image from "../../core/Image";
 import Button from "../general/Button";
 import FeedCardDottedMenu from "./FeedCardDottedMenu/FeedCardDottedMenu";
-import PollingResult from "./PollingResult";
 import FeedProfileHolder from "./FeedProfileHolder";
+import CompleteCourseImages from "./CompleteCourseImages/CompleteCourseImages";
+
 export default class FeedCard extends Component {
   state = {
     showFeedMenu: false
@@ -52,9 +53,11 @@ export default class FeedCard extends Component {
             <div className={styles.hashTag}>#productivity</div>
             <div className={styles.hashTag}>#productivity</div>
           </div>
-          {/* <div className={styles.completeCourseImagesContainer}>
-            <CompleteCourseImages />
-          </div> */}
+          <div className={styles.completeCourseImagesContainer}>
+            <CompleteCourseImages
+              updateImages={data => this.props && this.props.updateImages(data)}
+            />
+          </div>
           {/* <div className={styles.pollingResultContainer}>
 
             <PollingResultWithImage></PollingResultWithImage>

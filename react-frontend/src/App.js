@@ -13,6 +13,7 @@ import EventDetailsPageContainer from "./components/Event/container/EventDetails
 import ConnectionsContainer from "./components/modules/container/ConnectionContainer";
 import ProfileContainer from "./components/Profile/container/ProfileContainer";
 import FeedContainer from "./components/Feed/container/FeedContainer";
+import FeedExtraImagesContainer from "./components/Feed/container/FeedExtraImagesContainer"
 import Settings from "./components/Settings/SettingsContainer/SettingsContainer";
 import BlogContainer from "./components/Blog/container/BlogContainer";
 import VisualProfileContainer from "./components/VisualProfile/conatiner/VisualProfileContainer";
@@ -40,6 +41,7 @@ class App extends Component {
           <Route path="/profile" component={ProfileContainer} />
           <Route path="/feed" component={FeedContainer} />
           <Route path="/connections" component={ConnectionsContainer} />
+          <Route path="/feedImages" component={FeedExtraImagesContainer} />
           <Route path="/settings" component={Settings} />
         </Switch>
         <ModalContainer />
