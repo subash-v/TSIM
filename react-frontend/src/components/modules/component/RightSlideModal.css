@@ -7,9 +7,12 @@
   float: right;
   background: #ffffff;
   animation: slideInLeft 200ms forwards;
-  /* overflow-y: scroll;
-  overflow-x: hidden; */
+  overflow-y: scroll;
 }
+.base::-webkit-scrollbar {
+  display: none;
+}
+
 .base:before {
   content: "";
   width: 30px;
@@ -28,8 +31,13 @@
   display: flex;
   justify-content: center;
   animation: slideInUp 200ms forwards;
-  overflow: hidden;
+  overflow-y: scroll;
 }
+
+.crossIconHide::-webkit-scrollbar {
+  display: none;
+}
+
 .crossIconHide:before {
   display: none;
 }

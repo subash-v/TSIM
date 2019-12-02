@@ -9,6 +9,7 @@ import image4 from "../../images/entreprener-pic.png";
 import DesktopOnly from "../general/DesktopOnly";
 import MobileOnly from "../general/MobileOnly";
 import FooterContainer from "../Footer/FooterContainer";
+import PrimaryHeaderContainer from "../HomePage/container/PrimaryHeaderContainer";
 
 export default class TermsOfService extends Component {
   componentDidMount = () => {
@@ -25,7 +26,10 @@ export default class TermsOfService extends Component {
           <div className={styles.title}>The star in me</div>
           <div className={styles.opactityWrapper}></div>
         </div> */}
-        <div className={styles.base}>
+        <div className={styles.fixedHeader}>
+          <PrimaryHeaderContainer />
+        </div>
+        <div className={styles.base} style={{ marginTop: "30px" }}>
           <CenteredContent contentWidth="1200px">
             <div className={styles.container}>
               <p className={styles.titleText}>

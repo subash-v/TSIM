@@ -25,8 +25,8 @@ class SliderComponent extends Component {
   showEventSelector = () => {
     if (this.props.showEventSelector) {
       this.setState({ stopSlider: true });
-      // this.props.closeModal();
-      // this.props.showEventSelector();
+      this.props.closeModal();
+      this.props.showEventSelector();
     }
   };
   render() {

@@ -60,12 +60,8 @@
   cursor: pointer;
 }
 
-/* .socialImg:first-child {
-  margin-left: 0;
-}*/
-
 .socialImg:last-child {
-  margin-right: 0;
+  margin-left: 0;
 }
 .bottomContainer {
   display: flex;

@@ -1,15 +1,26 @@
 .container {
-  height: 200px;
+  height: 160px;
   width: 400px;
   padding: 40px;
   background: #fff;
   font-size: 18px;
   font-family: bold;
+  border-radius: 10px;
+  text-align: center;
 }
 .feedbackText {
   font-size: 18px;
   font-family: bold;
   color: #4f439a;
+}
+.crossIcon {
+  position: absolute;
+  top: 8px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  background: #fff;
+  color: #1a1a1a;
 }
 @media only screen and (max-width: 1024px) {
   .container {

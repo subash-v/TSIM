@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Home.css";
-import image0 from "../../images/Events-min.jpg";
+import image0 from "../../images/Welcome-Screen-min.jpg";
 import image1 from "../../images/Build-your-profile-min.jpg";
 import image2 from "../../images/Resources-min.jpg";
 import image3 from "../../images/Events-min.jpg";

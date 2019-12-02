@@ -75,7 +75,6 @@ export default class Footer extends React.Component {
                 TERMS AND CONDITIONS <div className={styles.arrow}></div>
               </div>
             </div>
-            showGetInTouchModal
           </div>
 
           <div className={styles.feedbackBlock}>
