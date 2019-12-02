@@ -9,6 +9,7 @@ import PrimaryHeaderContainer from "../HomePage/container/PrimaryHeaderContainer
 import DesktopOnly from "../general/DesktopOnly";
 import MobileOnly from "../general/MobileOnly";
 import MobileHeader from "../HomePage/MobileHeader";
+import FooterContainer from "../Footer/FooterContainer";
 export default class VisualProfilePage extends Component {
   render() {
     return (
@@ -110,7 +111,7 @@ export default class VisualProfilePage extends Component {
             </div>
           </CenteredContent>
           <div className={styles.footerSection}>
-            <Footer history={this.props.history} />
+            <FooterContainer />
           </div>
         </div>
       </React.Fragment>

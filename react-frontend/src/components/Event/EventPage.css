@@ -2,12 +2,12 @@
   width: 100%;
   height: auto;
   min-height: 100vh;
-  overflow: auto;
   padding: 20px 0px 40px 0px;
   background: #ececec;
 }
 
-.headerHolder {}
+.headerHolder {
+}
 
 .bannerContainer {
   width: 100%;
@@ -59,9 +59,8 @@
 .filterBase {
   width: 100%;
   height: auto;
-  padding: 25px 120px;
+  padding: 0px 16px 25px 120px;
   background: #ffffff;
-
 }
 
 .tagAndFilter {
@@ -107,32 +106,15 @@
 
 .card {
   width: calc((100% / 3));
-  padding: 22.5px;
+  padding: 45px;
   padding-left: 0px;
   flex-shrink: 0;
   display: flex;
   cursor: pointer;
 }
-
-@media only screen and (max-width: 1024px) {
-  .card {
-    width: 100%;
-    padding: 10px 0;
-  }
-
-
-  @media only screen and (max-width: 1024px) {
-    .card {
-      width: 100%;
-      padding: 10px 0;
-    }
-
-    .container {
-      padding: 0 43px;
-    }
-  }
+.card:nth-child(3n) {
+  padding-right: 0px;
 }
-
 .fixedHeader {
   width: 100%;
   height: auto;
@@ -142,4 +124,47 @@
   z-index: 1;
   background: #fff;
   z-index: 2;
+}
+@media only screen and (max-width: 1024px) {
+  .card {
+    width: 100%;
+    padding: 5px 0;
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: top;
+  }
+
+  .container {
+    padding: 0 43px;
+  }
+  .eventSlideHolder {
+    margin-top: 42px;
+  }
+  .fliterButton {
+    background: #fff;
+    padding: 0px 20px 15px 0px;
+  }
+  .recommendedEvents {
+    margin-top: 10px;
+    padding-left: 15px;
+  }
+  .storiesContainer {
+    padding: 15px;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: auto;
+  }
+  .storiesContainer::-webkit-scrollbar {
+    display: none;
+  }
+
+  .viewAllButtonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container {
+    padding: 0;
+  }
 }

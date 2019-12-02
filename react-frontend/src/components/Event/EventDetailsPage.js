@@ -10,6 +10,9 @@ import Image from "../../core/Image";
 import profileImage from "../Images/b.jpg";
 import PrimaryHeaderContainer from "../HomePage/container/PrimaryHeaderContainer";
 import EventDetailPageSliderComponent from "./EventDetailPageSlider/EventDetailPageSliderComponent";
+import DesktopOnly from "../general/DesktopOnly";
+import MobileOnly from "../general/MobileOnly";
+import FooterContainer from "../Footer/FooterContainer";
 
 export default class EventDetailsPage extends Component {
   componentDidMount() {
@@ -35,10 +38,19 @@ export default class EventDetailsPage extends Component {
           <div className={styles.container}>
             <CenteredContent>
               <div className={styles.bannerDescHolder}>
-                <div className={styles.bannerImage}>
-                  {/* <Image image={bannerImage} /> */}
-                  <EventDetailPageSliderComponent></EventDetailPageSliderComponent>
-                </div>
+                {eventDetails && eventDetails.imageUrl && (
+                  <div className={styles.bannerImage}>
+                    {eventDetails && eventDetails.imageUrl ? (
+                      <Image
+                        image={eventDetails.imageUrl}
+                        width="100%"
+                        height="100%"
+                      />
+                    ) : (
+                      <EventDetailPageSliderComponent></EventDetailPageSliderComponent>
+                    )}
+                  </div>
+                )}
                 <div className={styles.descriptionBase}>
                   <div className={styles.descriptionContainer}>
                     <div className={styles.tagContainer}>
@@ -74,13 +86,19 @@ export default class EventDetailsPage extends Component {
                       )}
                     <div className={styles.eventAddressBase}>
                       <div className={styles.eventAdressContainer}>
-                        <div className={styles.eventPlaceName}>
-                          Bangalore International Centre
-                        </div>
+                        {eventDetails && eventDetails.locality && (
+                          <div className={styles.eventPlaceName}>
+                            {eventDetails.locality}
+                          </div>
+                        )}
                         <div className={styles.address}>
                           No. 7, 4th Main Rd, Stage 2{" "}
                         </div>
-                        <div className={styles.address}>Domlur, Bengaluru</div>
+                        {eventDetails && eventDetails.eventAddress && (
+                          <div className={styles.address}>
+                            {eventDetails.eventAddress}
+                          </div>
+                        )}
                       </div>
                       <div className={styles.mapContainer}>
                         {/* <Map
@@ -128,17 +146,39 @@ export default class EventDetailsPage extends Component {
                           borderRadius={10}
                         />
                       </div>
-                      <div className={styles.eventButton}>
-                        <Button
-                          type="primary"
-                          backgroundColor={"#fff"}
-                          fontColor={"#4F439A"}
-                          height={50}
-                          width={210}
-                          label="I am interested"
-                          borderRadius={10}
-                        />
-                      </div>
+                      <DesktopOnly>
+                        <div
+                          className={styles.eventButton}
+                          onClick={this.props.showSignUpModal}
+                        >
+                          <Button
+                            type="primary"
+                            backgroundColor={"#fff"}
+                            fontColor={"#4F439A"}
+                            height={50}
+                            width={210}
+                            label="I am interested"
+                            borderRadius={10}
+                          />
+                        </div>
+                      </DesktopOnly>
+                      <MobileOnly>
+                        <div
+                          className={styles.eventButton}
+                          onClick={this.props.showSignUpModal}
+                        >
+                          <Button
+                            type="primary"
+                            backgroundColor={"#fff"}
+                            borderColor={"#fff"}
+                            fontColor={"#4F439A"}
+                            height={50}
+                            width={150}
+                            label="I am interested"
+                            borderRadius={10}
+                          />
+                        </div>
+                      </MobileOnly>
                     </div>
                   </div>
                   <div className={styles.registrationdetails}>
@@ -169,7 +209,9 @@ export default class EventDetailsPage extends Component {
               <div className={styles.detailsHolder}>
                 <div className={styles.header}>
                   <div className={styles.seletedText}>About the Workshop</div>
-                  <div className={styles.text}>Testimonials</div>
+                  <DesktopOnly>
+                    <div className={styles.text}>Testimonials</div>
+                  </DesktopOnly>
                 </div>
                 {eventDetails && eventDetails.eventDescription && (
                   <div className={styles.desc}>
@@ -197,24 +239,28 @@ export default class EventDetailsPage extends Component {
                 </div>
               </div>
             </CenteredContent>
-            <hr />
+            <DesktopOnly>
+              <hr />
+            </DesktopOnly>
             <CenteredContent>
               <div className={styles.recommendedEvents}>
                 <div className={styles.recommendedEventsHeading}>
                   Recommended Events
                 </div>
-                <div className={styles.viewAllButtonContainer}>
-                  <Button
-                    type="primary"
-                    backgroundColor={"#E0DEED"}
-                    borderColor="#E0DEED"
-                    fontColor={"#4F439A"}
-                    height={50}
-                    width={210}
-                    label="VIEW ALL"
-                    borderRadius={10}
-                  />
-                </div>
+                <DesktopOnly>
+                  <div className={styles.viewAllButtonContainer}>
+                    <Button
+                      type="primary"
+                      backgroundColor={"#E0DEED"}
+                      borderColor="#E0DEED"
+                      fontColor={"#4F439A"}
+                      height={50}
+                      width={210}
+                      label="VIEW ALL"
+                      borderRadius={10}
+                    />
+                  </div>
+                </DesktopOnly>
               </div>
               <div className={styles.storiesContainer}>
                 {carouselData.map((val, i) => (
@@ -231,11 +277,26 @@ export default class EventDetailsPage extends Component {
                   </div>
                 ))}
               </div>
+              <MobileOnly>
+                <div className={styles.viewAllButtonContainer}>
+                  <Button
+                    type="primary"
+                    backgroundColor={"#FFF"}
+                    borderColor="#4F439A"
+                    fontColor={"#4F439A"}
+                    height={30}
+                    width={99}
+                    fontSize={"12px"}
+                    label="VIEW ALL"
+                    borderRadius={0}
+                  />
+                </div>
+              </MobileOnly>
             </CenteredContent>
           </div>
 
           <div className={styles.footerSection}>
-            <Footer history={this.props.history} />
+            <FooterContainer />
           </div>
         </div>
       </React.Fragment>

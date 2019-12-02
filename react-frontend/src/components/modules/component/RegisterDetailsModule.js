@@ -18,6 +18,7 @@ import time_blue from "../../../images/time_blue.svg";
 import Counter from "../../general/Counter";
 import AttendeeDetails from "./AttendeeDetails";
 import HorizantalIconWithHeader from "../../../core/HorizantalIconWithHeader";
+import { RAZOR_PAY_ID } from "../../../utils/constant";
 export default class RegisterDetailsModule extends Component {
   constructor(props) {
     super(props);
@@ -36,15 +37,102 @@ export default class RegisterDetailsModule extends Component {
       counter: 1,
       ticketCounter: [],
       attende1Detials: null,
-      attende2Detials: null
+      attende2Detials: null,
+      showInputError: false,
+      eventPackages: null,
+      registerdAddress: null,
+      totalPrice: 0,
+      eventId: null,
+      showPaymentModal: false
     };
   }
+  componentWillReceiveProps = nextProps => {
+    let totalPrice = this.state.totalPrice;
+    if (nextProps && nextProps.paymentDetails) {
+      let options = {
+        key: RAZOR_PAY_ID,
+        amount: totalPrice * 100,
+        currency: "INR", // 2000 paise = INR 20, amount in paisa
+        name: "Merchant Name",
+        description: "Purchase Description",
+        image: "/your_logo.png",
+        order_id:
+          nextProps.paymentDetails &&
+          nextProps.paymentDetails.data &&
+          nextProps.paymentDetails.data.orderId,
+        handler: function(response) {
+          let details = {
+            referenceId: response.razorpay_payment_id,
+            signature: response.razorpay_signature,
+            orderId: response.razorpay_order_id
+          };
+          nextProps.paymentStatus(2, details);
+        },
+        prefill: {
+          name: this.state.attende1Detials.name,
+          email: this.state.attende1Detials.email
+        },
+        notes: {
+          address: this.state.registerdAddress
+        },
+        theme: {
+          color: "#F37254"
+        }
+      };
+
+      let rzp = new window.Razorpay(options);
+      rzp.open();
+    }
+    if (nextProps && nextProps.paymentStatusDetails) {
+      this.setState({ showPaymentModal: true });
+    }
+  };
   handleButtonClick = () => {
-    if (this.state.Proceed == 4) {
+    let eventPages =
+      this.props.registerEventList &&
+      this.props.registerEventList[0].eventPackages[0];
+    let attende = [];
+    if (this.state.attende1Detials) {
+      attende.push({
+        name: this.state.attende1Detials.name,
+        email: this.state.attende1Detials.email,
+        mobile: this.state.attende1Detials.mobileno,
+        primary: true
+      });
+    }
+    if (this.state.attende2Detials) {
+      attende.push({
+        name: this.state.attende2Detials.name,
+        email: this.state.attende2Detials.email,
+        mobile: this.state.attende2Detials.mobileno
+      });
+    }
+    if (this.state.Proceed == 3) {
+      this.setState({
+        registerdAddress: attende,
+        totalPrice: this.state.counter * eventPages.price,
+        eventId: this.props.registerEventList[0].eventSlotId
+      });
+      let data = {
+        userId: 3,
+        slotId: this.props.registerEventList[0].eventSlotId,
+        seats: [
+          {
+            packageId: eventPages.eventPackageId,
+            noOfSeats: this.state.counter,
+            price: this.state.counter * eventPages.price
+          }
+        ],
+        attendees: [...attende]
+      };
+      this.props.bookEvent(this.props.registerEventList[0].eventSlotId, data);
+    } else if (this.state.Proceed == 4) {
       this.props.closeModal();
+      window.scrollTo(0, 0);
     } else {
       if (this.state.Proceed == 2) {
         let attendeDetails = this.state.attende1Detials;
+        let attende2Details = this.state.attende2Detials;
         if (
           attendeDetails &&
           attendeDetails.name &&
@@ -52,15 +140,30 @@ export default class RegisterDetailsModule extends Component {
           attendeDetails.mobileno
         ) {
           this.setState({ Proceed: this.state.Proceed + 1 });
+          window.scrollTo(0, 0);
+        } else if (
+          attende2Details &&
+          attende2Details.name &&
+          attende2Details.email &&
+          attende2Details.mobileno
+        ) {
+          this.setState({ Proceed: this.state.Proceed + 1 });
+          window.scrollTo(0, 0);
+        } else {
+          this.setState({ showInputError: true });
         }
       } else {
         this.setState({ Proceed: this.state.Proceed + 1 });
+        window.scrollTo(0, 0);
       }
     }
   };
   goBack = () => {
     if (this.state.Proceed != 1) {
       this.setState({ Proceed: this.state.Proceed - 1 });
+    }
+    if (this.state.Proceed == 1) {
+      this.props.closeModal();
     }
   };
   setTicketCounter = val => {
@@ -98,10 +201,10 @@ export default class RegisterDetailsModule extends Component {
     });
   };
   addAttende1Details = val => {
-    this.setState({ attende1Detials: val });
+    this.setState({ attende1Detials: val, showInputError: false });
   };
   addAttende2Details = val => {
-    this.setState({ attende2Detials: val });
+    this.setState({ attende2Detials: val, showInputError: false });
   };
   render() {
     return (
@@ -114,7 +217,9 @@ export default class RegisterDetailsModule extends Component {
           <div className={styles.modalBase}>
             <div className={styles.registerHeader}>
               <div className={styles.icon} onClick={() => this.goBack()}>
-                <Icon image={Back} size={22} />
+                {!this.state.showPaymentModal && (
+                  <Icon image={Back} size={22} />
+                )}
               </div>
               <div className={styles.registerText}>Registration Details</div>
             </div>
@@ -134,7 +239,9 @@ export default class RegisterDetailsModule extends Component {
                   third={
                     this.state.Proceed > 2
                       ? "active"
-                      : this.state.Proceed > 3 && "complete"
+                      : (this.state.Proceed > 3 ||
+                          this.state.showPaymentModal) &&
+                        "complete"
                   }
                 />
               </div>
@@ -296,6 +403,7 @@ export default class RegisterDetailsModule extends Component {
                     <AttendeeDetails
                       title={"Attendee 1"}
                       onChange={val => this.addAttende1Details(val)}
+                      showInputError={this.state.showInputError}
                     />
                   </div>
                   <div className={styles.Attendes}>
@@ -307,7 +415,7 @@ export default class RegisterDetailsModule extends Component {
                   </div>
                 </div>
               )}
-              {(this.state.Proceed == 3 || this.state.Proceed == 4) &&
+              {(this.state.Proceed == 3 || this.state.showPaymentModal) &&
                 this.props.registerEventList &&
                 this.props.registerEventList[0].eventPackages &&
                 this.props.registerEventList[0].eventPackages.map(val => {
@@ -370,7 +478,7 @@ export default class RegisterDetailsModule extends Component {
                               this.state.attende1Detials.name}
                           </div>
                         </div>
-                        {this.state.Proceed === 4 && (
+                        {this.state.showPaymentModal && (
                           <div className={styles.attendeeText}>
                             (PAYMENT DONE THROUGH DEBIT CARD)
                             <div>
@@ -410,20 +518,39 @@ export default class RegisterDetailsModule extends Component {
                       </div>
                     );
                   })}
-                <div
-                  className={styles.button}
-                  onClick={() => this.handleButtonClick()}
-                >
-                  <Button
-                    type="primary"
-                    backgroundColor={"#4F439A"}
-                    fontColor={"#fff"}
-                    height={50}
-                    width={170}
-                    label="Proceed"
-                    borderRadius={5}
-                  />
-                </div>
+
+                {this.state.Proceed <= 3 ? (
+                  <div
+                    className={styles.button}
+                    onClick={() => this.handleButtonClick()}
+                  >
+                    {" "}
+                    <Button
+                      type="primary"
+                      backgroundColor={"#4F439A"}
+                      fontColor={"#fff"}
+                      height={50}
+                      width={170}
+                      label="Proceed"
+                      borderRadius={5}
+                    />
+                  </div>
+                ) : (
+                  <div
+                    className={styles.button}
+                    onClick={() => this.props.closeModal()}
+                  >
+                    <Button
+                      type="primary"
+                      backgroundColor={"#4F439A"}
+                      fontColor={"#fff"}
+                      height={50}
+                      width={170}
+                      label="BACK TO EVENTS"
+                      borderRadius={5}
+                    />
+                  </div>
+                )}
               </div>
             </div>
           </div>

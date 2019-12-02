@@ -4,7 +4,7 @@ import BlogFeed from "./components/Blog/BlogFeed";
 import styles from "./App.css";
 import MorePage from "./components/HomePage/MorePage";
 import Terms from "./components/TermsAndConditions/TermsAndConditions";
-import Privacy from "./components/TermsAndConditions/TermsAndConditions";
+import Privacy from "./components/TermsAndConditions/Privacy";
 import AboutUs from "./components/AboutUs/AboutUs";
 import ModalContainer from "./components/modules/container/ModalContainer";
 import EventPageContainer from "./components/Event/container/EventPageContainer";
@@ -16,9 +16,9 @@ import FeedContainer from "./components/Feed/container/FeedContainer";
 import FeedExtraImagesContainer from "./components/Feed/container/FeedExtraImagesContainer"
 import Settings from "./components/Settings/SettingsContainer/SettingsContainer";
 import BlogContainer from "./components/Blog/container/BlogContainer";
-import EventDetails from "./components/EventDetails/EventDetails";
 import VisualProfileContainer from "./components/VisualProfile/conatiner/VisualProfileContainer";
 import SeekGuideContainer from "./components/SeekGuide/SeekGuideContainer";
+import BlogDetailsContainer from "./components/Blog/container/BlogDetailsPageContainer";
 class App extends Component {
   render() {
     return (
@@ -36,13 +36,13 @@ class App extends Component {
             path="/eventDetails/:eventId"
             component={EventDetailsPageContainer}
           />
+          <Route path="/blogDetails/:blogId" component={BlogDetailsContainer} />
           <Route path="/event" component={EventPageContainer} />
           <Route path="/profile" component={ProfileContainer} />
           <Route path="/feed" component={FeedContainer} />
           <Route path="/connections" component={ConnectionsContainer} />
           <Route path="/feedImages" component={FeedExtraImagesContainer} />
           <Route path="/settings" component={Settings} />
-          <Route path="/eventDetails" component={EventDetails} />
         </Switch>
         <ModalContainer />
       </BrowserRouter>

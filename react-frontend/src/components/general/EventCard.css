@@ -35,15 +35,30 @@
   text-overflow: ellipsis;
 }
 
-.time,
-.date,
-.location {
+.date {
+  display: block;
   font-size: 14px;
   font-family: regular;
   line-height: 20px;
   margin-bottom: 10px;
+}
+
+.time {
+  display: block;
+  font-size: 14px;
+  font-family: regular;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+
+.location {
+  font-size: 14px;
+  font-family: regular;
+  line-height: 20px;
+  margin-bottom: 20px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  position: relative;
 }
 
 .icons {
@@ -76,7 +91,9 @@
   margin-right: 10px;
   background: url("../../images/Location-white.svg") no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
+  /* width: 10%; */
+  position: relative;
 }
 
 .homeLocationImage {
@@ -95,6 +112,13 @@
   overflow: hidden;
   text-overflow: ellipsis;
   width: 80%;
+}
+
+.locationText {
+  width: 80%;
+  position: absolute;
+  top: 0;
+  left: 25px;
 }
 
 .eventLabelContainer {
@@ -124,4 +148,39 @@
 
 .imageBase {
   position: relative;
+}
+
+@media only screen and (max-width: 768px) {
+  .storiesImage {
+    height: 154px;
+  }
+
+  .homeheadingtext {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .time,
+  .date,
+  .location {
+    font-size: 14px;
+    line-height: 14px;
+  }
+  .cardBase {
+    padding: 15px;
+  }
+
+  .tags {
+    font-size: 10px;
+    font-family: bold;
+    line-height: 18px;
+    padding: 5px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .cardBase {
+    white-space: normal;
+  }
+  .contentHeading {
+    font-size: 16px;
+  }
 }

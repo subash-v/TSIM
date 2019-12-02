@@ -6,7 +6,7 @@
 .container {
   width: 100%;
   height: auto;
-  padding: 16px 20px;
+  padding: 25px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -16,21 +16,13 @@
   display: flex;
   align-items: center;
 }
-.menu {
-  width: 16px;
-  height: 16px;
-  background: url(../../images/Hanburgermenu.svg) no-repeat;
-  background-size: cover;
-  background-position: center;
-  cursor: pointer;
-}
+
 .logo {
-  width: 20px;
+  width: 25px;
   height: 20px;
   background: url(../../images/tsim_logo.png) no-repeat;
   background-size: cover;
   background-position-x: right;
-  margin-left: 16px;
   cursor: pointer;
 }
 .searchLoginContainer {
@@ -50,6 +42,13 @@
   width: 16px;
   height: 16px;
   background: url(../../images/Search.svg) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.menu {
+  width: 16px;
+  height: 16px;
+  background: url(../../images/Menu_Line.svg) no-repeat;
   background-size: cover;
   background-position: center;
 }

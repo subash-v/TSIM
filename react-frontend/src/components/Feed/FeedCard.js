@@ -8,7 +8,6 @@ import FeedCardDottedMenu from "./FeedCardDottedMenu/FeedCardDottedMenu";
 import FeedProfileHolder from "./FeedProfileHolder";
 import CompleteCourseImages from "./CompleteCourseImages/CompleteCourseImages";
 
-
 export default class FeedCard extends Component {
   state = {
     showFeedMenu: false
@@ -55,7 +54,9 @@ export default class FeedCard extends Component {
             <div className={styles.hashTag}>#productivity</div>
           </div>
           <div className={styles.completeCourseImagesContainer}>
-            <CompleteCourseImages updateImages={(data) => this.props && this.props.updateImages(data)} />
+            <CompleteCourseImages
+              updateImages={data => this.props && this.props.updateImages(data)}
+            />
           </div>
           {/* <div className={styles.pollingResultContainer}>
 
@@ -100,7 +101,6 @@ export default class FeedCard extends Component {
             <div className={styles.intrested}>Intrested & 13 Registered</div>
           </div>
 
-
           {/* <div className={styles.pollingConatiner}>
 
             <PollingResult percentage={30} option="A"
@@ -112,7 +112,7 @@ export default class FeedCard extends Component {
           <div className={styles.comment}>21 comment</div>
           <div className={styles.share}>10 Share</div>
         </div>
-      </div >
+      </div>
     );
   }
 }

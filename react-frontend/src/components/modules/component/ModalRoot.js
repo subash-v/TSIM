@@ -17,6 +17,8 @@ import UserPostModal from "../../Feed/UserPostModal";
 import EventDetailSliderComponent from "../../Event/EventDetailSlider/EventDetailSliderComponent";
 import UploadCV from "./UploadCV";
 import WorkExpModal from "./WorkExpModal";
+import RegisterDetailsModuleContainer from "../container/RegisterDetailsModuleContainer";
+import GetInTouchModal from "./GetInTouchModal";
 const modalRoot = document.getElementById("modal-root");
 
 export default class ModalRoot extends React.Component {
@@ -109,7 +111,7 @@ export default class ModalRoot extends React.Component {
         />
       ),
       RegisterDetailsModal: (
-        <RegisterDetailsModule
+        <RegisterDetailsModuleContainer
           closeModal={() => this.handleClose()}
           {...this.props.ownProps}
         />
@@ -146,6 +148,12 @@ export default class ModalRoot extends React.Component {
       ),
       ImageUpload: (
         <ImageUplaod
+          closeModal={() => this.handleClose()}
+          {...this.props.ownProps}
+        />
+      ),
+      GetInTouchModal: (
+        <GetInTouchModal
           closeModal={() => this.handleClose()}
           {...this.props.ownProps}
         />

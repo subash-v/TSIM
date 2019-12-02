@@ -49,7 +49,7 @@ export default class Card extends Component {
               className={
                 window.location.pathname === "/"
                   ? styles.homeLocationText
-                  : null
+                  : styles.locationText
               }
             >
               {this.props.location}
