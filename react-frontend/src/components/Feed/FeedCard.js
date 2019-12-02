@@ -7,7 +7,6 @@ import Button from "../general/Button";
 import FeedCardDottedMenu from "./FeedCardDottedMenu/FeedCardDottedMenu";
 import PollingResult from "./PollingResult";
 import FeedProfileHolder from "./FeedProfileHolder";
-
 export default class FeedCard extends Component {
   state = {
     showFeedMenu: false
@@ -53,6 +52,13 @@ export default class FeedCard extends Component {
             <div className={styles.hashTag}>#productivity</div>
             <div className={styles.hashTag}>#productivity</div>
           </div>
+          {/* <div className={styles.completeCourseImagesContainer}>
+            <CompleteCourseImages />
+          </div> */}
+          {/* <div className={styles.pollingResultContainer}>
+
+            <PollingResultWithImage></PollingResultWithImage>
+          </div> */}
           <div className={styles.eventDetailsContainer}>
             <div className={styles.time}>3 pm - 5 pm</div>
             <div className={styles.eventDate}>17th August 2019</div>
@@ -91,9 +97,12 @@ export default class FeedCard extends Component {
             <span className={styles.more}>+26</span>
             <div className={styles.intrested}>Intrested & 13 Registered</div>
           </div>
-          <div className={styles.pollingConatiner}>
-            <PollingResult />
-          </div>
+
+          {/* <div className={styles.pollingConatiner}>
+
+            <PollingResult percentage={30} option="A"
+              pollQuestion="Wouldn't it be amazing to access a unique profile builder" />
+          </div> */}
         </div>
         <div className={styles.likesSection}>
           <div className={styles.likes}>12k Likes</div>
