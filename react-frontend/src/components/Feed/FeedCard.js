@@ -7,8 +7,6 @@ import Button from "../general/Button";
 import FeedCardDottedMenu from "./FeedCardDottedMenu/FeedCardDottedMenu";
 import PollingResult from "./PollingResult";
 import FeedProfileHolder from "./FeedProfileHolder";
-import PollingResultWithImage from "./PollingResultWithImage/PollingResultWithImage";
-import CompleteCourseImages from "./CompleteCourseImages/CompleteCourseImages";
 export default class FeedCard extends Component {
   state = {
     showFeedMenu: false
@@ -87,8 +85,8 @@ export default class FeedCard extends Component {
               fontColor={"#4F439A"}
               borderColor={"#fff"}
               height={40}
-              width={163}
-              label="I AM INTEREST"
+              width={167}
+              label="I AM INTERESTED"
               borderRadius={5}
             />
           </div>
@@ -99,7 +97,6 @@ export default class FeedCard extends Component {
             <span className={styles.more}>+26</span>
             <div className={styles.intrested}>Intrested & 13 Registered</div>
           </div>
-
 
           {/* <div className={styles.pollingConatiner}>
 
@@ -112,7 +109,7 @@ export default class FeedCard extends Component {
           <div className={styles.comment}>21 comment</div>
           <div className={styles.share}>10 Share</div>
         </div>
-      </div >
+      </div>
     );
   }
 }

@@ -3,6 +3,7 @@ import styles from "./Terms.css";
 // import { HOME_PAGE_URL } from "../lib/constants";
 import Footer from "../Footer/Footer";
 import PrimaryHeaderContainer from "../HomePage/container/PrimaryHeaderContainer";
+import FooterContainer from "../Footer/FooterContainer";
 
 export default class TermsOfService extends Component {
   // backToHomePage() {
@@ -233,10 +234,7 @@ export default class TermsOfService extends Component {
             </p>
           </div>{" "}
           <div className={styles.footer}>
-            <Footer
-              {...this.props}
-              handleBackToTop={() => this.handleBackToTop()}
-            />
+            <FooterContainer />
           </div>
         </div>
       </React.Fragment>

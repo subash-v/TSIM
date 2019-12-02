@@ -6,6 +6,7 @@ import Button from "../general/Button.js";
 import SignUpBar from "../Blog/SignUpBar";
 import Footer from "../Footer/Footer";
 import PrimaryHeaderContainer from "../HomePage/container/PrimaryHeaderContainer";
+import FooterContainer from "../Footer/FooterContainer";
 export default class SeekGuide extends Component {
   render() {
     return (
@@ -31,7 +32,10 @@ export default class SeekGuide extends Component {
                       Reach out to a guide or become one.{" "}
                     </div>
                     <div className={styles.buttonHolder}>
-                      <div className={styles.button}>
+                      <div
+                        className={styles.button}
+                        onClick={() => this.props.showSignUpModule()}
+                      >
                         <Button
                           type="primary"
                           backgroundColor={"#4F439A"}
@@ -39,17 +43,6 @@ export default class SeekGuide extends Component {
                           height={50}
                           width={210}
                           label="Seek Guidance"
-                          borderRadius={10}
-                        />
-                      </div>
-                      <div className={styles.button}>
-                        <Button
-                          type="primary"
-                          backgroundColor={"#4F439A"}
-                          fontColor={"#fff"}
-                          height={50}
-                          width={210}
-                          label="Register as a guide"
                           borderRadius={10}
                         />
                       </div>
@@ -116,7 +109,7 @@ export default class SeekGuide extends Component {
             </div>
           </CenteredContent>
           <div className={styles.footerSection}>
-            <Footer history={this.props.history} />
+            <FooterContainer />
           </div>
         </div>
       </React.Fragment>

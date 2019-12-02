@@ -36,7 +36,6 @@
   width: 100%;
   height: auto;
   padding: 20px;
-  border-top: 1px solid #b2b2b2;
 }
 .tagContainer {
   width: 100%;
@@ -285,14 +284,119 @@
   width: 100%;
   height: auto;
 }
-
-.pollingResultContainer
-{
-  width:100%;
-  height: auto;
+.overlay {
+  position: relative;
+  bottom: 60px;
+  display: block;
+  width: 525px;
+  height: 20%;
+  color: #ffffff;
+  background-color: rgba(26, 26, 26, 0.68);
+  z-index: 1;
+  cursor: pointer;
 }
-.completeCourseImagesContainer
-{
-  width:100%;
-  height: auto;
+.overlayhead {
+  color: #ffffff;
+  font-size: 16px;
+  padding-left: 16px;
+}
+.overlayurl {
+  color: #ffffff;
+  font-size: 12px;
+  padding-left: 17px;
+  padding-top: 5px;
+}
+.commentcont {
+  height: 50px;
+}
+.commentprofile {
+  border-radius: 100%;
+  margin-left: 20px;
+}
+.commsec {
+  display: flex;
+}
+.ans {
+  height: 22px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  color: #4f439a;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 22px;
+}
+.drop {
+  padding-left: 5px;
+}
+.commentholder {
+  display: flex;
+}
+.profilename {
+  font-size: 12px;
+  font-family: bold;
+  padding-left: 10px;
+}
+.degn {
+  color: #7f7f7f;
+  font-size: 12px;
+  padding-left: 10px;
+  padding-top: 3px;
+}
+.comment_text {
+  color: #333333;
+  font-size: 14px;
+  width: 440px;
+  padding-left: 10px;
+  padding-top: 10px;
+  line-height: 22px;
+}
+.dropupcont {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+.dropup {
+  height: 15px;
+  width: 15px;
+}
+.dropup:hover {
+  cursor: pointer;
+}
+.drouptxt {
+  font-size: 12px;
+  padding-left: 4px;
+  color: #7f7f7f;
+}
+.droupcont {
+  display: flex;
+}
+.commentBox {
+  border: 1px solid #4f439a;
+  display: flex;
+  height: 40px;
+  width: 440px;
+  padding: 8px 0px 7px 7px;
+  border-radius: 5px;
+}
+.commentinp {
+  width: 100%;
+  padding: 10px;
+}
+.commentbut {
+  height: 25px;
+  width: 60px;
+  background-color: #4f439a;
+  color: #ffffff;
+  border-radius: 2px;
+  border: none;
+  font-family: bold;
+  outline: none;
+}
+.commentinpprofile {
+  border-radius: 100%;
+}
+.combutcont {
+  margin: 0 9px 8px 0px;
 }

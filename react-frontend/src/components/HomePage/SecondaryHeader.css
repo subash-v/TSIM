@@ -60,3 +60,20 @@
 .buttonHolder {
   display: inline-block;
 }
+
+@media only screen and (max-width: 1024px) {
+  .logoHolder {
+    width: 30px;
+    height: 30px;
+    background: url(../../images/TSIM_Favicon-white.svg) no-repeat;
+    background-size: cover;
+    background-position-x: right;
+    margin-left: 5px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+  }
+  .headerHolder {
+    padding: 20px;
+  }
+}

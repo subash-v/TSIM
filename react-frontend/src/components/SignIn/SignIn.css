@@ -9,6 +9,12 @@
 .welTxt {
   display: block;
 }
+.error {
+  color: #ee0f0f;
+  font-family: bold;
+  font-size: 14px;
+  padding-bottom: 5px;
+}
 
 .welcomeTxt {
   color: #4f439a;
@@ -79,6 +85,7 @@
   color: white;
   text-align: center;
   margin: 15px 0 15px 0;
+  cursor: pointer;
 }
 
 .backImg {
@@ -100,6 +107,7 @@
   font-size: 14px;
   line-height: 22px;
   display: inline-block;
+  cursor: pointer;
 }
 
 .loginWith {
@@ -108,6 +116,7 @@
   font-size: 22px;
   margin-top: 30px;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 .img {
   display: inline-block;
@@ -117,6 +126,7 @@
   width: 30px;
   border: 0.86px solid #4f439a;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .backCircle {
@@ -129,6 +139,54 @@
   position: absolute;
   top: 60px;
   left: 45px;
+}
 
-  /* border: 1px solid #4f439a; */
+@media only screen and (max-width: 768px) {
+  .signInContainer {
+    width: 100%;
+    height: auto;
+    margin-top: 5%;
+    background: #fff;
+    padding: 116px 20px 20px 18px;
+  }
+  .backCircle {
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    position: absolute;
+    top: 21px;
+    left: 10px;
+    box-shadow: none;
+
+    /* border: 1px solid #4f439a; */
+  }
+
+  .checkbox {
+    /* -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; */
+    height: 14px;
+    width: 14px;
+    display: inline-block;
+    vertical-align: middle;
+    outline: 2px solid #4f439a;
+    margin-right: 10px;
+  }
+  .forgotPassword {
+    color: #7f7f7f;
+    font-family: bold;
+    font-size: 14px;
+    line-height: 22px;
+    display: inline-block;
+  }
+  .backImg {
+    width: 15px;
+    height: 15px;
+    margin: 0px;
+  }
+  .forgotPassword:last-child {
+    width: 100%;
+    float: none;
+  }
 }

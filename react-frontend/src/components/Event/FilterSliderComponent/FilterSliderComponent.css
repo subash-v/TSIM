@@ -68,11 +68,11 @@
   opacity: 0.6;
   cursor: pointer;
   position: absolute;
-  left: 525px;
+  left: 489px;
   top: -1px;
   bottom: 0;
   margin: auto;
-  z-index: 5;
+  z-index: 1;
   border-radius: 50%;
   box-shadow: 2px 2px 10px -3px;
 }

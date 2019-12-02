@@ -108,9 +108,9 @@ export default class Connection extends Component {
       limitForSent: this.state.limitForSent + 4
     });
   };
-  onLoadMore = () => {
-    this.props.showAllConnectionModal();
-  };
+  // onLoadMore = () => {
+  //   this.props.showAllConnectionModal();
+  // };
   render() {
     return (
       <div className={styles.base}>
