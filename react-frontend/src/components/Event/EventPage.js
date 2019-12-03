@@ -106,7 +106,7 @@ export default class EventPage extends Component {
                           fontColor={"#4F439A"}
                           height={40}
                           width={118}
-                          label="Fliter"
+                          label="Filter"
                           borderRadius={10}
                         />
                       </div>

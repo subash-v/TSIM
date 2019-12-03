@@ -19,6 +19,10 @@ import UploadCV from "./UploadCV";
 import WorkExpModal from "./WorkExpModal";
 import RegisterDetailsModuleContainer from "../container/RegisterDetailsModuleContainer";
 import GetInTouchModal from "./GetInTouchModal";
+import AddSkills from "./AddSkills";
+import AddLanguages from "./AddLanguage";
+import AddInterest from "./AddInterest";
+import AddActivity from "./AddActivity";
 const modalRoot = document.getElementById("modal-root");
 
 export default class ModalRoot extends React.Component {
@@ -154,6 +158,30 @@ export default class ModalRoot extends React.Component {
       ),
       GetInTouchModal: (
         <GetInTouchModal
+          closeModal={() => this.handleClose()}
+          {...this.props.ownProps}
+        />
+      ),
+      AddSkills: (
+        <AddSkills
+          closeModal={() => this.handleClose()}
+          {...this.props.ownProps}
+        />
+      ),
+      AddLanguages: (
+        <AddLanguages
+          closeModal={() => this.handleClose()}
+          {...this.props.ownProps}
+        />
+      ),
+      AddInterest: (
+        <AddInterest
+          closeModal={() => this.handleClose()}
+          {...this.props.ownProps}
+        />
+      ),
+      AddActivity: (
+        <AddActivity
           closeModal={() => this.handleClose()}
           {...this.props.ownProps}
         />

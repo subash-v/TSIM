@@ -568,10 +568,16 @@ export default class Profile extends Component {
                       }
                     />
                   )}
-                  <Skills title={"Skills"} skills={this.props.skills} />
+                  <Skills
+                    title={"Skills"}
+                    showAddSkillModal={this.props.showAddSkillModal}
+                  />
                 </div>
                 <div style={{ position: "relative" }}>
-                  <Skills title={"Languages"} skills={this.props.skills} />
+                  <Skills
+                    title={"Languages"}
+                    showAddLanguagesModal={this.props.showAddLanguagesModal}
+                  />
                   {this.state.tourcount === 6 && (
                     <ToolTip
                       toolTipLeft={"-510px"}
@@ -639,13 +645,16 @@ export default class Profile extends Component {
                       }
                     />
                   )}
-                  <Skills title={"Interests"} skills={this.props.skills} />
+                  <Skills
+                    title={"Interests"}
+                    showAddInterestModal={this.props.showAddInterestModal}
+                  />
                 </div>
                 <div style={{ position: "relative" }}>
                   {" "}
                   <Skills
                     title={"Recent Activity"}
-                    skills={this.props.skills}
+                    showAddActivityModal={this.props.showAddActivityModal}
                   />
                   {/* enable this tool tip if the client needs tool tip for recnet activity too */}
                   {/* {this.state.tourcount === 8 && (  

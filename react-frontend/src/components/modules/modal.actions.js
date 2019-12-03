@@ -18,6 +18,10 @@ export const USER_POST_MODAL = "UserPostModal";
 export const EVENT_DETAIL_SLIDER_COMPONENT = "EventDetailSlider";
 export const UPLOAD_CV_MODAL = "UploadCVModal";
 export const GET_IN_TOUCH = "GetInTouchModal";
+export const ADD_SKILLS = "AddSkills";
+export const ADD_LANGUAGES = "AddLanguages";
+export const ADD_INTEREST = "AddInterest";
+export const ADD_ACTIVITIES = "AddActivity";
 
 export function showModal(type, ownProps) {
   const scrollPosition =
