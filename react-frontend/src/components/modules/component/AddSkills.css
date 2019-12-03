@@ -1,0 +1,33 @@
+.base {
+  width: 30vw;
+  height: 50vh;
+  background: #fff;
+  padding: 40px;
+}
+
+.title {
+  font-size: 22px;
+  font-family: bold;
+  line-height: 30px;
+  padding-bottom: 20px;
+}
+
+.buttonContainer {
+  width: 50%;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.selectSection {
+  position: relative;
+}
+
+.addButton {
+  background: url("../../../images/Add-Fill-color.svg") no-repeat;
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 50px;
+  bottom: 10px;
+}

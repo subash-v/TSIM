@@ -14,9 +14,9 @@
 
 .profileSection {
   position: absolute;
-  top: 80px;
+  top: 30px;
   border-radius: 15px;
-  width: 90%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,7 +25,6 @@
   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
   max-width: 1200px;
   margin: 15px auto;
-  left: 35px;
 }
 
 .profile {
@@ -33,12 +32,11 @@
   width: 70%;
   height: 100%;
   padding: 0 40px;
-  margin-top: 30px;
 }
 
 .uploadImage {
   /* background: #7f7f7f; */
-  width: 30%;
+  width: 40%;
   height: auto;
   background: linear-gradient(180deg, #e5e5e5 0%, #eeeeee 100%);
   position: relative;
@@ -173,7 +171,7 @@
   background: url("../../images/Profile-Fill-grey.svg") no-repeat;
   background-size: 80%;
   width: auto;
-  height: 50vh;
+  height: 55vh;
   border: 1px dashed;
   margin: 20px;
   position: relative;
@@ -289,9 +287,9 @@
 }
 
 .milestones {
-  padding-bottom: 50px;
   border-bottom: 1px solid #ebeced;
   padding: 0 40px;
+  padding-bottom: 50px;
 }
 
 .journey {
